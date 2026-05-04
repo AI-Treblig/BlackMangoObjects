@@ -38,7 +38,6 @@
       "blocks": {
         "social_9hP4Fw": {
           "type": "social",
-          "disabled": true,
           "settings": {
             "show_mobile_social": true,
             "color_social": "#ffffff"
@@ -46,7 +45,6 @@
         },
         "custom_text_R4w3fP": {
           "type": "custom-text",
-          "disabled": true,
           "settings": {
             "custom_text_content": "Sale alert: up to 60% off now on. T&Cs apply",
             "color_custom_text": "#ffffff",
@@ -80,6 +78,7 @@
         "text_with_icon_6prGcW",
         "language_currency_FXhUXn"
       ],
+      "disabled": true,
       "name": "Header Topbar",
       "settings": {
         "show_topbar": false,
@@ -810,8 +809,8 @@
         "mainmenu_item_TnrwjN": {
           "type": "_mainmenu-item",
           "settings": {
-            "title": "Shop",
-            "menu_url": "shopify://collections/all",
+            "title": "Collection",
+            "menu_url": "shopify://collections",
             "submenu_format": "mega",
             "badge": "",
             "position": "after",
