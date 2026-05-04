@@ -1,1 +1,811 @@
-{"name":"Footer group","type":"footer","sections":{"featured_custom_section_6d8PKM":{"type":"featured-custom-section","blocks":{"column_Ta8HC9":{"type":"_column","settings":{"width":100,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"","margin":"","width_lap":100,"width_tab":100,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#fff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"line_3iUxCj":{"type":"line","name":"Line","settings":{"padding":"","margin":"","margin_line":"0px 0px 0px 0px","width":"","height":1,"background":"#e5e5e5"},"blocks":{}}},"block_order":["line_3iUxCj"]}},"block_order":["column_Ta8HC9"],"name":"Custom Section","settings":{"max_width":"","fullwidth":true,"background_gradient":"","background_fixed":false,"background_size":"cover","background_pos":"center center","background_color":"","width_bg":"container","half_overflow":true,"padding_bg":"","padding":"","margin":"","vertical_align":"top","horizontal_align":"left"}},"footer":{"type":"footer","blocks":{"column_bTPfmN":{"type":"_column","settings":{"width":25,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"0 15px | 0 7.5px","margin":"| | 0 0 30px","width_lap":25,"width_tab":50,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"title_B6mWEQ":{"type":"title","settings":{"heading_size":"h3","title":"CONTACT US","font":"--font-family-second","text_transfrom":"default","color":"#000000","font_size":14,"line_height":14,"letter_spacing":2,"font_weight":"400","align":"left","padding":"","margin":"0 0 20px","color_mobi":"#000000","font_size_mobi":14,"line_height_mobi":14,"letter_spacing_mobi":2,"align_mobi":"left"},"blocks":{}},"description_XyCWHr":{"type":"description","settings":{"desc":"Add :4 Copley Place, 7th Floor, Boston, MA 6","font":"--font-family-second","text_transfrom":"default","color":"#868686","font_size":14,"line_height":24,"letter_spacing":0,"font_weight":"400","align":"left","padding":"","margin":"0 0 3px","color_mobi":"#868686","font_size_mobi":14,"line_height_mobi":24,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}},"description_K3xATP":{"type":"description","settings":{"desc":"Tell : 866.453.4748","font":"--font-family-second","text_transfrom":"default","color":"#868686","font_size":14,"line_height":24,"letter_spacing":0,"font_weight":"400","align":"left","padding":"","margin":"0 0 3px","color_mobi":"#868686","font_size_mobi":14,"line_height_mobi":24,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}},"description_dXJqdw":{"type":"description","settings":{"desc":"HR Fax: 810.222.5439","font":"--font-family-second","text_transfrom":"default","color":"#868686","font_size":14,"line_height":24,"letter_spacing":0,"font_weight":"400","align":"left","padding":"","margin":"0 0 3px","color_mobi":"#868686","font_size_mobi":14,"line_height_mobi":24,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}},"description_Fwhh9b":{"type":"description","settings":{"desc":"sales@funorifurniture.com","font":"--font-family-second","text_transfrom":"default","color":"#868686","font_size":14,"line_height":24,"letter_spacing":0,"font_weight":"400","align":"left","padding":"","margin":"","color_mobi":"#868686","font_size_mobi":14,"line_height_mobi":24,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}}},"block_order":["title_B6mWEQ","description_XyCWHr","description_K3xATP","description_dXJqdw","description_Fwhh9b"]},"column_rJmAYX":{"type":"_column","settings":{"width":25,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"0 15px | 0 7.5px","margin":"| | 0 0 30px","width_lap":25,"width_tab":50,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"title_awEhmf":{"type":"title","settings":{"heading_size":"h3","title":"CATEGOIRES","font":"--font-family-second","text_transfrom":"default","color":"#000000","font_size":14,"line_height":24,"letter_spacing":2,"font_weight":"400","align":"left","padding":"","margin":"0 0 12px","color_mobi":"#000000","font_size_mobi":14,"line_height_mobi":24,"letter_spacing_mobi":2,"align_mobi":"left"},"blocks":{}},"list_link_FbXQk3":{"type":"list-link","settings":{"padding":"","margin":"","text_align":"left","list_style":"none","font":"--font-family-base","text_decoration":"none","font_size":14,"font_weight":"500","color":"#868686","color_hover":"#92614c","text_align_mobi":"left"},"blocks":{"list_item_rqrQWc":{"type":"_list-item","settings":{"text":"Furniture","url":"#","icon":"","padding":"","margin":"0 0 8px"},"blocks":{}},"list_item_gVnDAa":{"type":"_list-item","settings":{"text":"Tables","url":"#","icon":"","padding":"","margin":"0 0 8px"},"blocks":{}},"list_item_qYDVcn":{"type":"_list-item","settings":{"text":"Seating","url":"#","icon":"","padding":"","margin":"0 0 8px"},"blocks":{}},"list_item_LEzgVG":{"type":"_list-item","settings":{"text":"Desks & office","url":"#","icon":"","padding":"","margin":"0 0 8px"},"blocks":{}},"list_item_UefpNA":{"type":"_list-item","settings":{"text":"Storage","url":"#","icon":"","padding":"","margin":"0 0 8px"},"blocks":{}},"list_item_9N7PiX":{"type":"_list-item","settings":{"text":"Bed & Bath","url":"#","icon":"","padding":"","margin":""},"blocks":{}}},"block_order":["list_item_rqrQWc","list_item_gVnDAa","list_item_qYDVcn","list_item_LEzgVG","list_item_UefpNA","list_item_9N7PiX"]}},"block_order":["title_awEhmf","list_link_FbXQk3"]},"column_xKFnCC":{"type":"_column","settings":{"width":25,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"0 15px | 0 7.5px","margin":"| | 0 0 30px","width_lap":25,"width_tab":50,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"title_9jtBFV":{"type":"title","settings":{"heading_size":"h3","title":"SERVICES","font":"--font-family-second","text_transfrom":"default","color":"#000000","font_size":14,"line_height":24,"letter_spacing":2,"font_weight":"400","align":"left","padding":"","margin":"0 0 12px","color_mobi":"#000000","font_size_mobi":14,"line_height_mobi":24,"letter_spacing_mobi":2,"align_mobi":"left"},"blocks":{}},"list_link_gLEj88":{"type":"list-link","settings":{"padding":"","margin":"","text_align":"left","list_style":"none","font":"--font-family-base","text_decoration":"none","font_size":14,"font_weight":"500","color":"#868686","color_hover":"#92614c","text_align_mobi":"left"},"blocks":{"list_item_8QQaMM":{"type":"_list-item","settings":{"text":"Sale","url":"#","icon":"","padding":"","margin":"0 0 8px"},"blocks":{}},"list_item_eUarbW":{"type":"_list-item","settings":{"text":"Quick Ship","url":"#","icon":"","padding":"","margin":"0 0 8px"},"blocks":{}},"list_item_JefR9b":{"type":"_list-item","settings":{"text":"New Designs","url":"#","icon":"","padding":"","margin":"0 0 8px"},"blocks":{}},"list_item_e4qpHy":{"type":"_list-item","settings":{"text":"Accidental Fabric Protection","url":"#","icon":"","padding":"","margin":"0 0 8px"},"blocks":{}},"list_item_EYYUgm":{"type":"_list-item","settings":{"text":"Furniture Care","url":"#","icon":"","padding":"","margin":"0 0 8px"},"blocks":{}},"list_item_xMhyWb":{"type":"_list-item","settings":{"text":"Gift Cards","url":"#","icon":"","padding":"","margin":""},"blocks":{}}},"block_order":["list_item_8QQaMM","list_item_eUarbW","list_item_JefR9b","list_item_e4qpHy","list_item_EYYUgm","list_item_xMhyWb"]}},"block_order":["title_9jtBFV","list_link_gLEj88"]},"column_x7Gdih":{"type":"_column","settings":{"width":25,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"0 15px | 0 7.5px","margin":"","width_lap":25,"width_tab":50,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"title_GHztMx":{"type":"title","settings":{"heading_size":"h3","title":"JOIN US","font":"--font-family-second","text_transfrom":"default","color":"#000000","font_size":14,"line_height":24,"letter_spacing":2,"font_weight":"400","align":"left","padding":"","margin":"0 0 12px","color_mobi":"#000000","font_size_mobi":14,"line_height_mobi":24,"letter_spacing_mobi":2,"align_mobi":"left"},"blocks":{}},"description_PWQgKK":{"type":"description","settings":{"desc":"Enter your email below to be the first to know about new collections and product launches.","font":"--font-family-second","text_transfrom":"default","color":"#868686","font_size":14,"line_height":24,"letter_spacing":0,"font_weight":"400","align":"left","padding":"","margin":"0 0 25px","color_mobi":"#868686","font_size_mobi":14,"line_height_mobi":24,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}},"newsletter_RFGgi8":{"type":"newsletter","settings":{"padding":"","margin":"0 0 5px","mailchimp":true,"form_action":"","layout":"layout-2"},"blocks":{}},"social_FNWWa9":{"type":"social","settings":{"padding":"","margin":"","align":"left","gap":20,"width":18,"height":18,"font_size":18,"border_radius":"","border":false,"color":"#000000","background":"rgba(0,0,0,0)","border_color":"rgba(0,0,0,0)","color_hover":"#6e2f1b","background_hover":"rgba(0,0,0,0)","border_color_hover":"rgba(0,0,0,0)","align_mobi":"left"},"blocks":{}}},"block_order":["title_GHztMx","description_PWQgKK","newsletter_RFGgi8","social_FNWWa9"]}},"block_order":["column_bTPfmN","column_rJmAYX","column_xKFnCC","column_x7Gdih"],"settings":{"max_width":"","fullwidth":false,"background_color":"rgba(0,0,0,0)","background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"55px 0 45px | 55px 0 40px","margin":""}},"featured_custom_section_XLJxj8":{"type":"featured-custom-section","blocks":{"column_TQHVUL":{"type":"_column","settings":{"width":100,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"","margin":"","width_lap":100,"width_tab":100,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#fff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"line_ENMbAi":{"type":"line","name":"Line","settings":{"padding":"","margin":"","margin_line":"0px 0px 0px 0px","width":"","height":1,"background":"#e5e5e5"},"blocks":{}}},"block_order":["line_ENMbAi"]}},"block_order":["column_TQHVUL"],"name":"Custom Section","settings":{"max_width":"","fullwidth":true,"background_gradient":"","background_fixed":false,"background_size":"cover","background_pos":"center center","background_color":"","width_bg":"container","half_overflow":true,"padding_bg":"","padding":"","margin":"","vertical_align":"top","horizontal_align":"left"}},"featured_custom_section_L3Q6KA":{"type":"featured-custom-section","blocks":{"column_DyMNGj":{"type":"_column","settings":{"width":50,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"10px 15px | 10px 7.5px","margin":"","width_lap":50,"width_tab":50,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"text_block_RY8WdH":{"type":"text-block","settings":{"title":"Copyright © 2025. All Right Reserved","font":"--font-family-base","text_transform":"none","font_style":"normal","color":"#868686","font_size":14,"line_height":24,"letter_spacing":0,"font_weight":"400","align":"left","padding":"","margin":"","color_mobi":"#868686","font_size_mobi":14,"line_height_mobi":24,"letter_spacing_mobi":0,"align_mobi":"center"},"blocks":{}}},"block_order":["text_block_RY8WdH"]},"column_CTJCm4":{"type":"_column","settings":{"width":50,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"10px 15px | 10px 7.5px","margin":"","width_lap":50,"width_tab":50,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"image_L7rNKz":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/payments-1.png","url":"","padding":"","margin":"","size":"","image_size":"cover","image_pos":"center center","align":"right","border_radius":"0px 0px 0px 0px","border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","effect":"none","position":"unset","left":"","right":"","top":"","bottom":"","align_mobi":"center"},"blocks":{}}},"block_order":["image_L7rNKz"]}},"block_order":["column_DyMNGj","column_CTJCm4"],"settings":{"max_width":"","fullwidth":false,"background_gradient":"","background_fixed":false,"background_size":"cover","background_pos":"center center","background_color":"rgba(0,0,0,0)","width_bg":"full","half_overflow":true,"padding_bg":"","padding":"10px 0 | 10px 7.5px","margin":"","vertical_align":"middle","horizontal_align":"left"}}},"order":["featured_custom_section_6d8PKM","footer","featured_custom_section_XLJxj8","featured_custom_section_L3Q6KA"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "Footer group",
+  "type": "footer",
+  "sections": {
+    "featured_custom_section_6d8PKM": {
+      "type": "featured-custom-section",
+      "blocks": {
+        "column_Ta8HC9": {
+          "type": "_column",
+          "settings": {
+            "width": 100,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "",
+            "margin": "",
+            "width_lap": 100,
+            "width_tab": 100,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "line_3iUxCj": {
+              "type": "line",
+              "name": "Line",
+              "settings": {
+                "padding": "",
+                "margin": "",
+                "margin_line": "0px 0px 0px 0px",
+                "width": "",
+                "height": 1,
+                "background": "#e5e5e5"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "line_3iUxCj"
+          ]
+        }
+      },
+      "block_order": [
+        "column_Ta8HC9"
+      ],
+      "name": "Custom Section",
+      "settings": {
+        "max_width": "",
+        "fullwidth": true,
+        "background_gradient": "",
+        "background_fixed": false,
+        "background_size": "cover",
+        "background_pos": "center center",
+        "background_color": "",
+        "width_bg": "container",
+        "half_overflow": true,
+        "padding_bg": "",
+        "padding": "",
+        "margin": "",
+        "vertical_align": "top",
+        "horizontal_align": "left"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "column_bTPfmN": {
+          "type": "_column",
+          "settings": {
+            "width": 25,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 15px | 0 7.5px",
+            "margin": "| | 0 0 30px",
+            "width_lap": 25,
+            "width_tab": 50,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "title_B6mWEQ": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "CONTACT US",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#000000",
+                "font_size": 14,
+                "line_height": 14,
+                "letter_spacing": 2,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 20px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 14,
+                "line_height_mobi": 14,
+                "letter_spacing_mobi": 2,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "description_XyCWHr": {
+              "type": "description",
+              "settings": {
+                "desc": "Add :4 Copley Place, 7th Floor, Boston, MA 6",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 14,
+                "line_height": 24,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 3px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 14,
+                "line_height_mobi": 24,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "description_K3xATP": {
+              "type": "description",
+              "settings": {
+                "desc": "Tell : 866.453.4748",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 14,
+                "line_height": 24,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 3px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 14,
+                "line_height_mobi": 24,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "description_dXJqdw": {
+              "type": "description",
+              "settings": {
+                "desc": "HR Fax: 810.222.5439",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 14,
+                "line_height": 24,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 3px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 14,
+                "line_height_mobi": 24,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "description_Fwhh9b": {
+              "type": "description",
+              "settings": {
+                "desc": "sales@funorifurniture.com",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 14,
+                "line_height": 24,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "",
+                "color_mobi": "#868686",
+                "font_size_mobi": 14,
+                "line_height_mobi": 24,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "title_B6mWEQ",
+            "description_XyCWHr",
+            "description_K3xATP",
+            "description_dXJqdw",
+            "description_Fwhh9b"
+          ]
+        },
+        "column_rJmAYX": {
+          "type": "_column",
+          "settings": {
+            "width": 25,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 15px | 0 7.5px",
+            "margin": "| | 0 0 30px",
+            "width_lap": 25,
+            "width_tab": 50,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "title_awEhmf": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "CATEGOIRES",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#000000",
+                "font_size": 14,
+                "line_height": 24,
+                "letter_spacing": 2,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 12px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 14,
+                "line_height_mobi": 24,
+                "letter_spacing_mobi": 2,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "list_link_FbXQk3": {
+              "type": "list-link",
+              "settings": {
+                "padding": "",
+                "margin": "",
+                "text_align": "left",
+                "list_style": "none",
+                "font": "--font-family-base",
+                "text_decoration": "none",
+                "font_size": 14,
+                "font_weight": "500",
+                "color": "#868686",
+                "color_hover": "#92614c",
+                "text_align_mobi": "left"
+              },
+              "blocks": {
+                "list_item_rqrQWc": {
+                  "type": "_list-item",
+                  "settings": {
+                    "text": "Furniture",
+                    "url": "#",
+                    "icon": "",
+                    "padding": "",
+                    "margin": "0 0 8px"
+                  },
+                  "blocks": {}
+                },
+                "list_item_gVnDAa": {
+                  "type": "_list-item",
+                  "settings": {
+                    "text": "Tables",
+                    "url": "#",
+                    "icon": "",
+                    "padding": "",
+                    "margin": "0 0 8px"
+                  },
+                  "blocks": {}
+                },
+                "list_item_qYDVcn": {
+                  "type": "_list-item",
+                  "settings": {
+                    "text": "Seating",
+                    "url": "#",
+                    "icon": "",
+                    "padding": "",
+                    "margin": "0 0 8px"
+                  },
+                  "blocks": {}
+                },
+                "list_item_LEzgVG": {
+                  "type": "_list-item",
+                  "settings": {
+                    "text": "Desks & office",
+                    "url": "#",
+                    "icon": "",
+                    "padding": "",
+                    "margin": "0 0 8px"
+                  },
+                  "blocks": {}
+                },
+                "list_item_UefpNA": {
+                  "type": "_list-item",
+                  "settings": {
+                    "text": "Storage",
+                    "url": "#",
+                    "icon": "",
+                    "padding": "",
+                    "margin": "0 0 8px"
+                  },
+                  "blocks": {}
+                },
+                "list_item_9N7PiX": {
+                  "type": "_list-item",
+                  "settings": {
+                    "text": "Bed & Bath",
+                    "url": "#",
+                    "icon": "",
+                    "padding": "",
+                    "margin": ""
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "list_item_rqrQWc",
+                "list_item_gVnDAa",
+                "list_item_qYDVcn",
+                "list_item_LEzgVG",
+                "list_item_UefpNA",
+                "list_item_9N7PiX"
+              ]
+            }
+          },
+          "block_order": [
+            "title_awEhmf",
+            "list_link_FbXQk3"
+          ]
+        },
+        "column_xKFnCC": {
+          "type": "_column",
+          "settings": {
+            "width": 25,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 15px | 0 7.5px",
+            "margin": "| | 0 0 30px",
+            "width_lap": 25,
+            "width_tab": 50,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "title_9jtBFV": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "SERVICES",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#000000",
+                "font_size": 14,
+                "line_height": 24,
+                "letter_spacing": 2,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 12px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 14,
+                "line_height_mobi": 24,
+                "letter_spacing_mobi": 2,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "list_link_gLEj88": {
+              "type": "list-link",
+              "settings": {
+                "padding": "",
+                "margin": "",
+                "text_align": "left",
+                "list_style": "none",
+                "font": "--font-family-base",
+                "text_decoration": "none",
+                "font_size": 14,
+                "font_weight": "500",
+                "color": "#868686",
+                "color_hover": "#92614c",
+                "text_align_mobi": "left"
+              },
+              "blocks": {
+                "list_item_8QQaMM": {
+                  "type": "_list-item",
+                  "settings": {
+                    "text": "Sale",
+                    "url": "#",
+                    "icon": "",
+                    "padding": "",
+                    "margin": "0 0 8px"
+                  },
+                  "blocks": {}
+                },
+                "list_item_eUarbW": {
+                  "type": "_list-item",
+                  "settings": {
+                    "text": "Quick Ship",
+                    "url": "#",
+                    "icon": "",
+                    "padding": "",
+                    "margin": "0 0 8px"
+                  },
+                  "blocks": {}
+                },
+                "list_item_JefR9b": {
+                  "type": "_list-item",
+                  "settings": {
+                    "text": "New Designs",
+                    "url": "#",
+                    "icon": "",
+                    "padding": "",
+                    "margin": "0 0 8px"
+                  },
+                  "blocks": {}
+                },
+                "list_item_e4qpHy": {
+                  "type": "_list-item",
+                  "settings": {
+                    "text": "Accidental Fabric Protection",
+                    "url": "#",
+                    "icon": "",
+                    "padding": "",
+                    "margin": "0 0 8px"
+                  },
+                  "blocks": {}
+                },
+                "list_item_EYYUgm": {
+                  "type": "_list-item",
+                  "settings": {
+                    "text": "Furniture Care",
+                    "url": "#",
+                    "icon": "",
+                    "padding": "",
+                    "margin": "0 0 8px"
+                  },
+                  "blocks": {}
+                },
+                "list_item_xMhyWb": {
+                  "type": "_list-item",
+                  "settings": {
+                    "text": "Gift Cards",
+                    "url": "#",
+                    "icon": "",
+                    "padding": "",
+                    "margin": ""
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "list_item_8QQaMM",
+                "list_item_eUarbW",
+                "list_item_JefR9b",
+                "list_item_e4qpHy",
+                "list_item_EYYUgm",
+                "list_item_xMhyWb"
+              ]
+            }
+          },
+          "block_order": [
+            "title_9jtBFV",
+            "list_link_gLEj88"
+          ]
+        },
+        "column_x7Gdih": {
+          "type": "_column",
+          "settings": {
+            "width": 25,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 15px | 0 7.5px",
+            "margin": "",
+            "width_lap": 25,
+            "width_tab": 50,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "title_GHztMx": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "JOIN US",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#000000",
+                "font_size": 14,
+                "line_height": 24,
+                "letter_spacing": 2,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 12px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 14,
+                "line_height_mobi": 24,
+                "letter_spacing_mobi": 2,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "description_PWQgKK": {
+              "type": "description",
+              "settings": {
+                "desc": "Enter your email below to be the first to know about new collections and product launches.",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 14,
+                "line_height": 24,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 25px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 14,
+                "line_height_mobi": 24,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "newsletter_RFGgi8": {
+              "type": "newsletter",
+              "settings": {
+                "padding": "",
+                "margin": "0 0 5px",
+                "mailchimp": true,
+                "form_action": "",
+                "layout": "layout-2"
+              },
+              "blocks": {}
+            },
+            "social_FNWWa9": {
+              "type": "social",
+              "settings": {
+                "padding": "",
+                "margin": "",
+                "align": "left",
+                "gap": 20,
+                "width": 18,
+                "height": 18,
+                "font_size": 18,
+                "border_radius": "",
+                "border": false,
+                "color": "#000000",
+                "background": "rgba(0,0,0,0)",
+                "border_color": "rgba(0,0,0,0)",
+                "color_hover": "#6e2f1b",
+                "background_hover": "rgba(0,0,0,0)",
+                "border_color_hover": "rgba(0,0,0,0)",
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "title_GHztMx",
+            "description_PWQgKK",
+            "newsletter_RFGgi8",
+            "social_FNWWa9"
+          ]
+        }
+      },
+      "block_order": [
+        "column_bTPfmN",
+        "column_rJmAYX",
+        "column_xKFnCC",
+        "column_x7Gdih"
+      ],
+      "settings": {
+        "max_width": "",
+        "fullwidth": false,
+        "background_color": "rgba(0,0,0,0)",
+        "background_fixed": false,
+        "background_size": "cover",
+        "background_pos": "center center",
+        "padding": "55px 0 45px | 55px 0 40px",
+        "margin": ""
+      }
+    },
+    "featured_custom_section_XLJxj8": {
+      "type": "featured-custom-section",
+      "blocks": {
+        "column_TQHVUL": {
+          "type": "_column",
+          "settings": {
+            "width": 100,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "",
+            "margin": "",
+            "width_lap": 100,
+            "width_tab": 100,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "line_ENMbAi": {
+              "type": "line",
+              "name": "Line",
+              "settings": {
+                "padding": "",
+                "margin": "",
+                "margin_line": "0px 0px 0px 0px",
+                "width": "",
+                "height": 1,
+                "background": "#e5e5e5"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "line_ENMbAi"
+          ]
+        }
+      },
+      "block_order": [
+        "column_TQHVUL"
+      ],
+      "name": "Custom Section",
+      "settings": {
+        "max_width": "",
+        "fullwidth": true,
+        "background_gradient": "",
+        "background_fixed": false,
+        "background_size": "cover",
+        "background_pos": "center center",
+        "background_color": "",
+        "width_bg": "container",
+        "half_overflow": true,
+        "padding_bg": "",
+        "padding": "",
+        "margin": "",
+        "vertical_align": "top",
+        "horizontal_align": "left"
+      }
+    },
+    "featured_custom_section_L3Q6KA": {
+      "type": "featured-custom-section",
+      "blocks": {
+        "column_DyMNGj": {
+          "type": "_column",
+          "settings": {
+            "width": 50,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "10px 15px | 10px 7.5px",
+            "margin": "",
+            "width_lap": 50,
+            "width_tab": 50,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "text_block_RY8WdH": {
+              "type": "text-block",
+              "settings": {
+                "title": "Copyright © 2025. All Right Reserved",
+                "font": "--font-family-base",
+                "text_transform": "none",
+                "font_style": "normal",
+                "color": "#868686",
+                "font_size": 14,
+                "line_height": 24,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "",
+                "color_mobi": "#868686",
+                "font_size_mobi": 14,
+                "line_height_mobi": 24,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_block_RY8WdH"
+          ]
+        },
+        "column_CTJCm4": {
+          "type": "_column",
+          "settings": {
+            "width": 50,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "10px 15px | 10px 7.5px",
+            "margin": "",
+            "width_lap": 50,
+            "width_tab": 50,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "image_L7rNKz": {
+              "type": "image",
+              "disabled": true,
+              "settings": {
+                "url": "",
+                "padding": "",
+                "margin": "",
+                "size": "",
+                "image_size": "cover",
+                "image_pos": "center center",
+                "align": "right",
+                "border_radius": "0px 0px 0px 0px",
+                "border": false,
+                "border_width": "0px 0px 0px 0px",
+                "border_color": "#ffffff",
+                "effect": "none",
+                "position": "unset",
+                "left": "",
+                "right": "",
+                "top": "",
+                "bottom": "",
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_L7rNKz"
+          ]
+        }
+      },
+      "block_order": [
+        "column_DyMNGj",
+        "column_CTJCm4"
+      ],
+      "settings": {
+        "max_width": "",
+        "fullwidth": false,
+        "background_gradient": "",
+        "background_fixed": false,
+        "background_size": "cover",
+        "background_pos": "center center",
+        "background_color": "rgba(0,0,0,0)",
+        "width_bg": "full",
+        "half_overflow": true,
+        "padding_bg": "",
+        "padding": "10px 0 | 10px 7.5px",
+        "margin": "",
+        "vertical_align": "middle",
+        "horizontal_align": "left"
+      }
+    }
+  },
+  "order": [
+    "featured_custom_section_6d8PKM",
+    "footer",
+    "featured_custom_section_XLJxj8",
+    "featured_custom_section_L3Q6KA"
+  ]
+}
