@@ -35,6 +35,7 @@
     "font-weight-pre-light": "300",
     "font-weight-pre-medium": "500",
     "font-weight-pre-bold": "700",
+    "menu_link_mobile": "bmo-main-menu",
     "show_menu_bottom": true,
     "color_header_bg": "#ffffff",
     "color_menu_text": "#000000",

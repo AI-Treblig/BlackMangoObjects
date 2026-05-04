@@ -108,7 +108,7 @@
           "settings": {
             "title": "Home",
             "menu_url": "/",
-            "submenu_format": "mega",
+            "submenu_format": "",
             "badge": "",
             "position": "after",
             "badge_color": "#000000"
