@@ -65,7 +65,7 @@
                   "type": "title",
                   "settings": {
                     "heading_size": "h3",
-                    "title": "Recharge your <br> dreams",
+                    "title": "Recharge your  dreams",
                     "font": "--font-family-second",
                     "text_transfrom": "default",
                     "color": "#ffffff",
@@ -150,6 +150,7 @@
         },
         "slide_bLyxRk": {
           "type": "_slide",
+          "disabled": true,
           "settings": {
             "size_img": "cover",
             "pos_img": "center_center",
@@ -285,6 +286,7 @@
         },
         "slide_wDVJEp": {
           "type": "_slide",
+          "disabled": true,
           "settings": {
             "size_img": "cover",
             "pos_img": "center_center",
@@ -958,7 +960,7 @@
         "background_fixed": false,
         "background_size": "cover",
         "background_pos": "center center",
-        "background_color": "",
+        "background_color": "rgba(0,0,0,0)",
         "width_bg": "container",
         "half_overflow": true,
         "padding_bg": "",
@@ -1296,6 +1298,7 @@
       "block_order": [
         "column_pk9C4F"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": false,
@@ -2060,7 +2063,7 @@
               "type": "title",
               "settings": {
                 "heading_size": "h3",
-                "title": "Funori on instagram",
+                "title": "BlackMango on instagram",
                 "font": "--font-family-second",
                 "text_transfrom": "default",
                 "color": "#000000",
