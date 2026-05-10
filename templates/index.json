@@ -33,7 +33,7 @@
                 "padding": "200px 0px 0px 0px",
                 "margin": "",
                 "disable_absolute": false,
-                "vertical_align_mobi": "middle",
+                "vertical_align_mobi": "top",
                 "horizontal_align_mobi": "center",
                 "align_mobi": "center"
               },
