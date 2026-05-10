@@ -202,92 +202,108 @@
 
 <script>
 (function() {
-  function initMobileMenu() {
-    var body = document.body;
+  function rebind(el, handler) {
+    if (!el) return null;
+    var clone = el.cloneNode(true);
+    el.parentNode.replaceChild(clone, el);
+    clone.addEventListener('click', handler);
+    return clone;
+  }
 
+  function openMenu()  { document.body.classList.add('menu-mobile--open'); }
+  function closeMenu() { document.body.classList.remove('menu-mobile--open'); }
+
+  function initMobileMenu() {
     document.querySelectorAll('.js-menu-mobile').forEach(function(btn) {
-      if (btn.dataset.bmMenuInit === '1') return;
-      btn.dataset.bmMenuInit = '1';
-      btn.addEventListener('click', function(e) {
+      rebind(btn, function(e) {
         e.preventDefault();
         e.stopPropagation();
-        body.classList.toggle('menu-mobile--open');
+        if (document.body.classList.contains('menu-mobile--open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
       });
     });
 
     var overlay = document.querySelector('.menu-mobile__overlay');
-    if (overlay && overlay.dataset.bmOverlayInit !== '1') {
-      overlay.dataset.bmOverlayInit = '1';
-      overlay.addEventListener('click', function() {
-        body.classList.remove('menu-mobile--open');
+    if (overlay) {
+      rebind(overlay, function(e) {
+        e.preventDefault();
+        closeMenu();
       });
     }
 
     document.querySelectorAll('.js-mm-nav-item').forEach(function(btn) {
-      if (btn.dataset.bmChildInit === '1') return;
-      btn.dataset.bmChildInit = '1';
-      btn.addEventListener('click', function(e) {
+      rebind(btn, function(e) {
         e.preventDefault();
         e.stopPropagation();
-        if (btn.classList.contains('mm-nav__prev')) {
-          var parent = btn.closest('.active--hidden');
-          if (parent) parent.classList.remove('active--hidden');
-        } else {
-          var links = btn.closest('.mm-nav__wrapper');
-          if (links) {
-            var navLinks = links.nextElementSibling;
-            if (navLinks && navLinks.classList.contains('mm-nav__links')) {
-              navLinks.classList.add('active--hidden');
-            }
-          }
-        }
+        var isBack = btn.classList.contains('mm-nav__prev');
         var item = btn.closest('.menu-mobile__nav-item');
-        if (item) item.classList.toggle('active');
+        if (isBack) {
+          if (item) item.classList.remove('active');
+        } else {
+          if (item) item.classList.add('active');
+        }
       });
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMobileMenu);
-  } else {
-    initMobileMenu();
+  function run() {
+    setTimeout(initMobileMenu, 300);
   }
-  document.addEventListener('shopify:section:load', initMobileMenu);
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+  document.addEventListener('shopify:section:load', run);
 })();
 </script>
 
 <style>
-  body.menu-mobile--open { overflow: hidden; }
-  body.menu-mobile--open .menu-mobile__overlay {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
-  body.menu-mobile--open .menu-mobile__inner {
-    transform: translateX(0);
-  }
-  .menu-mobile__overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.45);
-    z-index: 998;
-    opacity: 0;
-    visibility: hidden;
+  body.menu-mobile--open { overflow: hidden !important; }
+  html body .menu-mobile {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 9998 !important;
     pointer-events: none;
-    transition: opacity .3s ease;
   }
-  .menu-mobile__inner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: min(85vw, 360px);
-    background: #fff;
-    z-index: 999;
-    transform: translateX(-100%);
-    transition: transform .3s ease;
-    overflow-y: auto;
-    padding: 60px 0 30px;
+  html body.menu-mobile--open .menu-mobile { pointer-events: auto; }
+  html body .menu-mobile__overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0,0,0,.45) !important;
+    z-index: 9998 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity .3s ease !important;
+  }
+  html body.menu-mobile--open .menu-mobile__overlay {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  html body .menu-mobile__inner {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 100vh !important;
+    width: min(85vw, 360px) !important;
+    background: #fff !important;
+    z-index: 9999 !important;
+    transform: translateX(-100%) !important;
+    transition: transform .3s ease !important;
+    overflow-y: auto !important;
+    padding: 60px 0 30px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  html body.menu-mobile--open .menu-mobile__inner {
+    transform: translateX(0) !important;
   }
   .menu-mobile__inner .menu-mobile__btn {
     position: absolute;
