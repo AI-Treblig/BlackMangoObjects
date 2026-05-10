@@ -1,0 +1,448 @@
+{%- comment -%}
+  Black Mango mobile navigation section.
+  Backend controls for logo, menu, and bottom navigation bar.
+{%- endcomment -%}
+
+{%- assign menu = linklists[section.settings.menu] -%}
+{%- if menu == blank or menu.links.size == 0 -%}
+  {%- assign menu = linklists.main-menu -%}
+{%- endif -%}
+
+{%- assign logo = section.settings.logo_mobile -%}
+{%- assign logo_height = section.settings.logo_height | default: 36 -%}
+
+<div id="bm-mnav-bar" class="bm-mnav-bar">
+  <div class="bm-mnav-bar__inner">
+    <button type="button"
+            id="bm-mnav-open"
+            class="bm-mnav-trigger"
+            aria-label="Open menu"
+            onclick="document.body.classList.add('bm-mnav-open');return false;">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <a class="bm-mnav-logo" href="/" aria-label="{{ shop.name }}">
+      {%- if logo -%}
+        <img src="{{ logo | image_url: width: 400 }}"
+             alt="{{ logo.alt | default: shop.name }}"
+             style="height: {{ logo_height }}px; width: auto;">
+      {%- else -%}
+        <span class="bm-mnav-logo__text">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
+
+    {%- if section.settings.show_cart_icon -%}
+      <a href="/cart" class="bm-mnav-cart" aria-label="Cart">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span class="bm-mnav-cart__count" data-cart-count>{{ cart.item_count }}</span>
+      </a>
+    {%- else -%}
+      <span class="bm-mnav-spacer"></span>
+    {%- endif -%}
+  </div>
+</div>
+
+<div id="bm-mnav-overlay"
+     class="bm-mnav-overlay"
+     onclick="document.body.classList.remove('bm-mnav-open')"></div>
+
+<aside id="bm-mnav-drawer" class="bm-mnav-drawer" aria-hidden="true">
+  <div class="bm-mnav-drawer__head">
+    <span class="bm-mnav-drawer__title">{{ section.settings.drawer_title | default: 'Menu' }}</span>
+    <button type="button"
+            class="bm-mnav-close"
+            aria-label="Close menu"
+            onclick="document.body.classList.remove('bm-mnav-open');return false;">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="bm-mnav-drawer__body">
+    <ul class="bm-mnav-list">
+      {%- for link in menu.links -%}
+        <li class="bm-mnav-item{% if link.links.size > 0 %} bm-mnav-item--has-children{% endif %}">
+          <div class="bm-mnav-row">
+            <a class="bm-mnav-link" href="{{ link.url }}">{{ link.title }}</a>
+            {%- if link.links.size > 0 -%}
+              <button type="button"
+                      class="bm-mnav-expand"
+                      aria-label="Expand {{ link.title | escape }}"
+                      onclick="this.closest('.bm-mnav-item').classList.toggle('is-open');return false;">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+            {%- endif -%}
+          </div>
+          {%- if link.links.size > 0 -%}
+            <ul class="bm-mnav-sublist">
+              {%- for child in link.links -%}
+                <li class="bm-mnav-item{% if child.links.size > 0 %} bm-mnav-item--has-children{% endif %}">
+                  <div class="bm-mnav-row">
+                    <a class="bm-mnav-link bm-mnav-link--child" href="{{ child.url }}">{{ child.title }}</a>
+                    {%- if child.links.size > 0 -%}
+                      <button type="button"
+                              class="bm-mnav-expand"
+                              aria-label="Expand {{ child.title | escape }}"
+                              onclick="this.closest('.bm-mnav-item').classList.toggle('is-open');return false;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </button>
+                    {%- endif -%}
+                  </div>
+                  {%- if child.links.size > 0 -%}
+                    <ul class="bm-mnav-sublist">
+                      {%- for grandchild in child.links -%}
+                        <li class="bm-mnav-item">
+                          <div class="bm-mnav-row">
+                            <a class="bm-mnav-link bm-mnav-link--child" href="{{ grandchild.url }}">{{ grandchild.title }}</a>
+                          </div>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+</aside>
+
+{%- if section.settings.show_bottom_bar and section.blocks.size > 0 -%}
+  <nav id="bm-mnav-bottom" class="bm-mnav-bottom" aria-label="Mobile bottom navigation">
+    {%- for block in section.blocks -%}
+      {%- assign icon = block.settings.icon -%}
+      {%- assign link_url = block.settings.url | default: '/' -%}
+      {%- assign label = block.settings.label -%}
+      <a href="{{ link_url }}" class="bm-mnav-bottom__item" aria-label="{{ label | escape }}" {{ block.shopify_attributes }}>
+        <span class="bm-mnav-bottom__icon">
+          {%- case icon -%}
+            {%- when 'home' -%}
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            {%- when 'shop' -%}
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>
+            {%- when 'account' -%}
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            {%- when 'wishlist' -%}
+              <span class="bm-mnav-bottom__icon-wrap">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <span class="bm-mnav-bottom__badge" data-count-wishlist>0</span>
+              </span>
+            {%- when 'cart' -%}
+              <span class="bm-mnav-bottom__icon-wrap">
+                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <span class="bm-mnav-bottom__badge" data-cart-count>{{ cart.item_count }}</span>
+              </span>
+            {%- when 'search' -%}
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            {%- when 'menu' -%}
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          {%- endcase -%}
+        </span>
+        <span class="bm-mnav-bottom__label">{{ label }}</span>
+      </a>
+    {%- endfor -%}
+  </nav>
+{%- endif -%}
+
+<style>
+  /* Hide stock theme mobile UI to prevent duplicate UI */
+  @media (max-width: 991px) {
+    .header-mobile,
+    .menu-mobile,
+    .header-top-mobile,
+    .header-bottom-fixed { display: none !important; }
+  }
+
+  /* Top bar: visible only below 992px */
+  #bm-mnav-bar { display: none; }
+  @media (max-width: 991px) {
+    #bm-mnav-bar {
+      display: block !important;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 9990 !important;
+      background: {{ section.settings.bar_bg | default: '#ffffff' }} !important;
+      border-bottom: 1px solid #eee !important;
+      width: 100% !important;
+    }
+    body { padding-top: 60px !important; padding-bottom: {% if section.settings.show_bottom_bar %}72px{% else %}0{% endif %} !important; }
+  }
+
+  .bm-mnav-bar__inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 10px 16px !important;
+    min-height: 56px !important;
+  }
+  .bm-mnav-trigger,
+  .bm-mnav-cart {
+    background: transparent;
+    border: 0;
+    padding: 8px;
+    margin: 0;
+    cursor: pointer;
+    color: {{ section.settings.icon_color | default: '#000000' }};
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .bm-mnav-spacer { width: 38px; display: inline-block; }
+  .bm-mnav-cart__count {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: #000;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 10px;
+    line-height: 1;
+    padding: 3px 5px;
+    min-width: 16px;
+    text-align: center;
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+  }
+  .bm-mnav-logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+  }
+  .bm-mnav-logo img { display: block; }
+  .bm-mnav-logo__text {
+    font-family: var(--font-family-second), 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: #000;
+  }
+
+  /* Overlay */
+  #bm-mnav-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0,0,0,.5) !important;
+    z-index: 9998 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity .25s ease !important;
+  }
+  body.bm-mnav-open #bm-mnav-overlay {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  /* Drawer */
+  #bm-mnav-drawer {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 100vh !important;
+    width: min(86vw, 360px) !important;
+    background: #fff !important;
+    z-index: 9999 !important;
+    transform: translateX(-100%) !important;
+    transition: transform .3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: 0 0 30px rgba(0,0,0,.1) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  body.bm-mnav-open #bm-mnav-drawer { transform: translateX(0) !important; }
+  body.bm-mnav-open { overflow: hidden !important; }
+
+  .bm-mnav-drawer__head {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 16px 20px !important;
+    border-bottom: 1px solid #eee !important;
+  }
+  .bm-mnav-drawer__title {
+    font-family: var(--font-family-second), 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: #000;
+  }
+  .bm-mnav-close {
+    background: transparent;
+    border: 0;
+    padding: 6px;
+    cursor: pointer;
+    color: #000;
+    display: inline-flex;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .bm-mnav-drawer__body {
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    padding: 8px 0 24px !important;
+  }
+  .bm-mnav-list,
+  .bm-mnav-sublist {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .bm-mnav-item { border-bottom: 1px solid #f3f3f3; }
+  .bm-mnav-row { display: flex; align-items: center; justify-content: space-between; }
+  .bm-mnav-link {
+    flex: 1;
+    padding: 14px 20px;
+    color: #000;
+    text-decoration: none;
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+    font-size: 15px;
+    letter-spacing: .3px;
+  }
+  .bm-mnav-link--child { padding-left: 36px; font-size: 14px; color: #444; }
+  .bm-mnav-expand {
+    background: transparent;
+    border: 0;
+    padding: 14px 16px;
+    cursor: pointer;
+    color: #000;
+    display: inline-flex;
+    transition: transform .25s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .bm-mnav-item--has-children > .bm-mnav-sublist {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+    background: #fafafa;
+  }
+  .bm-mnav-item.is-open > .bm-mnav-sublist { max-height: 2000px; }
+  .bm-mnav-item.is-open > .bm-mnav-row .bm-mnav-expand { transform: rotate(180deg); }
+
+  /* Bottom navigation bar */
+  #bm-mnav-bottom { display: none; }
+  @media (max-width: 991px) {
+    #bm-mnav-bottom {
+      display: flex !important;
+      position: fixed !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 9989 !important;
+      background: {{ section.settings.bottom_bar_bg | default: '#ffffff' }} !important;
+      border-top: 1px solid #eee !important;
+      padding: 8px 4px !important;
+      align-items: center !important;
+      justify-content: space-around !important;
+      padding-bottom: calc(8px + env(safe-area-inset-bottom)) !important;
+    }
+  }
+  .bm-mnav-bottom__item {
+    flex: 1 1 0;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    color: {{ section.settings.bottom_icon_color | default: '#000000' }} !important;
+    padding: 4px 0;
+    gap: 4px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .bm-mnav-bottom__icon { display: inline-flex; position: relative; }
+  .bm-mnav-bottom__label {
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: inherit;
+  }
+  .bm-mnav-bottom__icon-wrap { position: relative; display: inline-flex; }
+  .bm-mnav-bottom__badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: #000;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 10px;
+    line-height: 1;
+    padding: 3px 5px;
+    min-width: 18px;
+    text-align: center;
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "BM Mobile Navigation",
+  "settings": [
+    { "type": "header", "content": "Top bar" },
+    { "type": "image_picker", "id": "logo_mobile", "label": "Mobile logo" },
+    { "type": "range", "id": "logo_height", "label": "Logo height (px)", "min": 20, "max": 80, "step": 2, "default": 36 },
+    { "type": "color", "id": "bar_bg", "label": "Top bar background", "default": "#ffffff" },
+    { "type": "color", "id": "icon_color", "label": "Top bar icon color", "default": "#000000" },
+    { "type": "checkbox", "id": "show_cart_icon", "label": "Show cart icon in top bar", "default": false, "info": "Disable if you use the bottom bar for cart." },
+
+    { "type": "header", "content": "Slide-out menu (hamburger)" },
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu", "info": "Pick the menu shown inside the hamburger drawer. Edit items in Online Store → Navigation." },
+    { "type": "text", "id": "drawer_title", "label": "Drawer title", "default": "Menu" },
+
+    { "type": "header", "content": "Bottom bar" },
+    { "type": "checkbox", "id": "show_bottom_bar", "label": "Enable bottom bar on mobile", "default": true },
+    { "type": "color", "id": "bottom_bar_bg", "label": "Bottom bar background", "default": "#ffffff" },
+    { "type": "color", "id": "bottom_icon_color", "label": "Bottom bar icon/text color", "default": "#000000" }
+  ],
+  "blocks": [
+    {
+      "type": "bottom_link",
+      "name": "Bottom bar link",
+      "settings": [
+        { "type": "select", "id": "icon", "label": "Icon",
+          "options": [
+            { "value": "home", "label": "Home" },
+            { "value": "shop", "label": "Shop / Grid" },
+            { "value": "account", "label": "Account" },
+            { "value": "wishlist", "label": "Wishlist (heart with count)" },
+            { "value": "cart", "label": "Cart (bag with count)" },
+            { "value": "search", "label": "Search" },
+            { "value": "menu", "label": "Menu" }
+          ],
+          "default": "home"
+        },
+        { "type": "text", "id": "label", "label": "Label", "default": "Home" },
+        { "type": "url", "id": "url", "label": "URL" }
+      ]
+    }
+  ],
+  "max_blocks": 5,
+  "default": {
+    "blocks": [
+      { "type": "bottom_link", "settings": { "icon": "home",     "label": "Home"     } },
+      { "type": "bottom_link", "settings": { "icon": "shop",     "label": "Shop"     } },
+      { "type": "bottom_link", "settings": { "icon": "account",  "label": "Account"  } },
+      { "type": "bottom_link", "settings": { "icon": "wishlist", "label": "Wishlist" } }
+    ]
+  }
+}
+{% endschema %}
