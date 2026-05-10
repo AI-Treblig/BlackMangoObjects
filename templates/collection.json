@@ -489,9 +489,9 @@
         "views_enable": true,
         "select_columns": "grid-3",
         "select_columns_sm": "grid-sm-3",
-        "select_columns_xs": "grid-xs-2",
+        "select_columns_xs": "grid-xs-1",
         "sortby_enable": true,
-        "select_pagination": "pagination"
+        "select_pagination": "infinity"
       }
     }
   },
