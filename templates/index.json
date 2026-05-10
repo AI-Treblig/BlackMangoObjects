@@ -1238,16 +1238,6 @@
                   },
                   "blocks": {}
                 },
-                "collection_image_C7cRkf": {
-                  "type": "_collection-image",
-                  "settings": {
-                    "collection": "objects",
-                    "count": false,
-                    "text_count": "",
-                    "effects": "none"
-                  },
-                  "blocks": {}
-                },
                 "custom-colleciont-image": {
                   "type": "custom-collection-image",
                   "static": true,
@@ -1293,8 +1283,7 @@
                 "collection_image_mTNHC3",
                 "collection_image_qGXLY6",
                 "collection_image_yz6zyt",
-                "collection_image_GkWUGp",
-                "collection_image_C7cRkf"
+                "collection_image_GkWUGp"
               ]
             }
           },
