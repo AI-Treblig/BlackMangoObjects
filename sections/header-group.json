@@ -1100,8 +1100,8 @@
         "mainmenu_item_X9Q69H": {
           "type": "_mainmenu-item",
           "settings": {
-            "title": "Blog",
-            "menu_url": "shopify://blogs/news",
+            "title": "About",
+            "menu_url": "shopify://pages/about-us",
             "submenu_format": "",
             "badge": "",
             "position": "after",
@@ -1110,6 +1110,7 @@
           "blocks": {
             "megamenu_container_VQLtxg": {
               "type": "_megamenu-container",
+              "disabled": true,
               "settings": {
                 "width": "custom",
                 "width_custom": "650px"
