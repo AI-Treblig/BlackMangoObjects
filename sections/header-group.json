@@ -810,8 +810,8 @@
           "type": "_mainmenu-item",
           "settings": {
             "title": "Collection",
-            "menu_url": "shopify://collections",
-            "submenu_format": "mega",
+            "menu_url": "shopify://collections/all",
+            "submenu_format": "",
             "badge": "",
             "position": "after",
             "badge_color": "#000000"
