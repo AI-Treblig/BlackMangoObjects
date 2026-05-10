@@ -1231,6 +1231,7 @@
                   "type": "_collection-image",
                   "settings": {
                     "collection": "objects",
+                    "image": "shopify://shop_images/bmo-objects-w.svg",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
