@@ -1187,6 +1187,7 @@
                   "type": "_collection-image",
                   "settings": {
                     "collection": "rugs",
+                    "image": "shopify://shop_images/bmo-rugs-icon-w.svg",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
