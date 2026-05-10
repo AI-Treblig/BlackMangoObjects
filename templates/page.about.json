@@ -99,6 +99,7 @@
             },
             "line_intro": {
               "type": "line",
+              "disabled": true,
               "settings": {
                 "padding": "",
                 "margin": "0 auto",
@@ -542,6 +543,19 @@
               },
               "blocks": {}
             },
+            "line_story": {
+              "type": "line",
+              "disabled": true,
+              "settings": {
+                "padding": "",
+                "margin": "0 auto 30px",
+                "margin_line": "0px 0px 0px 0px",
+                "width": "60px",
+                "height": 1,
+                "background": "#000000"
+              },
+              "blocks": {}
+            },
             "h_story": {
               "type": "title",
               "settings": {
@@ -562,18 +576,6 @@
                 "line_height_mobi": 36,
                 "letter_spacing_mobi": 0,
                 "align_mobi": "center"
-              },
-              "blocks": {}
-            },
-            "line_story": {
-              "type": "line",
-              "settings": {
-                "padding": "",
-                "margin": "0 auto 30px",
-                "margin_line": "0px 0px 0px 0px",
-                "width": "60px",
-                "height": 1,
-                "background": "#000000"
               },
               "blocks": {}
             },
@@ -602,8 +604,8 @@
           },
           "block_order": [
             "lbl_story",
-            "h_story",
             "line_story",
+            "h_story",
             "desc_story"
           ]
         }
@@ -1058,6 +1060,7 @@
             },
             "line_team": {
               "type": "line",
+              "disabled": true,
               "settings": {
                 "padding": "",
                 "margin": "0 auto 30px",
@@ -1485,7 +1488,7 @@
         "background_fixed": false,
         "background_size": "cover",
         "background_pos": "center center",
-        "background_color": "#f5f1ee",
+        "background_color": "#f1f1f1",
         "width_bg": "full",
         "half_overflow": false,
         "padding_bg": "",
