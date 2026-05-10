@@ -648,7 +648,7 @@
                     "text_align": "left",
                     "background_content": "rgba(0,0,0,0)",
                     "border_radius_content": "0px 0px 0px 0px",
-                    "padding": "75px 0 55px 75px | 0 0 30px 15px",
+                    "padding": "70px 0 55px 75px | 0 0 30px 15px",
                     "margin": ""
                   },
                   "blocks": {
@@ -679,7 +679,7 @@
                       "type": "title",
                       "settings": {
                         "heading_size": "h3",
-                        "title": "Cushions & More",
+                        "title": "Rugs & More",
                         "font": "--font-family-second",
                         "text_transfrom": "default",
                         "color": "#000000",
