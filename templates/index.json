@@ -644,7 +644,7 @@
                   "settings": {
                     "content_position": "absolute",
                     "vertical_position": "top",
-                    "horizontal_position": "left",
+                    "horizontal_position": "center",
                     "text_align": "left",
                     "background_content": "rgba(0,0,0,0)",
                     "border_radius_content": "0px 0px 0px 0px",
