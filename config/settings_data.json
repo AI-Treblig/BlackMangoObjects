@@ -2391,7 +2391,7 @@
             "settings": {
               "icon": "shop",
               "label": "Shop",
-              "url": "shopify://collections"
+              "url": "shopify://collections/all"
             }
           },
           "bm-mobile-nav-2": {
@@ -2424,7 +2424,13 @@
           "icon_color": "#000000",
           "show_cart_icon": true,
           "menu": "bmo-main-menu",
-          "drawer_title": "Menu",
+          "drawer_title": "MENU",
+          "show_search": true,
+          "search_placeholder": "Search products...",
+          "instagram_url": "https://instagram.com/balckmangostudios",
+          "whatsapp_number": "918698205381",
+          "contact_phone": "+91 86982 05381",
+          "contact_email": "hello@blackmangoobjects.com",
           "show_bottom_bar": true,
           "bottom_bar_bg": "#ffffff",
           "bottom_icon_color": "#000000"
