@@ -2374,6 +2374,61 @@
           "show_copyright": true,
           "copyright": "Copyright &copy; 2020 Wpbingo. All Rights Reserved"
         }
+      },
+      "bm-mobile-nav": {
+        "type": "bm-mobile-nav",
+        "blocks": {
+          "bm-mobile-nav-0": {
+            "type": "bottom_link",
+            "settings": {
+              "icon": "home",
+              "label": "Home",
+              "url": ""
+            }
+          },
+          "bm-mobile-nav-1": {
+            "type": "bottom_link",
+            "settings": {
+              "icon": "shop",
+              "label": "Shop",
+              "url": ""
+            }
+          },
+          "bm-mobile-nav-2": {
+            "type": "bottom_link",
+            "settings": {
+              "icon": "account",
+              "label": "Account",
+              "url": ""
+            }
+          },
+          "bm-mobile-nav-3": {
+            "type": "bottom_link",
+            "settings": {
+              "icon": "wishlist",
+              "label": "Wishlist",
+              "url": ""
+            }
+          }
+        },
+        "block_order": [
+          "bm-mobile-nav-0",
+          "bm-mobile-nav-1",
+          "bm-mobile-nav-2",
+          "bm-mobile-nav-3"
+        ],
+        "settings": {
+          "logo_mobile": "shopify://shop_images/blackmango-logo.svg",
+          "logo_height": 58,
+          "bar_bg": "#ffffff",
+          "icon_color": "#000000",
+          "show_cart_icon": true,
+          "menu": "bmo-main-menu",
+          "drawer_title": "Menu",
+          "show_bottom_bar": true,
+          "bottom_bar_bg": "#ffffff",
+          "bottom_icon_color": "#000000"
+        }
       }
     },
     "content_for_index": [
