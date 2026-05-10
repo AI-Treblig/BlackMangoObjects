@@ -1217,6 +1217,7 @@
                   "type": "_collection-image",
                   "settings": {
                     "collection": "throws",
+                    "image": "shopify://shop_images/bmo-throw-icon.svg",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
