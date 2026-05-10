@@ -56,7 +56,7 @@ body{
 	--menu-dropdown-color: #000000;
 	--menu-dropdown-hover-color: #000000;
 	
-	--font-family-second: Questrial;
+	--font-family-second: 'Cormorant Garamond';
 	--heading-font-weight-default: 400;
 	--heading-font-weight-bold: 700;
 	--heading-font-weight-semibold: 600;
@@ -64,7 +64,7 @@ body{
 	--heading-font-weight-light: 300;
 	--font-size-heading: 30px;
 	
-	--font-family-base: Questrial;
+	--font-family-base: 'Manrope';
 	--body-font-weight-default: 400;
 	--body-font-weight-bold: 700;
 	--body-font-weight-semibold: 600;
@@ -72,7 +72,7 @@ body{
 	--body-font-weight-light: 300;
 	--font-size-base: 14px;
 
-    --font-family-pre: Questrial;
+    --font-family-pre: 'Manrope';
 	--pre-font-weight-default: 400;
 	--pre-font-weight-bold: 700;
 	--pre-font-weight-medium: 500;
