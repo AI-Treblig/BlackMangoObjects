@@ -1,1 +1,1510 @@
-{"sections":{"breadcrumb":{"type":"page-breadcrumb","settings":{"enable":true,"bgimage":true,"image":"shopify:\/\/shop_images\/bg-breadcrumb.jpg","show_pagetitle":true,"show_breadcrumb":true,"color_breadcrumb":"#000000","align_breadcrumb":"center"}},"main":{"type":"main-page","settings":{"enable":false,"padding_top":28,"padding_bottom":28}},"sec_intro":{"type":"featured-custom-section","blocks":{"col_intro":{"type":"_column","settings":{"width":100,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"","margin":"","width_lap":100,"width_tab":100,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"lbl_intro":{"type":"title","settings":{"heading_size":"h3","title":"THE BLACK MANGO STORY","font":"--font-family-base","text_transfrom":"uppercase","color":"#868686","font_size":12,"line_height":20,"letter_spacing":3,"font_weight":"400","align":"center","padding":"","margin":"0 0 16px","color_mobi":"#868686","font_size_mobi":12,"line_height_mobi":20,"letter_spacing_mobi":3,"align_mobi":"center"},"blocks":{}},"h_intro":{"type":"title","settings":{"heading_size":"h1","title":"Where Art Meets Home","font":"--font-family-second","text_transfrom":"default","color":"#000000","font_size":52,"line_height":56,"letter_spacing":0,"font_weight":"300","align":"center","padding":"","margin":"0 0 24px","color_mobi":"#000000","font_size_mobi":34,"line_height_mobi":40,"letter_spacing_mobi":0,"align_mobi":"center"},"blocks":{}},"line_intro":{"type":"line","settings":{"padding":"","margin":"0 auto","margin_line":"0px 0px 0px 0px","width":"60px","height":1,"background":"#000000"},"blocks":{}}},"block_order":["lbl_intro","h_intro","line_intro"]}},"block_order":["col_intro"],"settings":{"max_width":"","fullwidth":false,"background_fixed":false,"background_size":"cover","background_pos":"center center","background_color":"","padding":"80px 0 60px | 60px 0 40px | | 50px 0 30px","margin":"0 0 80px","vertical_align":"top","horizontal_align":"center"}},"sec_cards":{"type":"featured-custom-section","blocks":{"col_card1":{"type":"_column","settings":{"width":50,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"0 40px 0 0 | 0 20px 0 0 | | 0","margin":"| | | 0 0 60px","width_lap":50,"width_tab":50,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"img_c1":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/blackMango-home.webp","url":"","padding":"","margin":"0 0 32px","size":"","image_size":"cover","image_pos":"center center","align":"left","border_radius":"0px 0px 0px 0px","border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","effect":"","align_mobi":"left"},"blocks":{}},"lbl_c1":{"type":"title","settings":{"heading_size":"h3","title":"THE FOUNDER","font":"--font-family-base","text_transfrom":"uppercase","color":"#868686","font_size":11,"line_height":18,"letter_spacing":3,"font_weight":"400","align":"left","padding":"","margin":"0 0 10px","color_mobi":"#868686","font_size_mobi":11,"line_height_mobi":18,"letter_spacing_mobi":3,"align_mobi":"left"},"blocks":{}},"h_c1":{"type":"title","settings":{"heading_size":"h2","title":"Intent-Driven Design","font":"--font-family-second","text_transfrom":"default","color":"#000000","font_size":36,"line_height":42,"letter_spacing":0,"font_weight":"300","align":"left","padding":"","margin":"0 0 18px","color_mobi":"#000000","font_size_mobi":26,"line_height_mobi":32,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}},"line_c1":{"type":"line","settings":{"padding":"","margin":"0 0 24px","margin_line":"0px 0px 0px 0px","width":"40px","height":1,"background":"#000000"},"blocks":{}},"desc_c1a":{"type":"description","settings":{"desc":"I'm an intent-driven creator and the founder of Black Mango, driven by a deep love for intentional design and expressive aesthetics. The brand was born from that curiosity and a love for bold expression.","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":15,"line_height":26,"letter_spacing":0,"font_weight":"400","align":"left","padding":"","margin":"0 0 14px","color_mobi":"#868686","font_size_mobi":14,"line_height_mobi":24,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}},"desc_c1b":{"type":"description","settings":{"desc":"My work celebrates bold forms, layered textures, and an abundant use of color. I create artful, statement pieces designed to bring energy, character, and a sense of individuality into every home.","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":15,"line_height":26,"letter_spacing":0,"font_weight":"400","align":"left","padding":"","margin":"0 0 20px","color_mobi":"#868686","font_size_mobi":14,"line_height_mobi":24,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}},"desc_c1c":{"type":"description","settings":{"desc":"Because spaces shouldn't just look good — they should feel alive.","font":"--font-family-second","text_transfrom":"default","color":"#000000","font_size":18,"line_height":28,"letter_spacing":0,"font_weight":"300","align":"left","padding":"","margin":"","color_mobi":"#000000","font_size_mobi":16,"line_height_mobi":26,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}}},"block_order":["img_c1","lbl_c1","h_c1","line_c1","desc_c1a","desc_c1b","desc_c1c"]},"col_card2":{"type":"_column","settings":{"width":50,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"0 0 0 40px | 0 0 0 20px | | 0","margin":"","width_lap":50,"width_tab":50,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"img_c2":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/rugs-section-photo.webp","url":"","padding":"","margin":"0 0 32px","size":"","image_size":"cover","image_pos":"center center","align":"left","border_radius":"0px 0px 0px 0px","border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","effect":"","align_mobi":"left"},"blocks":{}},"lbl_c2":{"type":"title","settings":{"heading_size":"h3","title":"OUR SERVICE","font":"--font-family-base","text_transfrom":"uppercase","color":"#868686","font_size":11,"line_height":18,"letter_spacing":3,"font_weight":"400","align":"left","padding":"","margin":"0 0 10px","color_mobi":"#868686","font_size_mobi":11,"line_height_mobi":18,"letter_spacing_mobi":3,"align_mobi":"left"},"blocks":{}},"h_c2":{"type":"title","settings":{"heading_size":"h2","title":"Crafted for Your Space","font":"--font-family-second","text_transfrom":"default","color":"#000000","font_size":36,"line_height":42,"letter_spacing":0,"font_weight":"300","align":"left","padding":"","margin":"0 0 18px","color_mobi":"#000000","font_size_mobi":26,"line_height_mobi":32,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}},"line_c2":{"type":"line","settings":{"padding":"","margin":"0 0 24px","margin_line":"0px 0px 0px 0px","width":"40px","height":1,"background":"#000000"},"blocks":{}},"desc_c2a":{"type":"description","settings":{"desc":"We offer a curated range of premium home décor — hand-tufted rugs, tufted cushion covers, statement curtains, wool throws, and sculptural objects.","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":15,"line_height":26,"letter_spacing":0,"font_weight":"400","align":"left","padding":"","margin":"0 0 14px","color_mobi":"#868686","font_size_mobi":14,"line_height_mobi":24,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}},"desc_c2b":{"type":"description","settings":{"desc":"We also extend our work into space design, bringing the same commitment to craft and character into environments that are built to make an impression. At every scale, Black Mango delivers personality and intention in equal measure.","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":15,"line_height":26,"letter_spacing":0,"font_weight":"400","align":"left","padding":"","margin":"","color_mobi":"#868686","font_size_mobi":14,"line_height_mobi":24,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}}},"block_order":["img_c2","lbl_c2","h_c2","line_c2","desc_c2a","desc_c2b"]}},"block_order":["col_card1","col_card2"],"settings":{"max_width":"","fullwidth":false,"background_fixed":false,"background_size":"cover","background_pos":"center center","background_color":"","padding":"","margin":"0 0 100px","vertical_align":"top","horizontal_align":"left"}},"sec_story":{"type":"featured-custom-section","blocks":{"col_story":{"type":"_column","settings":{"width":70,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"0 15px | 0 7.5px","margin":"","width_lap":70,"width_tab":80,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"lbl_story":{"type":"title","settings":{"heading_size":"h3","title":"OUR STORY","font":"--font-family-base","text_transfrom":"uppercase","color":"#868686","font_size":12,"line_height":20,"letter_spacing":3,"font_weight":"400","align":"center","padding":"","margin":"0 0 12px","color_mobi":"#868686","font_size_mobi":12,"line_height_mobi":20,"letter_spacing_mobi":3,"align_mobi":"center"},"blocks":{}},"h_story":{"type":"title","settings":{"heading_size":"h2","title":"Elegance. Energy. Expression.","font":"--font-family-second","text_transfrom":"default","color":"#000000","font_size":44,"line_height":50,"letter_spacing":0,"font_weight":"300","align":"center","padding":"","margin":"0 0 20px","color_mobi":"#000000","font_size_mobi":30,"line_height_mobi":36,"letter_spacing_mobi":0,"align_mobi":"center"},"blocks":{}},"line_story":{"type":"line","settings":{"padding":"","margin":"0 auto 30px","margin_line":"0px 0px 0px 0px","width":"60px","height":1,"background":"#000000"},"blocks":{}},"desc_story":{"type":"description","settings":{"desc":"Black Mango was born from two contrasting ideas — the elegance and mystery of Black, and the energy and vibrancy of Mango. Together, they represent something rare: décor that lives at the edge of art. Every piece we create is designed not just to fill a space, but to transform it.","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":16,"line_height":28,"letter_spacing":0,"font_weight":"400","align":"center","padding":"","margin":"","color_mobi":"#868686","font_size_mobi":15,"line_height_mobi":26,"letter_spacing_mobi":0,"align_mobi":"center"},"blocks":{}}},"block_order":["lbl_story","h_story","line_story","desc_story"]}},"block_order":["col_story"],"settings":{"max_width":"","fullwidth":true,"background_fixed":false,"background_size":"cover","background_pos":"center center","background_color":"#f5f1ee","padding":"80px 0","margin":"0 0 100px","vertical_align":"top","horizontal_align":"center"}},"sec_divider1":{"type":"featured-custom-section","blocks":{"col_div1":{"type":"_column","settings":{"width":100,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"","margin":"","width_lap":100,"width_tab":100,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"line_div1":{"type":"line","settings":{"padding":"","margin":"","margin_line":"0px 0px 0px 0px","width":"","height":1,"background":"#e5e5e5"},"blocks":{}}},"block_order":["line_div1"]}},"block_order":["col_div1"],"settings":{"max_width":"","fullwidth":true,"background_fixed":false,"background_size":"cover","background_pos":"center center","background_color":"","padding":"","margin":"0 0 100px","vertical_align":"top","horizontal_align":"left"}},"sec_vm":{"type":"featured-custom-section","blocks":{"col_vision":{"type":"_column","settings":{"width":50,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"0 60px 0 0 | 0 30px 0 0 | | 0","margin":"| | | 0 0 50px","width_lap":50,"width_tab":50,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"lbl_vision":{"type":"title","settings":{"heading_size":"h3","title":"VISION","font":"--font-family-base","text_transfrom":"uppercase","color":"#868686","font_size":12,"line_height":20,"letter_spacing":3,"font_weight":"400","align":"left","padding":"","margin":"0 0 12px","color_mobi":"#868686","font_size_mobi":12,"line_height_mobi":20,"letter_spacing_mobi":3,"align_mobi":"left"},"blocks":{}},"h_vision":{"type":"title","settings":{"heading_size":"h2","title":"Every Home a Canvas","font":"--font-family-second","text_transfrom":"default","color":"#000000","font_size":36,"line_height":42,"letter_spacing":0,"font_weight":"300","align":"left","padding":"","margin":"0 0 20px","color_mobi":"#000000","font_size_mobi":26,"line_height_mobi":32,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}},"line_vision":{"type":"line","settings":{"padding":"","margin":"0 0 20px","margin_line":"0px 0px 0px 0px","width":"40px","height":1,"background":"#000000"},"blocks":{}},"desc_vision":{"type":"description","settings":{"desc":"To redefine how people experience their living spaces — where every home becomes a canvas for individuality. We envision interiors that are not just designed, but felt. Where the objects you live with reflect as an art piece. Bold, intentional, and defined.","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":15,"line_height":26,"letter_spacing":0,"font_weight":"400","align":"left","padding":"","margin":"","color_mobi":"#868686","font_size_mobi":15,"line_height_mobi":26,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}}},"block_order":["lbl_vision","h_vision","line_vision","desc_vision"]},"col_mission":{"type":"_column","settings":{"width":50,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"0 0 0 60px | 0 0 0 30px | | 0","margin":"","width_lap":50,"width_tab":50,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"lbl_mission":{"type":"title","settings":{"heading_size":"h3","title":"MISSION","font":"--font-family-base","text_transfrom":"uppercase","color":"#868686","font_size":12,"line_height":20,"letter_spacing":3,"font_weight":"400","align":"left","padding":"","margin":"0 0 12px","color_mobi":"#868686","font_size_mobi":12,"line_height_mobi":20,"letter_spacing_mobi":3,"align_mobi":"left"},"blocks":{}},"h_mission":{"type":"title","settings":{"heading_size":"h2","title":"Art and Interiors, Together","font":"--font-family-second","text_transfrom":"default","color":"#000000","font_size":36,"line_height":42,"letter_spacing":0,"font_weight":"300","align":"left","padding":"","margin":"0 0 20px","color_mobi":"#000000","font_size_mobi":26,"line_height_mobi":32,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}},"line_mission":{"type":"line","settings":{"padding":"","margin":"0 0 20px","margin_line":"0px 0px 0px 0px","width":"40px","height":1,"background":"#000000"},"blocks":{}},"desc_mission":{"type":"description","settings":{"desc":"To build a creative community where art and interiors collide. Black Mango envisions an ever-growing world of collaborations — with artists, designers, and makers — bringing fresh perspectives into every piece. A space where creativity is collective, and home décor becomes a living, evolving form of art.","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":15,"line_height":26,"letter_spacing":0,"font_weight":"400","align":"left","padding":"","margin":"","color_mobi":"#868686","font_size_mobi":15,"line_height_mobi":26,"letter_spacing_mobi":0,"align_mobi":"left"},"blocks":{}}},"block_order":["lbl_mission","h_mission","line_mission","desc_mission"]}},"block_order":["col_vision","col_mission"],"settings":{"max_width":"","fullwidth":false,"background_fixed":false,"background_size":"cover","background_pos":"center center","background_color":"","padding":"","margin":"0 0 100px","vertical_align":"top","horizontal_align":"left"}},"sec_divider2":{"type":"featured-custom-section","blocks":{"col_div2":{"type":"_column","settings":{"width":100,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"","margin":"","width_lap":100,"width_tab":100,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"line_div2":{"type":"line","settings":{"padding":"","margin":"","margin_line":"0px 0px 0px 0px","width":"","height":1,"background":"#e5e5e5"},"blocks":{}}},"block_order":["line_div2"]}},"block_order":["col_div2"],"settings":{"max_width":"","fullwidth":true,"background_fixed":false,"background_size":"cover","background_pos":"center center","background_color":"","padding":"","margin":"0 0 80px","vertical_align":"top","horizontal_align":"left"}},"sec_team":{"type":"featured-custom-section","blocks":{"col_team":{"type":"_column","settings":{"width":100,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"","margin":"","width_lap":100,"width_tab":100,"width_mobi":100,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"lbl_team":{"type":"title","settings":{"heading_size":"h3","title":"THE TEAM","font":"--font-family-base","text_transfrom":"uppercase","color":"#868686","font_size":12,"line_height":20,"letter_spacing":3,"font_weight":"400","align":"center","padding":"","margin":"0 0 12px","color_mobi":"#868686","font_size_mobi":12,"line_height_mobi":20,"letter_spacing_mobi":3,"align_mobi":"center"},"blocks":{}},"h_team":{"type":"title","settings":{"heading_size":"h2","title":"The People Behind Black Mango","font":"--font-family-second","text_transfrom":"default","color":"#000000","font_size":36,"line_height":42,"letter_spacing":0,"font_weight":"300","align":"center","padding":"","margin":"0 0 20px","color_mobi":"#000000","font_size_mobi":26,"line_height_mobi":32,"letter_spacing_mobi":0,"align_mobi":"center"},"blocks":{}},"line_team":{"type":"line","settings":{"padding":"","margin":"0 auto 30px","margin_line":"0px 0px 0px 0px","width":"60px","height":1,"background":"#000000"},"blocks":{}},"desc_team1":{"type":"description","settings":{"desc":"Founder — Manasi Chaware","font":"--font-family-base","text_transfrom":"default","color":"#000000","font_size":15,"line_height":32,"letter_spacing":0,"font_weight":"500","align":"center","padding":"","margin":"0","color_mobi":"#000000","font_size_mobi":15,"line_height_mobi":28,"letter_spacing_mobi":0,"align_mobi":"center"},"blocks":{}},"desc_team2":{"type":"description","settings":{"desc":"Creative Associate — Ashwini Jagtap","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":14,"line_height":30,"letter_spacing":0,"font_weight":"400","align":"center","padding":"","margin":"0","color_mobi":"#868686","font_size_mobi":14,"line_height_mobi":28,"letter_spacing_mobi":0,"align_mobi":"center"},"blocks":{}},"desc_team3":{"type":"description","settings":{"desc":"Creative Associate — Vithika Mishra","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":14,"line_height":30,"letter_spacing":0,"font_weight":"400","align":"center","padding":"","margin":"0","color_mobi":"#868686","font_size_mobi":14,"line_height_mobi":28,"letter_spacing_mobi":0,"align_mobi":"center"},"blocks":{}},"desc_team4":{"type":"description","settings":{"desc":"Accounts — Durgesh Jha","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":14,"line_height":30,"letter_spacing":0,"font_weight":"400","align":"center","padding":"","margin":"0","color_mobi":"#868686","font_size_mobi":14,"line_height_mobi":28,"letter_spacing_mobi":0,"align_mobi":"center"},"blocks":{}}},"block_order":["lbl_team","h_team","line_team","desc_team1","desc_team2","desc_team3","desc_team4"]}},"block_order":["col_team"],"settings":{"max_width":"","fullwidth":false,"background_fixed":false,"background_size":"cover","background_pos":"center center","background_color":"","padding":"","margin":"0 0 100px","vertical_align":"top","horizontal_align":"center"}},"sec_connect":{"type":"featured-custom-section","blocks":{"col_ig":{"type":"_column","settings":{"width":25,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"0 20px | 0 15px","margin":"| | | 0 0 30px","width_lap":25,"width_tab":50,"width_mobi":50,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"lbl_ig":{"type":"title","settings":{"heading_size":"h3","title":"Instagram","font":"--font-family-base","text_transfrom":"uppercase","color":"#000000","font_size":11,"line_height":18,"letter_spacing":2,"font_weight":"500","align":"center","padding":"","margin":"0 0 8px","color_mobi":"#000000","font_size_mobi":11,"line_height_mobi":18,"letter_spacing_mobi":2,"align_mobi":"center"},"blocks":{}},"desc_ig":{"type":"description","settings":{"desc":"@blackmangostudios","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":14,"line_height":22,"letter_spacing":0,"font_weight":"400","align":"center","padding":"","margin":"","color_mobi":"#868686","font_size_mobi":13,"line_height_mobi":20,"letter_spacing_mobi":0,"align_mobi":"center"},"blocks":{}}},"block_order":["lbl_ig","desc_ig"]},"col_addr":{"type":"_column","settings":{"width":25,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"0 20px | 0 15px","margin":"| | | 0 0 30px","width_lap":25,"width_tab":50,"width_mobi":50,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"lbl_addr":{"type":"title","settings":{"heading_size":"h3","title":"Address","font":"--font-family-base","text_transfrom":"uppercase","color":"#000000","font_size":11,"line_height":18,"letter_spacing":2,"font_weight":"500","align":"center","padding":"","margin":"0 0 8px","color_mobi":"#000000","font_size_mobi":11,"line_height_mobi":18,"letter_spacing_mobi":2,"align_mobi":"center"},"blocks":{}},"desc_addr":{"type":"description","settings":{"desc":"Mumbai, MH, India","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":14,"line_height":22,"letter_spacing":0,"font_weight":"400","align":"center","padding":"","margin":"","color_mobi":"#868686","font_size_mobi":13,"line_height_mobi":20,"letter_spacing_mobi":0,"align_mobi":"center"},"blocks":{}}},"block_order":["lbl_addr","desc_addr"]},"col_phone":{"type":"_column","settings":{"width":25,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"0 20px | 0 15px","margin":"| | | 0 0 30px","width_lap":25,"width_tab":50,"width_mobi":50,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"lbl_phone":{"type":"title","settings":{"heading_size":"h3","title":"WhatsApp","font":"--font-family-base","text_transfrom":"uppercase","color":"#000000","font_size":11,"line_height":18,"letter_spacing":2,"font_weight":"500","align":"center","padding":"","margin":"0 0 8px","color_mobi":"#000000","font_size_mobi":11,"line_height_mobi":18,"letter_spacing_mobi":2,"align_mobi":"center"},"blocks":{}},"desc_phone":{"type":"description","settings":{"desc":"+91 86982 05381","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":14,"line_height":22,"letter_spacing":0,"font_weight":"400","align":"center","padding":"","margin":"","color_mobi":"#868686","font_size_mobi":13,"line_height_mobi":20,"letter_spacing_mobi":0,"align_mobi":"center"},"blocks":{}}},"block_order":["lbl_phone","desc_phone"]},"col_email":{"type":"_column","settings":{"width":25,"background_fixed":false,"background_size":"cover","background_pos":"center center","padding":"0 20px | 0 15px","margin":"","width_lap":25,"width_tab":50,"width_mobi":50,"border":false,"border_width":"0px 0px 0px 0px","border_color":"#ffffff","box_shadow":"none","border_radius":"0px 0px 0px 0px"},"blocks":{"lbl_email":{"type":"title","settings":{"heading_size":"h3","title":"Email","font":"--font-family-base","text_transfrom":"uppercase","color":"#000000","font_size":11,"line_height":18,"letter_spacing":2,"font_weight":"500","align":"center","padding":"","margin":"0 0 8px","color_mobi":"#000000","font_size_mobi":11,"line_height_mobi":18,"letter_spacing_mobi":2,"align_mobi":"center"},"blocks":{}},"desc_email":{"type":"description","settings":{"desc":"blackmango.website@gmail.com","font":"--font-family-base","text_transfrom":"default","color":"#868686","font_size":14,"line_height":22,"letter_spacing":0,"font_weight":"400","align":"center","padding":"","margin":"","color_mobi":"#868686","font_size_mobi":13,"line_height_mobi":20,"letter_spacing_mobi":0,"align_mobi":"center"},"blocks":{}}},"block_order":["lbl_email","desc_email"]}},"block_order":["col_ig","col_addr","col_phone","col_email"],"settings":{"max_width":"","fullwidth":true,"background_fixed":false,"background_size":"cover","background_pos":"center center","background_color":"#f5f1ee","width_bg":"full","half_overflow":false,"padding_bg":"","padding":"60px 0","margin":"0","vertical_align":"top","horizontal_align":"left"}}},"order":["breadcrumb","main","sec_intro","sec_cards","sec_story","sec_divider1","sec_vm","sec_divider2","sec_team","sec_connect"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumb": {
+      "type": "page-breadcrumb",
+      "settings": {
+        "enable": true,
+        "bgimage": true,
+        "image": "shopify://shop_images/about-bg.webp",
+        "show_pagetitle": true,
+        "show_breadcrumb": true,
+        "color_breadcrumb": "#000000",
+        "align_breadcrumb": "center"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "enable": false,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "sec_intro": {
+      "type": "featured-custom-section",
+      "blocks": {
+        "col_intro": {
+          "type": "_column",
+          "settings": {
+            "width": 100,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "",
+            "margin": "",
+            "width_lap": 100,
+            "width_tab": 100,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "lbl_intro": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "THE BLACK MANGO STORY",
+                "font": "--font-family-base",
+                "text_transfrom": "uppercase",
+                "color": "#868686",
+                "font_size": 12,
+                "line_height": 20,
+                "letter_spacing": 3,
+                "font_weight": "400",
+                "align": "center",
+                "padding": "",
+                "margin": "0 0 16px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 12,
+                "line_height_mobi": 20,
+                "letter_spacing_mobi": 3,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "h_intro": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h1",
+                "title": "Where Art Meets Home",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#000000",
+                "font_size": 52,
+                "line_height": 56,
+                "letter_spacing": 0,
+                "font_weight": "300",
+                "align": "center",
+                "padding": "",
+                "margin": "0 0 24px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 34,
+                "line_height_mobi": 40,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "line_intro": {
+              "type": "line",
+              "settings": {
+                "padding": "",
+                "margin": "0 auto",
+                "margin_line": "0px 0px 0px 0px",
+                "width": "60px",
+                "height": 1,
+                "background": "#000000"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "lbl_intro",
+            "h_intro",
+            "line_intro"
+          ]
+        }
+      },
+      "block_order": [
+        "col_intro"
+      ],
+      "settings": {
+        "max_width": "",
+        "fullwidth": false,
+        "background_gradient": "",
+        "background_fixed": false,
+        "background_size": "cover",
+        "background_pos": "center center",
+        "background_color": "",
+        "width_bg": "container",
+        "half_overflow": true,
+        "padding_bg": "",
+        "padding": "80px 0 60px | 60px 0 40px | | 50px 0 30px",
+        "margin": "0 0 80px",
+        "vertical_align": "top",
+        "horizontal_align": "center"
+      }
+    },
+    "sec_cards": {
+      "type": "featured-custom-section",
+      "blocks": {
+        "col_card1": {
+          "type": "_column",
+          "settings": {
+            "width": 50,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 40px 0 0 | 0 20px 0 0 | | 0",
+            "margin": "| | | 0 0 60px",
+            "width_lap": 50,
+            "width_tab": 50,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "img_c1": {
+              "type": "image",
+              "settings": {
+                "image": "shopify://shop_images/Founder.webp",
+                "url": "",
+                "padding": "",
+                "margin": "0 0 32px",
+                "size": "",
+                "image_size": "cover",
+                "image_pos": "center center",
+                "align": "left",
+                "border_radius": "0px 0px 0px 0px",
+                "border": false,
+                "border_width": "0px 0px 0px 0px",
+                "border_color": "#ffffff",
+                "effect": "",
+                "position": "unset",
+                "left": "",
+                "right": "",
+                "top": "",
+                "bottom": "",
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "lbl_c1": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "THE FOUNDER",
+                "font": "--font-family-base",
+                "text_transfrom": "uppercase",
+                "color": "#868686",
+                "font_size": 11,
+                "line_height": 18,
+                "letter_spacing": 3,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 10px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 11,
+                "line_height_mobi": 18,
+                "letter_spacing_mobi": 3,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "h_c1": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h2",
+                "title": "Intent-Driven Design",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#000000",
+                "font_size": 36,
+                "line_height": 42,
+                "letter_spacing": 0,
+                "font_weight": "300",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 18px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 26,
+                "line_height_mobi": 32,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "line_c1": {
+              "type": "line",
+              "settings": {
+                "padding": "",
+                "margin": "0 0 24px",
+                "margin_line": "0px 0px 0px 0px",
+                "width": "40px",
+                "height": 1,
+                "background": "#000000"
+              },
+              "blocks": {}
+            },
+            "desc_c1a": {
+              "type": "description",
+              "settings": {
+                "desc": "I'm an intent-driven creator and the founder of Black Mango, driven by a deep love for intentional design and expressive aesthetics. The brand was born from that curiosity and a love for bold expression.",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 15,
+                "line_height": 26,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 14px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 14,
+                "line_height_mobi": 24,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "desc_c1b": {
+              "type": "description",
+              "settings": {
+                "desc": "My work celebrates bold forms, layered textures, and an abundant use of color. I create artful, statement pieces designed to bring energy, character, and a sense of individuality into every home.",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 15,
+                "line_height": 26,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 20px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 14,
+                "line_height_mobi": 24,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "desc_c1c": {
+              "type": "description",
+              "settings": {
+                "desc": "Because spaces shouldn't just look good — they should feel alive.",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#000000",
+                "font_size": 18,
+                "line_height": 28,
+                "letter_spacing": 0,
+                "font_weight": "300",
+                "align": "left",
+                "padding": "",
+                "margin": "",
+                "color_mobi": "#000000",
+                "font_size_mobi": 16,
+                "line_height_mobi": 26,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "img_c1",
+            "lbl_c1",
+            "h_c1",
+            "line_c1",
+            "desc_c1a",
+            "desc_c1b",
+            "desc_c1c"
+          ]
+        },
+        "col_card2": {
+          "type": "_column",
+          "settings": {
+            "width": 50,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 0 0 40px | 0 0 0 20px | | 0",
+            "margin": "",
+            "width_lap": 50,
+            "width_tab": 50,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "img_c2": {
+              "type": "image",
+              "settings": {
+                "image": "shopify://shop_images/rugs-section-photo.webp",
+                "url": "",
+                "padding": "",
+                "margin": "0 0 32px",
+                "size": "",
+                "image_size": "cover",
+                "image_pos": "center center",
+                "align": "left",
+                "border_radius": "0px 0px 0px 0px",
+                "border": false,
+                "border_width": "0px 0px 0px 0px",
+                "border_color": "#ffffff",
+                "effect": "",
+                "position": "unset",
+                "left": "",
+                "right": "",
+                "top": "",
+                "bottom": "",
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "lbl_c2": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "OUR SERVICE",
+                "font": "--font-family-base",
+                "text_transfrom": "uppercase",
+                "color": "#868686",
+                "font_size": 11,
+                "line_height": 18,
+                "letter_spacing": 3,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 10px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 11,
+                "line_height_mobi": 18,
+                "letter_spacing_mobi": 3,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "h_c2": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h2",
+                "title": "Crafted for Your Space",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#000000",
+                "font_size": 36,
+                "line_height": 42,
+                "letter_spacing": 0,
+                "font_weight": "300",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 18px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 26,
+                "line_height_mobi": 32,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "line_c2": {
+              "type": "line",
+              "settings": {
+                "padding": "",
+                "margin": "0 0 24px",
+                "margin_line": "0px 0px 0px 0px",
+                "width": "40px",
+                "height": 1,
+                "background": "#000000"
+              },
+              "blocks": {}
+            },
+            "desc_c2a": {
+              "type": "description",
+              "settings": {
+                "desc": "We offer a curated range of premium home décor — hand-tufted rugs, tufted cushion covers, statement curtains, wool throws, and sculptural objects.",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 15,
+                "line_height": 26,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 14px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 14,
+                "line_height_mobi": 24,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "desc_c2b": {
+              "type": "description",
+              "settings": {
+                "desc": "We also extend our work into space design, bringing the same commitment to craft and character into environments that are built to make an impression. At every scale, Black Mango delivers personality and intention in equal measure.",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 15,
+                "line_height": 26,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "",
+                "color_mobi": "#868686",
+                "font_size_mobi": 14,
+                "line_height_mobi": 24,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "img_c2",
+            "lbl_c2",
+            "h_c2",
+            "line_c2",
+            "desc_c2a",
+            "desc_c2b"
+          ]
+        }
+      },
+      "block_order": [
+        "col_card1",
+        "col_card2"
+      ],
+      "settings": {
+        "max_width": "",
+        "fullwidth": false,
+        "background_gradient": "",
+        "background_fixed": false,
+        "background_size": "cover",
+        "background_pos": "center center",
+        "background_color": "",
+        "width_bg": "container",
+        "half_overflow": true,
+        "padding_bg": "",
+        "padding": "",
+        "margin": "0 0 100px",
+        "vertical_align": "top",
+        "horizontal_align": "left"
+      }
+    },
+    "sec_story": {
+      "type": "featured-custom-section",
+      "blocks": {
+        "col_story": {
+          "type": "_column",
+          "settings": {
+            "width": 70,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 15px | 0 7.5px",
+            "margin": "",
+            "width_lap": 70,
+            "width_tab": 80,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "lbl_story": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "OUR STORY",
+                "font": "--font-family-base",
+                "text_transfrom": "uppercase",
+                "color": "#868686",
+                "font_size": 12,
+                "line_height": 20,
+                "letter_spacing": 3,
+                "font_weight": "400",
+                "align": "center",
+                "padding": "",
+                "margin": "0 0 12px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 12,
+                "line_height_mobi": 20,
+                "letter_spacing_mobi": 3,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "h_story": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h2",
+                "title": "Elegance. Energy. Expression.",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#000000",
+                "font_size": 44,
+                "line_height": 50,
+                "letter_spacing": 0,
+                "font_weight": "300",
+                "align": "center",
+                "padding": "",
+                "margin": "0 0 20px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 30,
+                "line_height_mobi": 36,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "line_story": {
+              "type": "line",
+              "settings": {
+                "padding": "",
+                "margin": "0 auto 30px",
+                "margin_line": "0px 0px 0px 0px",
+                "width": "60px",
+                "height": 1,
+                "background": "#000000"
+              },
+              "blocks": {}
+            },
+            "desc_story": {
+              "type": "description",
+              "settings": {
+                "desc": "Black Mango was born from two contrasting ideas — the elegance and mystery of Black, and the energy and vibrancy of Mango. Together, they represent something rare: décor that lives at the edge of art. Every piece we create is designed not just to fill a space, but to transform it.",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 16,
+                "line_height": 28,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "center",
+                "padding": "",
+                "margin": "",
+                "color_mobi": "#868686",
+                "font_size_mobi": 15,
+                "line_height_mobi": 26,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "lbl_story",
+            "h_story",
+            "line_story",
+            "desc_story"
+          ]
+        }
+      },
+      "block_order": [
+        "col_story"
+      ],
+      "settings": {
+        "max_width": "",
+        "fullwidth": true,
+        "background_gradient": "",
+        "background_fixed": false,
+        "background_size": "cover",
+        "background_pos": "center center",
+        "background_color": "#f5f1ee",
+        "width_bg": "container",
+        "half_overflow": true,
+        "padding_bg": "",
+        "padding": "80px 0",
+        "margin": "0 0 100px",
+        "vertical_align": "top",
+        "horizontal_align": "center"
+      }
+    },
+    "sec_divider1": {
+      "type": "featured-custom-section",
+      "blocks": {
+        "col_div1": {
+          "type": "_column",
+          "settings": {
+            "width": 100,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "",
+            "margin": "",
+            "width_lap": 100,
+            "width_tab": 100,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "line_div1": {
+              "type": "line",
+              "settings": {
+                "padding": "",
+                "margin": "",
+                "margin_line": "0px 0px 0px 0px",
+                "width": "",
+                "height": 1,
+                "background": "#e5e5e5"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "line_div1"
+          ]
+        }
+      },
+      "block_order": [
+        "col_div1"
+      ],
+      "settings": {
+        "max_width": "",
+        "fullwidth": true,
+        "background_gradient": "",
+        "background_fixed": false,
+        "background_size": "cover",
+        "background_pos": "center center",
+        "background_color": "",
+        "width_bg": "container",
+        "half_overflow": true,
+        "padding_bg": "",
+        "padding": "",
+        "margin": "0 0 100px",
+        "vertical_align": "top",
+        "horizontal_align": "left"
+      }
+    },
+    "sec_vm": {
+      "type": "featured-custom-section",
+      "blocks": {
+        "col_vision": {
+          "type": "_column",
+          "settings": {
+            "width": 50,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 60px 0 0 | 0 30px 0 0 | | 0",
+            "margin": "| | | 0 0 50px",
+            "width_lap": 50,
+            "width_tab": 50,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "lbl_vision": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "VISION",
+                "font": "--font-family-base",
+                "text_transfrom": "uppercase",
+                "color": "#868686",
+                "font_size": 12,
+                "line_height": 20,
+                "letter_spacing": 3,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 12px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 12,
+                "line_height_mobi": 20,
+                "letter_spacing_mobi": 3,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "h_vision": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h2",
+                "title": "Every Home a Canvas",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#000000",
+                "font_size": 36,
+                "line_height": 42,
+                "letter_spacing": 0,
+                "font_weight": "300",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 20px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 26,
+                "line_height_mobi": 32,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "line_vision": {
+              "type": "line",
+              "settings": {
+                "padding": "",
+                "margin": "0 0 20px",
+                "margin_line": "0px 0px 0px 0px",
+                "width": "40px",
+                "height": 1,
+                "background": "#000000"
+              },
+              "blocks": {}
+            },
+            "desc_vision": {
+              "type": "description",
+              "settings": {
+                "desc": "To redefine how people experience their living spaces — where every home becomes a canvas for individuality. We envision interiors that are not just designed, but felt. Where the objects you live with reflect as an art piece. Bold, intentional, and defined.",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 15,
+                "line_height": 26,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "",
+                "color_mobi": "#868686",
+                "font_size_mobi": 15,
+                "line_height_mobi": 26,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "lbl_vision",
+            "h_vision",
+            "line_vision",
+            "desc_vision"
+          ]
+        },
+        "col_mission": {
+          "type": "_column",
+          "settings": {
+            "width": 50,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 0 0 60px | 0 0 0 30px | | 0",
+            "margin": "",
+            "width_lap": 50,
+            "width_tab": 50,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "lbl_mission": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "MISSION",
+                "font": "--font-family-base",
+                "text_transfrom": "uppercase",
+                "color": "#868686",
+                "font_size": 12,
+                "line_height": 20,
+                "letter_spacing": 3,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 12px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 12,
+                "line_height_mobi": 20,
+                "letter_spacing_mobi": 3,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "h_mission": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h2",
+                "title": "Art and Interiors, Together",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#000000",
+                "font_size": 36,
+                "line_height": 42,
+                "letter_spacing": 0,
+                "font_weight": "300",
+                "align": "left",
+                "padding": "",
+                "margin": "0 0 20px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 26,
+                "line_height_mobi": 32,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            },
+            "line_mission": {
+              "type": "line",
+              "settings": {
+                "padding": "",
+                "margin": "0 0 20px",
+                "margin_line": "0px 0px 0px 0px",
+                "width": "40px",
+                "height": 1,
+                "background": "#000000"
+              },
+              "blocks": {}
+            },
+            "desc_mission": {
+              "type": "description",
+              "settings": {
+                "desc": "To build a creative community where art and interiors collide. Black Mango envisions an ever-growing world of collaborations — with artists, designers, and makers — bringing fresh perspectives into every piece. A space where creativity is collective, and home décor becomes a living, evolving form of art.",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 15,
+                "line_height": 26,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "left",
+                "padding": "",
+                "margin": "",
+                "color_mobi": "#868686",
+                "font_size_mobi": 15,
+                "line_height_mobi": 26,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "left"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "lbl_mission",
+            "h_mission",
+            "line_mission",
+            "desc_mission"
+          ]
+        }
+      },
+      "block_order": [
+        "col_vision",
+        "col_mission"
+      ],
+      "settings": {
+        "max_width": "",
+        "fullwidth": false,
+        "background_gradient": "",
+        "background_fixed": false,
+        "background_size": "cover",
+        "background_pos": "center center",
+        "background_color": "",
+        "width_bg": "container",
+        "half_overflow": true,
+        "padding_bg": "",
+        "padding": "",
+        "margin": "0 0 100px",
+        "vertical_align": "top",
+        "horizontal_align": "left"
+      }
+    },
+    "sec_divider2": {
+      "type": "featured-custom-section",
+      "blocks": {
+        "col_div2": {
+          "type": "_column",
+          "settings": {
+            "width": 100,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "",
+            "margin": "",
+            "width_lap": 100,
+            "width_tab": 100,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "line_div2": {
+              "type": "line",
+              "settings": {
+                "padding": "",
+                "margin": "",
+                "margin_line": "0px 0px 0px 0px",
+                "width": "",
+                "height": 1,
+                "background": "#e5e5e5"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "line_div2"
+          ]
+        }
+      },
+      "block_order": [
+        "col_div2"
+      ],
+      "settings": {
+        "max_width": "",
+        "fullwidth": true,
+        "background_gradient": "",
+        "background_fixed": false,
+        "background_size": "cover",
+        "background_pos": "center center",
+        "background_color": "",
+        "width_bg": "container",
+        "half_overflow": true,
+        "padding_bg": "",
+        "padding": "",
+        "margin": "0 0 80px",
+        "vertical_align": "top",
+        "horizontal_align": "left"
+      }
+    },
+    "sec_team": {
+      "type": "featured-custom-section",
+      "blocks": {
+        "col_team": {
+          "type": "_column",
+          "settings": {
+            "width": 100,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "",
+            "margin": "",
+            "width_lap": 100,
+            "width_tab": 100,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "lbl_team": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "THE TEAM",
+                "font": "--font-family-base",
+                "text_transfrom": "uppercase",
+                "color": "#868686",
+                "font_size": 12,
+                "line_height": 20,
+                "letter_spacing": 3,
+                "font_weight": "400",
+                "align": "center",
+                "padding": "",
+                "margin": "0 0 12px",
+                "color_mobi": "#868686",
+                "font_size_mobi": 12,
+                "line_height_mobi": 20,
+                "letter_spacing_mobi": 3,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "h_team": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h2",
+                "title": "The People Behind Black Mango",
+                "font": "--font-family-second",
+                "text_transfrom": "default",
+                "color": "#000000",
+                "font_size": 36,
+                "line_height": 42,
+                "letter_spacing": 0,
+                "font_weight": "300",
+                "align": "center",
+                "padding": "",
+                "margin": "0 0 20px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 26,
+                "line_height_mobi": 32,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "line_team": {
+              "type": "line",
+              "settings": {
+                "padding": "",
+                "margin": "0 auto 30px",
+                "margin_line": "0px 0px 0px 0px",
+                "width": "60px",
+                "height": 1,
+                "background": "#000000"
+              },
+              "blocks": {}
+            },
+            "desc_team1": {
+              "type": "description",
+              "settings": {
+                "desc": "Founder — Manasi Chaware",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#000000",
+                "font_size": 15,
+                "line_height": 32,
+                "letter_spacing": 0,
+                "font_weight": "500",
+                "align": "center",
+                "padding": "",
+                "margin": "0",
+                "color_mobi": "#000000",
+                "font_size_mobi": 15,
+                "line_height_mobi": 28,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "desc_team2": {
+              "type": "description",
+              "settings": {
+                "desc": "Creative Associate — Ashwini Jagtap",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 14,
+                "line_height": 30,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "center",
+                "padding": "",
+                "margin": "0",
+                "color_mobi": "#868686",
+                "font_size_mobi": 14,
+                "line_height_mobi": 28,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "desc_team3": {
+              "type": "description",
+              "settings": {
+                "desc": "Creative Associate — Vithika Mishra",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 14,
+                "line_height": 30,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "center",
+                "padding": "",
+                "margin": "0",
+                "color_mobi": "#868686",
+                "font_size_mobi": 14,
+                "line_height_mobi": 28,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "desc_team4": {
+              "type": "description",
+              "settings": {
+                "desc": "Accounts — Durgesh Jha",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 14,
+                "line_height": 30,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "center",
+                "padding": "",
+                "margin": "0",
+                "color_mobi": "#868686",
+                "font_size_mobi": 14,
+                "line_height_mobi": 28,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "lbl_team",
+            "h_team",
+            "line_team",
+            "desc_team1",
+            "desc_team2",
+            "desc_team3",
+            "desc_team4"
+          ]
+        }
+      },
+      "block_order": [
+        "col_team"
+      ],
+      "settings": {
+        "max_width": "",
+        "fullwidth": false,
+        "background_gradient": "",
+        "background_fixed": false,
+        "background_size": "cover",
+        "background_pos": "center center",
+        "background_color": "",
+        "width_bg": "container",
+        "half_overflow": true,
+        "padding_bg": "",
+        "padding": "",
+        "margin": "0 0 100px",
+        "vertical_align": "top",
+        "horizontal_align": "center"
+      }
+    },
+    "sec_connect": {
+      "type": "featured-custom-section",
+      "blocks": {
+        "col_ig": {
+          "type": "_column",
+          "settings": {
+            "width": 25,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 20px | 0 15px",
+            "margin": "| | | 0 0 30px",
+            "width_lap": 25,
+            "width_tab": 50,
+            "width_mobi": 50,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "lbl_ig": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "Instagram",
+                "font": "--font-family-base",
+                "text_transfrom": "uppercase",
+                "color": "#000000",
+                "font_size": 11,
+                "line_height": 18,
+                "letter_spacing": 2,
+                "font_weight": "500",
+                "align": "center",
+                "padding": "",
+                "margin": "0 0 8px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 11,
+                "line_height_mobi": 18,
+                "letter_spacing_mobi": 2,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "desc_ig": {
+              "type": "description",
+              "settings": {
+                "desc": "@blackmangostudios",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 14,
+                "line_height": 22,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "center",
+                "padding": "",
+                "margin": "",
+                "color_mobi": "#868686",
+                "font_size_mobi": 13,
+                "line_height_mobi": 20,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "lbl_ig",
+            "desc_ig"
+          ]
+        },
+        "col_addr": {
+          "type": "_column",
+          "settings": {
+            "width": 25,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 20px | 0 15px",
+            "margin": "| | | 0 0 30px",
+            "width_lap": 25,
+            "width_tab": 50,
+            "width_mobi": 50,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "lbl_addr": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "Address",
+                "font": "--font-family-base",
+                "text_transfrom": "uppercase",
+                "color": "#000000",
+                "font_size": 11,
+                "line_height": 18,
+                "letter_spacing": 2,
+                "font_weight": "500",
+                "align": "center",
+                "padding": "",
+                "margin": "0 0 8px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 11,
+                "line_height_mobi": 18,
+                "letter_spacing_mobi": 2,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "desc_addr": {
+              "type": "description",
+              "settings": {
+                "desc": "Mumbai, MH, India",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 14,
+                "line_height": 22,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "center",
+                "padding": "",
+                "margin": "",
+                "color_mobi": "#868686",
+                "font_size_mobi": 13,
+                "line_height_mobi": 20,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "lbl_addr",
+            "desc_addr"
+          ]
+        },
+        "col_phone": {
+          "type": "_column",
+          "settings": {
+            "width": 25,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 20px | 0 15px",
+            "margin": "| | | 0 0 30px",
+            "width_lap": 25,
+            "width_tab": 50,
+            "width_mobi": 50,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "lbl_phone": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "WhatsApp",
+                "font": "--font-family-base",
+                "text_transfrom": "uppercase",
+                "color": "#000000",
+                "font_size": 11,
+                "line_height": 18,
+                "letter_spacing": 2,
+                "font_weight": "500",
+                "align": "center",
+                "padding": "",
+                "margin": "0 0 8px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 11,
+                "line_height_mobi": 18,
+                "letter_spacing_mobi": 2,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "desc_phone": {
+              "type": "description",
+              "settings": {
+                "desc": "+91 86982 05381",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 14,
+                "line_height": 22,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "center",
+                "padding": "",
+                "margin": "",
+                "color_mobi": "#868686",
+                "font_size_mobi": 13,
+                "line_height_mobi": 20,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "lbl_phone",
+            "desc_phone"
+          ]
+        },
+        "col_email": {
+          "type": "_column",
+          "settings": {
+            "width": 25,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 20px | 0 15px",
+            "margin": "",
+            "width_lap": 25,
+            "width_tab": 50,
+            "width_mobi": 50,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "lbl_email": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "Email",
+                "font": "--font-family-base",
+                "text_transfrom": "uppercase",
+                "color": "#000000",
+                "font_size": 11,
+                "line_height": 18,
+                "letter_spacing": 2,
+                "font_weight": "500",
+                "align": "center",
+                "padding": "",
+                "margin": "0 0 8px",
+                "color_mobi": "#000000",
+                "font_size_mobi": 11,
+                "line_height_mobi": 18,
+                "letter_spacing_mobi": 2,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "desc_email": {
+              "type": "description",
+              "settings": {
+                "desc": "blackmango.website@gmail.com",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#868686",
+                "font_size": 14,
+                "line_height": 22,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "center",
+                "padding": "",
+                "margin": "",
+                "color_mobi": "#868686",
+                "font_size_mobi": 13,
+                "line_height_mobi": 20,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "lbl_email",
+            "desc_email"
+          ]
+        }
+      },
+      "block_order": [
+        "col_ig",
+        "col_addr",
+        "col_phone",
+        "col_email"
+      ],
+      "settings": {
+        "max_width": "",
+        "fullwidth": true,
+        "background_gradient": "",
+        "background_fixed": false,
+        "background_size": "cover",
+        "background_pos": "center center",
+        "background_color": "#f5f1ee",
+        "width_bg": "full",
+        "half_overflow": false,
+        "padding_bg": "",
+        "padding": "60px 0",
+        "margin": "0",
+        "vertical_align": "top",
+        "horizontal_align": "left"
+      }
+    }
+  },
+  "order": [
+    "breadcrumb",
+    "main",
+    "sec_intro",
+    "sec_cards",
+    "sec_story",
+    "sec_divider1",
+    "sec_vm",
+    "sec_divider2",
+    "sec_team",
+    "sec_connect"
+  ]
+}
