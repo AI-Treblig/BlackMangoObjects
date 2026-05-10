@@ -5,8 +5,8 @@
 
 // Gift Card Colors
 --colorGiftText: #868686; // note, this is always on a white background
---colorGiftBorder: #6e2f1b;
---theme-color: #6e2f1b;
+--colorGiftBorder: #000000;
+--theme-color: #000000;
 
 /*============================================================================
   #Sass Mixins

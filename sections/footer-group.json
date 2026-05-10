@@ -269,7 +269,7 @@
                 "font_size": 14,
                 "font_weight": "500",
                 "color": "#868686",
-                "color_hover": "#92614c",
+                "color_hover": "#000000",
                 "text_align_mobi": "left"
               },
               "blocks": {
@@ -409,7 +409,7 @@
                 "font_size": 14,
                 "font_weight": "500",
                 "color": "#868686",
-                "color_hover": "#92614c",
+                "color_hover": "#000000",
                 "text_align_mobi": "left"
               },
               "blocks": {
@@ -585,7 +585,7 @@
                 "color": "#000000",
                 "background": "rgba(0,0,0,0)",
                 "border_color": "rgba(0,0,0,0)",
-                "color_hover": "#6e2f1b",
+                "color_hover": "#000000",
                 "background_hover": "rgba(0,0,0,0)",
                 "border_color_hover": "rgba(0,0,0,0)",
                 "align_mobi": "left"

@@ -49,7 +49,7 @@
             "custom_text_content": "Sale alert: up to 60% off now on. T&Cs apply",
             "color_custom_text": "#ffffff",
             "color_custom_text_link": "#ffffff",
-            "color_custom_text_link_hover": "#92614c",
+            "color_custom_text_link_hover": "#ffffff",
             "text_align": "center",
             "show_mobile_custom_text": true,
             "text_align_mobi": "center"

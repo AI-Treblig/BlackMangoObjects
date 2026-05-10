@@ -23,13 +23,13 @@
 ); */
 body{
 	--white: #fff;
-    --theme-color:#6e2f1b; 
-	--theme-color-15:#6e2f1b26;
-	--theme-color-25:#6e2f1b3F;
-	--theme-color-50:#6e2f1b7F;
-	--theme-color-75:#6e2f1bBF;
-	
-	--hover-color:#451e11;
+    --theme-color:#000000;
+	--theme-color-15:#00000026;
+	--theme-color-25:#0000003F;
+	--theme-color-50:#0000007F;
+	--theme-color-75:#000000BF;
+
+	--hover-color:#000000;
 	--secondary-color:#a0a0a0;
 	--text-color:#868686;
 	--text-color-50:#8686867F;
@@ -54,7 +54,7 @@ body{
 	--menu-hover-color: #000000;
 	--menu-dropdown-bg: #ffffff;
 	--menu-dropdown-color: #000000;
-	--menu-dropdown-hover-color: #6e2f1b;
+	--menu-dropdown-hover-color: #000000;
 	
 	--font-family-second: Questrial;
 	--heading-font-weight-default: 400;
