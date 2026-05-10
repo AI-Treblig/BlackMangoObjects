@@ -357,6 +357,7 @@
                     "image_VqdgCP": {
                       "type": "image",
                       "settings": {
+                        "image": "shopify://shop_images/mess.svg",
                         "url": "",
                         "padding": "",
                         "margin": "0 0 15px",
