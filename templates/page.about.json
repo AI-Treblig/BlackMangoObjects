@@ -1216,6 +1216,7 @@
             "icon_ig": {
               "type": "image",
               "settings": {
+                "image": "shopify://shop_images/instagram-logo.svg",
                 "url": "",
                 "padding": "",
                 "margin": "0 0 18px",
@@ -1289,101 +1290,6 @@
             "desc_ig"
           ]
         },
-        "col_addr": {
-          "type": "_column",
-          "settings": {
-            "width": 25,
-            "background_fixed": false,
-            "background_size": "cover",
-            "background_pos": "center center",
-            "padding": "0 20px | 0 15px",
-            "margin": "| | | 0 0 40px",
-            "width_lap": 25,
-            "width_tab": 50,
-            "width_mobi": 50,
-            "border": false,
-            "border_width": "0px 0px 0px 0px",
-            "border_color": "#000000",
-            "box_shadow": "none",
-            "border_radius": "0px 0px 0px 0px"
-          },
-          "blocks": {
-            "icon_addr": {
-              "type": "image",
-              "settings": {
-                "url": "",
-                "padding": "",
-                "margin": "0 0 18px",
-                "size": "38px",
-                "image_size": "contain",
-                "image_pos": "center center",
-                "align": "center",
-                "border_radius": "0px 0px 0px 0px",
-                "border": false,
-                "border_width": "0px 0px 0px 0px",
-                "border_color": "#000000",
-                "effect": "",
-                "position": "unset",
-                "left": "",
-                "right": "",
-                "top": "",
-                "bottom": "",
-                "align_mobi": "center"
-              },
-              "blocks": {}
-            },
-            "lbl_addr": {
-              "type": "title",
-              "settings": {
-                "heading_size": "h3",
-                "title": "Address",
-                "font": "--font-family-base",
-                "text_transfrom": "uppercase",
-                "color": "#ffffff",
-                "font_size": 11,
-                "line_height": 18,
-                "letter_spacing": 2,
-                "font_weight": "500",
-                "align": "center",
-                "padding": "",
-                "margin": "0 0 8px",
-                "color_mobi": "#ffffff",
-                "font_size_mobi": 11,
-                "line_height_mobi": 18,
-                "letter_spacing_mobi": 2,
-                "align_mobi": "center"
-              },
-              "blocks": {}
-            },
-            "desc_addr": {
-              "type": "description",
-              "settings": {
-                "desc": "Mumbai, MH, India",
-                "font": "--font-family-base",
-                "text_transfrom": "default",
-                "color": "#ffffff",
-                "font_size": 14,
-                "line_height": 22,
-                "letter_spacing": 0,
-                "font_weight": "400",
-                "align": "center",
-                "padding": "",
-                "margin": "",
-                "color_mobi": "#ffffff",
-                "font_size_mobi": 13,
-                "line_height_mobi": 20,
-                "letter_spacing_mobi": 0,
-                "align_mobi": "center"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "icon_addr",
-            "lbl_addr",
-            "desc_addr"
-          ]
-        },
         "col_phone": {
           "type": "_column",
           "settings": {
@@ -1406,6 +1312,7 @@
             "icon_phone": {
               "type": "image",
               "settings": {
+                "image": "shopify://shop_images/whatsapp-logo.svg",
                 "url": "",
                 "padding": "",
                 "margin": "0 0 18px",
@@ -1479,6 +1386,102 @@
             "desc_phone"
           ]
         },
+        "col_addr": {
+          "type": "_column",
+          "settings": {
+            "width": 25,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 20px | 0 15px",
+            "margin": "| | | 0 0 40px",
+            "width_lap": 25,
+            "width_tab": 50,
+            "width_mobi": 50,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#000000",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "icon_addr": {
+              "type": "image",
+              "settings": {
+                "image": "shopify://shop_images/address-icon.svg",
+                "url": "",
+                "padding": "",
+                "margin": "0 0 18px",
+                "size": "38px",
+                "image_size": "contain",
+                "image_pos": "center center",
+                "align": "center",
+                "border_radius": "0px 0px 0px 0px",
+                "border": false,
+                "border_width": "0px 0px 0px 0px",
+                "border_color": "#000000",
+                "effect": "",
+                "position": "unset",
+                "left": "",
+                "right": "",
+                "top": "",
+                "bottom": "",
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "lbl_addr": {
+              "type": "title",
+              "settings": {
+                "heading_size": "h3",
+                "title": "Address",
+                "font": "--font-family-base",
+                "text_transfrom": "uppercase",
+                "color": "#ffffff",
+                "font_size": 11,
+                "line_height": 18,
+                "letter_spacing": 2,
+                "font_weight": "500",
+                "align": "center",
+                "padding": "",
+                "margin": "0 0 8px",
+                "color_mobi": "#ffffff",
+                "font_size_mobi": 11,
+                "line_height_mobi": 18,
+                "letter_spacing_mobi": 2,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            },
+            "desc_addr": {
+              "type": "description",
+              "settings": {
+                "desc": "Mumbai, MH, India",
+                "font": "--font-family-base",
+                "text_transfrom": "default",
+                "color": "#ffffff",
+                "font_size": 14,
+                "line_height": 22,
+                "letter_spacing": 0,
+                "font_weight": "400",
+                "align": "center",
+                "padding": "",
+                "margin": "",
+                "color_mobi": "#ffffff",
+                "font_size_mobi": 13,
+                "line_height_mobi": 20,
+                "letter_spacing_mobi": 0,
+                "align_mobi": "center"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "icon_addr",
+            "lbl_addr",
+            "desc_addr"
+          ]
+        },
         "col_email": {
           "type": "_column",
           "settings": {
@@ -1501,6 +1504,7 @@
             "icon_email": {
               "type": "image",
               "settings": {
+                "image": "shopify://shop_images/email-icon.svg",
                 "url": "",
                 "padding": "",
                 "margin": "0 0 18px",
@@ -1577,8 +1581,8 @@
       },
       "block_order": [
         "col_ig",
-        "col_addr",
         "col_phone",
+        "col_addr",
         "col_email"
       ],
       "settings": {
