@@ -1288,7 +1288,7 @@
         "page_wishlist": "wishlist",
         "show_header_user": true,
         "header_user_title": "Account",
-        "header_user_link_list": "",
+        "header_user_link_list": "bmo-main-menu",
         "show_header_cart": true
       }
     },
