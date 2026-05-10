@@ -1207,6 +1207,7 @@
                   "type": "_collection-image",
                   "settings": {
                     "collection": "curtains",
+                    "image": "shopify://shop_images/bmo-curtains-icon-w.svg",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
