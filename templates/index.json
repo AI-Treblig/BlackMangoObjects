@@ -26,11 +26,11 @@
               "type": "_group-content-slide",
               "settings": {
                 "caption_width": "",
-                "vertical_align": "middle",
+                "vertical_align": "top",
                 "horizontal_align": "center",
                 "align": "center",
                 "animation": "left-to-right",
-                "padding": "",
+                "padding": "200px 0px 0px 0px",
                 "margin": "",
                 "disable_absolute": false,
                 "vertical_align_mobi": "middle",
@@ -45,7 +45,7 @@
                     "title": "NEW ARRIVALS",
                     "font": "--font-family-second",
                     "text_transfrom": "default",
-                    "color": "#ffffff",
+                    "color": "#000000",
                     "font_size": 16,
                     "line_height": 20,
                     "letter_spacing": 3,
@@ -65,10 +65,10 @@
                   "type": "title",
                   "settings": {
                     "heading_size": "h3",
-                    "title": "Handcrafted <br> for your home",
+                    "title": "Handcrafted  for your home",
                     "font": "--font-family-second",
                     "text_transfrom": "default",
-                    "color": "#ffffff",
+                    "color": "#000000",
                     "font_size": 70,
                     "line_height": 80,
                     "letter_spacing": 0,
@@ -108,8 +108,8 @@
                     "color": "#000000",
                     "background": "#ffffff",
                     "border_color": "#ffffff",
-                    "color_hover": "#000000",
-                    "background_hover": "#ffffff",
+                    "color_hover": "#ffffff",
+                    "background_hover": "#000000",
                     "border_color_hover": "#000000",
                     "font_size": 12,
                     "line_height": 40,
@@ -636,19 +636,19 @@
                 "margin_image": "",
                 "padding": "",
                 "margin": "",
-                "effect": "grow"
+                "effect": "shine-out"
               },
               "blocks": {
                 "banner_box_WYgniW": {
                   "type": "_banner-box",
                   "settings": {
                     "content_position": "absolute",
-                    "vertical_position": "bottom",
-                    "horizontal_position": "left",
+                    "vertical_position": "top",
+                    "horizontal_position": "center",
                     "text_align": "left",
                     "background_content": "rgba(0,0,0,0)",
                     "border_radius_content": "0px 0px 0px 0px",
-                    "padding": "0 0 55px 75px | 0 0 30px 15px",
+                    "padding": "70px 0 55px 75px | 0 0 30px 15px",
                     "margin": ""
                   },
                   "blocks": {
@@ -679,7 +679,7 @@
                       "type": "title",
                       "settings": {
                         "heading_size": "h3",
-                        "title": "Cushions & More",
+                        "title": "Rugs & More",
                         "font": "--font-family-second",
                         "text_transfrom": "default",
                         "color": "#000000",
@@ -1187,6 +1187,7 @@
                   "type": "_collection-image",
                   "settings": {
                     "collection": "rugs",
+                    "image": "shopify://shop_images/bmo-rugs-icon-w.svg",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
@@ -1197,6 +1198,7 @@
                   "type": "_collection-image",
                   "settings": {
                     "collection": "cushion-covers",
+                    "image": "shopify://shop_images/bmo-cushion-covers-icon-w.svg",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
@@ -1207,6 +1209,7 @@
                   "type": "_collection-image",
                   "settings": {
                     "collection": "curtains",
+                    "image": "shopify://shop_images/bmo-curtains-icon-w.svg",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
@@ -1217,6 +1220,7 @@
                   "type": "_collection-image",
                   "settings": {
                     "collection": "throws",
+                    "image": "shopify://shop_images/bmo-throw-icon-w_4bd2394f-7944-40f8-a6ea-dae510536aa8.svg",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
@@ -1227,16 +1231,7 @@
                   "type": "_collection-image",
                   "settings": {
                     "collection": "objects",
-                    "count": false,
-                    "text_count": "",
-                    "effects": "none"
-                  },
-                  "blocks": {}
-                },
-                "collection_image_C7cRkf": {
-                  "type": "_collection-image",
-                  "settings": {
-                    "collection": "objects",
+                    "image": "shopify://shop_images/bmo-objects-w.svg",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
@@ -1288,8 +1283,7 @@
                 "collection_image_mTNHC3",
                 "collection_image_qGXLY6",
                 "collection_image_yz6zyt",
-                "collection_image_GkWUGp",
-                "collection_image_C7cRkf"
+                "collection_image_GkWUGp"
               ]
             }
           },
@@ -1732,6 +1726,7 @@
         "column_RaWHgw",
         "column_tT44H3"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "1490px",
         "fullwidth": false,
@@ -2022,6 +2017,7 @@
         "column_B969Hd",
         "column_tHKcgB"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": false,
@@ -2029,7 +2025,7 @@
         "background_fixed": false,
         "background_size": "cover",
         "background_pos": "center center",
-        "background_color": "#f5f1ee",
+        "background_color": "#e8e8e8",
         "width_bg": "full",
         "half_overflow": true,
         "padding_bg": "",
@@ -2093,6 +2089,7 @@
       "block_order": [
         "column_H8McEE"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": false,
@@ -2161,6 +2158,7 @@
         "image_VeTaKE",
         "image_zJgWib"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": false,
