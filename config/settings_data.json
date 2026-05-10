@@ -44,7 +44,7 @@
     "color_submenu_text_hover": "#000000",
     "color_footer_text": "#878787",
     "color_footer_text_hover": "#000000",
-    "enable_rtl": true,
+    "enable_rtl": false,
     "iso_rtl": "ar",
     "scroll_to_top": true,
     "preview_bar": true,
