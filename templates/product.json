@@ -215,7 +215,7 @@
                     "quantity_selector": "text",
                     "atc_button_color": "#404040",
                     "enable_payment_button": true,
-                    "payment_button_color": "#451e11",
+                    "payment_button_color": "#000000",
                     "payment_text_color": "#ffffff"
                   },
                   "blocks": {}
@@ -424,7 +424,7 @@
         "bg_section": "#ffffff",
         "padding_section": "0px 0px 0px 0px",
         "show_sticky_cart": true,
-        "media_layout": "thumbnails",
+        "media_layout": "grid",
         "position_thumbnails": "left",
         "thumbnail_count": 5,
         "enable_video_looping": false
