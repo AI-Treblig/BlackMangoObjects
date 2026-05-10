@@ -1215,7 +1215,7 @@
                 "collection_image_yz6zyt": {
                   "type": "_collection-image",
                   "settings": {
-                    "collection": "table-mats-runners",
+                    "collection": "throws",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
@@ -1225,7 +1225,7 @@
                 "collection_image_GkWUGp": {
                   "type": "_collection-image",
                   "settings": {
-                    "collection": "bead-coasters",
+                    "collection": "objects",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
