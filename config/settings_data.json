@@ -2391,7 +2391,7 @@
             "settings": {
               "icon": "shop",
               "label": "Shop",
-              "url": "shopify://collections"
+              "url": "shopify://collections/all"
             }
           },
           "bm-mobile-nav-2": {
@@ -2425,6 +2425,12 @@
           "show_cart_icon": true,
           "menu": "bmo-main-menu",
           "drawer_title": "Menu",
+          "show_search": true,
+          "search_placeholder": "Search products...",
+          "instagram_url": "",
+          "whatsapp_number": "",
+          "contact_phone": "",
+          "contact_email": "",
           "show_bottom_bar": true,
           "bottom_bar_bg": "#ffffff",
           "bottom_icon_color": "#000000"
