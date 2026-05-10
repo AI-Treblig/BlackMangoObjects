@@ -2399,7 +2399,7 @@
             "settings": {
               "icon": "account",
               "label": "Account",
-              "url": ""
+              "url": "/accounts"
             }
           },
           "bm-mobile-nav-3": {
