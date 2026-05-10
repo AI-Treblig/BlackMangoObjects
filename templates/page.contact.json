@@ -14,7 +14,6 @@
       "settings": {
         "enable": true,
         "bgimage": true,
-        "image": "shopify://shop_images/bg-breadcrumb.jpg",
         "show_pagetitle": true,
         "show_breadcrumb": true,
         "color_breadcrumb": "#000000",
@@ -101,9 +100,10 @@
               "settings": {
                 "padding": "",
                 "margin": "0 0 20px",
-                "image": "shopify://shop_images/home.svg",
+                "image": "shopify://shop_images/address-icon.svg",
                 "size": "70px",
                 "background_color": "#000000",
+                "border_radius": "0px 0px 0px 0px",
                 "padding_bg": "15px",
                 "align": "left",
                 "effects": "wobble-horizontal"
@@ -165,9 +165,10 @@
               "settings": {
                 "padding": "",
                 "margin": "0 0 20px",
-                "image": "shopify://shop_images/phone.svg",
+                "image": "shopify://shop_images/whatsapp-logo.svg",
                 "size": "70px",
                 "background_color": "#000000",
+                "border_radius": "0px 0px 0px 0px",
                 "padding_bg": "20px",
                 "align": "left",
                 "effects": "wobble-horizontal"
@@ -224,14 +225,15 @@
                 "description_aWzRRy"
               ]
             },
-            "policy_NfzMia": {
+            "policy_kwhXJB": {
               "type": "policy",
               "settings": {
                 "padding": "",
                 "margin": "",
-                "image": "shopify://shop_images/email.svg",
+                "image": "shopify://shop_images/email-icon.svg",
                 "size": "70px",
                 "background_color": "#000000",
+                "border_radius": "0px 0px 0px 0px",
                 "padding_bg": "20px",
                 "align": "left",
                 "effects": "wobble-horizontal"
@@ -294,7 +296,7 @@
             "description_FWLLH3",
             "policy_cMTANc",
             "policy_PzQQhm",
-            "policy_NfzMia"
+            "policy_kwhXJB"
           ]
         },
         "column_xF9ekV": {
@@ -355,7 +357,6 @@
                     "image_VqdgCP": {
                       "type": "image",
                       "settings": {
-                        "image": "shopify://shop_images/mess.svg",
                         "url": "",
                         "padding": "",
                         "margin": "0 0 15px",
@@ -368,6 +369,11 @@
                         "border_width": "0px 0px 0px 0px",
                         "border_color": "#ffffff",
                         "effect": "wobble-horizontal",
+                        "position": "unset",
+                        "left": "",
+                        "right": "",
+                        "top": "",
+                        "bottom": "",
                         "align_mobi": "center"
                       },
                       "blocks": {}
