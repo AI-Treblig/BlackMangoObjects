@@ -643,12 +643,12 @@
                   "type": "_banner-box",
                   "settings": {
                     "content_position": "absolute",
-                    "vertical_position": "bottom",
+                    "vertical_position": "top",
                     "horizontal_position": "left",
                     "text_align": "left",
                     "background_content": "rgba(0,0,0,0)",
                     "border_radius_content": "0px 0px 0px 0px",
-                    "padding": "0 0 55px 75px | 0 0 30px 15px",
+                    "padding": "75px 0 55px 75px | 0 0 30px 15px",
                     "margin": ""
                   },
                   "blocks": {
