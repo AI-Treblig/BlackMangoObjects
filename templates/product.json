@@ -424,7 +424,7 @@
         "bg_section": "#ffffff",
         "padding_section": "0px 0px 0px 0px",
         "show_sticky_cart": true,
-        "media_layout": "gird-sticky",
+        "media_layout": "lagre-gallery",
         "position_thumbnails": "left",
         "thumbnail_count": 5,
         "enable_video_looping": false
