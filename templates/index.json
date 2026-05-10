@@ -1726,6 +1726,7 @@
         "column_RaWHgw",
         "column_tT44H3"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "1490px",
         "fullwidth": false,
@@ -2016,6 +2017,7 @@
         "column_B969Hd",
         "column_tHKcgB"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": false,
@@ -2023,7 +2025,7 @@
         "background_fixed": false,
         "background_size": "cover",
         "background_pos": "center center",
-        "background_color": "#f5f1ee",
+        "background_color": "#e8e8e8",
         "width_bg": "full",
         "half_overflow": true,
         "padding_bg": "",
@@ -2087,6 +2089,7 @@
       "block_order": [
         "column_H8McEE"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": false,
@@ -2155,6 +2158,7 @@
         "image_VeTaKE",
         "image_zJgWib"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": false,
