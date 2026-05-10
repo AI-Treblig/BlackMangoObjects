@@ -1197,6 +1197,7 @@
                   "type": "_collection-image",
                   "settings": {
                     "collection": "cushion-covers",
+                    "image": "shopify://shop_images/bmo-cushion-covers-icon-w.svg",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
