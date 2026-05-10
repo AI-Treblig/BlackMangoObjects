@@ -19,8 +19,8 @@
             "image_mobi": "shopify://shop_images/hero-image-mobile.webp",
             "size_img": "contain",
             "pos_img": "center_center",
-            "size_img_mobi": "cover",
-            "pos_img_mobi": "center_center"
+            "size_img_mobi": "fill",
+            "pos_img_mobi": "center_bottom"
           },
           "blocks": {
             "group_content_slide_FY8fwf": {
