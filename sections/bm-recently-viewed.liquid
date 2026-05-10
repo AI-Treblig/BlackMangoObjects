@@ -1,0 +1,174 @@
+{%- assign heading = section.settings.heading | default: 'Recently Viewed' -%}
+{%- assign limit = section.settings.limit | default: 6 -%}
+
+<section class="bm-recent" data-bm-recent
+         data-current-handle="{{ product.handle }}"
+         data-limit="{{ limit }}"
+         style="margin: {{ section.settings.margin }};">
+  <div class="container">
+    <div class="bm-recent__head" data-bm-recent-head hidden>
+      <h2 class="bm-recent__heading">{{ heading }}</h2>
+    </div>
+    <div class="bm-recent__grid" data-bm-recent-grid></div>
+  </div>
+</section>
+
+<style>
+  .bm-recent { padding: 0; }
+  .bm-recent__head { text-align: center; margin-bottom: 40px; }
+  .bm-recent__heading {
+    font-family: var(--font-family-second), 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin: 0;
+    color: #000;
+  }
+  .bm-recent__grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns | default: 4 }}, 1fr);
+    gap: 24px;
+  }
+  .bm-recent__grid:empty { display: none; }
+  .bm-recent__card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform .3s ease;
+  }
+  .bm-recent__card:hover { transform: translateY(-4px); }
+  .bm-recent__image {
+    aspect-ratio: 1 / 1;
+    background: #f5f5f5;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .bm-recent__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
+  }
+  .bm-recent__card:hover .bm-recent__image img { transform: scale(1.04); }
+  .bm-recent__info { text-align: center; }
+  .bm-recent__title {
+    font-family: var(--font-family-second), 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 4px;
+    color: #000;
+  }
+  .bm-recent__price {
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+    font-size: 14px;
+    color: #666;
+  }
+  @media (max-width: 991px) {
+    .bm-recent__grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  }
+  @media (max-width: 767px) {
+    .bm-recent__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .bm-recent__heading { font-size: 26px; }
+  }
+</style>
+
+<script>
+(function() {
+  var STORAGE_KEY = 'bm_recently_viewed';
+  var MAX_STORE = 12;
+
+  function readList() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) { return []; }
+  }
+  function writeList(arr) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); } catch (e) {}
+  }
+  function recordCurrent(handle) {
+    if (!handle) return;
+    var list = readList().filter(function(h) { return h !== handle; });
+    list.unshift(handle);
+    if (list.length > MAX_STORE) list = list.slice(0, MAX_STORE);
+    writeList(list);
+  }
+  function fetchProduct(handle) {
+    return fetch('/products/' + handle + '.js', { headers: { 'Accept': 'application/json' } })
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .catch(function() { return null; });
+  }
+  function moneyFormat(cents) {
+    var n = (cents / 100);
+    return 'Rs. ' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function buildCard(p) {
+    var img = p.featured_image || (p.images && p.images[0]) || '';
+    var imgUrl = img ? (img.indexOf('//') === 0 ? 'https:' + img : img) : '';
+    var price = p.price != null ? moneyFormat(p.price) : '';
+    var a = document.createElement('a');
+    a.className = 'bm-recent__card';
+    a.href = p.url || ('/products/' + p.handle);
+    a.innerHTML =
+      '<div class="bm-recent__image">' +
+        (imgUrl ? '<img src="' + imgUrl.replace(/(\.[a-z]+)(\?|$)/i, '_600x$1$2') + '" alt="" loading="lazy">' : '') +
+      '</div>' +
+      '<div class="bm-recent__info">' +
+        '<div class="bm-recent__title">' + (p.title || '') + '</div>' +
+        '<div class="bm-recent__price">' + price + '</div>' +
+      '</div>';
+    return a;
+  }
+
+  function init(root) {
+    if (!root || root.dataset.bmRecentInit === '1') return;
+    root.dataset.bmRecentInit = '1';
+
+    var currentHandle = root.dataset.currentHandle;
+    var limit = parseInt(root.dataset.limit, 10) || 6;
+    var grid = root.querySelector('[data-bm-recent-grid]');
+    var head = root.querySelector('[data-bm-recent-head]');
+    if (!grid) return;
+
+    var list = readList().filter(function(h) { return h !== currentHandle; }).slice(0, limit);
+
+    if (list.length === 0) {
+      if (currentHandle) recordCurrent(currentHandle);
+      return;
+    }
+
+    if (head) head.hidden = false;
+
+    Promise.all(list.map(fetchProduct)).then(function(products) {
+      products.forEach(function(p) {
+        if (p && p.handle) grid.appendChild(buildCard(p));
+      });
+      if (currentHandle) recordCurrent(currentHandle);
+    });
+  }
+
+  function run() {
+    document.querySelectorAll('[data-bm-recent]').forEach(init);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+  document.addEventListener('shopify:section:load', run);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "BM Recently Viewed",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Recently Viewed" },
+    { "type": "range", "id": "limit", "label": "Number of products", "min": 2, "max": 12, "step": 1, "default": 6 },
+    { "type": "range", "id": "columns", "label": "Columns (desktop)", "min": 2, "max": 6, "step": 1, "default": 4 },
+    { "type": "text", "id": "margin", "label": "Margin", "default": "60px 0" }
+  ],
+  "presets": [{ "name": "BM Recently Viewed" }]
+}
+{% endschema %}
