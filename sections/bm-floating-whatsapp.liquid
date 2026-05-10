@@ -1,0 +1,148 @@
+{%- comment -%}
+  Floating WhatsApp contact button. Loads on every page via theme.liquid.
+{%- endcomment -%}
+
+{%- assign number_raw = section.settings.whatsapp_number -%}
+{%- assign number = number_raw | replace: '+', '' | replace: ' ', '' | replace: '-', '' | replace: '(', '' | replace: ')', '' -%}
+{%- assign message = section.settings.prefill_message | default: 'Hi! I have a purchase inquiry.' -%}
+{%- assign message_encoded = message | url_encode -%}
+
+{%- if number != blank -%}
+  <a href="https://wa.me/{{ number }}?text={{ message_encoded }}"
+     class="bm-fab-whatsapp"
+     target="_blank"
+     rel="noopener"
+     aria-label="Chat with us on WhatsApp"
+     {% if section.settings.show_tooltip and section.settings.tooltip_text != blank %}data-tooltip="{{ section.settings.tooltip_text | escape }}"{% endif %}>
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="#ffffff" aria-hidden="true">
+      <path d="M16 .396c-8.836 0-16 7.164-16 16 0 2.823.733 5.582 2.124 8.011L0 32l7.821-2.057c2.337 1.275 4.961 1.95 7.633 1.95h.001c8.836 0 16-7.164 16-16 0-4.27-1.668-8.288-4.694-11.31C24.286 2.064 20.268.396 16 .396zm0 29.327h-.001c-2.393 0-4.74-.642-6.788-1.857l-.487-.289-5.063 1.331 1.352-4.937-.317-.508c-1.339-2.128-2.046-4.583-2.046-7.067 0-7.343 5.974-13.317 13.317-13.317 3.555 0 6.896 1.387 9.408 3.903 2.513 2.517 3.896 5.859 3.895 9.415-.002 7.342-5.975 13.326-13.27 13.326zm7.299-9.985c-.4-.2-2.366-1.168-2.733-1.301-.366-.134-.633-.2-.9.2-.266.4-1.033 1.301-1.266 1.567-.234.267-.466.3-.866.1-.4-.2-1.689-.622-3.219-1.984-1.19-1.06-1.994-2.371-2.228-2.771-.234-.4-.025-.616.175-.815.18-.179.4-.466.6-.7.2-.234.266-.4.4-.667.133-.267.066-.5-.034-.7-.1-.2-.9-2.166-1.233-2.967-.325-.778-.655-.672-.9-.685l-.766-.014c-.267 0-.7.1-1.066.5-.366.4-1.4 1.367-1.4 3.333 0 1.966 1.433 3.867 1.633 4.133.2.267 2.819 4.304 6.832 6.034.954.412 1.699.658 2.279.842.957.304 1.829.262 2.519.159.769-.115 2.366-.967 2.7-1.901.333-.934.333-1.733.233-1.901-.1-.166-.366-.266-.766-.466z"/>
+    </svg>
+  </a>
+
+  <style>
+    .bm-fab-whatsapp {
+      position: fixed;
+      left: {{ section.settings.offset_x | default: 20 }}px;
+      bottom: {{ section.settings.offset_y_desktop | default: 24 }}px;
+      width: {{ section.settings.button_size | default: 56 }}px;
+      height: {{ section.settings.button_size | default: 56 }}px;
+      border-radius: 50%;
+      background: {{ section.settings.button_color | default: '#25D366' }};
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,.18);
+      z-index: 9985;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .bm-fab-whatsapp:hover {
+      transform: scale(1.06);
+      box-shadow: 0 8px 22px rgba(0,0,0,.22);
+    }
+    .bm-fab-whatsapp:active { transform: scale(.96); }
+
+    {%- if section.settings.pulse_animation -%}
+    .bm-fab-whatsapp::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: {{ section.settings.button_color | default: '#25D366' }};
+      opacity: .6;
+      z-index: -1;
+      animation: bm-fab-pulse 1.8s ease-out infinite;
+    }
+    @keyframes bm-fab-pulse {
+      0%   { transform: scale(1);   opacity: .6; }
+      100% { transform: scale(1.6); opacity: 0;  }
+    }
+    {%- endif -%}
+
+    {%- if section.settings.show_tooltip and section.settings.tooltip_text != blank -%}
+    .bm-fab-whatsapp[data-tooltip]::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: calc(100% + 12px);
+      top: 50%;
+      transform: translateY(-50%);
+      background: #000;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: var(--font-family-base), 'Manrope', sans-serif;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s ease;
+      pointer-events: none;
+    }
+    .bm-fab-whatsapp[data-tooltip]:hover::after {
+      opacity: 1;
+      visibility: visible;
+    }
+    @media (max-width: 991px) {
+      .bm-fab-whatsapp[data-tooltip]::after { display: none; }
+    }
+    {%- endif -%}
+
+    /* On mobile, lift the button above the bottom navigation bar */
+    @media (max-width: 991px) {
+      .bm-fab-whatsapp {
+        bottom: {{ section.settings.offset_y_mobile | default: 92 }}px;
+        left: {{ section.settings.offset_x_mobile | default: 16 }}px;
+        width: {{ section.settings.button_size_mobile | default: 52 }}px;
+        height: {{ section.settings.button_size_mobile | default: 52 }}px;
+      }
+    }
+
+    {%- unless section.settings.show_on_desktop -%}
+    @media (min-width: 992px) {
+      .bm-fab-whatsapp { display: none !important; }
+    }
+    {%- endunless -%}
+
+    {%- unless section.settings.show_on_mobile -%}
+    @media (max-width: 991px) {
+      .bm-fab-whatsapp { display: none !important; }
+    }
+    {%- endunless -%}
+  </style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "BM Floating WhatsApp",
+  "settings": [
+    { "type": "text", "id": "whatsapp_number", "label": "WhatsApp number",
+      "info": "International format with country code, e.g. 919876543210. Plus/spaces/dashes are stripped automatically." },
+    { "type": "textarea", "id": "prefill_message", "label": "Pre-filled message",
+      "default": "Hi! I have a purchase inquiry. Could you help me out?" },
+
+    { "type": "header", "content": "Visibility" },
+    { "type": "checkbox", "id": "show_on_desktop", "label": "Show on desktop", "default": true },
+    { "type": "checkbox", "id": "show_on_mobile", "label": "Show on mobile", "default": true },
+
+    { "type": "header", "content": "Appearance" },
+    { "type": "color", "id": "button_color", "label": "Button color", "default": "#25D366" },
+    { "type": "range", "id": "button_size", "label": "Button size — desktop (px)", "min": 40, "max": 80, "step": 2, "default": 56 },
+    { "type": "range", "id": "button_size_mobile", "label": "Button size — mobile (px)", "min": 40, "max": 72, "step": 2, "default": 52 },
+    { "type": "checkbox", "id": "pulse_animation", "label": "Pulse animation", "default": true },
+
+    { "type": "header", "content": "Position" },
+    { "type": "range", "id": "offset_x", "label": "Left offset — desktop (px)", "min": 10, "max": 60, "step": 2, "default": 24 },
+    { "type": "range", "id": "offset_y_desktop", "label": "Bottom offset — desktop (px)", "min": 10, "max": 80, "step": 2, "default": 24 },
+    { "type": "range", "id": "offset_x_mobile", "label": "Left offset — mobile (px)", "min": 8, "max": 40, "step": 2, "default": 16 },
+    { "type": "range", "id": "offset_y_mobile", "label": "Bottom offset — mobile (px)",
+      "info": "Increase if your bottom navigation bar is taller. Default 92 clears the standard 72px bar.",
+      "min": 70, "max": 160, "step": 2, "default": 92 },
+
+    { "type": "header", "content": "Tooltip (desktop only)" },
+    { "type": "checkbox", "id": "show_tooltip", "label": "Show hover tooltip", "default": false },
+    { "type": "text", "id": "tooltip_text", "label": "Tooltip text", "default": "Chat with us" }
+  ],
+  "presets": [{ "name": "BM Floating WhatsApp" }]
+}
+{% endschema %}
