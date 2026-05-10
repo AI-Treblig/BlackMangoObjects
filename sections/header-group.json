@@ -13,6 +13,7 @@
   "sections": {
     "header_campar_kBVbbz": {
       "type": "header-campar",
+      "disabled": true,
       "name": "Header Campar",
       "settings": {
         "show_campar": false,

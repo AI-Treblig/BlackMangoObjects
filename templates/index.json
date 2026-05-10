@@ -16,6 +16,7 @@
           "type": "_slide",
           "settings": {
             "image": "shopify://shop_images/blackMango-home.webp",
+            "image_mobi": "shopify://shop_images/hero-image-mobile.webp",
             "size_img": "contain",
             "pos_img": "center_center",
             "size_img_mobi": "cover",
