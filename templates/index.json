@@ -26,7 +26,7 @@
               "type": "_group-content-slide",
               "settings": {
                 "caption_width": "",
-                "vertical_align": "middle",
+                "vertical_align": "top",
                 "horizontal_align": "center",
                 "align": "center",
                 "animation": "left-to-right",
@@ -65,7 +65,7 @@
                   "type": "title",
                   "settings": {
                     "heading_size": "h3",
-                    "title": "Handcrafted <br> for your home",
+                    "title": "Handcrafted  for your home",
                     "font": "--font-family-second",
                     "text_transfrom": "default",
                     "color": "#ffffff",
