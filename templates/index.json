@@ -33,7 +33,7 @@
                 "padding": "200px 0px 0px 0px",
                 "margin": "",
                 "disable_absolute": false,
-                "vertical_align_mobi": "middle",
+                "vertical_align_mobi": "top",
                 "horizontal_align_mobi": "center",
                 "align_mobi": "center"
               },
@@ -470,7 +470,7 @@
             "banners_box_wbLnX9": {
               "type": "banners-box",
               "settings": {
-                "image": "shopify://shop_images/rugs-section-photo.webp",
+                "image": "shopify://shop_images/banner-home-mid_19d2fdec-c5f9-44a3-bec9-5d2cf2a75c3f.webp",
                 "url": "",
                 "border_radius_img": "0px 0px 0px 0px",
                 "style_image": "default",
@@ -798,7 +798,7 @@
                               "type": "title",
                               "settings": {
                                 "heading_size": "h3",
-                                "title": "Home Decor",
+                                "title": "Cushions",
                                 "font": "--font-family-second",
                                 "text_transfrom": "default",
                                 "color": "#000000",
@@ -855,6 +855,7 @@
                     "banners_box_CnUtjN": {
                       "type": "banners-box",
                       "settings": {
+                        "image": "shopify://shop_images/checker-curtain.webp",
                         "url": "",
                         "border_radius_img": "0px 0px 0px 0px",
                         "style_image": "default",
@@ -904,7 +905,7 @@
                               "type": "title",
                               "settings": {
                                 "heading_size": "h3",
-                                "title": "Home Decor",
+                                "title": "Home Decor Curtains",
                                 "font": "--font-family-second",
                                 "text_transfrom": "default",
                                 "color": "#000000",

@@ -1283,12 +1283,12 @@
         "logo": "shopify://shop_images/blackmango-logo.svg",
         "logo_homepage": "shopify://shop_images/blackmango-logo.svg",
         "logo_max_width": 110,
-        "show_header_search": true,
+        "show_header_search": false,
         "show_header_wishlist": true,
         "page_wishlist": "wishlist",
         "show_header_user": true,
         "header_user_title": "Account",
-        "header_user_link_list": "",
+        "header_user_link_list": "bmo-main-menu",
         "show_header_cart": true
       }
     },
