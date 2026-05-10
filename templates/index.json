@@ -42,7 +42,7 @@
                   "type": "title",
                   "settings": {
                     "heading_size": "h3",
-                    "title": "20% OFF END MONDAY",
+                    "title": "NEW ARRIVALS",
                     "font": "--font-family-second",
                     "text_transfrom": "default",
                     "color": "#ffffff",
@@ -65,7 +65,7 @@
                   "type": "title",
                   "settings": {
                     "heading_size": "h3",
-                    "title": "Recharge your  dreams",
+                    "title": "Handcrafted <br> for your home",
                     "font": "--font-family-second",
                     "text_transfrom": "default",
                     "color": "#ffffff",
@@ -555,7 +555,7 @@
                         "border_radius_icon": "0px 0px 0px 0px",
                         "width_icon": 20,
                         "margin_icon": "0px 0px 0px 0px",
-                        "button_link": "",
+                        "button_link": "shopify://collections/soft-furnishing",
                         "border_radius": "0px 0px 0px 0px",
                         "border": false,
                         "border_width": "0px 0px 0px 0px",
@@ -679,7 +679,7 @@
                       "type": "title",
                       "settings": {
                         "heading_size": "h3",
-                        "title": "Dining & Kitchen",
+                        "title": "Cushions & More",
                         "font": "--font-family-second",
                         "text_transfrom": "default",
                         "color": "#000000",
@@ -1022,7 +1022,7 @@
               "settings": {
                 "padding": "",
                 "margin": "0 0 30px",
-                "featured_products": "armchairs",
+                "featured_products": "all",
                 "limit": 8,
                 "navigation": true,
                 "infinite": true,
@@ -1185,7 +1185,7 @@
                 "collection_image_NXTLbB": {
                   "type": "_collection-image",
                   "settings": {
-                    "collection": "bedroom",
+                    "collection": "rugs",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
@@ -1195,7 +1195,7 @@
                 "collection_image_mTNHC3": {
                   "type": "_collection-image",
                   "settings": {
-                    "collection": "dining-room",
+                    "collection": "cushion-covers",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
@@ -1205,7 +1205,7 @@
                 "collection_image_qGXLY6": {
                   "type": "_collection-image",
                   "settings": {
-                    "collection": "light-bulb",
+                    "collection": "curtains",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
@@ -1215,7 +1215,7 @@
                 "collection_image_yz6zyt": {
                   "type": "_collection-image",
                   "settings": {
-                    "collection": "living-room",
+                    "collection": "table-mats-runners",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
@@ -1225,7 +1225,7 @@
                 "collection_image_GkWUGp": {
                   "type": "_collection-image",
                   "settings": {
-                    "collection": "office",
+                    "collection": "bead-coasters",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
@@ -1235,7 +1235,7 @@
                 "collection_image_C7cRkf": {
                   "type": "_collection-image",
                   "settings": {
-                    "collection": "outdoor",
+                    "collection": "objects",
                     "count": false,
                     "text_count": "",
                     "effects": "none"
@@ -1300,7 +1300,6 @@
       "block_order": [
         "column_pk9C4F"
       ],
-      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": false,
@@ -1369,7 +1368,7 @@
                       "type": "title",
                       "settings": {
                         "heading_size": "h3",
-                        "title": "Objects of interest",
+                        "title": "Objects of beauty",
                         "font": "--font-family-second",
                         "text_transfrom": "default",
                         "color": "#000000",
@@ -1391,7 +1390,7 @@
                     "button_DLxyN3": {
                       "type": "button",
                       "settings": {
-                        "title": "SHOP DECOR",
+                        "title": "SHOP OBJECTS",
                         "layout": "layout-1",
                         "font": "--font-family-second",
                         "text_transform": "none",
@@ -1405,7 +1404,7 @@
                         "border_radius_icon": "0px 0px 0px 0px",
                         "width_icon": 14,
                         "margin_icon": "0px 0px 0px 5px",
-                        "button_link": "shopify://collections/all",
+                        "button_link": "shopify://collections/objects",
                         "border_radius": "0px 0px 0px 0px",
                         "border": true,
                         "border_width": "1px",
@@ -1526,7 +1525,7 @@
                     "button_CC6cMV": {
                       "type": "button",
                       "settings": {
-                        "title": "SHOP RUG",
+                        "title": "SHOP RUGS",
                         "layout": "layout-1",
                         "font": "--font-family-second",
                         "text_transform": "none",
@@ -1540,7 +1539,7 @@
                         "border_radius_icon": "0px 0px 0px 0px",
                         "width_icon": 14,
                         "margin_icon": "0px 0px 0px 5px",
-                        "button_link": "shopify://collections/all",
+                        "button_link": "shopify://collections/rugs",
                         "border_radius": "0px 0px 0px 0px",
                         "border": true,
                         "border_width": "1px",
@@ -1639,7 +1638,7 @@
                       "type": "title",
                       "settings": {
                         "heading_size": "h3",
-                        "title": "Streamlined storage",
+                        "title": "Soft furnishings",
                         "font": "--font-family-second",
                         "text_transfrom": "default",
                         "color": "#000000",
@@ -1661,7 +1660,7 @@
                     "button_PCHeBE": {
                       "type": "button",
                       "settings": {
-                        "title": "SHOP STORAGE",
+                        "title": "SHOP FURNISHING",
                         "layout": "layout-1",
                         "font": "--font-family-second",
                         "text_transform": "none",
@@ -1675,7 +1674,7 @@
                         "border_radius_icon": "0px 0px 0px 0px",
                         "width_icon": 14,
                         "margin_icon": "0px 0px 0px 5px",
-                        "button_link": "shopify://collections/all",
+                        "button_link": "shopify://collections/soft-furnishing",
                         "border_radius": "0px 0px 0px 0px",
                         "border": true,
                         "border_width": "1px",
@@ -1788,7 +1787,7 @@
                   "type": "title",
                   "settings": {
                     "heading_size": "h3",
-                    "title": "Free full-service delivery",
+                    "title": "Nationwide delivery",
                     "font": "--font-family-second",
                     "text_transfrom": "default",
                     "color": "#000000",
@@ -1810,7 +1809,7 @@
                 "description_BgXYk7": {
                   "type": "description",
                   "settings": {
-                    "desc": "Sit back and relax! We put your new furniture into place and take all rubbish with us.",
+                    "desc": "Each order is carefully packed and delivered to your door. We ensure every piece arrives safely.",
                     "font": "--font-family-second",
                     "text_transfrom": "default",
                     "color": "#868686",
@@ -1876,7 +1875,7 @@
                   "type": "title",
                   "settings": {
                     "heading_size": "h3",
-                    "title": "Worry-free purchasing",
+                    "title": "Easy returns",
                     "font": "--font-family-second",
                     "text_transfrom": "default",
                     "color": "#000000",
@@ -1898,7 +1897,7 @@
                 "description_TzBDnz": {
                   "type": "description",
                   "settings": {
-                    "desc": "Your new FEST piece comes with a 3-Year Warranty, including at-home repair service.",
+                    "desc": "Shop with confidence. Easy 30-day returns on all orders — no questions asked.",
                     "font": "--font-family-second",
                     "text_transfrom": "default",
                     "color": "#868686",
@@ -1964,7 +1963,7 @@
                   "type": "title",
                   "settings": {
                     "heading_size": "h3",
-                    "title": "Choose from over 100 fabrics",
+                    "title": "Genuine handcraft",
                     "font": "--font-family-second",
                     "text_transfrom": "default",
                     "color": "#000000",
@@ -1986,7 +1985,7 @@
                 "description_bdfRrE": {
                   "type": "description",
                   "settings": {
-                    "desc": "Mix and match. Create your one-of-a-kind piece of furniture.",
+                    "desc": "Every Black Mango piece is made by hand by skilled artisans. No two items are exactly alike.",
                     "font": "--font-family-second",
                     "text_transfrom": "default",
                     "color": "#868686",

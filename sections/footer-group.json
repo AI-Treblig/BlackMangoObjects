@@ -121,7 +121,7 @@
             "description_XyCWHr": {
               "type": "description",
               "settings": {
-                "desc": "Add :4 Copley Place, 7th Floor, Boston, MA 6",
+                "desc": "South Africa",
                 "font": "--font-family-second",
                 "text_transfrom": "default",
                 "color": "#868686",
@@ -143,7 +143,7 @@
             "description_K3xATP": {
               "type": "description",
               "settings": {
-                "desc": "Tell : 866.453.4748",
+                "desc": "WhatsApp: Available on request",
                 "font": "--font-family-second",
                 "text_transfrom": "default",
                 "color": "#868686",
@@ -165,7 +165,7 @@
             "description_dXJqdw": {
               "type": "description",
               "settings": {
-                "desc": "HR Fax: 810.222.5439",
+                "desc": "Email: hello@blackmangoobjects.com",
                 "font": "--font-family-second",
                 "text_transfrom": "default",
                 "color": "#868686",
@@ -187,7 +187,7 @@
             "description_Fwhh9b": {
               "type": "description",
               "settings": {
-                "desc": "sales@funorifurniture.com",
+                "desc": "Online store — open 24/7",
                 "font": "--font-family-second",
                 "text_transfrom": "default",
                 "color": "#868686",
@@ -238,7 +238,7 @@
               "type": "title",
               "settings": {
                 "heading_size": "h3",
-                "title": "CATEGOIRES",
+                "title": "COLLECTIONS",
                 "font": "--font-family-second",
                 "text_transfrom": "default",
                 "color": "#000000",
@@ -276,8 +276,8 @@
                 "list_item_rqrQWc": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Furniture",
-                    "url": "#",
+                    "text": "Soft Furnishing",
+                    "url": "/collections/soft-furnishing",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
@@ -287,8 +287,8 @@
                 "list_item_gVnDAa": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Tables",
-                    "url": "#",
+                    "text": "Rugs",
+                    "url": "/collections/rugs",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
@@ -298,8 +298,8 @@
                 "list_item_qYDVcn": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Seating",
-                    "url": "#",
+                    "text": "Cushion Covers",
+                    "url": "/collections/cushion-covers",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
@@ -309,8 +309,8 @@
                 "list_item_LEzgVG": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Desks & office",
-                    "url": "#",
+                    "text": "Curtains",
+                    "url": "/collections/curtains",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
@@ -320,8 +320,8 @@
                 "list_item_UefpNA": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Storage",
-                    "url": "#",
+                    "text": "Objects",
+                    "url": "/collections/objects",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
@@ -331,8 +331,8 @@
                 "list_item_9N7PiX": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Bed & Bath",
-                    "url": "#",
+                    "text": "All Products",
+                    "url": "/collections/all",
                     "icon": "",
                     "padding": "",
                     "margin": ""
@@ -416,8 +416,8 @@
                 "list_item_8QQaMM": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Sale",
-                    "url": "#",
+                    "text": "About Us",
+                    "url": "/pages/about",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
@@ -427,8 +427,8 @@
                 "list_item_eUarbW": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Quick Ship",
-                    "url": "#",
+                    "text": "Blog",
+                    "url": "/blogs/news",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
@@ -438,8 +438,8 @@
                 "list_item_JefR9b": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "New Designs",
-                    "url": "#",
+                    "text": "Contact Us",
+                    "url": "/pages/contact",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
@@ -449,8 +449,8 @@
                 "list_item_e4qpHy": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Accidental Fabric Protection",
-                    "url": "#",
+                    "text": "Shipping Policy",
+                    "url": "/policies/shipping-policy",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
@@ -460,8 +460,8 @@
                 "list_item_EYYUgm": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Furniture Care",
-                    "url": "#",
+                    "text": "Returns & Refunds",
+                    "url": "/policies/refund-policy",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
@@ -471,8 +471,8 @@
                 "list_item_xMhyWb": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Gift Cards",
-                    "url": "#",
+                    "text": "Privacy Policy",
+                    "url": "/policies/privacy-policy",
                     "icon": "",
                     "padding": "",
                     "margin": ""
@@ -705,7 +705,7 @@
             "text_block_RY8WdH": {
               "type": "text-block",
               "settings": {
-                "title": "Copyright © 2026. All Right Reserved",
+                "title": "© 2026 Black Mango Objects. All Rights Reserved.",
                 "font": "--font-family-base",
                 "text_transform": "none",
                 "font_style": "normal",
