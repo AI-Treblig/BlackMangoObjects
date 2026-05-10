@@ -66,6 +66,39 @@
   </script>
 {% endunless %}
 
+<script>
+(function() {
+  function initProductMediaNav() {
+    var mediaGroup = document.querySelector('.js-product-media-group');
+    if (!mediaGroup) return;
+    var swiper = mediaGroup.swiper;
+    if (!swiper) return;
+
+    var nextBtn = mediaGroup.querySelector('[data-slick-next]');
+    var prevBtn = mediaGroup.querySelector('[data-slick-previous]');
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        swiper.slideNext();
+      });
+    }
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        swiper.slidePrev();
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() { setTimeout(initProductMediaNav, 600); });
+  } else {
+    setTimeout(initProductMediaNav, 600);
+  }
+})();
+</script>
+
 {% schema %}
 {
   "name": "Main Product",
