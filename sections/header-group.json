@@ -830,7 +830,7 @@
                     "widget": "image",
                     "menu_col": "25%",
                     "menu_heading": "",
-                    "menu_link_list_child": "",
+                    "menu_link_list_child": "bmo-main-menu",
                     "banner_title": "",
                     "banner_button": "New Arrivals",
                     "banner_link": "#",
