@@ -1277,7 +1277,7 @@
       "settings": {
         "width_header": "1770px",
         "padding": "20px 0",
-        "header_sticky": false,
+        "header_sticky": true,
         "header_absolute": false,
         "color_homepage_text": "#ffffff",
         "logo": "shopify://shop_images/blackmango-logo.svg",

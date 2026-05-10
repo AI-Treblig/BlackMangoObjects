@@ -629,7 +629,7 @@
             "banners_box_LUkJ9T": {
               "type": "banners-box",
               "settings": {
-                "image": "shopify://shop_images/cushion-banner-home.webp",
+                "image": "shopify://shop_images/banner2.webp",
                 "url": "",
                 "border_radius_img": "0px 0px 0px 0px",
                 "style_image": "default",
@@ -748,6 +748,7 @@
                     "banners_box_NagwwV": {
                       "type": "banners-box",
                       "settings": {
+                        "image": "shopify://shop_images/cushion-banner-home.webp",
                         "url": "",
                         "border_radius_img": "0px 0px 0px 0px",
                         "style_image": "default",
@@ -1307,9 +1308,9 @@
         "background_fixed": false,
         "background_size": "cover",
         "background_pos": "center center",
-        "background_color": "#2b3944",
+        "background_color": "#000000",
         "width_bg": "full",
-        "half_overflow": true,
+        "half_overflow": false,
         "padding_bg": "",
         "padding": "90px 0 85px",
         "margin": "0 0 80px",
