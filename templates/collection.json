@@ -14,13 +14,13 @@
       "settings": {
         "enable": true,
         "bgimage": true,
-        "image": "shopify://shop_images/bg-breadcrumb.jpg",
+        "image": "shopify://shop_images/banner.webp",
         "show_pagetitle": true,
         "show_breadcrumb": true,
         "color_breadcrumb": "#000000",
         "align_breadcrumb": "center",
         "enable_collection": true,
-        "categories_menu": "categories",
+        "categories_menu": "",
         "style_collection": "style_2",
         "navigation": true,
         "infinite": true,
@@ -447,7 +447,7 @@
           "settings": {
             "categories_enable": true,
             "categories_title": "Categories",
-            "categories_menu": "categories",
+            "categories_menu": "",
             "show_count": true,
             "enable_filtering": true
           },
@@ -472,7 +472,7 @@
           "settings": {
             "categories_enable": true,
             "categories_title": "Collection",
-            "categories_menu": "categories",
+            "categories_menu": "",
             "layput_shop": "simple",
             "page_item": 12,
             "numproduct_enable": true
