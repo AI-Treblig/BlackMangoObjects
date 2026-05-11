@@ -582,7 +582,7 @@
             "desc_story": {
               "type": "description",
               "settings": {
-                "desc": "Black Mango was born from two contrasting ideas — the elegance and mystery of Black, and the energy and vibrancy of Mango. Together, they represent something rare: décor that lives at the edge of art. Every piece we create is designed not just to fill a space, but to transform it.",
+                "desc": "Black Mango was born from two contrasting ideas - the elegance and mystery of Black, and the energy and vibrancy of Mango. Together, they represent something rare: décor that lives at the edge of art. Every piece we create is designed not just to fill a space, but to transform it.",
                 "font": "--font-family-base",
                 "text_transfrom": "default",
                 "color": "#868686",
@@ -617,7 +617,7 @@
         "max_width": "",
         "fullwidth": true,
         "background_gradient": "",
-        "background": "shopify://shop_images/bg-aboutus.webp",
+        "background": "shopify://shop_images/banner.webp",
         "background_fixed": false,
         "background_size": "cover",
         "background_pos": "center center",
