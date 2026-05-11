@@ -621,7 +621,7 @@
         "background_fixed": false,
         "background_size": "cover",
         "background_pos": "center center",
-        "background_color": "rgba(0,0,0,0)",
+        "background_color": "#ffffff",
         "width_bg": "container",
         "half_overflow": true,
         "padding_bg": "",
