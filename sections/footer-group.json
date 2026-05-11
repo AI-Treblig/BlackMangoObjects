@@ -103,7 +103,7 @@
                 "font": "--font-family-second",
                 "text_transfrom": "default",
                 "color": "#000000",
-                "font_size": 14,
+                "font_size": 100,
                 "line_height": 14,
                 "letter_spacing": 2,
                 "font_weight": "400",
@@ -111,7 +111,7 @@
                 "padding": "",
                 "margin": "0 0 20px",
                 "color_mobi": "#000000",
-                "font_size_mobi": 14,
+                "font_size_mobi": 20,
                 "line_height_mobi": 14,
                 "letter_spacing_mobi": 2,
                 "align_mobi": "left"
@@ -251,7 +251,7 @@
                 "padding": "",
                 "margin": "0 0 12px",
                 "color_mobi": "#000000",
-                "font_size_mobi": 14,
+                "font_size_mobi": 20,
                 "line_height_mobi": 24,
                 "letter_spacing_mobi": 2,
                 "align_mobi": "left"
@@ -391,7 +391,7 @@
                 "padding": "",
                 "margin": "0 0 12px",
                 "color_mobi": "#000000",
-                "font_size_mobi": 14,
+                "font_size_mobi": 20,
                 "line_height_mobi": 24,
                 "letter_spacing_mobi": 2,
                 "align_mobi": "left"
