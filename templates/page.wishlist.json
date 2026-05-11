@@ -14,7 +14,7 @@
       "settings": {
         "enable": true,
         "bgimage": true,
-        "image": "shopify://shop_images/bg-breadcrumb.jpg",
+        "image": "shopify://shop_images/banner.webp",
         "show_pagetitle": true,
         "show_breadcrumb": true,
         "color_breadcrumb": "#000000",
