@@ -167,7 +167,7 @@
               "type": "description",
               "settings": {
                 "desc": "Email: hello@blackmangoobjects.com",
-                "font": "--font-family-second",
+                "font": "--font-family-base",
                 "text_transfrom": "default",
                 "color": "#868686",
                 "font_size": 18,
@@ -189,7 +189,7 @@
               "type": "description",
               "settings": {
                 "desc": "Online store — open 24/7",
-                "font": "--font-family-second",
+                "font": "--font-family-base",
                 "text_transfrom": "default",
                 "color": "#868686",
                 "font_size": 18,
