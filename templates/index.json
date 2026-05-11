@@ -29,7 +29,7 @@
                 "vertical_align": "top",
                 "horizontal_align": "center",
                 "align": "center",
-                "animation": "left-to-right",
+                "animation": "fade-in",
                 "padding": "200px 0px 0px 0px",
                 "margin": "",
                 "disable_absolute": false,
