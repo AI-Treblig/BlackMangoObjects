@@ -277,6 +277,7 @@
               "blocks": {
                 "list_item_rqrQWc": {
                   "type": "_list-item",
+                  "disabled": true,
                   "settings": {
                     "text": "Soft Furnishing",
                     "url": "/collections/soft-furnishing",

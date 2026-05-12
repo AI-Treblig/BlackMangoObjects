@@ -2455,7 +2455,7 @@
             "settings": {
               "image": "shopify://shop_images/bmo-all-mobile.svg",
               "label": "More",
-              "url": ""
+              "url": "shopify://collections"
             }
           }
         },
