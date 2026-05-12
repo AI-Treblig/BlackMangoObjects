@@ -1191,6 +1191,7 @@
       "block_order": [
         "column_pk9C4F"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": false,
@@ -1206,6 +1207,95 @@
         "margin": "0 0 0px",
         "vertical_align": "top",
         "horizontal_align": "left"
+      }
+    },
+    "bm_category_strip_RFCikA": {
+      "type": "bm-category-strip",
+      "blocks": {
+        "category_Qh6PtL": {
+          "type": "category",
+          "settings": {
+            "label": "Rugs",
+            "url": "",
+            "circle_bg": "",
+            "circle_border_color": ""
+          }
+        },
+        "category_hK4mmH": {
+          "type": "category",
+          "settings": {
+            "label": "Cushion Covers",
+            "url": "",
+            "circle_bg": "",
+            "circle_border_color": ""
+          }
+        },
+        "category_iMagPk": {
+          "type": "category",
+          "settings": {
+            "label": "Curtains",
+            "url": "",
+            "circle_bg": "",
+            "circle_border_color": ""
+          }
+        },
+        "category_Qzchrz": {
+          "type": "category",
+          "settings": {
+            "label": "Throws",
+            "url": "",
+            "circle_bg": "",
+            "circle_border_color": ""
+          }
+        },
+        "category_jGKLij": {
+          "type": "category",
+          "settings": {
+            "label": "Objects",
+            "url": "",
+            "circle_bg": "",
+            "circle_border_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_Qh6PtL",
+        "category_hK4mmH",
+        "category_iMagPk",
+        "category_Qzchrz",
+        "category_jGKLij"
+      ],
+      "name": "BM Category Strip",
+      "settings": {
+        "bg_color": "#000000",
+        "bg_image_opacity": 100,
+        "bg_image_position": "center center",
+        "bg_image_size": "cover",
+        "heading": "",
+        "subheading": "",
+        "heading_size_desktop": 28,
+        "heading_size_mobile": 22,
+        "heading_color": "#ffffff",
+        "heading_align": "center",
+        "cols_desktop": 5,
+        "cols_tablet": 3,
+        "mobile_visible": 1.5,
+        "gap": 20,
+        "padding_y_desktop": 50,
+        "padding_y_mobile": 32,
+        "padding_x_desktop": 60,
+        "padding_x_mobile": 16,
+        "circle_size_desktop": 140,
+        "circle_size_mobile": 110,
+        "circle_bg": "#ffffff",
+        "circle_border_color": "#ffffff",
+        "circle_border_width": 0,
+        "label_size_desktop": 14,
+        "label_size_mobile": 12,
+        "label_color": "#ffffff",
+        "label_case": "none",
+        "label_letter_spacing": 0.5,
+        "label_gap": 18
       }
     },
     "featured_custom_section_7d7gx7": {
@@ -2234,6 +2324,7 @@
     "slidershow_wFjjfz",
     "featured_custom_section_VrgDaP",
     "featured_custom_section_DmnpLg",
+    "bm_category_strip_RFCikA",
     "featured_custom_section_7d7gx7",
     "featured_custom_section_f8EHJE",
     "featured_custom_section_pCbp6J",
