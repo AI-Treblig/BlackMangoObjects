@@ -1302,7 +1302,7 @@
         "fullwidth": false,
         "background_gradient": "",
         "background_fixed": false,
-        "background_size": "auto",
+        "background_size": "cover",
         "background_pos": "center center",
         "background_color": "#000000",
         "width_bg": "full",
@@ -2180,8 +2180,8 @@
   "order": [
     "slidershow_wFjjfz",
     "featured_custom_section_VrgDaP",
-    "featured_custom_section_7d7gx7",
     "featured_custom_section_DmnpLg",
+    "featured_custom_section_7d7gx7",
     "featured_custom_section_f8EHJE",
     "featured_custom_section_pCbp6J",
     "featured_custom_section_tXeKDy",
