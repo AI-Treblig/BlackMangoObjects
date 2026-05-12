@@ -975,6 +975,187 @@
         "horizontal_align": "left"
       }
     },
+    "featured_custom_section_DmnpLg": {
+      "type": "featured-custom-section",
+      "blocks": {
+        "column_pk9C4F": {
+          "type": "_column",
+          "settings": {
+            "width": 100,
+            "background_fixed": false,
+            "background_size": "cover",
+            "background_pos": "center center",
+            "padding": "0 15px | 0 7.5px",
+            "margin": "",
+            "width_lap": 100,
+            "width_tab": 100,
+            "width_mobi": 100,
+            "border": false,
+            "border_width": "0px 0px 0px 0px",
+            "border_color": "#ffffff",
+            "box_shadow": "none",
+            "border_radius": "0px 0px 0px 0px"
+          },
+          "blocks": {
+            "collection_image_j8tXBX": {
+              "type": "collection-image",
+              "settings": {
+                "padding": "",
+                "margin": "",
+                "navigation": true,
+                "infinite": true,
+                "autoplay": false,
+                "autoplay_speed": "10000",
+                "rows": 1,
+                "columns": 5,
+                "pergroup_columns": 1,
+                "space_columns": 90,
+                "column1440": 5,
+                "pergroup_column1440": 1,
+                "space_column1440": 30,
+                "column1": 4,
+                "pergroup_column1": 1,
+                "space_column1": 15,
+                "column2": 3,
+                "pergroup_column2": 1,
+                "space_column2": 15,
+                "column3": 2,
+                "pergroup_column3": 1,
+                "space_column3": 15,
+                "column4": 1.5,
+                "pergroup_column4": 1,
+                "space_column4": 15
+              },
+              "blocks": {
+                "collection_image_NXTLbB": {
+                  "type": "_collection-image",
+                  "settings": {
+                    "collection": "rugs",
+                    "image": "shopify://shop_images/bmo-rugs-icon-w.svg",
+                    "count": false,
+                    "text_count": "",
+                    "effects": "none"
+                  },
+                  "blocks": {}
+                },
+                "collection_image_mTNHC3": {
+                  "type": "_collection-image",
+                  "settings": {
+                    "collection": "cushion-covers",
+                    "image": "shopify://shop_images/bmo-cushion-covers-icon-w.svg",
+                    "count": false,
+                    "text_count": "",
+                    "effects": "none"
+                  },
+                  "blocks": {}
+                },
+                "collection_image_qGXLY6": {
+                  "type": "_collection-image",
+                  "settings": {
+                    "collection": "curtains",
+                    "image": "shopify://shop_images/bmo-curtains.svg",
+                    "count": false,
+                    "text_count": "",
+                    "effects": "none"
+                  },
+                  "blocks": {}
+                },
+                "collection_image_yz6zyt": {
+                  "type": "_collection-image",
+                  "settings": {
+                    "collection": "throws",
+                    "image": "shopify://shop_images/bmo-throw-icon-w_4bd2394f-7944-40f8-a6ea-dae510536aa8.svg",
+                    "count": false,
+                    "text_count": "",
+                    "effects": "none"
+                  },
+                  "blocks": {}
+                },
+                "collection_image_GkWUGp": {
+                  "type": "_collection-image",
+                  "settings": {
+                    "collection": "objects",
+                    "image": "shopify://shop_images/bmo-objects-w.svg",
+                    "count": false,
+                    "text_count": "",
+                    "effects": "none"
+                  },
+                  "blocks": {}
+                },
+                "custom-colleciont-image": {
+                  "type": "custom-collection-image",
+                  "static": true,
+                  "settings": {
+                    "border_image": "50%",
+                    "width_image": "100%",
+                    "font": "--font-family-second",
+                    "color": "#ffffff",
+                    "background": "rgba(0,0,0,0)",
+                    "color_hover": "#000000",
+                    "background_hover": "rgba(0,0,0,0)",
+                    "font_size": 18,
+                    "line_height": 22,
+                    "letter_spacing": 0,
+                    "font_weight": "400",
+                    "padding_title": "0px 0px 0px 0px",
+                    "border_radius": "0",
+                    "text_transform": "none",
+                    "text_align": "center",
+                    "font_count": "--font-family-second",
+                    "color_count": "#000000",
+                    "font_size_count": 16,
+                    "line_height_count": 22,
+                    "letter_spacing_count": 0,
+                    "font_weight_count": "500",
+                    "text_transform_count": "uppercase",
+                    "margin_count": "0px 0px 0px 0px",
+                    "font_size_mobi": 16,
+                    "line_height_mobi": 22,
+                    "letter_spacing_mobi": 0,
+                    "font_weight_mobi": "400",
+                    "padding_title_mobi": "0px 0px 0px 0px",
+                    "font_size_count_mobi": 16,
+                    "line_height_count_mobi": 22,
+                    "letter_spacing_count_mobi": 0,
+                    "font_weight_count_mobi": "500"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "collection_image_NXTLbB",
+                "collection_image_mTNHC3",
+                "collection_image_qGXLY6",
+                "collection_image_yz6zyt",
+                "collection_image_GkWUGp"
+              ]
+            }
+          },
+          "block_order": [
+            "collection_image_j8tXBX"
+          ]
+        }
+      },
+      "block_order": [
+        "column_pk9C4F"
+      ],
+      "settings": {
+        "max_width": "",
+        "fullwidth": false,
+        "background_gradient": "",
+        "background_fixed": false,
+        "background_size": "cover",
+        "background_pos": "center center",
+        "background_color": "#000000",
+        "width_bg": "full",
+        "half_overflow": false,
+        "padding_bg": "",
+        "padding": "90px 0 85px",
+        "margin": "0 0 0px",
+        "vertical_align": "top",
+        "horizontal_align": "left"
+      }
+    },
     "featured_custom_section_7d7gx7": {
       "type": "featured-custom-section",
       "blocks": {
@@ -1129,187 +1310,6 @@
         "padding_bg": "",
         "padding": "",
         "margin": "75px 0 80px",
-        "vertical_align": "top",
-        "horizontal_align": "left"
-      }
-    },
-    "featured_custom_section_DmnpLg": {
-      "type": "featured-custom-section",
-      "blocks": {
-        "column_pk9C4F": {
-          "type": "_column",
-          "settings": {
-            "width": 100,
-            "background_fixed": false,
-            "background_size": "cover",
-            "background_pos": "center center",
-            "padding": "0 15px | 0 7.5px",
-            "margin": "",
-            "width_lap": 100,
-            "width_tab": 100,
-            "width_mobi": 100,
-            "border": false,
-            "border_width": "0px 0px 0px 0px",
-            "border_color": "#ffffff",
-            "box_shadow": "none",
-            "border_radius": "0px 0px 0px 0px"
-          },
-          "blocks": {
-            "collection_image_j8tXBX": {
-              "type": "collection-image",
-              "settings": {
-                "padding": "",
-                "margin": "",
-                "navigation": true,
-                "infinite": true,
-                "autoplay": false,
-                "autoplay_speed": "10000",
-                "rows": 1,
-                "columns": 5,
-                "pergroup_columns": 1,
-                "space_columns": 90,
-                "column1440": 5,
-                "pergroup_column1440": 1,
-                "space_column1440": 30,
-                "column1": 4,
-                "pergroup_column1": 1,
-                "space_column1": 15,
-                "column2": 3,
-                "pergroup_column2": 1,
-                "space_column2": 15,
-                "column3": 2,
-                "pergroup_column3": 1,
-                "space_column3": 15,
-                "column4": 1.5,
-                "pergroup_column4": 1,
-                "space_column4": 15
-              },
-              "blocks": {
-                "collection_image_NXTLbB": {
-                  "type": "_collection-image",
-                  "settings": {
-                    "collection": "rugs",
-                    "image": "shopify://shop_images/bmo-rugs-icon-w.svg",
-                    "count": false,
-                    "text_count": "",
-                    "effects": "none"
-                  },
-                  "blocks": {}
-                },
-                "collection_image_mTNHC3": {
-                  "type": "_collection-image",
-                  "settings": {
-                    "collection": "cushion-covers",
-                    "image": "shopify://shop_images/bmo-cushion-covers-icon-w.svg",
-                    "count": false,
-                    "text_count": "",
-                    "effects": "none"
-                  },
-                  "blocks": {}
-                },
-                "collection_image_qGXLY6": {
-                  "type": "_collection-image",
-                  "settings": {
-                    "collection": "curtains",
-                    "image": "shopify://shop_images/bmo-curtains-icon-w.svg",
-                    "count": false,
-                    "text_count": "",
-                    "effects": "none"
-                  },
-                  "blocks": {}
-                },
-                "collection_image_yz6zyt": {
-                  "type": "_collection-image",
-                  "settings": {
-                    "collection": "throws",
-                    "image": "shopify://shop_images/bmo-throw-icon-w_4bd2394f-7944-40f8-a6ea-dae510536aa8.svg",
-                    "count": false,
-                    "text_count": "",
-                    "effects": "none"
-                  },
-                  "blocks": {}
-                },
-                "collection_image_GkWUGp": {
-                  "type": "_collection-image",
-                  "settings": {
-                    "collection": "objects",
-                    "image": "shopify://shop_images/bmo-objects-w.svg",
-                    "count": false,
-                    "text_count": "",
-                    "effects": "none"
-                  },
-                  "blocks": {}
-                },
-                "custom-colleciont-image": {
-                  "type": "custom-collection-image",
-                  "static": true,
-                  "settings": {
-                    "border_image": "50%",
-                    "width_image": "100%",
-                    "font": "--font-family-second",
-                    "color": "#ffffff",
-                    "background": "rgba(0,0,0,0)",
-                    "color_hover": "#000000",
-                    "background_hover": "rgba(0,0,0,0)",
-                    "font_size": 18,
-                    "line_height": 22,
-                    "letter_spacing": 0,
-                    "font_weight": "400",
-                    "padding_title": "0px 0px 0px 0px",
-                    "border_radius": "0",
-                    "text_transform": "none",
-                    "text_align": "center",
-                    "font_count": "--font-family-second",
-                    "color_count": "#000000",
-                    "font_size_count": 16,
-                    "line_height_count": 22,
-                    "letter_spacing_count": 0,
-                    "font_weight_count": "500",
-                    "text_transform_count": "uppercase",
-                    "margin_count": "0px 0px 0px 0px",
-                    "font_size_mobi": 16,
-                    "line_height_mobi": 22,
-                    "letter_spacing_mobi": 0,
-                    "font_weight_mobi": "400",
-                    "padding_title_mobi": "0px 0px 0px 0px",
-                    "font_size_count_mobi": 16,
-                    "line_height_count_mobi": 22,
-                    "letter_spacing_count_mobi": 0,
-                    "font_weight_count_mobi": "500"
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "collection_image_NXTLbB",
-                "collection_image_mTNHC3",
-                "collection_image_qGXLY6",
-                "collection_image_yz6zyt",
-                "collection_image_GkWUGp"
-              ]
-            }
-          },
-          "block_order": [
-            "collection_image_j8tXBX"
-          ]
-        }
-      },
-      "block_order": [
-        "column_pk9C4F"
-      ],
-      "settings": {
-        "max_width": "",
-        "fullwidth": false,
-        "background_gradient": "",
-        "background_fixed": false,
-        "background_size": "cover",
-        "background_pos": "center center",
-        "background_color": "#000000",
-        "width_bg": "full",
-        "half_overflow": false,
-        "padding_bg": "",
-        "padding": "90px 0 85px",
-        "margin": "0 0 0px",
         "vertical_align": "top",
         "horizontal_align": "left"
       }
@@ -2180,8 +2180,8 @@
   "order": [
     "slidershow_wFjjfz",
     "featured_custom_section_VrgDaP",
-    "featured_custom_section_7d7gx7",
     "featured_custom_section_DmnpLg",
+    "featured_custom_section_7d7gx7",
     "featured_custom_section_f8EHJE",
     "featured_custom_section_pCbp6J",
     "featured_custom_section_tXeKDy",
