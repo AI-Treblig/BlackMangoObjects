@@ -1217,7 +1217,7 @@
           "settings": {
             "image": "shopify://shop_images/bmo-rugs-hmpg.svg",
             "label": "Rugs",
-            "url": "",
+            "url": "shopify://collections/rugs",
             "circle_bg": "",
             "circle_border_color": ""
           }
@@ -1227,7 +1227,7 @@
           "settings": {
             "image": "shopify://shop_images/bmo-cushion.svg",
             "label": "Cushion Covers",
-            "url": "",
+            "url": "shopify://collections/cushion-covers",
             "circle_bg": "",
             "circle_border_color": ""
           }
@@ -1237,7 +1237,7 @@
           "settings": {
             "image": "shopify://shop_images/bmo-curtains.svg",
             "label": "Curtains",
-            "url": "",
+            "url": "shopify://collections/curtains",
             "circle_bg": "",
             "circle_border_color": ""
           }
@@ -1247,7 +1247,7 @@
           "settings": {
             "image": "shopify://shop_images/bmo-throws-hmpg.svg",
             "label": "Throws",
-            "url": "",
+            "url": "shopify://collections/throws",
             "circle_bg": "",
             "circle_border_color": ""
           }
@@ -1257,7 +1257,7 @@
           "settings": {
             "image": "shopify://shop_images/bmo-objects-homepg.svg",
             "label": "Objects",
-            "url": "",
+            "url": "shopify://collections/objects",
             "circle_bg": "",
             "circle_border_color": ""
           }
