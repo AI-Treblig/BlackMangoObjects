@@ -2526,6 +2526,36 @@
           "show_tooltip": false,
           "tooltip_text": "Chat with us"
         }
+      },
+      "bm-desktop-header": {
+        "type": "bm-desktop-header",
+        "settings": {
+          "logo": "shopify://shop_images/blackmango-logo.svg",
+          "logo_height": 70,
+          "layout": "menu-below",
+          "menu": "bmo-main-menu",
+          "menu_gap": 32,
+          "menu_font": "ebgaramond_n4",
+          "menu_case": "uppercase",
+          "show_search": true,
+          "show_account": true,
+          "show_wishlist": true,
+          "wishlist_url": "",
+          "show_cart": true,
+          "bg_color": "#ffffff",
+          "text_color": "#000000",
+          "hover_color": "#000000",
+          "accent_color": "#000000",
+          "border_color": "#eeeeee",
+          "dropdown_bg": "#ffffff",
+          "dropdown_color": "#000000",
+          "dropdown_hover_color": "#666666",
+          "font_size": 18,
+          "letter_spacing": 1,
+          "font_weight": "500",
+          "padding_y": 18,
+          "sticky": true
+        }
       }
     },
     "content_for_index": [
