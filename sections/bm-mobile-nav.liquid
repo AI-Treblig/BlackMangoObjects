@@ -177,6 +177,31 @@
           {%- endfor -%}
         </div>
       </div>
+    {%- elsif section.settings.show_default_categories -%}
+      {%- comment -%} Fallback: auto-render from the chosen collection list {%- endcomment -%}
+      {%- assign cat_list = linklists[section.settings.categories_menu] -%}
+      {%- if cat_list.links.size > 0 -%}
+        <div class="bm-mnav-cats{% if section.settings.cats_layout == 'scroll' %} bm-mnav-cats--scroll{% endif %}">
+          {%- if section.settings.cats_title != blank -%}
+            <h3 class="bm-mnav-cats__title">{{ section.settings.cats_title }}</h3>
+          {%- endif -%}
+          <div class="bm-mnav-cats__grid">
+            {%- for l in cat_list.links limit: 12 -%}
+              {%- assign coll = collections[l.handle] -%}
+              <a href="{{ l.url }}" class="bm-mnav-cat">
+                <span class="bm-mnav-cat__img">
+                  {%- if coll.image -%}
+                    <img src="{{ coll.image | image_url: width: 240 }}" alt="{{ l.title | escape }}" loading="lazy">
+                  {%- elsif coll.products.first.featured_image -%}
+                    <img src="{{ coll.products.first.featured_image | image_url: width: 240 }}" alt="{{ l.title | escape }}" loading="lazy">
+                  {%- endif -%}
+                </span>
+                <span class="bm-mnav-cat__label">{{ l.title }}</span>
+              </a>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
     {%- endif -%}
 
     {%- if section.settings.contact_phone != blank or section.settings.contact_email != blank -%}
@@ -669,7 +694,9 @@
     { "type": "url", "id": "instagram_url", "label": "Instagram URL", "info": "e.g. https://instagram.com/yourhandle" },
     { "type": "text", "id": "whatsapp_number", "label": "WhatsApp number", "info": "International format, e.g. 919876543210 (no plus or spaces)" },
 
-    { "type": "header", "content": "Category circles (drawer)", "info": "Add a 'Category icon' block for each circle. Upload a custom image and set the URL." },
+    { "type": "header", "content": "Category circles (drawer)", "info": "Add a 'Category icon' block for each circle, OR enable the menu-driven fallback below." },
+    { "type": "checkbox", "id": "show_default_categories", "label": "Auto-show categories from a menu", "default": true, "info": "When you have no Category icon blocks, pull categories from the menu chosen below. Each menu item is shown as a circle using its linked collection's image." },
+    { "type": "link_list", "id": "categories_menu", "label": "Categories menu (fallback)", "default": "main-menu", "info": "Used only when there are no Category icon blocks." },
     { "type": "text", "id": "cats_title", "label": "Section title (optional)", "default": "" },
     { "type": "range", "id": "cats_title_size", "label": "Title font size (px)", "min": 12, "max": 24, "step": 1, "default": 16 },
     { "type": "color", "id": "cats_title_color", "label": "Title color", "default": "#000000" },
