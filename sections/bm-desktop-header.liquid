@@ -290,14 +290,14 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 11px 26px 11px 26px;
+    padding: {{ section.settings.dropdown_item_padding | default: 11 }}px 26px;
     color: var(--dh-dropdown-color);
     text-decoration: none;
-    text-transform: none;
-    letter-spacing: 0.4px;
+    text-transform: {{ section.settings.dropdown_case | default: 'none' }};
+    letter-spacing: {{ section.settings.dropdown_letter_spacing | default: 0.4 }}px;
     font-family: var(--dh-menu-font, var(--font-family-base, 'Manrope', sans-serif));
-    font-size: 14px;
-    font-weight: 400;
+    font-size: {{ section.settings.dropdown_font_size | default: 14 }}px;
+    font-weight: {{ section.settings.dropdown_font_weight | default: '400' }};
     line-height: 1.4;
     transition: color .25s ease, padding-left .25s ease, background .25s ease;
     position: relative;
@@ -375,9 +375,32 @@
     { "type": "color", "id": "hover_color", "label": "Hover color", "default": "#000000" },
     { "type": "color", "id": "accent_color", "label": "Badge / accent", "default": "#000000" },
     { "type": "color", "id": "border_color", "label": "Border / divider", "default": "#eeeeee" },
+    { "type": "header", "content": "Dropdown" },
     { "type": "color", "id": "dropdown_bg", "label": "Dropdown background", "default": "#ffffff" },
     { "type": "color", "id": "dropdown_color", "label": "Dropdown text color", "default": "#000000" },
     { "type": "color", "id": "dropdown_hover_color", "label": "Dropdown link hover color", "default": "#666666" },
+    { "type": "range", "id": "dropdown_font_size", "label": "Dropdown font size (px)", "min": 11, "max": 22, "step": 1, "default": 14 },
+    { "type": "select", "id": "dropdown_font_weight", "label": "Dropdown font weight",
+      "options": [
+        { "value": "300", "label": "Light" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "400"
+    },
+    { "type": "range", "id": "dropdown_letter_spacing", "label": "Dropdown letter spacing (px)", "min": 0, "max": 4, "step": 0.5, "default": 0.4 },
+    { "type": "select", "id": "dropdown_case", "label": "Dropdown text case",
+      "options": [
+        { "value": "none", "label": "Original" },
+        { "value": "uppercase", "label": "UPPERCASE" },
+        { "value": "capitalize", "label": "Capitalized" },
+        { "value": "lowercase", "label": "lowercase" }
+      ],
+      "default": "none"
+    },
+    { "type": "range", "id": "dropdown_item_padding", "label": "Item vertical padding (px)", "min": 4, "max": 22, "step": 1, "default": 11 },
 
     { "type": "header", "content": "Typography" },
     { "type": "range", "id": "font_size", "label": "Menu font size (px)", "min": 10, "max": 22, "step": 1, "default": 13 },
