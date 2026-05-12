@@ -2391,7 +2391,7 @@
             "settings": {
               "icon": "shop",
               "label": "Shop",
-              "url": "shopify://collections/all"
+              "url": ""
             }
           },
           "bm-mobile-nav-2": {
@@ -2409,31 +2409,116 @@
               "label": "Wishlist",
               "url": ""
             }
+          },
+          "bm-mobile-nav-4": {
+            "type": "category",
+            "settings": {
+              "image": "shopify://shop_images/bmo-rugs-icon-w.svg",
+              "label": "Rugs",
+              "url": "shopify://collections/rugs"
+            }
+          },
+          "bm-mobile-nav-5": {
+            "type": "category",
+            "settings": {
+              "label": "Curtains",
+              "url": ""
+            }
+          },
+          "bm-mobile-nav-6": {
+            "type": "category",
+            "settings": {
+              "label": "Objects",
+              "url": ""
+            }
+          },
+          "bm-mobile-nav-7": {
+            "type": "category",
+            "settings": {
+              "label": "Cushions",
+              "url": ""
+            }
+          },
+          "bm-mobile-nav-8": {
+            "type": "category",
+            "settings": {
+              "label": "Throws",
+              "url": ""
+            }
+          },
+          "bm-mobile-nav-9": {
+            "type": "category",
+            "settings": {
+              "label": "More",
+              "url": ""
+            }
           }
         },
         "block_order": [
           "bm-mobile-nav-0",
           "bm-mobile-nav-1",
           "bm-mobile-nav-2",
-          "bm-mobile-nav-3"
+          "bm-mobile-nav-3",
+          "bm-mobile-nav-4",
+          "bm-mobile-nav-5",
+          "bm-mobile-nav-6",
+          "bm-mobile-nav-7",
+          "bm-mobile-nav-8",
+          "bm-mobile-nav-9"
         ],
         "settings": {
-          "logo_mobile": "shopify://shop_images/blackmango-logo.svg",
-          "logo_height": 58,
+          "logo_height": 36,
           "bar_bg": "#ffffff",
           "icon_color": "#000000",
-          "show_cart_icon": true,
-          "menu": "bmo-main-menu",
+          "show_cart_icon": false,
+          "menu": "main-menu",
           "drawer_title": "MENU",
+          "drawer_title_size": 20,
+          "drawer_title_color": "#000000",
+          "menu_font_size": 15,
+          "menu_color": "#000000",
+          "menu_child_color": "#444444",
           "show_search": true,
           "search_placeholder": "Search products...",
-          "instagram_url": "https://instagram.com/balckmangostudios",
-          "whatsapp_number": "918698205381",
-          "contact_phone": "+91 86982 05381",
-          "contact_email": "hello@blackmangoobjects.com",
+          "instagram_url": "",
+          "whatsapp_number": "",
+          "show_default_categories": true,
+          "categories_menu": "main-menu",
+          "cats_title": "",
+          "cats_title_size": 16,
+          "cats_title_color": "#000000",
+          "cats_layout": "grid",
+          "cat_label_size": 12,
+          "cat_label_color": "#000000",
+          "cat_border_color": "#dddddd",
+          "cat_bg_color": "#ffffff",
+          "phone_icon": "phone",
+          "contact_phone": "",
+          "contact_email": "",
+          "contact_font_size": 13,
+          "contact_color": "#444444",
           "show_bottom_bar": true,
           "bottom_bar_bg": "#ffffff",
           "bottom_icon_color": "#000000"
+        }
+      },
+      "bm-floating-whatsapp": {
+        "type": "bm-floating-whatsapp",
+        "settings": {
+          "whatsapp_number": "918698205381",
+          "prefill_message": "Hi! I have a purchase inquiry. Could you help me out?",
+          "show_on_desktop": true,
+          "show_on_mobile": true,
+          "button_color": "#25d366",
+          "button_size": 56,
+          "button_size_mobile": 52,
+          "pulse_animation": true,
+          "offset_x": 24,
+          "offset_y_desktop": 24,
+          "offset_x_mobile": 16,
+          "offset_y_mobile": 92,
+          "show_tooltip": false,
+          "tooltip_text": "Chat with us"
         }
       }
     },
