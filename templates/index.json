@@ -1037,7 +1037,7 @@
             "background_fixed": false,
             "background_size": "cover",
             "background_pos": "center center",
-            "padding": "0 15px | 0 7.5px",
+            "padding": "0 0px | 0 7.5px",
             "margin": "",
             "width_lap": 100,
             "width_tab": 100,
@@ -1202,7 +1202,7 @@
         "width_bg": "full",
         "half_overflow": false,
         "padding_bg": "",
-        "padding": "90px 0 85px",
+        "padding": "70px 0 55px",
         "margin": "0 0 0px",
         "vertical_align": "top",
         "horizontal_align": "left"
