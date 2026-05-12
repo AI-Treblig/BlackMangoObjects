@@ -38,6 +38,7 @@
 			<div class="pre-loading__bar"></div>
 		</div>
 		{%- unless template.name == 'password' -%}
+		{% section 'bm-desktop-header' %}
 		<header id="header-group" class="header">
 			{% sections 'header-group' %}
 		</header>

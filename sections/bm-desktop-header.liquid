@@ -1,0 +1,327 @@
+{%- comment -%}
+  Black Mango desktop header with full controls.
+  Hidden on mobile (mobile uses bm-mobile-nav). Self-contained CSS+JS,
+  no dependencies on theme JS.
+{%- endcomment -%}
+
+{%- assign menu = linklists[section.settings.menu] -%}
+{%- if menu == blank -%}{%- assign menu = linklists.main-menu -%}{%- endif -%}
+
+<header id="bm-dh-{{ section.id }}" class="bm-dh{% if section.settings.sticky %} bm-dh--sticky{% endif %}"
+        style="--dh-bg: {{ section.settings.bg_color | default: '#ffffff' }};
+               --dh-color: {{ section.settings.text_color | default: '#000000' }};
+               --dh-hover: {{ section.settings.hover_color | default: '#000000' }};
+               --dh-accent: {{ section.settings.accent_color | default: '#000000' }};
+               --dh-border: {{ section.settings.border_color | default: '#eeeeee' }};
+               --dh-pad-y: {{ section.settings.padding_y | default: 18 }}px;
+               --dh-font-size: {{ section.settings.font_size | default: 13 }}px;
+               --dh-letter-spacing: {{ section.settings.letter_spacing | default: 1 }}px;
+               --dh-font-weight: {{ section.settings.font_weight | default: '500' }};
+               --dh-dropdown-bg: {{ section.settings.dropdown_bg | default: '#ffffff' }};
+               --dh-dropdown-color: {{ section.settings.dropdown_color | default: '#000000' }};
+               --dh-dropdown-hover: {{ section.settings.dropdown_hover_color | default: '#666666' }};">
+
+  <div class="bm-dh__inner bm-dh--{{ section.settings.layout | default: 'logo-center' }}">
+
+    {%- comment -%} Left side: menu when logo is center, or logo when logo is left {%- endcomment -%}
+    <div class="bm-dh__left">
+      {%- if section.settings.layout == 'logo-left' -%}
+        <a href="/" class="bm-dh__logo">
+          {%- if section.settings.logo -%}
+            <img src="{{ section.settings.logo | image_url: width: 480 }}"
+                 alt="{{ shop.name | escape }}"
+                 style="height: {{ section.settings.logo_height | default: 44 }}px;">
+          {%- else -%}
+            <span class="bm-dh__logo-text">{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+      {%- else -%}
+        <nav class="bm-dh__nav" aria-label="Main navigation">
+          {%- render 'bm-dh-menu', menu: menu -%}
+        </nav>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Center: logo when logo is center, nothing otherwise {%- endcomment -%}
+    {%- if section.settings.layout == 'logo-center' -%}
+      <div class="bm-dh__center">
+        <a href="/" class="bm-dh__logo">
+          {%- if section.settings.logo -%}
+            <img src="{{ section.settings.logo | image_url: width: 600 }}"
+                 alt="{{ shop.name | escape }}"
+                 style="height: {{ section.settings.logo_height | default: 56 }}px;">
+          {%- else -%}
+            <span class="bm-dh__logo-text">{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Right side {%- endcomment -%}
+    <div class="bm-dh__right">
+      {%- if section.settings.layout == 'logo-left' -%}
+        {%- comment -%} Logo-left layout: menu lives in the center-right area {%- endcomment -%}
+      {%- endif -%}
+
+      {%- if section.settings.show_search -%}
+        <a href="{{ routes.search_url }}" class="bm-dh__icon" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </a>
+      {%- endif -%}
+      {%- if section.settings.show_account -%}
+        <a href="{{ routes.account_url }}" class="bm-dh__icon" aria-label="Account">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+      {%- endif -%}
+      {%- if section.settings.show_wishlist -%}
+        <a href="{{ section.settings.wishlist_url | default: '/pages/wishlist' }}" class="bm-dh__icon" aria-label="Wishlist">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="bm-dh__badge" data-count-wishlist>0</span>
+        </a>
+      {%- endif -%}
+      {%- if section.settings.show_cart -%}
+        <a href="/cart" class="bm-dh__icon" aria-label="Cart">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+          <span class="bm-dh__badge" data-cart-count>{{ cart.item_count }}</span>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- comment -%} Below: full-width menu row when layout is logo-center {%- endcomment -%}
+  {%- if section.settings.layout == 'logo-center' and section.settings.menu_row == 'below' -%}
+    <nav class="bm-dh__row-nav" aria-label="Main navigation">
+      {%- render 'bm-dh-menu', menu: menu -%}
+    </nav>
+  {%- endif -%}
+</header>
+
+<style>
+  #bm-dh-{{ section.id }}.bm-dh {
+    display: none;
+    background: var(--dh-bg);
+    color: var(--dh-color);
+    border-bottom: 1px solid var(--dh-border);
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+    font-size: var(--dh-font-size);
+    letter-spacing: var(--dh-letter-spacing);
+    font-weight: var(--dh-font-weight);
+  }
+  @media (min-width: 992px) {
+    #bm-dh-{{ section.id }}.bm-dh { display: block; }
+  }
+  #bm-dh-{{ section.id }}.bm-dh--sticky {
+    position: sticky;
+    top: 0;
+    z-index: 8990;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: var(--dh-pad-y) 32px;
+    display: grid;
+    align-items: center;
+    gap: 16px;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__inner.bm-dh--logo-left {
+    grid-template-columns: auto 1fr auto;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__inner.bm-dh--logo-center {
+    grid-template-columns: 1fr auto 1fr;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__left { display: flex; align-items: center; }
+  #bm-dh-{{ section.id }} .bm-dh__center { display: flex; align-items: center; justify-content: center; }
+  #bm-dh-{{ section.id }} .bm-dh__right { display: flex; align-items: center; justify-content: flex-end; gap: 18px; }
+  #bm-dh-{{ section.id }} .bm-dh__logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--dh-color);
+  }
+  #bm-dh-{{ section.id }} .bm-dh__logo img { display: block; }
+  #bm-dh-{{ section.id }} .bm-dh__logo-text {
+    font-family: var(--font-family-second), 'Cormorant Garamond', serif;
+    font-size: 30px;
+    color: var(--dh-color);
+    letter-spacing: 0;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__icon {
+    color: var(--dh-color);
+    text-decoration: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color .2s ease;
+    padding: 4px;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__icon:hover { color: var(--dh-hover); }
+  #bm-dh-{{ section.id }} .bm-dh__badge {
+    position: absolute;
+    top: -2px;
+    right: -6px;
+    background: var(--dh-accent);
+    color: #ffffff;
+    font-size: 10px;
+    line-height: 1;
+    border-radius: 999px;
+    padding: 3px 5px;
+    min-width: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    font-weight: 600;
+  }
+
+  /* Menu */
+  #bm-dh-{{ section.id }} .bm-dh__nav,
+  #bm-dh-{{ section.id }} .bm-dh__row-nav {
+    display: flex;
+    align-items: center;
+    gap: {{ section.settings.menu_gap | default: 32 }}px;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__row-nav {
+    justify-content: center;
+    border-top: 1px solid var(--dh-border);
+    padding: 12px 32px;
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__menu-item {
+    position: relative;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__menu-link {
+    color: var(--dh-color);
+    text-decoration: none;
+    text-transform: {{ section.settings.menu_case | default: 'uppercase' }};
+    padding: 8px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color .2s ease;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__menu-link:hover,
+  #bm-dh-{{ section.id }} .bm-dh__menu-item.is-active > .bm-dh__menu-link { color: var(--dh-hover); }
+  #bm-dh-{{ section.id }} .bm-dh__menu-caret {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    transition: transform .2s ease;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__menu-item:hover > .bm-dh__menu-link .bm-dh__menu-caret { transform: rotate(180deg); }
+
+  /* Dropdown */
+  #bm-dh-{{ section.id }} .bm-dh__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--dh-dropdown-bg);
+    color: var(--dh-dropdown-color);
+    border: 1px solid var(--dh-border);
+    min-width: 220px;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+    z-index: 8995;
+    box-shadow: 0 12px 32px rgba(0,0,0,.06);
+  }
+  #bm-dh-{{ section.id }} .bm-dh__menu-item:hover > .bm-dh__dropdown,
+  #bm-dh-{{ section.id }} .bm-dh__menu-item:focus-within > .bm-dh__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  #bm-dh-{{ section.id }} .bm-dh__dropdown a {
+    display: block;
+    padding: 8px 22px;
+    color: var(--dh-dropdown-color);
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 0.3px;
+    transition: color .2s ease;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__dropdown a:hover { color: var(--dh-dropdown-hover); }
+  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__dropdown { left: 50%; transform: translate(-50%, 8px); }
+  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__menu-item:hover > .bm-dh__dropdown {
+    transform: translate(-50%, 0);
+  }
+
+  /* Hide stock theme desktop header on desktop to avoid duplicates */
+  @media (min-width: 992px) {
+    .bwp-header,
+    .header-group { display: none !important; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "BM Desktop Header",
+  "settings": [
+    { "type": "header", "content": "Logo" },
+    { "type": "image_picker", "id": "logo", "label": "Logo" },
+    { "type": "range", "id": "logo_height", "label": "Logo height (px)", "min": 24, "max": 100, "step": 2, "default": 56 },
+    { "type": "select", "id": "layout", "label": "Layout",
+      "options": [
+        { "value": "logo-center", "label": "Logo center, menu below" },
+        { "value": "logo-left", "label": "Logo left, menu right" }
+      ],
+      "default": "logo-center"
+    },
+    { "type": "select", "id": "menu_row", "label": "Menu position (logo-center only)",
+      "options": [
+        { "value": "below", "label": "Below logo" }
+      ],
+      "default": "below"
+    },
+
+    { "type": "header", "content": "Menu" },
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu", "info": "Edit menus in Online Store → Navigation. Items with children show as dropdowns." },
+    { "type": "range", "id": "menu_gap", "label": "Gap between items (px)", "min": 8, "max": 80, "step": 2, "default": 32 },
+    { "type": "select", "id": "menu_case", "label": "Menu case",
+      "options": [
+        { "value": "none", "label": "Original" },
+        { "value": "uppercase", "label": "UPPERCASE" },
+        { "value": "capitalize", "label": "Capitalized" }
+      ],
+      "default": "uppercase"
+    },
+
+    { "type": "header", "content": "Right icons" },
+    { "type": "checkbox", "id": "show_search", "label": "Show search icon", "default": true },
+    { "type": "checkbox", "id": "show_account", "label": "Show account icon", "default": true },
+    { "type": "checkbox", "id": "show_wishlist", "label": "Show wishlist icon", "default": true },
+    { "type": "url", "id": "wishlist_url", "label": "Wishlist URL" },
+    { "type": "checkbox", "id": "show_cart", "label": "Show cart icon", "default": true },
+
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "bg_color", "label": "Header background", "default": "#ffffff" },
+    { "type": "color", "id": "text_color", "label": "Text & icon color", "default": "#000000" },
+    { "type": "color", "id": "hover_color", "label": "Hover color", "default": "#000000" },
+    { "type": "color", "id": "accent_color", "label": "Badge / accent", "default": "#000000" },
+    { "type": "color", "id": "border_color", "label": "Border / divider", "default": "#eeeeee" },
+    { "type": "color", "id": "dropdown_bg", "label": "Dropdown background", "default": "#ffffff" },
+    { "type": "color", "id": "dropdown_color", "label": "Dropdown text color", "default": "#000000" },
+    { "type": "color", "id": "dropdown_hover_color", "label": "Dropdown link hover color", "default": "#666666" },
+
+    { "type": "header", "content": "Typography" },
+    { "type": "range", "id": "font_size", "label": "Menu font size (px)", "min": 10, "max": 22, "step": 1, "default": 13 },
+    { "type": "range", "id": "letter_spacing", "label": "Letter spacing (px)", "min": 0, "max": 5, "step": 0.5, "default": 1 },
+    { "type": "select", "id": "font_weight", "label": "Font weight",
+      "options": [
+        { "value": "300", "label": "Light" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "500"
+    },
+
+    { "type": "header", "content": "Behavior" },
+    { "type": "range", "id": "padding_y", "label": "Vertical padding (px)", "min": 6, "max": 48, "step": 2, "default": 18 },
+    { "type": "checkbox", "id": "sticky", "label": "Stick to top on scroll", "default": true }
+  ],
+  "presets": [{ "name": "BM Desktop Header" }]
+}
+{% endschema %}
