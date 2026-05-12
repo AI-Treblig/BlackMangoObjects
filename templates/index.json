@@ -1215,7 +1215,7 @@
         "category_Qh6PtL": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/bmo-rugs.svg",
+            "image": "shopify://shop_images/bmo-rugs-hmpg.svg",
             "label": "Rugs",
             "url": "",
             "circle_bg": "",
@@ -1245,7 +1245,7 @@
         "category_Qzchrz": {
           "type": "category",
           "settings": {
-            "image": "shopify://shop_images/bmo-throws.svg",
+            "image": "shopify://shop_images/bmo-throws-hmpg.svg",
             "label": "Throws",
             "url": "",
             "circle_bg": "",
