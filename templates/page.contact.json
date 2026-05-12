@@ -14,6 +14,7 @@
       "settings": {
         "enable": true,
         "bgimage": true,
+        "image": "shopify://shop_images/about-bgcontact.webp",
         "show_pagetitle": true,
         "show_breadcrumb": true,
         "color_breadcrumb": "#000000",
@@ -76,8 +77,8 @@
             "description_FWLLH3": {
               "type": "description",
               "settings": {
-                "desc": "We would love to hear from you. Whether you have a question about a product, an order, or simply want to say hello — our team is here to help.",
-                "font": "--font-family-second",
+                "desc": "We would love to hear from you. Whether you have a question about a product, an order, or simply want to say hello - our team is here to help.",
+                "font": "--font-family-base",
                 "text_transfrom": "default",
                 "color": "#868686",
                 "font_size": 16,
@@ -136,10 +137,10 @@
                   "type": "description",
                   "settings": {
                     "desc": "Mumbai, MH, India",
-                    "font": "--font-family-second",
+                    "font": "--font-family-base",
                     "text_transfrom": "default",
                     "color": "#868686",
-                    "font_size": 18,
+                    "font_size": 16,
                     "line_height": 24,
                     "letter_spacing": 0,
                     "font_weight": "300",
@@ -201,10 +202,10 @@
                   "type": "description",
                   "settings": {
                     "desc": "+91 86982 05381",
-                    "font": "--font-family-second",
+                    "font": "--font-family-base",
                     "text_transfrom": "default",
                     "color": "#868686",
-                    "font_size": 18,
+                    "font_size": 16,
                     "line_height": 24,
                     "letter_spacing": 0,
                     "font_weight": "300",
@@ -266,7 +267,7 @@
                   "type": "description",
                   "settings": {
                     "desc": "blackmango.website@gmail.com",
-                    "font": "--font-family-second",
+                    "font": "--font-family-base",
                     "text_transfrom": "default",
                     "color": "#868686",
                     "font_size": 18,

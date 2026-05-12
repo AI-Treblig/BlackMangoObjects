@@ -19,8 +19,8 @@
             "image_mobi": "shopify://shop_images/hero-image-mobile.webp",
             "size_img": "contain",
             "pos_img": "center_center",
-            "size_img_mobi": "fill",
-            "pos_img_mobi": "center_bottom"
+            "size_img_mobi": "cover",
+            "pos_img_mobi": "center_center"
           },
           "blocks": {
             "group_content_slide_FY8fwf": {
@@ -30,7 +30,7 @@
                 "vertical_align": "top",
                 "horizontal_align": "center",
                 "align": "center",
-                "animation": "left-to-right",
+                "animation": "fade-in",
                 "padding": "200px 0px 0px 0px",
                 "margin": "",
                 "disable_absolute": false,
@@ -521,7 +521,7 @@
                       "type": "description",
                       "settings": {
                         "desc": "Bold shapes and organic textures that redefine your space.",
-                        "font": "--font-family-second",
+                        "font": "--font-family-base",
                         "text_transfrom": "default",
                         "color": "#000000",
                         "font_size": 16,
@@ -1309,7 +1309,7 @@
         "half_overflow": false,
         "padding_bg": "",
         "padding": "90px 0 85px",
-        "margin": "0 0 80px",
+        "margin": "0 0 0px",
         "vertical_align": "top",
         "horizontal_align": "left"
       }
