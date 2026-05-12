@@ -35,7 +35,12 @@
 
   <div class="bm-dh__inner bm-dh--{{ layout }}">
 
-    {%- comment -%} Left slot: empty (menu-below) or logo (menu-inline) {%- endcomment -%}
+    {%- comment -%}
+      Left slot:
+      - menu-below       → empty
+      - menu-inline      → logo
+      - menu-left-logo-center → menu
+    {%- endcomment -%}
     <div class="bm-dh__left">
       {%- if layout == 'menu-inline' -%}
         <a href="/" class="bm-dh__logo">
@@ -47,12 +52,25 @@
             <span class="bm-dh__logo-text">{{ shop.name }}</span>
           {%- endif -%}
         </a>
+      {%- elsif layout == 'menu-left-logo-center' -%}
+        <nav class="bm-dh__nav bm-dh__nav--left" aria-label="Main navigation">
+          {%- render 'bm-dh-menu', menu: menu -%}
+        </nav>
       {%- endif -%}
     </div>
 
-    {%- comment -%} Center slot: logo (menu-below) or inline menu (menu-inline) {%- endcomment -%}
+    {%- comment -%}
+      Center slot:
+      - menu-below       → logo
+      - menu-inline      → menu
+      - menu-left-logo-center → logo
+    {%- endcomment -%}
     <div class="bm-dh__center">
-      {%- if layout == 'menu-below' -%}
+      {%- if layout == 'menu-inline' -%}
+        <nav class="bm-dh__nav" aria-label="Main navigation">
+          {%- render 'bm-dh-menu', menu: menu -%}
+        </nav>
+      {%- else -%}
         <a href="/" class="bm-dh__logo">
           {%- if section.settings.logo -%}
             <img src="{{ section.settings.logo | image_url: width: 600 }}"
@@ -62,10 +80,6 @@
             <span class="bm-dh__logo-text">{{ shop.name }}</span>
           {%- endif -%}
         </a>
-      {%- else -%}
-        <nav class="bm-dh__nav" aria-label="Main navigation">
-          {%- render 'bm-dh-menu', menu: menu -%}
-        </nav>
       {%- endif -%}
     </div>
 
@@ -134,9 +148,12 @@
   #bm-dh-{{ section.id }} .bm-dh__inner.bm-dh--menu-inline {
     grid-template-columns: auto 1fr auto;
   }
-  #bm-dh-{{ section.id }} .bm-dh__inner.bm-dh--menu-below {
+  #bm-dh-{{ section.id }} .bm-dh__inner.bm-dh--menu-below,
+  #bm-dh-{{ section.id }} .bm-dh__inner.bm-dh--menu-left-logo-center {
     grid-template-columns: 1fr auto 1fr;
   }
+  #bm-dh-{{ section.id }} .bm-dh__inner.bm-dh--menu-left-logo-center .bm-dh__left { justify-content: flex-start; }
+  #bm-dh-{{ section.id }} .bm-dh__nav--left { justify-content: flex-start; }
   #bm-dh-{{ section.id }} .bm-dh__left { display: flex; align-items: center; }
   #bm-dh-{{ section.id }} .bm-dh__center { display: flex; align-items: center; justify-content: center; }
   #bm-dh-{{ section.id }} .bm-dh__right { display: flex; align-items: center; justify-content: flex-end; gap: 18px; }
@@ -222,7 +239,8 @@
     position: absolute;
     top: calc(100% + 14px);
     left: 0;
-    background: var(--dh-dropdown-bg);
+    background-color: var(--dh-dropdown-bg, #ffffff);
+    background-image: none;
     color: var(--dh-dropdown-color);
     min-width: 240px;
     padding: 16px 0;
@@ -237,6 +255,8 @@
     box-shadow: 0 24px 60px rgba(0,0,0,.10), 0 2px 6px rgba(0,0,0,.04);
     border-radius: 2px;
     border-top: 2px solid var(--dh-accent);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
   /* Bridge so the gap between trigger and dropdown is still hoverable */
   #bm-dh-{{ section.id }} .bm-dh__dropdown::before {
@@ -255,7 +275,7 @@
     left: 28px;
     width: 12px;
     height: 12px;
-    background: var(--dh-dropdown-bg);
+    background-color: var(--dh-dropdown-bg, #ffffff);
     border-top: 2px solid var(--dh-accent);
     border-left: 2px solid var(--dh-accent);
     transform: rotate(45deg);
@@ -322,8 +342,9 @@
     { "type": "select", "id": "layout", "label": "Menu placement",
       "info": "Pick exactly one — only one menu will render.",
       "options": [
-        { "value": "menu-below",  "label": "Menu below logo (logo centered)" },
-        { "value": "menu-inline", "label": "Menu beside logo (logo on left)" }
+        { "value": "menu-below",            "label": "Menu below logo (logo centered)" },
+        { "value": "menu-inline",           "label": "Menu beside logo (logo on left)" },
+        { "value": "menu-left-logo-center", "label": "Menu on the left (logo centered)" }
       ],
       "default": "menu-below"
     },
