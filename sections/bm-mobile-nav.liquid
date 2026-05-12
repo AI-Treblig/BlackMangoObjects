@@ -157,14 +157,41 @@
       </div>
     {%- endif -%}
 
+    {%- assign cat_blocks = section.blocks | where: 'type', 'category' -%}
+    {%- if cat_blocks.size > 0 -%}
+      <div class="bm-mnav-cats{% if section.settings.cats_layout == 'scroll' %} bm-mnav-cats--scroll{% endif %}">
+        {%- if section.settings.cats_title != blank -%}
+          <h3 class="bm-mnav-cats__title">{{ section.settings.cats_title }}</h3>
+        {%- endif -%}
+        <div class="bm-mnav-cats__grid">
+          {%- for block in cat_blocks -%}
+            {%- assign cat_url = block.settings.url | default: '#' -%}
+            <a href="{{ cat_url }}" class="bm-mnav-cat" {{ block.shopify_attributes }}>
+              <span class="bm-mnav-cat__img">
+                {%- if block.settings.image -%}
+                  <img src="{{ block.settings.image | image_url: width: 240 }}" alt="{{ block.settings.label | escape }}" loading="lazy">
+                {%- endif -%}
+              </span>
+              <span class="bm-mnav-cat__label">{{ block.settings.label }}</span>
+            </a>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+
     {%- if section.settings.contact_phone != blank or section.settings.contact_email != blank -%}
-      <div class="bm-mnav-contact">
+      <div class="bm-mnav-contact" style="--ct-color: {{ section.settings.contact_color | default: '#444444' }}; --ct-size: {{ section.settings.contact_font_size | default: 13 }}px;">
         {%- if section.settings.contact_phone != blank -%}
           {%- assign phone_clean = section.settings.contact_phone | replace: ' ', '' | replace: '-', '' -%}
           <a href="tel:{{ phone_clean }}">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
+            {%- case section.settings.phone_icon -%}
+              {%- when 'whatsapp' -%}
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.88 11.89L4 20l4.22-1.11a7.93 7.93 0 0 0 3.83.98h.01a7.94 7.94 0 0 0 5.54-13.55zm-5.55 12.21h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.5.66.67-2.44-.16-.25a6.6 6.6 0 1 1 5.6 3.09zm3.62-4.94c-.2-.1-1.17-.58-1.36-.65-.18-.07-.31-.1-.45.1-.13.2-.5.65-.62.78-.11.13-.23.15-.43.05-.2-.1-.84-.31-1.6-.99-.6-.53-1-1.18-1.12-1.38-.11-.2-.01-.31.09-.4.09-.09.2-.23.3-.35.1-.12.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.45-1.08-.62-1.48-.16-.39-.33-.34-.45-.34l-.39-.01a.75.75 0 0 0-.54.25c-.18.2-.7.69-.7 1.67 0 .98.72 1.93.82 2.06.1.13 1.42 2.17 3.43 3.04.48.21.85.33 1.14.42.48.15.92.13 1.26.08.39-.06 1.17-.48 1.34-.95.16-.46.16-.86.11-.95-.05-.08-.18-.13-.38-.23z"/></svg>
+              {%- when 'mobile' -%}
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12" y2="18"></line></svg>
+              {%- else -%}
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            {%- endcase -%}
             <span>{{ section.settings.contact_phone }}</span>
           </a>
         {%- endif -%}
@@ -182,9 +209,10 @@
   </nav>
 </aside>
 
-{%- if section.settings.show_bottom_bar and section.blocks.size > 0 -%}
+{%- assign bottom_blocks = section.blocks | where: 'type', 'bottom_link' -%}
+{%- if section.settings.show_bottom_bar and bottom_blocks.size > 0 -%}
   <nav id="bm-mnav-bottom" class="bm-mnav-bottom" aria-label="Mobile bottom navigation">
-    {%- for block in section.blocks -%}
+    {%- for block in bottom_blocks -%}
       {%- assign icon = block.settings.icon -%}
       {%- assign label = block.settings.label -%}
       {%- assign default_url = '/' -%}
@@ -516,6 +544,85 @@
   .bm-mnav-social a:hover { background: #000; color: #fff; }
   .bm-mnav-social a:hover svg { color: #fff; }
 
+  /* Category circles */
+  .bm-mnav-cats { padding: 18px 20px 8px; border-top: 1px solid #f0f0f0; }
+  .bm-mnav-cats__title {
+    font-family: var(--font-family-second), 'Cormorant Garamond', serif;
+    font-size: {{ section.settings.cats_title_size | default: 16 }}px;
+    margin: 0 0 14px;
+    color: {{ section.settings.cats_title_color | default: '#000000' }};
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .bm-mnav-cats__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px 10px;
+  }
+  .bm-mnav-cats--scroll .bm-mnav-cats__grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 14px 16px;
+    padding-bottom: 6px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .bm-mnav-cats--scroll .bm-mnav-cat {
+    min-width: 80px;
+    scroll-snap-align: start;
+  }
+  .bm-mnav-cat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .bm-mnav-cat__img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 1px solid {{ section.settings.cat_border_color | default: '#dddddd' }};
+    background: {{ section.settings.cat_bg_color | default: '#ffffff' }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .bm-mnav-cat__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .bm-mnav-cat__label {
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+    font-size: {{ section.settings.cat_label_size | default: 12 }}px;
+    color: {{ section.settings.cat_label_color | default: '#000000' }};
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    text-align: center;
+  }
+
+  /* Override menu link font + color from settings */
+  .bm-mnav-link {
+    font-size: {{ section.settings.menu_font_size | default: 15 }}px !important;
+    color: {{ section.settings.menu_color | default: '#000000' }} !important;
+  }
+  .bm-mnav-link--child {
+    color: {{ section.settings.menu_child_color | default: '#444444' }} !important;
+  }
+  .bm-mnav-drawer__title {
+    font-size: {{ section.settings.drawer_title_size | default: 20 }}px !important;
+    color: {{ section.settings.drawer_title_color | default: '#000000' }} !important;
+  }
+
   /* Contact info */
   .bm-mnav-contact {
     padding: 12px 20px 24px;
@@ -527,13 +634,13 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    color: #444;
+    color: var(--ct-color, #444);
     text-decoration: none;
     font-family: var(--font-family-base), 'Manrope', sans-serif;
-    font-size: 13px;
-    transition: color .2s ease;
+    font-size: var(--ct-size, 13px);
+    transition: opacity .2s ease;
   }
-  .bm-mnav-contact a:hover { color: #000; }
+  .bm-mnav-contact a:hover { opacity: .7; }
 </style>
 
 {% schema %}
@@ -549,7 +656,12 @@
 
     { "type": "header", "content": "Slide-out menu (hamburger)" },
     { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu", "info": "Pick the menu shown inside the hamburger drawer. Edit items in Online Store → Navigation." },
-    { "type": "text", "id": "drawer_title", "label": "Drawer title", "default": "Menu" },
+    { "type": "text", "id": "drawer_title", "label": "Drawer title", "default": "MENU" },
+    { "type": "range", "id": "drawer_title_size", "label": "Drawer title font size (px)", "min": 14, "max": 32, "step": 1, "default": 20 },
+    { "type": "color", "id": "drawer_title_color", "label": "Drawer title color", "default": "#000000" },
+    { "type": "range", "id": "menu_font_size", "label": "Menu item font size (px)", "min": 12, "max": 22, "step": 1, "default": 15 },
+    { "type": "color", "id": "menu_color", "label": "Menu item color", "default": "#000000" },
+    { "type": "color", "id": "menu_child_color", "label": "Sub-menu item color", "default": "#444444" },
     { "type": "checkbox", "id": "show_search", "label": "Show search bar in drawer", "default": true },
     { "type": "text", "id": "search_placeholder", "label": "Search placeholder", "default": "Search products..." },
 
@@ -557,9 +669,36 @@
     { "type": "url", "id": "instagram_url", "label": "Instagram URL", "info": "e.g. https://instagram.com/yourhandle" },
     { "type": "text", "id": "whatsapp_number", "label": "WhatsApp number", "info": "International format, e.g. 919876543210 (no plus or spaces)" },
 
+    { "type": "header", "content": "Category circles (drawer)", "info": "Add a 'Category icon' block for each circle. Upload a custom image and set the URL." },
+    { "type": "text", "id": "cats_title", "label": "Section title (optional)", "default": "" },
+    { "type": "range", "id": "cats_title_size", "label": "Title font size (px)", "min": 12, "max": 24, "step": 1, "default": 16 },
+    { "type": "color", "id": "cats_title_color", "label": "Title color", "default": "#000000" },
+    { "type": "select", "id": "cats_layout", "label": "Layout",
+      "options": [
+        { "value": "grid", "label": "3-column grid (wraps to multiple rows)" },
+        { "value": "scroll", "label": "Horizontal scroll (2 rows)" }
+      ],
+      "default": "grid",
+      "info": "Switch to horizontal scroll when you have many categories."
+    },
+    { "type": "range", "id": "cat_label_size", "label": "Category label font size (px)", "min": 9, "max": 16, "step": 1, "default": 12 },
+    { "type": "color", "id": "cat_label_color", "label": "Category label color", "default": "#000000" },
+    { "type": "color", "id": "cat_border_color", "label": "Category circle border", "default": "#dddddd" },
+    { "type": "color", "id": "cat_bg_color", "label": "Category circle background", "default": "#ffffff" },
+
     { "type": "header", "content": "Contact info (shown at bottom of drawer)" },
+    { "type": "select", "id": "phone_icon", "label": "Phone icon style",
+      "options": [
+        { "value": "phone", "label": "Telephone (landline)" },
+        { "value": "mobile", "label": "Mobile phone" },
+        { "value": "whatsapp", "label": "WhatsApp speech bubble" }
+      ],
+      "default": "phone"
+    },
     { "type": "text", "id": "contact_phone", "label": "Phone number", "info": "Shown as a tap-to-call link" },
     { "type": "text", "id": "contact_email", "label": "Email address", "info": "Shown as a tap-to-email link" },
+    { "type": "range", "id": "contact_font_size", "label": "Contact font size (px)", "min": 10, "max": 18, "step": 1, "default": 13 },
+    { "type": "color", "id": "contact_color", "label": "Contact text/icon color", "default": "#444444" },
 
     { "type": "header", "content": "Bottom bar" },
     { "type": "checkbox", "id": "show_bottom_bar", "label": "Enable bottom bar on mobile", "default": true },
@@ -586,15 +725,29 @@
         { "type": "text", "id": "label", "label": "Label", "default": "Home" },
         { "type": "url", "id": "url", "label": "URL" }
       ]
+    },
+    {
+      "type": "category",
+      "name": "Category icon (drawer)",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image", "info": "Square works best (e.g. 240×240)." },
+        { "type": "text", "id": "label", "label": "Label", "default": "Category" },
+        { "type": "url", "id": "url", "label": "Link to collection or page" }
+      ]
     }
   ],
-  "max_blocks": 5,
   "default": {
     "blocks": [
       { "type": "bottom_link", "settings": { "icon": "home",     "label": "Home"     } },
       { "type": "bottom_link", "settings": { "icon": "shop",     "label": "Shop"     } },
       { "type": "bottom_link", "settings": { "icon": "account",  "label": "Account"  } },
-      { "type": "bottom_link", "settings": { "icon": "wishlist", "label": "Wishlist" } }
+      { "type": "bottom_link", "settings": { "icon": "wishlist", "label": "Wishlist" } },
+      { "type": "category",    "settings": { "label": "Rugs"     } },
+      { "type": "category",    "settings": { "label": "Curtains" } },
+      { "type": "category",    "settings": { "label": "Objects"  } },
+      { "type": "category",    "settings": { "label": "Cushions" } },
+      { "type": "category",    "settings": { "label": "Throws"   } },
+      { "type": "category",    "settings": { "label": "More"     } }
     ]
   }
 }
