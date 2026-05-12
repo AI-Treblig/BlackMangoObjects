@@ -2453,6 +2453,7 @@
           "bm-mobile-nav-9": {
             "type": "category",
             "settings": {
+              "image": "shopify://shop_images/bmo-all-mobile.svg",
               "label": "More",
               "url": ""
             }
