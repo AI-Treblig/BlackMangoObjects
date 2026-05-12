@@ -810,9 +810,9 @@
         "mainmenu_item_TnrwjN": {
           "type": "_mainmenu-item",
           "settings": {
-            "title": "Collection",
-            "menu_url": "shopify://collections/all",
-            "submenu_format": "",
+            "title": "Collections",
+            "menu_url": "shopify://collections",
+            "submenu_format": "list",
             "badge": "",
             "position": "after",
             "badge_color": "#000000"
@@ -825,6 +825,21 @@
                 "width_custom": ""
               },
               "blocks": {
+                "megamenu_item_7RKRKb": {
+                  "type": "_megamenu-item",
+                  "settings": {
+                    "widget": "menu",
+                    "menu_col": "16.66%",
+                    "menu_heading": "All Collections",
+                    "menu_link_list_child": "",
+                    "banner_title": "",
+                    "banner_button": "",
+                    "banner_link": "",
+                    "collection_widget": "",
+                    "blog_widget": ""
+                  },
+                  "blocks": {}
+                },
                 "megamenu_item_cJ6KwT": {
                   "type": "_megamenu-item",
                   "settings": {
@@ -855,23 +870,9 @@
                   },
                   "blocks": {}
                 },
-                "megamenu_item_7RKRKb": {
-                  "type": "_megamenu-item",
-                  "settings": {
-                    "widget": "menu",
-                    "menu_col": "16.66%",
-                    "menu_heading": "Layout",
-                    "menu_link_list_child": "",
-                    "banner_title": "",
-                    "banner_button": "",
-                    "banner_link": "",
-                    "collection_widget": "",
-                    "blog_widget": ""
-                  },
-                  "blocks": {}
-                },
                 "megamenu_item_baUnfL": {
                   "type": "_megamenu-item",
+                  "disabled": true,
                   "settings": {
                     "widget": "menu",
                     "menu_col": "16.66%",
@@ -887,6 +888,7 @@
                 },
                 "megamenu_item_48MgKL": {
                   "type": "_megamenu-item",
+                  "disabled": true,
                   "settings": {
                     "widget": "menu",
                     "menu_col": "16.66%",
@@ -902,9 +904,9 @@
                 }
               },
               "block_order": [
+                "megamenu_item_7RKRKb",
                 "megamenu_item_cJ6KwT",
                 "megamenu_item_JG6zPr",
-                "megamenu_item_7RKRKb",
                 "megamenu_item_baUnfL",
                 "megamenu_item_48MgKL"
               ]
