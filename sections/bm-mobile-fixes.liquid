@@ -1,0 +1,97 @@
+{%- comment -%} BM sync v3 - 2026-05-11 {%- endcomment -%}
+{%- comment -%}
+  Mobile-only polish for stock sections that have desktop-only spacing baked in.
+  Loaded once globally from theme.liquid.
+{%- endcomment -%}
+<style>
+  @media (max-width: 767px) {
+    /* Tight up section gaps on mobile — removes white space between large stacked sections */
+    .wpbingo-section { margin-bottom: 0 !important; }
+    .wpbingo-section + .wpbingo-section { margin-top: 0 !important; }
+
+    /* Slideshow / featured rows: trim excessive vertical padding */
+    .wpbingo-section--slideshow { padding-bottom: 0 !important; }
+    .wpbingo-section--featured-custom-section { padding-top: 0 !important; padding-bottom: 0 !important; }
+
+    /* Reduce extreme padding values that look right on desktop but pile up on mobile */
+    .shopify-block .column,
+    .shopify-block .inner-section { padding-top: 24px !important; padding-bottom: 24px !important; }
+
+    /* The dark "categories" strip near the bottom of the home page —
+       trim the heavy top/bottom black gap on mobile */
+    .shopify-section[id*="featured_custom"] [style*="background:#000"],
+    .shopify-section[id*="featured_custom"] [style*="background: #000"],
+    .shopify-section[id*="featured_custom"] [style*="background-color:#000"],
+    .shopify-section[id*="featured_custom"] [style*="background-color: #000"] {
+      padding-top: 28px !important;
+      padding-bottom: 28px !important;
+    }
+
+    /* Make any phone/email/whatsapp text inside the existing footer/contact strips
+       clickable & touchable (auto-link on tap) */
+    .footer-mid a[href^="tel:"],
+    .footer-mid a[href^="mailto:"],
+    .footer-mid a[href*="wa.me"],
+    .bwp-footer a[href^="tel:"],
+    .bwp-footer a[href^="mailto:"],
+    .bwp-footer a[href*="wa.me"] {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+</style>
+
+<script>
+(function() {
+  if (window.__bmContactLinkify) return;
+  window.__bmContactLinkify = true;
+
+  /* Auto-linkify phone numbers, emails, and WhatsApp strings in the
+     existing footer / contact strips so taps go straight to the dialer or
+     mail client even if the markup was hard-coded as plain text. */
+  function linkify() {
+    var scopes = document.querySelectorAll('.bwp-footer, .footer-mid, .footer-bottom, .contact-info, .bm-contact-strip');
+    var emailRe = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
+    var phoneRe = /(\+?\d[\d\s\-()]{7,}\d)/g;
+
+    scopes.forEach(function(scope) {
+      if (scope.dataset.bmLinkified === '1') return;
+      scope.dataset.bmLinkified = '1';
+
+      var walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, null, false);
+      var nodes = [];
+      var n; while ((n = walker.nextNode())) {
+        var p = n.parentElement;
+        if (!p) continue;
+        if (p.closest('a')) continue;
+        if (/^(SCRIPT|STYLE|NOSCRIPT)$/i.test(p.tagName)) continue;
+        if (!emailRe.test(n.nodeValue) && !phoneRe.test(n.nodeValue)) {
+          emailRe.lastIndex = 0; phoneRe.lastIndex = 0; continue;
+        }
+        emailRe.lastIndex = 0; phoneRe.lastIndex = 0;
+        nodes.push(n);
+      }
+      nodes.forEach(function(node) {
+        var text = node.nodeValue;
+        var html = text
+          .replace(emailRe, '<a href="mailto:$1">$1</a>')
+          .replace(phoneRe, function(m) {
+            var clean = m.replace(/[^\d+]/g, '');
+            return '<a href="tel:' + clean + '">' + m + '</a>';
+          });
+        if (html !== text) {
+          var span = document.createElement('span');
+          span.innerHTML = html;
+          node.parentNode.replaceChild(span, node);
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', linkify);
+  } else {
+    linkify();
+  }
+})();
+</script>
