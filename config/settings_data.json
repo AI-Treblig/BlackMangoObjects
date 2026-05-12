@@ -2410,6 +2410,14 @@
               "url": ""
             }
           },
+          "bm-mobile-nav-6": {
+            "type": "category",
+            "settings": {
+              "image": "shopify://shop_images/bmo-cushion_b4f07b39-9b80-4729-9e3a-b4f77e8aa480.svg",
+              "label": "CUSHIONS",
+              "url": ""
+            }
+          },
           "bm-mobile-nav-4": {
             "type": "category",
             "settings": {
@@ -2421,20 +2429,15 @@
           "bm-mobile-nav-5": {
             "type": "category",
             "settings": {
+              "image": "shopify://shop_images/bmo-curtains_28051ec3-0c91-41cb-969c-9548eec9f2b0.svg",
               "label": "Curtains",
-              "url": ""
-            }
-          },
-          "bm-mobile-nav-6": {
-            "type": "category",
-            "settings": {
-              "label": "Objects",
               "url": ""
             }
           },
           "bm-mobile-nav-7": {
             "type": "category",
             "settings": {
+              "image": "shopify://shop_images/bmo-rugs.svg",
               "label": "Cushions",
               "url": ""
             }
@@ -2459,9 +2462,9 @@
           "bm-mobile-nav-1",
           "bm-mobile-nav-2",
           "bm-mobile-nav-3",
+          "bm-mobile-nav-6",
           "bm-mobile-nav-4",
           "bm-mobile-nav-5",
-          "bm-mobile-nav-6",
           "bm-mobile-nav-7",
           "bm-mobile-nav-8",
           "bm-mobile-nav-9"
