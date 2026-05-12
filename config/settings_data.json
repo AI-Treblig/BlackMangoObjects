@@ -51,17 +51,17 @@
     "show_search_blog": true,
     "search_item_count": 8,
     "show_compare": false,
-    "sortby_variants": true,
+    "sortby_variants": false,
     "number_variants": 5,
     "product_vendor_enable": false,
     "product_within_collection": false,
     "product_card_review": true,
     "product_atc_mobile": true,
     "quickview_enable_mobile": true,
-    "hover_style": "hover_style_4",
+    "hover_style": "hover_style_2",
     "image_hover": "fadein",
     "countdown_style": "style_1",
-    "preload_product_image_logo": "funori",
+    "preload_product_image_logo": "BlackMango",
     "image_raito_product": "",
     "size_image": "cover",
     "bg_raito": "#f5f5f5",
@@ -2434,26 +2434,28 @@
               "url": ""
             }
           },
-          "bm-mobile-nav-4": {
-            "type": "category",
-            "settings": {
-              "image": "shopify://shop_images/bmo-rugs-icon-w.svg",
-              "label": "Rugs",
-              "url": "shopify://collections/rugs"
-            }
-          },
           "bm-mobile-nav-8": {
             "type": "category",
             "settings": {
+              "image": "shopify://shop_images/bmo-throws.svg",
               "label": "Throws",
               "url": ""
+            }
+          },
+          "bm-mobile-nav-4": {
+            "type": "category",
+            "settings": {
+              "image": "shopify://shop_images/bmo-objects-mobile.svg",
+              "label": "Objects",
+              "url": "shopify://collections/rugs"
             }
           },
           "bm-mobile-nav-9": {
             "type": "category",
             "settings": {
+              "image": "shopify://shop_images/bmo-all-mobile.svg",
               "label": "More",
-              "url": ""
+              "url": "shopify://collections"
             }
           }
         },
@@ -2465,8 +2467,8 @@
           "bm-mobile-nav-6",
           "bm-mobile-nav-7",
           "bm-mobile-nav-5",
-          "bm-mobile-nav-4",
           "bm-mobile-nav-8",
+          "bm-mobile-nav-4",
           "bm-mobile-nav-9"
         ],
         "settings": {
