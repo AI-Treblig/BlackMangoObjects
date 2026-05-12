@@ -2418,11 +2418,11 @@
               "url": ""
             }
           },
-          "bm-mobile-nav-4": {
+          "bm-mobile-nav-7": {
             "type": "category",
             "settings": {
-              "image": "shopify://shop_images/bmo-rugs-icon-w.svg",
-              "label": "Rugs",
+              "image": "shopify://shop_images/bmo-rugs.svg",
+              "label": "RUGS",
               "url": "shopify://collections/rugs"
             }
           },
@@ -2434,12 +2434,12 @@
               "url": ""
             }
           },
-          "bm-mobile-nav-7": {
+          "bm-mobile-nav-4": {
             "type": "category",
             "settings": {
-              "image": "shopify://shop_images/bmo-rugs.svg",
-              "label": "Cushions",
-              "url": ""
+              "image": "shopify://shop_images/bmo-rugs-icon-w.svg",
+              "label": "Rugs",
+              "url": "shopify://collections/rugs"
             }
           },
           "bm-mobile-nav-8": {
@@ -2463,9 +2463,9 @@
           "bm-mobile-nav-2",
           "bm-mobile-nav-3",
           "bm-mobile-nav-6",
-          "bm-mobile-nav-4",
-          "bm-mobile-nav-5",
           "bm-mobile-nav-7",
+          "bm-mobile-nav-5",
+          "bm-mobile-nav-4",
           "bm-mobile-nav-8",
           "bm-mobile-nav-9"
         ],
