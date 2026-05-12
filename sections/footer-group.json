@@ -78,6 +78,7 @@
       "blocks": {
         "column_bTPfmN": {
           "type": "_column",
+          "disabled": true,
           "settings": {
             "width": 25,
             "background_fixed": false,
