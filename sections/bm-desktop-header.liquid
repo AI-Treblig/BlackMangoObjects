@@ -7,6 +7,13 @@
 {%- assign menu = linklists[section.settings.menu] -%}
 {%- if menu == blank -%}{%- assign menu = linklists.main-menu -%}{%- endif -%}
 
+{%- if section.settings.menu_font -%}
+  {{ section.settings.menu_font | font_face: font_display: 'swap' }}
+  {%- assign menu_font_family = section.settings.menu_font.family -%}
+{%- else -%}
+  {%- assign menu_font_family = 'Manrope' -%}
+{%- endif -%}
+
 <header id="bm-dh-{{ section.id }}" class="bm-dh{% if section.settings.sticky %} bm-dh--sticky{% endif %}"
         style="--dh-bg: {{ section.settings.bg_color | default: '#ffffff' }};
                --dh-color: {{ section.settings.text_color | default: '#000000' }};
@@ -17,20 +24,38 @@
                --dh-font-size: {{ section.settings.font_size | default: 13 }}px;
                --dh-letter-spacing: {{ section.settings.letter_spacing | default: 1 }}px;
                --dh-font-weight: {{ section.settings.font_weight | default: '500' }};
+               --dh-menu-font: '{{ menu_font_family }}', var(--font-family-base, 'Manrope'), sans-serif;
                --dh-dropdown-bg: {{ section.settings.dropdown_bg | default: '#ffffff' }};
                --dh-dropdown-color: {{ section.settings.dropdown_color | default: '#000000' }};
                --dh-dropdown-hover: {{ section.settings.dropdown_hover_color | default: '#666666' }};">
 
-  <div class="bm-dh__inner bm-dh--{{ section.settings.layout | default: 'logo-center' }}">
+  {%- assign layout = section.settings.layout | default: 'menu-below' -%}
 
-    {%- comment -%} Left side: menu when logo is center, or logo when logo is left {%- endcomment -%}
+  <div class="bm-dh__inner bm-dh--{{ layout }}">
+
+    {%- comment -%} Left slot: empty (menu-below) or logo (menu-inline) {%- endcomment -%}
     <div class="bm-dh__left">
-      {%- if section.settings.layout == 'logo-left' -%}
+      {%- if layout == 'menu-inline' -%}
         <a href="/" class="bm-dh__logo">
           {%- if section.settings.logo -%}
             <img src="{{ section.settings.logo | image_url: width: 480 }}"
                  alt="{{ shop.name | escape }}"
                  style="height: {{ section.settings.logo_height | default: 44 }}px;">
+          {%- else -%}
+            <span class="bm-dh__logo-text">{{ shop.name }}</span>
+          {%- endif -%}
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Center slot: logo (menu-below) or inline menu (menu-inline) {%- endcomment -%}
+    <div class="bm-dh__center">
+      {%- if layout == 'menu-below' -%}
+        <a href="/" class="bm-dh__logo">
+          {%- if section.settings.logo -%}
+            <img src="{{ section.settings.logo | image_url: width: 600 }}"
+                 alt="{{ shop.name | escape }}"
+                 style="height: {{ section.settings.logo_height | default: 56 }}px;">
           {%- else -%}
             <span class="bm-dh__logo-text">{{ shop.name }}</span>
           {%- endif -%}
@@ -42,27 +67,8 @@
       {%- endif -%}
     </div>
 
-    {%- comment -%} Center: logo when logo is center, nothing otherwise {%- endcomment -%}
-    {%- if section.settings.layout == 'logo-center' -%}
-      <div class="bm-dh__center">
-        <a href="/" class="bm-dh__logo">
-          {%- if section.settings.logo -%}
-            <img src="{{ section.settings.logo | image_url: width: 600 }}"
-                 alt="{{ shop.name | escape }}"
-                 style="height: {{ section.settings.logo_height | default: 56 }}px;">
-          {%- else -%}
-            <span class="bm-dh__logo-text">{{ shop.name }}</span>
-          {%- endif -%}
-        </a>
-      </div>
-    {%- endif -%}
-
-    {%- comment -%} Right side {%- endcomment -%}
+    {%- comment -%} Right slot: icons {%- endcomment -%}
     <div class="bm-dh__right">
-      {%- if section.settings.layout == 'logo-left' -%}
-        {%- comment -%} Logo-left layout: menu lives in the center-right area {%- endcomment -%}
-      {%- endif -%}
-
       {%- if section.settings.show_search -%}
         <a href="{{ routes.search_url }}" class="bm-dh__icon" aria-label="Search">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -88,8 +94,8 @@
     </div>
   </div>
 
-  {%- comment -%} Below: full-width menu row when layout is logo-center {%- endcomment -%}
-  {%- if section.settings.layout == 'logo-center' and section.settings.menu_row == 'below' -%}
+  {%- comment -%} Menu below logo when layout is menu-below {%- endcomment -%}
+  {%- if layout == 'menu-below' -%}
     <nav class="bm-dh__row-nav" aria-label="Main navigation">
       {%- render 'bm-dh-menu', menu: menu -%}
     </nav>
@@ -102,7 +108,7 @@
     background: var(--dh-bg);
     color: var(--dh-color);
     border-bottom: 1px solid var(--dh-border);
-    font-family: var(--font-family-base), 'Manrope', sans-serif;
+    font-family: var(--dh-menu-font);
     font-size: var(--dh-font-size);
     letter-spacing: var(--dh-letter-spacing);
     font-weight: var(--dh-font-weight);
@@ -123,10 +129,10 @@
     align-items: center;
     gap: 16px;
   }
-  #bm-dh-{{ section.id }} .bm-dh__inner.bm-dh--logo-left {
+  #bm-dh-{{ section.id }} .bm-dh__inner.bm-dh--menu-inline {
     grid-template-columns: auto 1fr auto;
   }
-  #bm-dh-{{ section.id }} .bm-dh__inner.bm-dh--logo-center {
+  #bm-dh-{{ section.id }} .bm-dh__inner.bm-dh--menu-below {
     grid-template-columns: 1fr auto 1fr;
   }
   #bm-dh-{{ section.id }} .bm-dh__left { display: flex; align-items: center; }
@@ -209,42 +215,92 @@
   }
   #bm-dh-{{ section.id }} .bm-dh__menu-item:hover > .bm-dh__menu-link .bm-dh__menu-caret { transform: rotate(180deg); }
 
-  /* Dropdown */
+  /* Premium dropdown */
   #bm-dh-{{ section.id }} .bm-dh__dropdown {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 14px);
     left: 0;
     background: var(--dh-dropdown-bg);
     color: var(--dh-dropdown-color);
-    border: 1px solid var(--dh-border);
-    min-width: 220px;
-    padding: 10px 0;
+    min-width: 240px;
+    padding: 16px 0;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(8px);
-    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+    transform: translateY(12px) scale(.98);
+    transform-origin: top center;
+    transition: opacity .28s cubic-bezier(.2,.7,.2,1),
+                transform .28s cubic-bezier(.2,.7,.2,1),
+                visibility .28s ease;
     z-index: 8995;
-    box-shadow: 0 12px 32px rgba(0,0,0,.06);
+    box-shadow: 0 24px 60px rgba(0,0,0,.10), 0 2px 6px rgba(0,0,0,.04);
+    border-radius: 2px;
+    border-top: 2px solid var(--dh-accent);
+  }
+  /* Bridge so the gap between trigger and dropdown is still hoverable */
+  #bm-dh-{{ section.id }} .bm-dh__dropdown::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: 0;
+    right: 0;
+    height: 16px;
+  }
+  /* Pointer triangle */
+  #bm-dh-{{ section.id }} .bm-dh__dropdown::after {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: 28px;
+    width: 12px;
+    height: 12px;
+    background: var(--dh-dropdown-bg);
+    border-top: 2px solid var(--dh-accent);
+    border-left: 2px solid var(--dh-accent);
+    transform: rotate(45deg);
   }
   #bm-dh-{{ section.id }} .bm-dh__menu-item:hover > .bm-dh__dropdown,
   #bm-dh-{{ section.id }} .bm-dh__menu-item:focus-within > .bm-dh__dropdown {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
   #bm-dh-{{ section.id }} .bm-dh__dropdown a {
-    display: block;
-    padding: 8px 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 26px 11px 26px;
     color: var(--dh-dropdown-color);
     text-decoration: none;
     text-transform: none;
-    letter-spacing: 0.3px;
-    transition: color .2s ease;
+    letter-spacing: 0.4px;
+    font-family: var(--dh-menu-font, var(--font-family-base, 'Manrope', sans-serif));
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    transition: color .25s ease, padding-left .25s ease, background .25s ease;
+    position: relative;
   }
-  #bm-dh-{{ section.id }} .bm-dh__dropdown a:hover { color: var(--dh-dropdown-hover); }
-  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__dropdown { left: 50%; transform: translate(-50%, 8px); }
-  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__menu-item:hover > .bm-dh__dropdown {
-    transform: translate(-50%, 0);
+  #bm-dh-{{ section.id }} .bm-dh__dropdown a::before {
+    content: '';
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width .25s ease;
+    display: inline-block;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__dropdown a:hover {
+    color: var(--dh-dropdown-hover);
+    padding-left: 32px;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__dropdown a:hover::before {
+    width: 14px;
+    margin-right: 4px;
+  }
+  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__dropdown { left: 50%; transform: translate(-50%, 12px) scale(.98); }
+  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__dropdown::after { left: 50%; margin-left: -6px; }
+  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__menu-item:hover > .bm-dh__dropdown,
+  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__menu-item:focus-within > .bm-dh__dropdown {
+    transform: translate(-50%, 0) scale(1);
   }
 
   /* Hide stock theme desktop header on desktop to avoid duplicates */
@@ -261,23 +317,19 @@
     { "type": "header", "content": "Logo" },
     { "type": "image_picker", "id": "logo", "label": "Logo" },
     { "type": "range", "id": "logo_height", "label": "Logo height (px)", "min": 24, "max": 100, "step": 2, "default": 56 },
-    { "type": "select", "id": "layout", "label": "Layout",
+    { "type": "select", "id": "layout", "label": "Menu placement",
+      "info": "Pick exactly one — only one menu will render.",
       "options": [
-        { "value": "logo-center", "label": "Logo center, menu below" },
-        { "value": "logo-left", "label": "Logo left, menu right" }
+        { "value": "menu-below",  "label": "Menu below logo (logo centered)" },
+        { "value": "menu-inline", "label": "Menu beside logo (logo on left)" }
       ],
-      "default": "logo-center"
-    },
-    { "type": "select", "id": "menu_row", "label": "Menu position (logo-center only)",
-      "options": [
-        { "value": "below", "label": "Below logo" }
-      ],
-      "default": "below"
+      "default": "menu-below"
     },
 
     { "type": "header", "content": "Menu" },
     { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu", "info": "Edit menus in Online Store → Navigation. Items with children show as dropdowns." },
     { "type": "range", "id": "menu_gap", "label": "Gap between items (px)", "min": 8, "max": 80, "step": 2, "default": 32 },
+    { "type": "font_picker", "id": "menu_font", "label": "Menu font", "default": "manrope_n4" },
     { "type": "select", "id": "menu_case", "label": "Menu case",
       "options": [
         { "value": "none", "label": "Original" },
