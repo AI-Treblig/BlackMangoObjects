@@ -1139,7 +1139,7 @@
                   "static": true,
                   "settings": {
                     "border_image": "50%",
-                    "width_image": "100%",
+                    "width_image": "50%",
                     "font": "--font-family-second",
                     "color": "#ffffff",
                     "background": "rgba(0,0,0,0)",
