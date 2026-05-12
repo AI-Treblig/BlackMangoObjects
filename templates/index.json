@@ -1215,6 +1215,7 @@
         "category_Qh6PtL": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/bmo-rugs.svg",
             "label": "Rugs",
             "url": "",
             "circle_bg": "",
@@ -1224,6 +1225,7 @@
         "category_hK4mmH": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/bmo-cushion.svg",
             "label": "Cushion Covers",
             "url": "",
             "circle_bg": "",
@@ -1233,6 +1235,7 @@
         "category_iMagPk": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/bmo-curtains.svg",
             "label": "Curtains",
             "url": "",
             "circle_bg": "",
@@ -1242,6 +1245,7 @@
         "category_Qzchrz": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/bmo-throws.svg",
             "label": "Throws",
             "url": "",
             "circle_bg": "",
@@ -1251,6 +1255,7 @@
         "category_jGKLij": {
           "type": "category",
           "settings": {
+            "image": "shopify://shop_images/bmo-objects-w.svg",
             "label": "Objects",
             "url": "",
             "circle_bg": "",
