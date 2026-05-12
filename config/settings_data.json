@@ -2434,19 +2434,20 @@
               "url": ""
             }
           },
-          "bm-mobile-nav-4": {
-            "type": "category",
-            "settings": {
-              "image": "shopify://shop_images/bmo-rugs-icon-w.svg",
-              "label": "Rugs",
-              "url": "shopify://collections/rugs"
-            }
-          },
           "bm-mobile-nav-8": {
             "type": "category",
             "settings": {
+              "image": "shopify://shop_images/bmo-throws.svg",
               "label": "Throws",
               "url": ""
+            }
+          },
+          "bm-mobile-nav-4": {
+            "type": "category",
+            "settings": {
+              "image": "shopify://shop_images/bmo-objects-mobile.svg",
+              "label": "Objects",
+              "url": "shopify://collections/rugs"
             }
           },
           "bm-mobile-nav-9": {
@@ -2465,8 +2466,8 @@
           "bm-mobile-nav-6",
           "bm-mobile-nav-7",
           "bm-mobile-nav-5",
-          "bm-mobile-nav-4",
           "bm-mobile-nav-8",
+          "bm-mobile-nav-4",
           "bm-mobile-nav-9"
         ],
         "settings": {
