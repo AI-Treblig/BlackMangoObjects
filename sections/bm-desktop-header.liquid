@@ -1,3 +1,4 @@
+{%- comment -%} BM Desktop Header v5 — 2026-05-11 — sticky + dropdown typography controls {%- endcomment -%}
 {%- comment -%}
   Black Mango desktop header with full controls.
   Hidden on mobile (mobile uses bm-mobile-nav). Self-contained CSS+JS,
@@ -133,9 +134,16 @@
     #bm-dh-{{ section.id }}.bm-dh { display: block; }
   }
   #bm-dh-{{ section.id }}.bm-dh--sticky {
-    position: sticky;
-    top: 0;
-    z-index: 8990;
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 8990 !important;
+    will-change: box-shadow;
+    transition: box-shadow .25s ease;
+  }
+  /* Subtle drop-shadow once the user has scrolled, gives a premium "lifting" feel */
+  #bm-dh-{{ section.id }}.bm-dh--sticky.is-scrolled {
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .06);
   }
   #bm-dh-{{ section.id }} .bm-dh__inner {
     max-width: 1440px;
@@ -331,6 +339,19 @@
     .header-group { display: none !important; }
   }
 </style>
+
+<script>
+(function() {
+  var el = document.getElementById('bm-dh-{{ section.id }}');
+  if (!el) return;
+  function update() {
+    if (window.scrollY > 8) el.classList.add('is-scrolled');
+    else el.classList.remove('is-scrolled');
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+})();
+</script>
 
 {% schema %}
 {
