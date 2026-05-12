@@ -1037,7 +1037,7 @@
             "background_fixed": false,
             "background_size": "cover",
             "background_pos": "center center",
-            "padding": "0 15px | 0 7.5px",
+            "padding": "0 0px | 0 7.5px",
             "margin": "",
             "width_lap": 100,
             "width_tab": 100,
