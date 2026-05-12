@@ -1455,7 +1455,7 @@
         "width_bg": "container",
         "half_overflow": true,
         "padding_bg": "",
-        "padding": "",
+        "padding": "10px 0px 0px 0px",
         "margin": "75px 0 80px",
         "vertical_align": "top",
         "horizontal_align": "left"
