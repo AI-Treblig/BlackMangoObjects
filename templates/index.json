@@ -1302,7 +1302,7 @@
         "fullwidth": false,
         "background_gradient": "",
         "background_fixed": false,
-        "background_size": "cover",
+        "background_size": "auto",
         "background_pos": "center center",
         "background_color": "#000000",
         "width_bg": "full",
