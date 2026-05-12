@@ -5,17 +5,46 @@
 {%- endcomment -%}
 <style>
   @media (max-width: 767px) {
-    /* Tight up section gaps on mobile — removes white space between large stacked sections */
-    .wpbingo-section { margin-bottom: 0 !important; }
-    .wpbingo-section + .wpbingo-section { margin-top: 0 !important; }
+    /* Kill ALL margin between consecutive shopify-section wrappers on mobile */
+    .shopify-section { margin: 0 !important; }
+    .shopify-section + .shopify-section { margin-top: 0 !important; }
 
-    /* Slideshow / featured rows: trim excessive vertical padding */
+    /* Tighten internal section margins/padding */
+    .wpbingo-section,
+    .wpbingo-section--slideshow,
+    .wpbingo-section--featured-custom-section,
+    .bm-hero {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
     .wpbingo-section--slideshow { padding-bottom: 0 !important; }
-    .wpbingo-section--featured-custom-section { padding-top: 0 !important; padding-bottom: 0 !important; }
+    .wpbingo-section--featured-custom-section {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
 
-    /* Reduce extreme padding values that look right on desktop but pile up on mobile */
+    /* BM Hero shouldn't leave any trailing whitespace */
+    .bm-hero,
+    .bm-hero__viewport { margin-bottom: 0 !important; }
+
+    /* Reduce inner column/inner-section padding that piles up on mobile */
     .shopify-block .column,
-    .shopify-block .inner-section { padding-top: 24px !important; padding-bottom: 24px !important; }
+    .shopify-block .inner-section,
+    .featured-custom-section .column,
+    .featured-custom-section .inner-section {
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+    }
+
+    /* Featured custom sections' inline padding/margin via style attribute is hardest
+       to defeat — match the wrapper for it too */
+    .shopify-section[id*="featured_custom"] > section,
+    .shopify-section[id*="featured_custom"] .wpbingo-section {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
 
     /* The dark "categories" strip near the bottom of the home page —
        trim the heavy top/bottom black gap on mobile */
@@ -26,6 +55,11 @@
       padding-top: 28px !important;
       padding-bottom: 28px !important;
     }
+
+    /* Banners box: kill any leftover bottom margin on mobile */
+    .banners-box,
+    .banners-box__inner,
+    .shopify-block .banners-box { margin-bottom: 0 !important; }
 
     /* Make any phone/email/whatsapp text inside the existing footer/contact strips
        clickable & touchable (auto-link on tap) */
