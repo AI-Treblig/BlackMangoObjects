@@ -9,6 +9,57 @@
  */
 {
   "sections": {
+    "bm_hero_pxxHYA": {
+      "type": "bm-hero",
+      "blocks": {
+        "slide_BF99NV": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify://shop_images/blackMango-home.webp",
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "text_align_desktop": "left",
+            "text_color": "#ffffff",
+            "text_align_mobile": "center",
+            "text_color_mobile": "#ffffff"
+          }
+        },
+        "slide_XiXiyb": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "text_align_desktop": "left",
+            "text_color": "#ffffff",
+            "text_align_mobile": "center",
+            "text_color_mobile": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "slide_BF99NV",
+        "slide_XiXiyb"
+      ],
+      "name": "BM Hero Slideshow",
+      "settings": {
+        "height_desktop": 1000,
+        "height_tablet": 560,
+        "height_mobile": 540,
+        "autoplay": true,
+        "autoplay_speed": 6000,
+        "show_navigation": true,
+        "show_dots": true
+      }
+    },
     "slidershow_wFjjfz": {
       "type": "slidershow",
       "blocks": {
@@ -427,6 +478,7 @@
         "slide_bLyxRk",
         "slide_wDVJEp"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": true,
@@ -1024,7 +1076,7 @@
                 "space_column3": 15,
                 "column4": 1.5,
                 "pergroup_column4": 1,
-                "space_column4": 15
+                "space_column4": 12
               },
               "blocks": {
                 "collection_image_NXTLbB": {
@@ -2178,6 +2230,7 @@
     }
   },
   "order": [
+    "bm_hero_pxxHYA",
     "slidershow_wFjjfz",
     "featured_custom_section_VrgDaP",
     "featured_custom_section_DmnpLg",
