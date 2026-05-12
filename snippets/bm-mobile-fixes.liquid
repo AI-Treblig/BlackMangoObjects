@@ -55,6 +55,19 @@
       padding-top: 28px !important;
       padding-bottom: 28px !important;
     }
+  }
+
+  /* Desktop: trim the same dark categories strip to a sensible 50/50 vertical padding */
+  @media (min-width: 768px) {
+    .shopify-section[id*="featured_custom"] [style*="background:#000"],
+    .shopify-section[id*="featured_custom"] [style*="background: #000"],
+    .shopify-section[id*="featured_custom"] [style*="background-color:#000"],
+    .shopify-section[id*="featured_custom"] [style*="background-color: #000"],
+    .shopify-section[id*="featured_custom"] [style*="background:rgb(0,0,0)"],
+    .shopify-section[id*="featured_custom"] [style*="background: rgb(0, 0, 0)"] {
+      padding-top: 50px !important;
+      padding-bottom: 50px !important;
+    }
 
     /* Banners box: kill any leftover bottom margin on mobile */
     .banners-box,
