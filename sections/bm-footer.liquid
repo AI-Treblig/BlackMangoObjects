@@ -172,7 +172,9 @@
     <div class="bm-footer__bottom">
       <div class="bm-footer__container bm-footer__bottom-inner">
         <div class="bm-footer__copy">
-          {{ section.settings.copyright | default: '© 2025 Your Store. All rights reserved.' | replace: '{year}', 'now' | date: '%Y' }}
+          {%- assign current_year = 'now' | date: '%Y' -%}
+          {%- assign copy_text = section.settings.copyright | default: '© Black Mango. All rights reserved.' -%}
+          {{ copy_text | replace: 'YEAR', current_year }}
         </div>
         {%- if section.settings.show_payment_icons -%}
           <div class="bm-footer__payments">
@@ -393,7 +395,7 @@
 
     { "type": "header", "content": "Bottom strip" },
     { "type": "checkbox", "id": "show_bottom_strip", "label": "Show bottom strip", "default": true },
-    { "type": "text", "id": "copyright", "label": "Copyright text", "default": "© 2025 Black Mango. All rights reserved." },
+    { "type": "text", "id": "copyright", "label": "Copyright text", "default": "© YEAR Black Mango. All rights reserved.", "info": "Use 'YEAR' (uppercase, no quotes) anywhere in the text to insert the current year automatically." },
     { "type": "checkbox", "id": "show_payment_icons", "label": "Show payment method icons", "default": false }
   ],
   "blocks": [
