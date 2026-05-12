@@ -8,7 +8,9 @@
 {%- if menu == blank -%}{%- assign menu = linklists.main-menu -%}{%- endif -%}
 
 {%- if section.settings.menu_font -%}
-  {{ section.settings.menu_font | font_face: font_display: 'swap' }}
+  {%- style -%}
+    {{ section.settings.menu_font | font_face: font_display: 'swap' }}
+  {%- endstyle -%}
   {%- assign menu_font_family = section.settings.menu_font.family -%}
 {%- else -%}
   {%- assign menu_font_family = 'Manrope' -%}
