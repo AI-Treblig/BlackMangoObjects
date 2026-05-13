@@ -1,100 +1,81 @@
 {%- comment -%}
   Black Mango — keep the displayed price in sync with the selected variant.
-  Self-contained, no dependency on theme JS. Pulls money format from shop settings.
+  Self-contained. Format = ₹ + integer with comma thousands (no decimals).
+  Includes debug logging so you can see what's happening in the browser console.
 {%- endcomment -%}
 <script>
 (function() {
-  var productJsonEl = document.getElementById('ProductJson-{{ section.id }}');
-  if (!productJsonEl) return;
+  var DEBUG = true;
+  var log = function() { if (DEBUG && window.console) console.log.apply(console, ['[BM variant]'].concat([].slice.call(arguments))); };
 
-  /* BM: forced format = '₹' + integer with comma thousands (no decimals).
-     NOTE: 'amount_no_decimals_with_comma_separator' is the EUROPEAN format
-     (dot thousands). For Indian / US comma thousands we want 'amount_no_decimals'. */
+  /* Find ProductJson — accept both scoped and generic IDs */
+  var productJsonEl = document.getElementById('ProductJson-{{ section.id }}')
+                   || document.querySelector('[id^="ProductJson-"]');
+  if (!productJsonEl) { log('no ProductJson script found'); return; }
+
   var product;
-  var moneyFormat = '₹{{amount_no_decimals}}';
-  try { product = JSON.parse(productJsonEl.textContent); } catch (e) { return; }
-  if (!product || !product.variants) return;
+  try { product = JSON.parse(productJsonEl.textContent); }
+  catch (e) { log('failed to parse ProductJson:', e); return; }
+  if (!product || !product.variants) { log('no variants in product'); return; }
 
-  /* Find the product form so events are scoped to this product */
-  var form = document.querySelector('form[action*="/cart/add"][data-section-id="{{ section.id }}"]')
-          || document.querySelector('form[action*="/cart/add"]');
-  if (!form) return;
+  log('loaded for', product.title, '—', product.variants.length, 'variants');
 
-  /* Shopify-compatible money formatter — supports {{amount}}, {{amount_no_decimals}},
-     {{amount_with_comma_separator}}, {{amount_no_decimals_with_comma_separator}} */
-  function formatWithDelimiters(num, precision, thousands, decimal) {
-    if (isNaN(num) || num == null) return 0;
-    thousands = thousands == null ? ',' : thousands;
-    decimal   = decimal   == null ? '.' : decimal;
-    var n = (num / 100.0).toFixed(precision);
-    var parts = n.split('.');
-    var intPart = parts[0].replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + thousands);
-    return parts.length > 1 ? intPart + decimal + parts[1] : intPart;
-  }
-  function formatMoney(cents, format) {
-    if (typeof cents === 'string') cents = cents.replace('.', '');
-    var value = '';
-    var placeholder = /\{\{\s*(\w+)\s*\}\}/;
-    var f = format || moneyFormat || '${{amount}}';
-    switch (f.match(placeholder)[1]) {
-      case 'amount': value = formatWithDelimiters(cents, 2); break;
-      case 'amount_no_decimals': value = formatWithDelimiters(cents, 0); break;
-      case 'amount_with_comma_separator': value = formatWithDelimiters(cents, 2, '.', ','); break;
-      case 'amount_no_decimals_with_comma_separator': value = formatWithDelimiters(cents, 0, '.', ','); break;
-      case 'amount_with_space_separator': value = formatWithDelimiters(cents, 2, ' ', '.'); break;
-      case 'amount_no_decimals_with_space_separator': value = formatWithDelimiters(cents, 0, ' '); break;
-      case 'amount_with_apostrophe_separator': value = formatWithDelimiters(cents, 2, "'", '.'); break;
-      default: value = formatWithDelimiters(cents, 2);
-    }
-    return f.replace(placeholder, value);
+  function formatINR(cents) {
+    var n = Math.round(cents / 100);
+    return '₹' + String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
-  function selectedOptions() {
-    var radios = form.querySelectorAll('.js-single-option-selector[type="radio"]:checked');
-    var selects = form.querySelectorAll('select.js-single-option-selector');
+  function selectedValues() {
     var values = [];
-    radios.forEach(function(r) {
-      var idx = (r.dataset.index || r.name || 'option1').replace(/option/, '');
-      values[parseInt(idx, 10) - 1] = r.value;
+    document.querySelectorAll('.js-single-option-selector[type="radio"]:checked').forEach(function(r) {
+      var idxStr = (r.dataset.index || 'option1').replace(/option/, '');
+      var idx = parseInt(idxStr, 10) - 1;
+      if (idx >= 0) values[idx] = r.value;
     });
-    selects.forEach(function(s) {
-      var idx = (s.dataset.index || s.name || 'option1').replace(/option/, '');
-      if (!values[parseInt(idx, 10) - 1]) {
-        values[parseInt(idx, 10) - 1] = s.value;
-      }
+    document.querySelectorAll('select.js-single-option-selector').forEach(function(s) {
+      var idxStr = (s.dataset.index || 'option1').replace(/option/, '');
+      var idx = parseInt(idxStr, 10) - 1;
+      if (idx >= 0 && values[idx] == null) values[idx] = s.value;
     });
     return values;
   }
 
   function findVariant() {
-    var optionValues = selectedOptions();
-    if (!optionValues.length) return null;
-    return product.variants.find(function(v) {
-      return v.options.every(function(opt, i) {
-        return optionValues[i] == null || optionValues[i] === opt;
-      }) && v.options.length === optionValues.filter(function(x) { return x != null; }).length;
-    });
+    var vals = selectedValues();
+    if (!vals.length) return null;
+    /* Match a variant whose options match all selected values at the same index */
+    for (var i = 0; i < product.variants.length; i++) {
+      var v = product.variants[i];
+      var ok = true;
+      for (var j = 0; j < v.options.length; j++) {
+        if (vals[j] == null) continue;
+        if (vals[j] !== v.options[j]) { ok = false; break; }
+      }
+      if (ok) return v;
+    }
+    return null;
   }
 
-  function updateForVariant(variant) {
-    if (!variant) return;
+  function update() {
+    var v = findVariant();
+    if (!v) { log('no matching variant for selection:', selectedValues()); return; }
+    log('updating to variant:', v.title, '— price:', v.price, '— compare_at:', v.compare_at_price);
 
     /* Main price */
-    document.querySelectorAll('.js-product-price').forEach(function(el) {
-      el.innerHTML = formatMoney(variant.price);
-      el.setAttribute('content', (variant.price / 100).toFixed(2));
-      if (variant.compare_at_price && variant.compare_at_price > variant.price) {
-        el.classList.add('on-sale');
-      } else {
-        el.classList.remove('on-sale');
-      }
+    var priceEls = document.querySelectorAll('.js-product-price');
+    log('found', priceEls.length, '.js-product-price element(s)');
+    priceEls.forEach(function(el) {
+      el.innerHTML = formatINR(v.price);
+      el.setAttribute('content', (v.price / 100).toFixed(2));
+      if (v.compare_at_price && v.compare_at_price > v.price) el.classList.add('on-sale');
+      else el.classList.remove('on-sale');
     });
 
     /* Compare-at price */
     document.querySelectorAll('.js-product-compare-price').forEach(function(el) {
       var wrap = el.closest('.product-single__price--wrapper');
-      if (variant.compare_at_price && variant.compare_at_price > variant.price) {
-        el.innerHTML = formatMoney(variant.compare_at_price);
+      if (v.compare_at_price && v.compare_at_price > v.price) {
+        el.innerHTML = formatINR(v.compare_at_price);
         if (wrap) { wrap.classList.remove('d-none'); wrap.setAttribute('aria-hidden', 'false'); }
       } else {
         el.innerHTML = '';
@@ -102,63 +83,45 @@
       }
     });
 
-    /* Variant ID hidden field */
-    var idInput = form.querySelector('input[name="id"]');
-    if (idInput) idInput.value = variant.id;
+    /* Hidden variant ID for Add to Cart */
+    var idInput = document.querySelector('form[action*="/cart/add"] input[name="id"]');
+    if (idInput) idInput.value = v.id;
 
     /* URL */
     if (window.history && history.replaceState) {
       try {
         var url = new URL(window.location.href);
-        url.searchParams.set('variant', variant.id);
+        url.searchParams.set('variant', v.id);
         history.replaceState({}, '', url.toString());
       } catch (e) {}
     }
-
-    /* Availability label fallback */
-    document.querySelectorAll('[data-variant-available-text]').forEach(function(el) {
-      el.textContent = variant.available ? (el.dataset.variantAvailableText || 'In stock') : (el.dataset.variantUnavailableText || 'Sold out');
-    });
   }
 
-  function sync() {
-    var v = findVariant();
-    if (v) updateForVariant(v);
-  }
+  /* Aggressive event coverage — listen everywhere */
+  document.addEventListener('change', update, true);
+  document.addEventListener('input',  update, true);
+  document.addEventListener('click', function() {
+    setTimeout(update, 0);
+    setTimeout(update, 80);
+    setTimeout(update, 250);
+  }, true);
 
-  /* Event-based listeners (fast path) */
-  form.addEventListener('change', function() { sync(); });
-  form.addEventListener('input',  function() { sync(); });
-  form.addEventListener('click',  function() { setTimeout(sync, 30); setTimeout(sync, 200); });
-  document.addEventListener('change', function(e) {
-    var t = e.target;
-    if (t && t.classList && t.classList.contains('js-single-option-selector')) sync();
-  });
-  document.addEventListener('click', function(e) {
-    var t = e.target;
-    if (!t) return;
-    if (t.closest && (t.closest('.single-option-selector') ||
-                      t.closest('[data-single-option-button]') ||
-                      t.closest('label[for^="ProductSelect-option"]') ||
-                      t.closest('.wpb-variants-swatch'))) {
-      setTimeout(sync, 30); setTimeout(sync, 200);
-    }
-  });
-
-  /* Polling fallback (bulletproof) — checks if the resolved variant changed
-     every 300ms. Catches any case where the theme's click handler doesn't
-     trigger a standard change event. */
-  var lastVariantId = null;
+  /* Polling fallback (300ms) — bulletproof if any of the above misses */
+  var lastId = null;
   setInterval(function() {
     var v = findVariant();
-    if (v && v.id !== lastVariantId) {
-      lastVariantId = v.id;
-      updateForVariant(v);
+    if (v && v.id !== lastId) {
+      lastId = v.id;
+      update();
     }
   }, 300);
 
-  /* Initial sync */
-  sync();
-  setTimeout(sync, 400);
+  /* Initial sync now and shortly after load */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', update);
+  } else {
+    update();
+  }
+  setTimeout(update, 600);
 })();
 </script>
