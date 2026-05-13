@@ -275,8 +275,8 @@
        White-on-transparent SVGs render unchanged. */
     filter: brightness(0) invert(1);
   }
-  .bm-contact__card-icon--wa { background: #25D366; }
-  .bm-contact__card:hover .bm-contact__card-icon--wa { background: #128C7E; }
+  .bm-contact__card-icon--wa { background: {{ section.settings.whatsapp_icon_bg | default: '#000000' }}; }
+  .bm-contact__card:hover .bm-contact__card-icon--wa { background: {{ section.settings.whatsapp_icon_bg_hover | default: section.settings.accent_color | default: '#000000' }}; }
   .bm-contact__card-text { display: flex; flex-direction: column; gap: 2px; }
   .bm-contact__card-title {
     font-size: 11px;
@@ -459,6 +459,8 @@
     { "type": "text", "id": "address", "label": "Address", "default": "Mumbai, MH, India" },
     { "type": "text", "id": "whatsapp", "label": "WhatsApp number", "default": "+91 86982 05381", "info": "International format. Auto-links to wa.me." },
     { "type": "image_picker", "id": "whatsapp_icon", "label": "WhatsApp icon (optional)", "info": "Upload or pick a logo (e.g. whatsapp-logo.svg from your media library). Leave empty to use the built-in SVG." },
+    { "type": "color", "id": "whatsapp_icon_bg", "label": "WhatsApp circle background", "default": "#000000" },
+    { "type": "color", "id": "whatsapp_icon_bg_hover", "label": "WhatsApp circle background (hover)", "default": "#000000" },
     { "type": "textarea", "id": "whatsapp_prefill", "label": "WhatsApp pre-fill message", "default": "Hi! I have a question." },
     { "type": "text", "id": "phone", "label": "Phone (optional)", "info": "Tap-to-call link" },
     { "type": "text", "id": "email", "label": "Email", "default": "blackmango.website@gmail.com" },
