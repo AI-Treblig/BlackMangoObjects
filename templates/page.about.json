@@ -617,7 +617,7 @@
         "max_width": "",
         "fullwidth": true,
         "background_gradient": "",
-        "background": "shopify://shop_images/about-bg-pattern.webp",
+        "background": "shopify://shop_images/pattern-about-bg.webp",
         "background_fixed": false,
         "background_size": "cover",
         "background_pos": "center center",
