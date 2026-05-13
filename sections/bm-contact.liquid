@@ -44,8 +44,12 @@
           {%- if section.settings.whatsapp != blank -%}
             {%- assign wa_clean = section.settings.whatsapp | replace: '+', '' | replace: ' ', '' | replace: '-', '' | replace: '(', '' | replace: ')', '' -%}
             <a href="https://wa.me/{{ wa_clean }}{% if section.settings.whatsapp_prefill != blank %}?text={{ section.settings.whatsapp_prefill | url_encode }}{% endif %}" target="_blank" rel="noopener" class="bm-contact__card">
-              <span class="bm-contact__card-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.88 11.89L4 20l4.22-1.11a7.93 7.93 0 0 0 3.83.98h.01a7.94 7.94 0 0 0 5.54-13.55zm-2 9.61c-.16.46-.94.88-1.34.95-.34.05-.78.07-1.26-.08-.29-.09-.66-.21-1.14-.42-2.01-.87-3.33-2.91-3.43-3.04-.1-.13-.82-1.08-.82-2.06s.52-1.47.7-1.67a.75.75 0 0 1 .54-.25l.39.01c.12 0 .29-.05.45.34.17.4.57 1.38.62 1.48.05.1.09.22.02.35-.07.13-.1.21-.2.33-.1.12-.21.26-.3.35-.1.09-.2.2-.09.4.11.2.51.85 1.12 1.38.76.68 1.4.89 1.6.99.2.1.32.08.43-.05.13-.13.5-.58.62-.78.13-.2.26-.17.45-.1.18.07 1.16.55 1.36.65.2.1.33.15.38.23.05.09.05.49-.11.95z"/></svg>
+              <span class="bm-contact__card-icon bm-contact__card-icon--wa" aria-hidden="true">
+                {%- if section.settings.whatsapp_icon -%}
+                  <img src="{{ section.settings.whatsapp_icon | image_url: width: 120 }}" alt="" width="26" height="26">
+                {%- else -%}
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.88 11.89L4 20l4.22-1.11a7.93 7.93 0 0 0 3.83.98h.01a7.94 7.94 0 0 0 5.54-13.55zm-2 9.61c-.16.46-.94.88-1.34.95-.34.05-.78.07-1.26-.08-.29-.09-.66-.21-1.14-.42-2.01-.87-3.33-2.91-3.43-3.04-.1-.13-.82-1.08-.82-2.06s.52-1.47.7-1.67a.75.75 0 0 1 .54-.25l.39.01c.12 0 .29-.05.45.34.17.4.57 1.38.62 1.48.05.1.09.22.02.35-.07.13-.1.21-.2.33-.1.12-.21.26-.3.35-.1.09-.2.2-.09.4.11.2.51.85 1.12 1.38.76.68 1.4.89 1.6.99.2.1.32.08.43-.05.13-.13.5-.58.62-.78.13-.2.26-.17.45-.1.18.07 1.16.55 1.36.65.2.1.33.15.38.23.05.09.05.49-.11.95z"/></svg>
+                {%- endif -%}
               </span>
               <span class="bm-contact__card-text">
                 <span class="bm-contact__card-title">WhatsApp</span>
@@ -261,6 +265,18 @@
     transition: background .25s ease, color .25s ease;
   }
   .bm-contact__card:hover .bm-contact__card-icon { background: var(--bc-accent); }
+  /* WhatsApp icon — make uploaded image fill the circle and stay white on hover */
+  .bm-contact__card-icon img {
+    width: 56%;
+    height: 56%;
+    object-fit: contain;
+    display: block;
+    /* If the supplied SVG is dark, invert to white so it shows on the dark circle.
+       White-on-transparent SVGs render unchanged. */
+    filter: brightness(0) invert(1);
+  }
+  .bm-contact__card-icon--wa { background: #25D366; }
+  .bm-contact__card:hover .bm-contact__card-icon--wa { background: #128C7E; }
   .bm-contact__card-text { display: flex; flex-direction: column; gap: 2px; }
   .bm-contact__card-title {
     font-size: 11px;
@@ -442,6 +458,7 @@
     { "type": "header", "content": "Contact info" },
     { "type": "text", "id": "address", "label": "Address", "default": "Mumbai, MH, India" },
     { "type": "text", "id": "whatsapp", "label": "WhatsApp number", "default": "+91 86982 05381", "info": "International format. Auto-links to wa.me." },
+    { "type": "image_picker", "id": "whatsapp_icon", "label": "WhatsApp icon (optional)", "info": "Upload or pick a logo (e.g. whatsapp-logo.svg from your media library). Leave empty to use the built-in SVG." },
     { "type": "textarea", "id": "whatsapp_prefill", "label": "WhatsApp pre-fill message", "default": "Hi! I have a question." },
     { "type": "text", "id": "phone", "label": "Phone (optional)", "info": "Tap-to-call link" },
     { "type": "text", "id": "email", "label": "Email", "default": "blackmango.website@gmail.com" },
