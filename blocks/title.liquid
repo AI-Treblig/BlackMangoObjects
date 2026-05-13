@@ -48,6 +48,8 @@
         letter-spacing:{{ block.settings.letter_spacing_mobi }}px;
         color:{{ block.settings.color_mobi }};
         text-align:{{ block.settings.align_mobi }};
+        {%- if block.settings.padding_mobi != blank -%}padding:{{ block.settings.padding_mobi }} !important;{%- endif -%}
+        {%- if block.settings.margin_mobi != blank -%}margin:{{ block.settings.margin_mobi }} !important;{%- endif -%}
       }
     }
 </style>
@@ -226,6 +228,20 @@
             "id": "align_mobi",
             "label": "Text align",
             "default": "left"
+        },
+        {
+            "type": "text",
+            "id": "padding_mobi",
+            "label": "Padding (mobile)",
+            "placeholder": "20px 0 20px 0",
+            "info": "Top right bottom left. Example: 30px 0 20px 0"
+        },
+        {
+            "type": "text",
+            "id": "margin_mobi",
+            "label": "Margin (mobile)",
+            "placeholder": "0 0 20px 0",
+            "info": "Top right bottom left. Example: 30px 0 20px 0"
         }
     ],
     "presets": [
