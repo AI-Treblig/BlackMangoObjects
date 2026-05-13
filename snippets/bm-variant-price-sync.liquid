@@ -126,13 +126,10 @@
     if (v) updateForVariant(v);
   }
 
-  /* Listen on the whole form so any selector type fires it */
+  /* Event-based listeners (fast path) */
   form.addEventListener('change', function() { sync(); });
   form.addEventListener('input',  function() { sync(); });
-  /* Some swatches are <label> click-only — fire via click delegation too */
-  form.addEventListener('click', function() { setTimeout(sync, 30); setTimeout(sync, 200); });
-
-  /* Also listen globally — some themes have the option selector outside the form */
+  form.addEventListener('click',  function() { setTimeout(sync, 30); setTimeout(sync, 200); });
   document.addEventListener('change', function(e) {
     var t = e.target;
     if (t && t.classList && t.classList.contains('js-single-option-selector')) sync();
@@ -140,14 +137,28 @@
   document.addEventListener('click', function(e) {
     var t = e.target;
     if (!t) return;
-    var label = t.closest && t.closest('label[for^="ProductSelect-option"]');
-    var swatch = t.closest && (t.closest('.single-option-selector') || t.closest('[data-single-option-button]'));
-    if (label || swatch) { setTimeout(sync, 30); setTimeout(sync, 200); }
+    if (t.closest && (t.closest('.single-option-selector') ||
+                      t.closest('[data-single-option-button]') ||
+                      t.closest('label[for^="ProductSelect-option"]') ||
+                      t.closest('.wpb-variants-swatch'))) {
+      setTimeout(sync, 30); setTimeout(sync, 200);
+    }
   });
 
-  /* Initial sync in case the rendered HTML and the actual selected variant disagree */
+  /* Polling fallback (bulletproof) — checks if the resolved variant changed
+     every 300ms. Catches any case where the theme's click handler doesn't
+     trigger a standard change event. */
+  var lastVariantId = null;
+  setInterval(function() {
+    var v = findVariant();
+    if (v && v.id !== lastVariantId) {
+      lastVariantId = v.id;
+      updateForVariant(v);
+    }
+  }, 300);
+
+  /* Initial sync */
   sync();
-  /* Re-sync shortly after load so any theme JS that mutates the selectors has settled */
   setTimeout(sync, 400);
 })();
 </script>

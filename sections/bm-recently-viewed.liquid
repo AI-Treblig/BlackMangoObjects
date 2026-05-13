@@ -100,8 +100,8 @@
       .catch(function() { return null; });
   }
   function moneyFormat(cents) {
-    var n = (cents / 100);
-    return 'Rs. ' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    var whole = Math.round(cents / 100);
+    return '₹' + String(whole).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
   function buildCard(p) {
     var img = p.featured_image || (p.images && p.images[0]) || '';

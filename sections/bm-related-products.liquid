@@ -50,7 +50,7 @@
           </div>
           <div class="bm-related__info">
             <div class="bm-related__title">{{ p.title }}</div>
-            <div class="bm-related__price">{{ p.price | money }}</div>
+            <div class="bm-related__price">₹{{ p.price | money_without_currency | split: '.' | first }}</div>
           </div>
         </a>
       {%- endfor -%}

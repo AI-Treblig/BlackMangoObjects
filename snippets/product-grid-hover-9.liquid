@@ -233,17 +233,17 @@
 			<div class="product-group-price" data-handle="{{ product.handle }}">
 				{% if group_product == blank %}
 					{%- if on_sale -%}
-						<div class="product-price product-price--regular">{{ product.compare_at_price | money }}</div>
+						<div class="product-price product-price--regular">₹{{ product.compare_at_price | money_without_currency | split: '.' | first }}</div>
 						{%- if variant_count > 1 -%}
-							<div class="product-price variant-price price-sale">{{ variant.price | money }}</div>
+							<div class="product-price variant-price price-sale">₹{{ variant.price | money_without_currency | split: '.' | first }}</div>
 						{%- else -%}
-							<div class="product-price price-sale">{{ product.price | money }}</div>
+							<div class="product-price price-sale">₹{{ product.price | money_without_currency | split: '.' | first }}</div>
 						{%- endif -%}
 					{%- else -%}
 						{%- if variant_count > 1 -%}
-							<div class="product-price variant-price">{{ variant.price | money }}</div>
+							<div class="product-price variant-price">₹{{ variant.price | money_without_currency | split: '.' | first }}</div>
 						{%- else -%}
-							<div class="product-price">{{ product.price | money }}</div>
+							<div class="product-price">₹{{ product.price | money_without_currency | split: '.' | first }}</div>
 						{%- endif -%}
 					{%- endif -%}
 					{%- if product.price_varies == false and variant.unit_price_measurement -%}
@@ -285,7 +285,7 @@
 							{% endif %}	
 						{% endfor %}
 						{%- if template contains 'collection' -%}
-							{{ product.price | money }}
+							₹{{ product.price | money_without_currency | split: '.' | first }}
 						{% else %}	
 							{{  min_price | money }} - {{  max_price | money }}
 						{% endif %}	
