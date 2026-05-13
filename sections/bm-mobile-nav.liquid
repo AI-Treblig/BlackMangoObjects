@@ -12,6 +12,16 @@
 {%- assign logo = section.settings.logo_mobile -%}
 {%- assign logo_height = section.settings.logo_height | default: 36 -%}
 
+{%- if section.settings.menu_font -%}
+  {%- style -%}
+    {{ section.settings.menu_font | font_face: font_display: 'swap' }}
+  {%- endstyle -%}
+  {%- assign menu_font_family = section.settings.menu_font.family -%}
+{%- else -%}
+  {%- assign menu_font_family = 'EB Garamond' -%}
+{%- endif -%}
+{%- assign menu_case = section.settings.menu_case | default: 'uppercase' -%}
+
 <div id="bm-mnav-bar" class="bm-mnav-bar">
   <div class="bm-mnav-bar__inner">
     <button type="button"
@@ -638,11 +648,15 @@
 
   /* Override menu link font + color from settings */
   .bm-mnav-link {
+    font-family: '{{ menu_font_family }}', var(--font-family-second, 'EB Garamond'), serif !important;
     font-size: {{ section.settings.menu_font_size | default: 15 }}px !important;
     color: {{ section.settings.menu_color | default: '#000000' }} !important;
+    text-transform: {{ menu_case }} !important;
+    letter-spacing: {{ section.settings.menu_letter_spacing | default: 0.5 }}px !important;
   }
   .bm-mnav-link--child {
     color: {{ section.settings.menu_child_color | default: '#444444' }} !important;
+    text-transform: {{ menu_case }} !important;
   }
   .bm-mnav-drawer__title {
     font-size: {{ section.settings.drawer_title_size | default: 20 }}px !important;
@@ -685,6 +699,17 @@
     { "type": "text", "id": "drawer_title", "label": "Drawer title", "default": "MENU" },
     { "type": "range", "id": "drawer_title_size", "label": "Drawer title font size (px)", "min": 14, "max": 32, "step": 1, "default": 20 },
     { "type": "color", "id": "drawer_title_color", "label": "Drawer title color", "default": "#000000" },
+    { "type": "font_picker", "id": "menu_font", "label": "Menu font", "default": "eb_garamond_n4", "info": "Applies to all hamburger menu items (Home, Collections, About Us, Contact Us, etc.)" },
+    { "type": "select", "id": "menu_case", "label": "Menu case",
+      "options": [
+        { "value": "none", "label": "Original (no transform)" },
+        { "value": "uppercase", "label": "UPPERCASE" },
+        { "value": "lowercase", "label": "lowercase" },
+        { "value": "capitalize", "label": "Capitalized" }
+      ],
+      "default": "uppercase"
+    },
+    { "type": "range", "id": "menu_letter_spacing", "label": "Menu letter spacing (px)", "min": 0, "max": 4, "step": 0.5, "default": 0.5 },
     { "type": "range", "id": "menu_font_size", "label": "Menu item font size (px)", "min": 12, "max": 22, "step": 1, "default": 15 },
     { "type": "color", "id": "menu_color", "label": "Menu item color", "default": "#000000" },
     { "type": "color", "id": "menu_child_color", "label": "Sub-menu item color", "default": "#444444" },
