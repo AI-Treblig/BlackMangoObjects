@@ -7,9 +7,11 @@
   var productJsonEl = document.getElementById('ProductJson-{{ section.id }}');
   if (!productJsonEl) return;
 
-  /* BM: forced format = '₹' + comma-separated integer (no decimals) */
+  /* BM: forced format = '₹' + integer with comma thousands (no decimals).
+     NOTE: 'amount_no_decimals_with_comma_separator' is the EUROPEAN format
+     (dot thousands). For Indian / US comma thousands we want 'amount_no_decimals'. */
   var product;
-  var moneyFormat = '₹{{amount_no_decimals_with_comma_separator}}';
+  var moneyFormat = '₹{{amount_no_decimals}}';
   try { product = JSON.parse(productJsonEl.textContent); } catch (e) { return; }
   if (!product || !product.variants) return;
 
@@ -125,19 +127,27 @@
   }
 
   /* Listen on the whole form so any selector type fires it */
-  form.addEventListener('change', function(e) {
+  form.addEventListener('change', function() { sync(); });
+  form.addEventListener('input',  function() { sync(); });
+  /* Some swatches are <label> click-only — fire via click delegation too */
+  form.addEventListener('click', function() { setTimeout(sync, 30); setTimeout(sync, 200); });
+
+  /* Also listen globally — some themes have the option selector outside the form */
+  document.addEventListener('change', function(e) {
+    var t = e.target;
+    if (t && t.classList && t.classList.contains('js-single-option-selector')) sync();
+  });
+  document.addEventListener('click', function(e) {
     var t = e.target;
     if (!t) return;
-    if (t.classList && t.classList.contains('js-single-option-selector')) sync();
-  });
-  /* Some swatches are <label> click-only — fire via click delegation too */
-  form.addEventListener('click', function(e) {
-    var label = e.target.closest('label');
-    if (!label) return;
-    setTimeout(sync, 0);
+    var label = t.closest && t.closest('label[for^="ProductSelect-option"]');
+    var swatch = t.closest && (t.closest('.single-option-selector') || t.closest('[data-single-option-button]'));
+    if (label || swatch) { setTimeout(sync, 30); setTimeout(sync, 200); }
   });
 
   /* Initial sync in case the rendered HTML and the actual selected variant disagree */
   sync();
+  /* Re-sync shortly after load so any theme JS that mutates the selectors has settled */
+  setTimeout(sync, 400);
 })();
 </script>
