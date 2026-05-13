@@ -161,7 +161,7 @@
                 <label for="bm-contact-phone">Phone *</label>
                 <input type="tel" id="bm-contact-phone" name="contact[phone]" required
                        value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-                       autocomplete="tel" placeholder="+91 9XXXX XXXXX"
+                       autocomplete="tel" placeholder="+91-"
                        pattern="[\d\s+\-()]{7,}"
                        title="Enter a valid phone number">
               </div>
