@@ -1,4 +1,4 @@
-{%- comment -%} BM Desktop Header v6 — predictive search panel with live suggestions {%- endcomment -%}
+{%- comment -%} BM Desktop Header v7 — search button styling reset + resilient suggest fetch {%- endcomment -%}
 {%- comment -%}
   Black Mango desktop header with full controls.
   Hidden on mobile (mobile uses bm-mobile-nav). Self-contained CSS+JS,
@@ -212,7 +212,17 @@
     justify-content: center;
     transition: color .2s ease;
     padding: 4px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    cursor: pointer;
+    font: inherit;
+    -webkit-appearance: none;
+    appearance: none;
   }
+  #bm-dh-{{ section.id }} .bm-dh__icon:focus,
+  #bm-dh-{{ section.id }} .bm-dh__icon:focus-visible { outline: 0; box-shadow: none; }
   #bm-dh-{{ section.id }} .bm-dh__icon:hover { color: var(--dh-hover); }
   #bm-dh-{{ section.id }} .bm-dh__badge {
     position: absolute;
@@ -612,20 +622,40 @@
   var lastReqId = 0;
   function search(q) {
     var reqId = ++lastReqId;
-    var url = '/search/suggest.json?q=' + encodeURIComponent(q)
+    var origin = window.location.origin || (window.location.protocol + '//' + window.location.host);
+    var url = origin + '/search/suggest.json'
+            + '?q=' + encodeURIComponent(q)
             + '&resources[type]=product'
             + '&resources[limit]=8'
-            + '&resources[options][unavailable_products]=last'
-            + '&resources[options][fields]=title,product_type,vendor,tag';
-    fetch(url, { headers: { 'Accept': 'application/json' } })
-      .then(function(r) { return r.ok ? r.json() : null; })
+            + '&resources[options][unavailable_products]=last';
+    fetch(url, {
+      headers: { 'Accept': 'application/json' },
+      credentials: 'same-origin',
+      cache: 'no-store'
+    })
+      .then(function(r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
       .then(function(data) {
         if (reqId !== lastReqId) return; // stale response
         renderResults(q, data);
       })
-      .catch(function() {
+      .catch(function(err) {
         if (reqId !== lastReqId) return;
-        results.innerHTML = '<div class="bm-dh__sr-state">Couldn\'t fetch suggestions. Try pressing Enter.</div>';
+        if (window && window.console) console.warn('[BM search] suggest.json failed:', err);
+        // Fallback: render a minimal suggestion that links to the full search page
+        results.innerHTML =
+          '<div class="bm-dh__sr-group">' +
+            '<h3 class="bm-dh__sr-heading">Search</h3>' +
+            '<a class="bm-dh__sr-item" href="/search?q=' + encodeURIComponent(q) + '&type=product">' +
+              '<span class="bm-dh__sr-thumb"></span>' +
+              '<span class="bm-dh__sr-meta">' +
+                '<span class="bm-dh__sr-title">Search for "' + escapeHtml(q) + '"</span>' +
+                '<span class="bm-dh__sr-price">Press Enter or click to see results</span>' +
+              '</span>' +
+            '</a>' +
+          '</div>';
       });
   }
   input.addEventListener('input', function() {
