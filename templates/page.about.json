@@ -674,6 +674,7 @@
       "block_order": [
         "col_div1"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": true,
@@ -913,6 +914,7 @@
         "col_vision",
         "col_mission"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": false,
@@ -973,6 +975,7 @@
       "block_order": [
         "col_div2"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": true,
@@ -1174,6 +1177,7 @@
       "block_order": [
         "col_team"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": false,

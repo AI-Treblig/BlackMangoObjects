@@ -420,7 +420,7 @@
                   "type": "_list-item",
                   "settings": {
                     "text": "About Us",
-                    "url": "/pages/about",
+                    "url": "shopify://pages/about-us",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"

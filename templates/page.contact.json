@@ -440,6 +440,7 @@
         "column_HME3hR",
         "column_xF9ekV"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": false,
@@ -456,11 +457,42 @@
         "vertical_align": "top",
         "horizontal_align": "left"
       }
+    },
+    "bm_contact_jXmyaB": {
+      "type": "bm-contact",
+      "name": "BM Contact",
+      "settings": {
+        "eyebrow": "GET IN TOUCH",
+        "heading": "Contact Us",
+        "intro": "We would love to hear from you. Whether you have a question about a product, an order, or simply want to say hello - our team is here to help.",
+        "address": "Mumbai, MH, India",
+        "whatsapp": "+91 86982 05381",
+        "whatsapp_prefill": "Hi! I have a question.",
+        "phone": "",
+        "email": "blackmango.website@gmail.com",
+        "hours": "Online store — open 24/7",
+        "show_socials": true,
+        "instagram": "",
+        "facebook": "",
+        "pinterest": "",
+        "form_title": "Send us a message",
+        "form_subtitle": "We typically reply within 24 hours.",
+        "submit_label": "Send Message",
+        "success_message": "Thank you - your message is on its way. We will get back to you shortly.",
+        "bg_color": "#ffffff",
+        "card_bg": "#fafafa",
+        "text_color": "#444444",
+        "heading_color": "#000000",
+        "accent_color": "#000000",
+        "border_color": "#e5e5e5",
+        "padding_y": 80
+      }
     }
   },
   "order": [
     "breadcrumb",
     "main",
-    "featured_custom_section_4HV8DK"
+    "featured_custom_section_4HV8DK",
+    "bm_contact_jXmyaB"
   ]
 }
