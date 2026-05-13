@@ -1,4 +1,4 @@
-{%- comment -%} BM Desktop Header v7 — search button styling reset + resilient suggest fetch {%- endcomment -%}
+{%- comment -%} BM Desktop Header v8 — split top-bar / menu-row colors + logo invert {%- endcomment -%}
 {%- comment -%}
   Black Mango desktop header with full controls.
   Hidden on mobile (mobile uses bm-mobile-nav). Self-contained CSS+JS,
@@ -30,7 +30,10 @@
                --dh-menu-font: '{{ menu_font_family }}', var(--font-family-base, 'Manrope'), sans-serif;
                --dh-dropdown-bg: {{ section.settings.dropdown_bg | default: '#ffffff' }};
                --dh-dropdown-color: {{ section.settings.dropdown_color | default: '#000000' }};
-               --dh-dropdown-hover: {{ section.settings.dropdown_hover_color | default: '#666666' }};">
+               --dh-dropdown-hover: {{ section.settings.dropdown_hover_color | default: '#666666' }};
+               --dh-menu-bg: {{ section.settings.menu_row_bg | default: '#ffffff' }};
+               --dh-menu-color: {{ section.settings.menu_row_text_color | default: '#000000' }};
+               --dh-menu-hover: {{ section.settings.menu_row_hover_color | default: '#000000' }};">
 
   {%- assign layout = section.settings.layout | default: 'menu-below' -%}
 
@@ -196,7 +199,10 @@
     text-decoration: none;
     color: var(--dh-color);
   }
-  #bm-dh-{{ section.id }} .bm-dh__logo img { display: block; }
+  #bm-dh-{{ section.id }} .bm-dh__logo img {
+    display: block;
+    {%- if section.settings.invert_logo -%}filter: brightness(0) invert(1);{%- endif -%}
+  }
   #bm-dh-{{ section.id }} .bm-dh__logo-text {
     font-family: var(--font-family-second), 'Cormorant Garamond', serif;
     font-size: 30px;
@@ -247,13 +253,23 @@
     align-items: center;
     gap: {{ section.settings.menu_gap | default: 32 }}px;
   }
+  /* Menu row has its own background + text color so it can stay light when
+     the top bar is dark (e.g. inverted brand header) */
   #bm-dh-{{ section.id }} .bm-dh__row-nav {
     justify-content: center;
+    background: var(--dh-menu-bg);
+    color: var(--dh-menu-color);
     border-top: 1px solid var(--dh-border);
     padding: 12px 32px;
-    margin: 0 auto;
-    max-width: 1440px;
+    margin: 0;
+    max-width: none;
+    width: 100%;
+    box-sizing: border-box;
   }
+  /* Menu links inside the row use menu_color rather than the top-bar color */
+  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__menu-link { color: var(--dh-menu-color); }
+  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__menu-link:hover,
+  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__menu-item.is-active > .bm-dh__menu-link { color: var(--dh-menu-hover); }
   #bm-dh-{{ section.id }} .bm-dh__menu-item {
     position: relative;
   }
@@ -727,12 +743,21 @@
     { "type": "url", "id": "wishlist_url", "label": "Wishlist URL" },
     { "type": "checkbox", "id": "show_cart", "label": "Show cart icon", "default": true },
 
-    { "type": "header", "content": "Colors" },
-    { "type": "color", "id": "bg_color", "label": "Header background", "default": "#ffffff" },
+    { "type": "header", "content": "Top bar colors",
+      "info": "These apply to the row containing the logo and the right-side icons." },
+    { "type": "color", "id": "bg_color", "label": "Top bar background", "default": "#ffffff" },
     { "type": "color", "id": "text_color", "label": "Text & icon color", "default": "#000000" },
     { "type": "color", "id": "hover_color", "label": "Hover color", "default": "#000000" },
     { "type": "color", "id": "accent_color", "label": "Badge / accent", "default": "#000000" },
     { "type": "color", "id": "border_color", "label": "Border / divider", "default": "#eeeeee" },
+    { "type": "checkbox", "id": "invert_logo", "label": "Invert logo color (display as white)", "default": false,
+      "info": "Turn ON if your top bar is dark and you want a black logo image to display in white." },
+
+    { "type": "header", "content": "Menu row colors (under-logo navigation)",
+      "info": "Only applies when 'Menu placement' is set to 'Menu below logo'. Lets you keep a white menu row while the top bar is inverted." },
+    { "type": "color", "id": "menu_row_bg", "label": "Menu row background", "default": "#ffffff" },
+    { "type": "color", "id": "menu_row_text_color", "label": "Menu link color", "default": "#000000" },
+    { "type": "color", "id": "menu_row_hover_color", "label": "Menu link hover color", "default": "#000000" },
     { "type": "header", "content": "Dropdown" },
     { "type": "color", "id": "dropdown_bg", "label": "Dropdown background", "default": "#ffffff" },
     { "type": "color", "id": "dropdown_color", "label": "Dropdown text color", "default": "#000000" },
