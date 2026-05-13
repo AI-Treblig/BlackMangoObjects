@@ -14,7 +14,7 @@
       "settings": {
         "enable": true,
         "bgimage": true,
-        "image": "shopify://shop_images/banner.webp",
+        "image": "shopify://shop_images/pattern-bg.webp",
         "show_pagetitle": true,
         "show_breadcrumb": true,
         "color_breadcrumb": "#000000",
@@ -617,7 +617,7 @@
         "max_width": "",
         "fullwidth": true,
         "background_gradient": "",
-        "background": "shopify://shop_images/banner.webp",
+        "background": "shopify://shop_images/about-bg-pattern.webp",
         "background_fixed": false,
         "background_size": "cover",
         "background_pos": "center center",
