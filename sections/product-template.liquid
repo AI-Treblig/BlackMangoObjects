@@ -64,6 +64,7 @@
   <script type="application/json" id="ModelJson-{{ section.id }}">
     {{ product.media | where: 'media_type', 'model' | json }}
   </script>
+  {% render 'bm-variant-price-sync', section: section %}
 {% endunless %}
 
 {% schema %}

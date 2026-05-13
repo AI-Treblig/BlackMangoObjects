@@ -1,0 +1,145 @@
+{%- comment -%}
+  Black Mango — keep the displayed price in sync with the selected variant.
+  Self-contained, no dependency on theme JS. Pulls money format from shop settings.
+{%- endcomment -%}
+<script id="BMMoneyFormat-{{ section.id }}" type="application/json">{{ shop.money_format | json }}</script>
+
+<script>
+(function() {
+  var productJsonEl = document.getElementById('ProductJson-{{ section.id }}');
+  if (!productJsonEl) return;
+
+  var product, moneyFormat = '{{ shop.money_format }}';
+  try { product = JSON.parse(productJsonEl.textContent); } catch (e) { return; }
+  try {
+    var fmtEl = document.getElementById('BMMoneyFormat-{{ section.id }}');
+    if (fmtEl) moneyFormat = JSON.parse(fmtEl.textContent);
+  } catch (e) {}
+  if (!product || !product.variants) return;
+
+  /* Find the product form so events are scoped to this product */
+  var form = document.querySelector('form[action*="/cart/add"][data-section-id="{{ section.id }}"]')
+          || document.querySelector('form[action*="/cart/add"]');
+  if (!form) return;
+
+  /* Shopify-compatible money formatter — supports {{amount}}, {{amount_no_decimals}},
+     {{amount_with_comma_separator}}, {{amount_no_decimals_with_comma_separator}} */
+  function formatWithDelimiters(num, precision, thousands, decimal) {
+    if (isNaN(num) || num == null) return 0;
+    var n = (num / 100.0).toFixed(precision);
+    var parts = n.split('.');
+    var intPart = parts[0].replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + thousands);
+    return parts.length > 1 ? intPart + decimal + parts[1] : intPart;
+  }
+  function formatMoney(cents, format) {
+    if (typeof cents === 'string') cents = cents.replace('.', '');
+    var value = '';
+    var placeholder = /\{\{\s*(\w+)\s*\}\}/;
+    var f = format || moneyFormat || '${{amount}}';
+    switch (f.match(placeholder)[1]) {
+      case 'amount': value = formatWithDelimiters(cents, 2); break;
+      case 'amount_no_decimals': value = formatWithDelimiters(cents, 0); break;
+      case 'amount_with_comma_separator': value = formatWithDelimiters(cents, 2, '.', ','); break;
+      case 'amount_no_decimals_with_comma_separator': value = formatWithDelimiters(cents, 0, '.', ','); break;
+      case 'amount_with_space_separator': value = formatWithDelimiters(cents, 2, ' ', '.'); break;
+      case 'amount_no_decimals_with_space_separator': value = formatWithDelimiters(cents, 0, ' '); break;
+      case 'amount_with_apostrophe_separator': value = formatWithDelimiters(cents, 2, "'", '.'); break;
+      default: value = formatWithDelimiters(cents, 2);
+    }
+    return f.replace(placeholder, value);
+  }
+
+  function selectedOptions() {
+    var radios = form.querySelectorAll('.js-single-option-selector[type="radio"]:checked');
+    var selects = form.querySelectorAll('select.js-single-option-selector');
+    var values = [];
+    radios.forEach(function(r) {
+      var idx = (r.dataset.index || r.name || 'option1').replace(/option/, '');
+      values[parseInt(idx, 10) - 1] = r.value;
+    });
+    selects.forEach(function(s) {
+      var idx = (s.dataset.index || s.name || 'option1').replace(/option/, '');
+      if (!values[parseInt(idx, 10) - 1]) {
+        values[parseInt(idx, 10) - 1] = s.value;
+      }
+    });
+    return values;
+  }
+
+  function findVariant() {
+    var optionValues = selectedOptions();
+    if (!optionValues.length) return null;
+    return product.variants.find(function(v) {
+      return v.options.every(function(opt, i) {
+        return optionValues[i] == null || optionValues[i] === opt;
+      }) && v.options.length === optionValues.filter(function(x) { return x != null; }).length;
+    });
+  }
+
+  function updateForVariant(variant) {
+    if (!variant) return;
+
+    /* Main price */
+    document.querySelectorAll('.js-product-price').forEach(function(el) {
+      el.innerHTML = formatMoney(variant.price);
+      el.setAttribute('content', (variant.price / 100).toFixed(2));
+      if (variant.compare_at_price && variant.compare_at_price > variant.price) {
+        el.classList.add('on-sale');
+      } else {
+        el.classList.remove('on-sale');
+      }
+    });
+
+    /* Compare-at price */
+    document.querySelectorAll('.js-product-compare-price').forEach(function(el) {
+      var wrap = el.closest('.product-single__price--wrapper');
+      if (variant.compare_at_price && variant.compare_at_price > variant.price) {
+        el.innerHTML = formatMoney(variant.compare_at_price);
+        if (wrap) { wrap.classList.remove('d-none'); wrap.setAttribute('aria-hidden', 'false'); }
+      } else {
+        el.innerHTML = '';
+        if (wrap) { wrap.classList.add('d-none'); wrap.setAttribute('aria-hidden', 'true'); }
+      }
+    });
+
+    /* Variant ID hidden field */
+    var idInput = form.querySelector('input[name="id"]');
+    if (idInput) idInput.value = variant.id;
+
+    /* URL */
+    if (window.history && history.replaceState) {
+      try {
+        var url = new URL(window.location.href);
+        url.searchParams.set('variant', variant.id);
+        history.replaceState({}, '', url.toString());
+      } catch (e) {}
+    }
+
+    /* Availability label fallback */
+    document.querySelectorAll('[data-variant-available-text]').forEach(function(el) {
+      el.textContent = variant.available ? (el.dataset.variantAvailableText || 'In stock') : (el.dataset.variantUnavailableText || 'Sold out');
+    });
+  }
+
+  function sync() {
+    var v = findVariant();
+    if (v) updateForVariant(v);
+  }
+
+  /* Listen on the whole form so any selector type fires it */
+  form.addEventListener('change', function(e) {
+    var t = e.target;
+    if (!t) return;
+    if (t.classList && t.classList.contains('js-single-option-selector')) sync();
+  });
+  /* Some swatches are <label> click-only — fire via click delegation too */
+  form.addEventListener('click', function(e) {
+    var label = e.target.closest('label');
+    if (!label) return;
+    setTimeout(sync, 0);
+  });
+
+  /* Initial sync in case the rendered HTML and the actual selected variant disagree */
+  sync();
+})();
+</script>
