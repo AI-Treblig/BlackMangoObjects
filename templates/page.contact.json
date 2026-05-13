@@ -467,6 +467,7 @@
         "intro": "We would love to hear from you. Whether you have a question about a product, an order, or simply want to say hello - our team is here to help.",
         "address": "Mumbai, MH, India",
         "whatsapp": "+91 86982 05381",
+        "whatsapp_icon": "shopify://shop_images/whatsapp-logo.svg",
         "whatsapp_prefill": "Hi! I have a question.",
         "phone": "",
         "email": "blackmango.website@gmail.com",
