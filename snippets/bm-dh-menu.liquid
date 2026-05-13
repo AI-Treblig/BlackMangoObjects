@@ -28,23 +28,24 @@
       </a>
       {%- if link.links.size > 0 -%}
         <div class="bm-dh__dropdown"
-             style="background: {{ dd_bg }};
-                    color: {{ dd_color }};
-                    border-color: {{ dd_border }};
-                    border-top-color: {{ dd_accent }};">
+             style="background: {{ dd_bg }} !important;
+                    background-color: {{ dd_bg }} !important;
+                    color: {{ dd_color }} !important;
+                    border-color: {{ dd_border }} !important;
+                    border-top-color: {{ dd_accent }} !important;">
           {%- for child in link.links -%}
             <a href="{{ child.url }}"
-               style="color: {{ dd_color }};
+               style="color: {{ dd_color }} !important;
                       font-size: {{ dd_fsize }}px;
                       font-weight: {{ dd_fweight }};
                       letter-spacing: {{ dd_lspace }}px;
                       text-transform: {{ dd_case }};
                       padding-top: {{ dd_ipad }}px;
                       padding-bottom: {{ dd_ipad }}px;"
-               onmouseover="this.style.color='{{ dd_hover }}'"
-               onmouseout="this.style.color='{{ dd_color }}'"
-               onfocus="this.style.color='{{ dd_hover }}'"
-               onblur="this.style.color='{{ dd_color }}'">{{ child.title }}</a>
+               onmouseover="this.style.setProperty('color','{{ dd_hover }}','important')"
+               onmouseout="this.style.setProperty('color','{{ dd_color }}','important')"
+               onfocus="this.style.setProperty('color','{{ dd_hover }}','important')"
+               onblur="this.style.setProperty('color','{{ dd_color }}','important')">{{ child.title }}</a>
           {%- endfor -%}
         </div>
       {%- endif -%}

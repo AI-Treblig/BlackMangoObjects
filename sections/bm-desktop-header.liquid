@@ -1,4 +1,4 @@
-{%- comment -%} BM Desktop Header v9 — dropdown colors applied via inline style for true isolation {%- endcomment -%}
+{%- comment -%} BM Desktop Header v10 — !important everywhere on menu row and dropdown colors {%- endcomment -%}
 {%- comment -%}
   Black Mango desktop header with full controls.
   Hidden on mobile (mobile uses bm-mobile-nav). Self-contained CSS+JS,
@@ -284,11 +284,12 @@
     gap: {{ section.settings.menu_gap | default: 32 }}px;
   }
   /* Menu row has its own background + text color so it can stay light when
-     the top bar is dark (e.g. inverted brand header) */
+     the top bar is dark (e.g. inverted brand header). All !important so they
+     win against the base top-bar rules unconditionally. */
   #bm-dh-{{ section.id }} .bm-dh__row-nav {
     justify-content: center;
-    background: var(--dh-menu-bg);
-    color: var(--dh-menu-color);
+    background-color: {{ section.settings.menu_row_bg | default: '#ffffff' }} !important;
+    color: {{ section.settings.menu_row_text_color | default: '#000000' }} !important;
     border-top: 1px solid var(--dh-border);
     padding: 12px 32px;
     margin: 0;
@@ -296,10 +297,15 @@
     width: 100%;
     box-sizing: border-box;
   }
-  /* Menu links inside the row use menu_color rather than the top-bar color */
-  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__menu-link { color: var(--dh-menu-color); }
+  /* Menu links inside the row — explicit color, !important to override .bm-dh__menu-link base */
+  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__menu-link,
+  #bm-dh-{{ section.id }} .bm-dh__row-nav a.bm-dh__menu-link {
+    color: {{ section.settings.menu_row_text_color | default: '#000000' }} !important;
+  }
   #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__menu-link:hover,
-  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__menu-item.is-active > .bm-dh__menu-link { color: var(--dh-menu-hover); }
+  #bm-dh-{{ section.id }} .bm-dh__row-nav .bm-dh__menu-item.is-active > .bm-dh__menu-link {
+    color: {{ section.settings.menu_row_hover_color | default: '#000000' }} !important;
+  }
   #bm-dh-{{ section.id }} .bm-dh__menu-item {
     position: relative;
   }
