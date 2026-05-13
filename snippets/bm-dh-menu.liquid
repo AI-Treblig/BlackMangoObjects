@@ -1,4 +1,22 @@
-{%- comment -%} Black Mango desktop header menu renderer with dropdowns {%- endcomment -%}
+{%- comment -%}
+  Black Mango desktop header menu renderer with dropdowns.
+  Dropdown colors are applied as INLINE styles directly on the dropdown
+  element + each link, so they are guaranteed independent from anything
+  else (top bar, theme, CSS cascade). The optional bm-dh-* params let
+  the parent section pass through its dropdown styling.
+{%- endcomment -%}
+
+{%- assign dd_bg     = dd_bg     | default: '#ffffff' -%}
+{%- assign dd_color  = dd_color  | default: '#000000' -%}
+{%- assign dd_hover  = dd_hover  | default: '#666666' -%}
+{%- assign dd_accent = dd_accent | default: dd_color -%}
+{%- assign dd_border = dd_border | default: '#eeeeee' -%}
+{%- assign dd_fsize  = dd_fsize  | default: 14 -%}
+{%- assign dd_fweight = dd_fweight | default: '400' -%}
+{%- assign dd_lspace = dd_lspace | default: 0.4 -%}
+{%- assign dd_case   = dd_case   | default: 'none' -%}
+{%- assign dd_ipad   = dd_ipad   | default: 11 -%}
+
 <ul class="bm-dh__menu" style="display: flex; align-items: center; gap: inherit; list-style: none; margin: 0; padding: 0;">
   {%- for link in menu.links -%}
     <li class="bm-dh__menu-item{% if link.links.size > 0 %} bm-dh__menu-item--has-children{% endif %}{% if link.active %} is-active{% endif %}">
@@ -9,9 +27,24 @@
         {%- endif -%}
       </a>
       {%- if link.links.size > 0 -%}
-        <div class="bm-dh__dropdown">
+        <div class="bm-dh__dropdown"
+             style="background: {{ dd_bg }};
+                    color: {{ dd_color }};
+                    border-color: {{ dd_border }};
+                    border-top-color: {{ dd_accent }};">
           {%- for child in link.links -%}
-            <a href="{{ child.url }}">{{ child.title }}</a>
+            <a href="{{ child.url }}"
+               style="color: {{ dd_color }};
+                      font-size: {{ dd_fsize }}px;
+                      font-weight: {{ dd_fweight }};
+                      letter-spacing: {{ dd_lspace }}px;
+                      text-transform: {{ dd_case }};
+                      padding-top: {{ dd_ipad }}px;
+                      padding-bottom: {{ dd_ipad }}px;"
+               onmouseover="this.style.color='{{ dd_hover }}'"
+               onmouseout="this.style.color='{{ dd_color }}'"
+               onfocus="this.style.color='{{ dd_hover }}'"
+               onblur="this.style.color='{{ dd_color }}'">{{ child.title }}</a>
           {%- endfor -%}
         </div>
       {%- endif -%}

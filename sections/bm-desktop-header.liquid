@@ -1,4 +1,4 @@
-{%- comment -%} BM Desktop Header v8 — split top-bar / menu-row colors + logo invert {%- endcomment -%}
+{%- comment -%} BM Desktop Header v9 — dropdown colors applied via inline style for true isolation {%- endcomment -%}
 {%- comment -%}
   Black Mango desktop header with full controls.
   Hidden on mobile (mobile uses bm-mobile-nav). Self-contained CSS+JS,
@@ -58,7 +58,17 @@
         </a>
       {%- elsif layout == 'menu-left-logo-center' -%}
         <nav class="bm-dh__nav bm-dh__nav--left" aria-label="Main navigation">
-          {%- render 'bm-dh-menu', menu: menu -%}
+          {%- render 'bm-dh-menu', menu: menu,
+        dd_bg: section.settings.dropdown_bg,
+        dd_color: section.settings.dropdown_color,
+        dd_hover: section.settings.dropdown_hover_color,
+        dd_accent: section.settings.accent_color,
+        dd_border: section.settings.border_color,
+        dd_fsize: section.settings.dropdown_font_size,
+        dd_fweight: section.settings.dropdown_font_weight,
+        dd_lspace: section.settings.dropdown_letter_spacing,
+        dd_case: section.settings.dropdown_case,
+        dd_ipad: section.settings.dropdown_item_padding -%}
         </nav>
       {%- endif -%}
     </div>
@@ -72,7 +82,17 @@
     <div class="bm-dh__center">
       {%- if layout == 'menu-inline' -%}
         <nav class="bm-dh__nav" aria-label="Main navigation">
-          {%- render 'bm-dh-menu', menu: menu -%}
+          {%- render 'bm-dh-menu', menu: menu,
+        dd_bg: section.settings.dropdown_bg,
+        dd_color: section.settings.dropdown_color,
+        dd_hover: section.settings.dropdown_hover_color,
+        dd_accent: section.settings.accent_color,
+        dd_border: section.settings.border_color,
+        dd_fsize: section.settings.dropdown_font_size,
+        dd_fweight: section.settings.dropdown_font_weight,
+        dd_lspace: section.settings.dropdown_letter_spacing,
+        dd_case: section.settings.dropdown_case,
+        dd_ipad: section.settings.dropdown_item_padding -%}
         </nav>
       {%- else -%}
         <a href="/" class="bm-dh__logo">
@@ -117,7 +137,17 @@
   {%- comment -%} Menu below logo when layout is menu-below {%- endcomment -%}
   {%- if layout == 'menu-below' -%}
     <nav class="bm-dh__row-nav" aria-label="Main navigation">
-      {%- render 'bm-dh-menu', menu: menu -%}
+      {%- render 'bm-dh-menu', menu: menu,
+        dd_bg: section.settings.dropdown_bg,
+        dd_color: section.settings.dropdown_color,
+        dd_hover: section.settings.dropdown_hover_color,
+        dd_accent: section.settings.accent_color,
+        dd_border: section.settings.border_color,
+        dd_fsize: section.settings.dropdown_font_size,
+        dd_fweight: section.settings.dropdown_font_weight,
+        dd_lspace: section.settings.dropdown_letter_spacing,
+        dd_case: section.settings.dropdown_case,
+        dd_ipad: section.settings.dropdown_item_padding -%}
     </nav>
   {%- endif -%}
 
