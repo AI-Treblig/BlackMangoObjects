@@ -2,19 +2,15 @@
   Black Mango — keep the displayed price in sync with the selected variant.
   Self-contained, no dependency on theme JS. Pulls money format from shop settings.
 {%- endcomment -%}
-<script id="BMMoneyFormat-{{ section.id }}" type="application/json">{{ shop.money_format | json }}</script>
-
 <script>
 (function() {
   var productJsonEl = document.getElementById('ProductJson-{{ section.id }}');
   if (!productJsonEl) return;
 
-  var product, moneyFormat = '{{ shop.money_format }}';
+  /* BM: forced format = '₹' + comma-separated integer (no decimals) */
+  var product;
+  var moneyFormat = '₹{{amount_no_decimals_with_comma_separator}}';
   try { product = JSON.parse(productJsonEl.textContent); } catch (e) { return; }
-  try {
-    var fmtEl = document.getElementById('BMMoneyFormat-{{ section.id }}');
-    if (fmtEl) moneyFormat = JSON.parse(fmtEl.textContent);
-  } catch (e) {}
   if (!product || !product.variants) return;
 
   /* Find the product form so events are scoped to this product */
