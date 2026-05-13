@@ -26,6 +26,8 @@
      {{amount_with_comma_separator}}, {{amount_no_decimals_with_comma_separator}} */
   function formatWithDelimiters(num, precision, thousands, decimal) {
     if (isNaN(num) || num == null) return 0;
+    thousands = thousands == null ? ',' : thousands;
+    decimal   = decimal   == null ? '.' : decimal;
     var n = (num / 100.0).toFixed(precision);
     var parts = n.split('.');
     var intPart = parts[0].replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1' + thousands);
