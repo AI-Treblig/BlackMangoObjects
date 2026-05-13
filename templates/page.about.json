@@ -547,7 +547,7 @@
               "type": "title",
               "settings": {
                 "heading_size": "h2",
-                "title": "Elegance. Energy. Expression.",
+                "title": "Bold. Contemporary. Expressive.",
                 "font": "--font-family-second",
                 "text_transfrom": "default",
                 "color": "#000000",
@@ -617,7 +617,6 @@
         "max_width": "",
         "fullwidth": true,
         "background_gradient": "",
-        "background": "shopify://shop_images/pattern-about-bg.webp",
         "background_fixed": false,
         "background_size": "cover",
         "background_pos": "center center",
