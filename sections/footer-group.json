@@ -463,8 +463,8 @@
                 "list_item_EYYUgm": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Returns & Refunds",
-                    "url": "/policies/refund-policy",
+                    "text": "Refunds & Cancellation",
+                    "url": "shopify://pages/refund-and-cancellation-policy",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
