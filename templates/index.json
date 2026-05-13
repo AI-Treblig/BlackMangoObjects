@@ -15,15 +15,15 @@
         "slide_BF99NV": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify://shop_images/blackMango-home.webp",
-            "overlay_opacity": 0,
+            "image_desktop": "shopify://shop_images/blackMango-new-pattern2a.webp",
+            "overlay_opacity": 10,
             "subheading": "",
-            "heading": "",
-            "text": "",
+            "heading": "Objects With Presence",
+            "text": "Thoughtfully made home décor and spatial styling shaped through clean lines, tactile finishes, and modern Indian sensibilities.",
             "button_label": "",
             "button_link": "",
-            "text_align_desktop": "left",
-            "text_color": "#ffffff",
+            "text_align_desktop": "center",
+            "text_color": "#000000",
             "text_align_mobile": "center",
             "text_color_mobile": "#ffffff"
           }
@@ -1010,6 +1010,7 @@
         "column_jYYTUn",
         "column_qRG4c4"
       ],
+      "disabled": true,
       "settings": {
         "max_width": "",
         "fullwidth": true,
