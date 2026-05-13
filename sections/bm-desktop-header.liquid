@@ -293,14 +293,15 @@
   }
   #bm-dh-{{ section.id }} .bm-dh__menu-item:hover > .bm-dh__menu-link .bm-dh__menu-caret { transform: rotate(180deg); }
 
-  /* Premium dropdown */
+  /* Premium dropdown — kept independent from top bar colors via !important so the
+     dropdown can stay white + black even when the top bar is inverted */
   #bm-dh-{{ section.id }} .bm-dh__dropdown {
     position: absolute;
     top: calc(100% + 14px);
     left: 0;
-    background-color: var(--dh-dropdown-bg, #ffffff);
-    background-image: none;
-    color: var(--dh-dropdown-color);
+    background-color: var(--dh-dropdown-bg, #ffffff) !important;
+    background-image: none !important;
+    color: var(--dh-dropdown-color) !important;
     min-width: 240px;
     padding: 16px 0;
     opacity: 0;
@@ -350,7 +351,7 @@
     align-items: center;
     gap: 10px;
     padding: {{ section.settings.dropdown_item_padding | default: 11 }}px 26px;
-    color: var(--dh-dropdown-color);
+    color: var(--dh-dropdown-color) !important;
     text-decoration: none;
     text-transform: {{ section.settings.dropdown_case | default: 'none' }};
     letter-spacing: {{ section.settings.dropdown_letter_spacing | default: 0.4 }}px;
@@ -369,8 +370,9 @@
     transition: width .25s ease;
     display: inline-block;
   }
-  #bm-dh-{{ section.id }} .bm-dh__dropdown a:hover {
-    color: var(--dh-dropdown-hover);
+  #bm-dh-{{ section.id }} .bm-dh__dropdown a:hover,
+  #bm-dh-{{ section.id }} .bm-dh__dropdown a:focus {
+    color: var(--dh-dropdown-hover) !important;
     padding-left: 32px;
   }
   #bm-dh-{{ section.id }} .bm-dh__dropdown a:hover::before {
