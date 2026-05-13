@@ -452,8 +452,8 @@
                 "list_item_e4qpHy": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Shipping Policy",
-                    "url": "/policies/shipping-policy",
+                    "text": "Terms & Conditions",
+                    "url": "shopify://pages/terms-and-conditions",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
