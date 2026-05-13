@@ -11,95 +11,6 @@
   "name": "Header Group",
   "type": "header",
   "sections": {
-    "header_campar_kBVbbz": {
-      "type": "header-campar",
-      "disabled": true,
-      "name": "Header Campar",
-      "settings": {
-        "show_campar": false,
-        "max_width": "",
-        "fullwidth": false,
-        "padding": "10px 0",
-        "margin": "",
-        "bg_background": "#000000",
-        "content_campar": "Autumn collection. A new season. A new perspective. Buy now!",
-        "url_campar": "",
-        "color_content": "#ffffff",
-        "color_span": "#ffffff",
-        "font_size": 16,
-        "font_weight": "400",
-        "marquee_content": false,
-        "marquee_loop": 10,
-        "marquee_time": 4,
-        "show_mobile": true
-      }
-    },
-    "header_topbar_34WPTr": {
-      "type": "header-topbar",
-      "blocks": {
-        "social_9hP4Fw": {
-          "type": "social",
-          "settings": {
-            "show_mobile_social": true,
-            "color_social": "#ffffff"
-          }
-        },
-        "custom_text_R4w3fP": {
-          "type": "custom-text",
-          "settings": {
-            "custom_text_content": "Sale alert: up to 60% off now on. T&Cs apply",
-            "color_custom_text": "#ffffff",
-            "color_custom_text_link": "#ffffff",
-            "color_custom_text_link_hover": "#ffffff",
-            "text_align": "center",
-            "show_mobile_custom_text": true,
-            "text_align_mobi": "center"
-          }
-        },
-        "text_with_icon_6prGcW": {
-          "type": "text-with-icon",
-          "settings": {
-            "text_icon_content1": "<i class=\"icon-telephone\"></i> <a href=\"tel:+1-202-555-0184\">+1-202-555-0184</a>",
-            "color_text_icon1": "#868686",
-            "text_icon_content2": "<i class=\"icon-email\"></i> <a href=\"mailto:\" sayhello>sayhello@funori.com</a>",
-            "color_text_icon2": "#868686",
-            "show_mobile_text_icon": true
-          }
-        },
-        "language_currency_FXhUXn": {
-          "type": "language-currency",
-          "settings": {
-            "show_mobile_currency": true
-          }
-        }
-      },
-      "block_order": [
-        "social_9hP4Fw",
-        "custom_text_R4w3fP",
-        "text_with_icon_6prGcW",
-        "language_currency_FXhUXn"
-      ],
-      "disabled": true,
-      "name": "Header Topbar",
-      "settings": {
-        "show_topbar": false,
-        "max_width": "1770px",
-        "fullwidth": false,
-        "padding": "10px 15px",
-        "margin": "",
-        "bg_background": "#ebebeb",
-        "topbar_absolute": false,
-        "bg_background2": "#000000",
-        "font_size": 14,
-        "color_text": "#828282",
-        "font_weight": "400",
-        "border": true,
-        "border_width": "0 0 1px",
-        "border_color": "#ffffff",
-        "border_opacity": 0.1,
-        "show_mobile": true
-      }
-    },
     "header_1": {
       "type": "header_1",
       "blocks": {
@@ -1277,6 +1188,7 @@
         "mainmenu_item_X9Q69H",
         "mainmenu_item_W7FURi"
       ],
+      "disabled": true,
       "settings": {
         "width_header": "1770px",
         "padding": "20px 0",
@@ -3526,8 +3438,6 @@
     }
   },
   "order": [
-    "header_campar_kBVbbz",
-    "header_topbar_34WPTr",
     "header_1",
     "header_2",
     "header_3",

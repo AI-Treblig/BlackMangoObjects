@@ -110,6 +110,7 @@
               "type": "single-short-description",
               "name": "Single short description",
               "settings": {
+                "content_short_description": "",
                 "description_margin": "0 0 20px",
                 "description_size": 14,
                 "description_color": "#868686"
@@ -156,6 +157,7 @@
               "type": "single-countdown",
               "name": "Single product countdown",
               "settings": {
+                "metafield_product_countdowns": "",
                 "product_countdowns_margin": "",
                 "product_countdown_title": "Hurry up! Sale ends in :",
                 "product_countdown_day": "Days",
@@ -313,8 +315,10 @@
             "single_buy_it_with_VRUHwN": {
               "type": "single-buy-it-with",
               "name": "Single buy it with",
+              "disabled": true,
               "settings": {
                 "product_buy_with_margin": "",
+                "product_buy_with_metafield": "",
                 "buy_it_with_title": "Buy It With",
                 "buy_it_with_button": "VIEW PRODUCT"
               },
@@ -327,7 +331,7 @@
                 "product_trust_barget_margin": "",
                 "trust_barget_bg": "#f3f3f3",
                 "trust_barget_title": "Guaranteed Checkout",
-                "image": "shopify://shop_images/payment-product.png"
+                "image": "shopify://shop_images/bmo-payments01.svg"
               },
               "blocks": {}
             },
@@ -336,6 +340,7 @@
               "name": "Single buy together",
               "disabled": true,
               "settings": {
+                "metafields_buy_together": [],
                 "product_buy_together_margin": "0 0 50px",
                 "buy_together_title": "Frequently Bought Together"
               },
@@ -433,6 +438,7 @@
     "buy-together": {
       "type": "buy-together",
       "settings": {
+        "metafields_buy_together": [],
         "bundler_title": "Frequently Bought Together",
         "bundler_margin": "60px 0 0"
       }

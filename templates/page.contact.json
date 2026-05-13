@@ -14,7 +14,7 @@
       "settings": {
         "enable": true,
         "bgimage": true,
-        "image": "shopify://shop_images/about-bgcontact.webp",
+        "image": "shopify://shop_images/about-bg-pattern.webp",
         "show_pagetitle": true,
         "show_breadcrumb": true,
         "color_breadcrumb": "#000000",
@@ -468,6 +468,8 @@
         "address": "Mumbai, MH, India",
         "whatsapp": "+91 86982 05381",
         "whatsapp_icon": "shopify://shop_images/whatsapp-logo.svg",
+        "whatsapp_icon_bg": "#000000",
+        "whatsapp_icon_bg_hover": "#000000",
         "whatsapp_prefill": "Hi! I have a question.",
         "phone": "",
         "email": "blackmango.website@gmail.com",
