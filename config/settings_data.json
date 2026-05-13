@@ -2415,7 +2415,7 @@
             "settings": {
               "image": "shopify://shop_images/bmo-cushion_b4f07b39-9b80-4729-9e3a-b4f77e8aa480.svg",
               "label": "CUSHIONS",
-              "url": ""
+              "url": "shopify://collections/cushion-covers"
             }
           },
           "bm-mobile-nav-7": {
@@ -2431,7 +2431,7 @@
             "settings": {
               "image": "shopify://shop_images/bmo-curtains_28051ec3-0c91-41cb-969c-9548eec9f2b0.svg",
               "label": "Curtains",
-              "url": ""
+              "url": "shopify://collections/curtains"
             }
           },
           "bm-mobile-nav-8": {
@@ -2439,7 +2439,7 @@
             "settings": {
               "image": "shopify://shop_images/bmo-throws.svg",
               "label": "Throws",
-              "url": ""
+              "url": "shopify://collections/throws"
             }
           },
           "bm-mobile-nav-4": {
@@ -2447,7 +2447,7 @@
             "settings": {
               "image": "shopify://shop_images/bmo-objects-mobile.svg",
               "label": "Objects",
-              "url": "shopify://collections/rugs"
+              "url": "shopify://collections/objects"
             }
           },
           "bm-mobile-nav-9": {
@@ -2550,6 +2550,11 @@
           "dropdown_bg": "#ffffff",
           "dropdown_color": "#000000",
           "dropdown_hover_color": "#666666",
+          "dropdown_font_size": 16,
+          "dropdown_font_weight": "400",
+          "dropdown_letter_spacing": 0.5,
+          "dropdown_case": "uppercase",
+          "dropdown_item_padding": 11,
           "font_size": 18,
           "letter_spacing": 1,
           "font_weight": "500",
