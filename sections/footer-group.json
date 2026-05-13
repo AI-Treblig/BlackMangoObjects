@@ -452,8 +452,8 @@
                 "list_item_e4qpHy": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Shipping Policy",
-                    "url": "/policies/shipping-policy",
+                    "text": "Terms & Conditions",
+                    "url": "shopify://pages/terms-and-conditions",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
@@ -463,8 +463,8 @@
                 "list_item_EYYUgm": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Returns & Refunds",
-                    "url": "/policies/refund-policy",
+                    "text": "Refunds & Cancellation",
+                    "url": "shopify://pages/refund-and-cancellation-policy",
                     "icon": "",
                     "padding": "",
                     "margin": "0 0 8px"
@@ -475,7 +475,7 @@
                   "type": "_list-item",
                   "settings": {
                     "text": "Privacy Policy",
-                    "url": "/policies/privacy-policy",
+                    "url": "shopify://pages/privacy-policy",
                     "icon": "",
                     "padding": "",
                     "margin": ""
