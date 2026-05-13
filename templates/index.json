@@ -127,7 +127,9 @@
                         "font_size_mobi": 30,
                         "line_height_mobi": 40,
                         "letter_spacing_mobi": 0,
-                        "align_mobi": "left"
+                        "align_mobi": "left",
+                        "padding_mobi": "",
+                        "margin_mobi": ""
                       },
                       "blocks": {}
                     },
@@ -286,7 +288,9 @@
                         "font_size_mobi": 13,
                         "line_height_mobi": 23,
                         "letter_spacing_mobi": 2,
-                        "align_mobi": "left"
+                        "align_mobi": "left",
+                        "padding_mobi": "",
+                        "margin_mobi": ""
                       },
                       "blocks": {}
                     },
@@ -309,7 +313,9 @@
                         "font_size_mobi": 30,
                         "line_height_mobi": 35,
                         "letter_spacing_mobi": 0,
-                        "align_mobi": "left"
+                        "align_mobi": "left",
+                        "padding_mobi": "",
+                        "margin_mobi": ""
                       },
                       "blocks": {}
                     }
@@ -405,7 +411,9 @@
                                 "font_size_mobi": 13,
                                 "line_height_mobi": 23,
                                 "letter_spacing_mobi": 2,
-                                "align_mobi": "left"
+                                "align_mobi": "left",
+                                "padding_mobi": "",
+                                "margin_mobi": ""
                               },
                               "blocks": {}
                             },
@@ -428,7 +436,9 @@
                                 "font_size_mobi": 30,
                                 "line_height_mobi": 35,
                                 "letter_spacing_mobi": 0,
-                                "align_mobi": "left"
+                                "align_mobi": "left",
+                                "padding_mobi": "",
+                                "margin_mobi": ""
                               },
                               "blocks": {}
                             }
@@ -512,7 +522,9 @@
                                 "font_size_mobi": 13,
                                 "line_height_mobi": 23,
                                 "letter_spacing_mobi": 2,
-                                "align_mobi": "left"
+                                "align_mobi": "left",
+                                "padding_mobi": "",
+                                "margin_mobi": ""
                               },
                               "blocks": {}
                             },
@@ -535,7 +547,9 @@
                                 "font_size_mobi": 30,
                                 "line_height_mobi": 35,
                                 "letter_spacing_mobi": 0,
-                                "align_mobi": "left"
+                                "align_mobi": "left",
+                                "padding_mobi": "",
+                                "margin_mobi": ""
                               },
                               "blocks": {}
                             }
@@ -907,7 +921,9 @@
                 "font_size_mobi": 30,
                 "line_height_mobi": 30,
                 "letter_spacing_mobi": 0,
-                "align_mobi": "center"
+                "align_mobi": "center",
+                "padding_mobi": "50px 0 10px 0",
+                "margin_mobi": ""
               },
               "blocks": {}
             },
@@ -1090,7 +1106,9 @@
                         "font_size_mobi": 28,
                         "line_height_mobi": 34,
                         "letter_spacing_mobi": 0,
-                        "align_mobi": "left"
+                        "align_mobi": "left",
+                        "padding_mobi": "",
+                        "margin_mobi": ""
                       },
                       "blocks": {}
                     },
@@ -1225,7 +1243,9 @@
                         "font_size_mobi": 28,
                         "line_height_mobi": 34,
                         "letter_spacing_mobi": 0,
-                        "align_mobi": "left"
+                        "align_mobi": "left",
+                        "padding_mobi": "",
+                        "margin_mobi": ""
                       },
                       "blocks": {}
                     },
@@ -1360,7 +1380,9 @@
                         "font_size_mobi": 28,
                         "line_height_mobi": 34,
                         "letter_spacing_mobi": 0,
-                        "align_mobi": "left"
+                        "align_mobi": "left",
+                        "padding_mobi": "",
+                        "margin_mobi": ""
                       },
                       "blocks": {}
                     },
@@ -1510,7 +1532,9 @@
                     "font_size_mobi": 20,
                     "line_height_mobi": 25,
                     "letter_spacing_mobi": 0,
-                    "align_mobi": "center"
+                    "align_mobi": "center",
+                    "padding_mobi": "",
+                    "margin_mobi": ""
                   },
                   "blocks": {}
                 },
@@ -1598,7 +1622,9 @@
                     "font_size_mobi": 20,
                     "line_height_mobi": 25,
                     "letter_spacing_mobi": 0,
-                    "align_mobi": "center"
+                    "align_mobi": "center",
+                    "padding_mobi": "",
+                    "margin_mobi": ""
                   },
                   "blocks": {}
                 },
@@ -1686,7 +1712,9 @@
                     "font_size_mobi": 20,
                     "line_height_mobi": 25,
                     "letter_spacing_mobi": 0,
-                    "align_mobi": "center"
+                    "align_mobi": "center",
+                    "padding_mobi": "",
+                    "margin_mobi": ""
                   },
                   "blocks": {}
                 },
@@ -1788,7 +1816,9 @@
                 "font_size_mobi": 30,
                 "line_height_mobi": 30,
                 "letter_spacing_mobi": 0,
-                "align_mobi": "center"
+                "align_mobi": "center",
+                "padding_mobi": "",
+                "margin_mobi": ""
               },
               "blocks": {}
             }
