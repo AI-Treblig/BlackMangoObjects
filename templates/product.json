@@ -145,6 +145,7 @@
             "single_inventory_cUbwac": {
               "type": "single-inventory",
               "name": "Single product inventory",
+              "disabled": true,
               "settings": {
                 "product_inventory_margin": "0 0 20px",
                 "inventory_size": 16,
