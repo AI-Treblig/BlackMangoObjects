@@ -330,7 +330,7 @@
               "settings": {
                 "product_trust_barget_margin": "",
                 "trust_barget_bg": "#f3f3f3",
-                "trust_barget_title": "Guaranteed Checkout",
+                "trust_barget_title": "RazorPay powered payments",
                 "image": "shopify://shop_images/bmo-payments01.svg"
               },
               "blocks": {}
@@ -338,7 +338,6 @@
             "single_buy_together_6pLxD7": {
               "type": "single-buy-together",
               "name": "Single buy together",
-              "disabled": true,
               "settings": {
                 "metafields_buy_together": [],
                 "product_buy_together_margin": "0 0 50px",
