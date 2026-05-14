@@ -266,7 +266,7 @@
                 "description_MDMbrB": {
                   "type": "description",
                   "settings": {
-                    "desc": "blackmango.website@gmail.com",
+                    "desc": "info@blackmangoobjects.com",
                     "font": "--font-family-base",
                     "text_transfrom": "default",
                     "color": "#868686",
@@ -472,7 +472,7 @@
         "whatsapp_icon_bg_hover": "#000000",
         "whatsapp_prefill": "Hi! I have a question.",
         "phone": "",
-        "email": "blackmango.website@gmail.com",
+        "email": "info@blackmangoobjects.com",
         "hours": "Online store — open 24/7",
         "show_socials": true,
         "instagram": "",
