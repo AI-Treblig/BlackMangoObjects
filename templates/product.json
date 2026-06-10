@@ -184,6 +184,44 @@
                 "bis_text_hover_color": "#ffffff"
               },
               "blocks": {
+                "single_feature_list_nLwfA7": {
+                  "type": "single-feature-list",
+                  "name": "Single feature list",
+                  "settings": {
+                    "metafield_namespace": "custom",
+                    "metafield_key": "product_features",
+                    "heading": "",
+                    "feature_1": "Hand tufted premium finish",
+                    "feature_2": "Made with New Zealand wool",
+                    "feature_3": "Soft underfoot and durable",
+                    "feature_4": "Designed for modern interiors",
+                    "feature_5": "Available in multiple sizes",
+                    "feature_6": "",
+                    "feature_7": "",
+                    "feature_8": "",
+                    "bullet_char": "•",
+                    "bullet_color": "#000000",
+                    "bullet_size": 15,
+                    "indent": 22,
+                    "heading_font": "--font-family-second",
+                    "heading_size": 16,
+                    "heading_size_mobi": 15,
+                    "heading_color": "#000000",
+                    "heading_weight": "500",
+                    "heading_transform": "none",
+                    "heading_letter_spacing": 0,
+                    "font": "--font-family-base",
+                    "font_size": 15,
+                    "font_size_mobi": 14,
+                    "color": "#666666",
+                    "line_height": 1.5,
+                    "letter_spacing": 0,
+                    "item_spacing": 10,
+                    "margin": "0 0 24px",
+                    "margin_mobi": ""
+                  },
+                  "blocks": {}
+                },
                 "variants_form_JaCQdT": {
                   "type": "_variants-form",
                   "name": "Single variants",
@@ -227,6 +265,7 @@
                 }
               },
               "block_order": [
+                "single_feature_list_nLwfA7",
                 "variants_form_JaCQdT",
                 "single_sizeguide_T77xfJ",
                 "single_inventory_quantity_hEE3qL",
