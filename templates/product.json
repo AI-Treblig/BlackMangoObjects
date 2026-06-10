@@ -120,6 +120,7 @@
             "single_real_time_kzbcCU": {
               "type": "single-real-time",
               "name": "Single product real time",
+              "disabled": true,
               "settings": {
                 "product_real_time_margin": "0 0 15px",
                 "product_real_time_count": "30-40",
@@ -132,6 +133,7 @@
             "single_count_sale_WXDgqa": {
               "type": "single-count-sale",
               "name": "Single product count sale",
+              "disabled": true,
               "settings": {
                 "product_count_sale_margin": "0 0 20px",
                 "product_sale_count": "30-40",
@@ -145,6 +147,7 @@
             "single_inventory_cUbwac": {
               "type": "single-inventory",
               "name": "Single product inventory",
+              "disabled": true,
               "settings": {
                 "product_inventory_margin": "0 0 20px",
                 "inventory_size": 16,
@@ -330,7 +333,7 @@
               "settings": {
                 "product_trust_barget_margin": "",
                 "trust_barget_bg": "#f3f3f3",
-                "trust_barget_title": "Guaranteed Checkout",
+                "trust_barget_title": "RazorPay powered payments",
                 "image": "shopify://shop_images/bmo-payments01.svg"
               },
               "blocks": {}
@@ -338,7 +341,6 @@
             "single_buy_together_6pLxD7": {
               "type": "single-buy-together",
               "name": "Single buy together",
-              "disabled": true,
               "settings": {
                 "metafields_buy_together": [],
                 "product_buy_together_margin": "0 0 50px",
