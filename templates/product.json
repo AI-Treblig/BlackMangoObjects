@@ -120,6 +120,7 @@
             "single_real_time_kzbcCU": {
               "type": "single-real-time",
               "name": "Single product real time",
+              "disabled": true,
               "settings": {
                 "product_real_time_margin": "0 0 15px",
                 "product_real_time_count": "30-40",
@@ -132,6 +133,7 @@
             "single_count_sale_WXDgqa": {
               "type": "single-count-sale",
               "name": "Single product count sale",
+              "disabled": true,
               "settings": {
                 "product_count_sale_margin": "0 0 20px",
                 "product_sale_count": "30-40",
