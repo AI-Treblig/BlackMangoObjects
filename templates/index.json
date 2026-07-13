@@ -678,28 +678,6 @@
                   },
                   "blocks": {}
                 },
-                "collection_image_qGXLY6": {
-                  "type": "_collection-image",
-                  "settings": {
-                    "collection": "curtains",
-                    "image": "shopify://shop_images/bmo-curtains.svg",
-                    "count": false,
-                    "text_count": "",
-                    "effects": "none"
-                  },
-                  "blocks": {}
-                },
-                "collection_image_yz6zyt": {
-                  "type": "_collection-image",
-                  "settings": {
-                    "collection": "throws",
-                    "image": "shopify://shop_images/bmo-throw-icon-w_4bd2394f-7944-40f8-a6ea-dae510536aa8.svg",
-                    "count": false,
-                    "text_count": "",
-                    "effects": "none"
-                  },
-                  "blocks": {}
-                },
                 "collection_image_GkWUGp": {
                   "type": "_collection-image",
                   "settings": {
@@ -754,8 +732,6 @@
               "block_order": [
                 "collection_image_NXTLbB",
                 "collection_image_mTNHC3",
-                "collection_image_qGXLY6",
-                "collection_image_yz6zyt",
                 "collection_image_GkWUGp"
               ]
             }
@@ -809,26 +785,6 @@
             "circle_border_color": ""
           }
         },
-        "category_iMagPk": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/bmo-curtains.svg",
-            "label": "Curtains",
-            "url": "shopify://collections/curtains",
-            "circle_bg": "",
-            "circle_border_color": ""
-          }
-        },
-        "category_Qzchrz": {
-          "type": "category",
-          "settings": {
-            "image": "shopify://shop_images/bmo-throws-hmpg.svg",
-            "label": "Throws",
-            "url": "shopify://collections/throws",
-            "circle_bg": "",
-            "circle_border_color": ""
-          }
-        },
         "category_jGKLij": {
           "type": "category",
           "settings": {
@@ -843,8 +799,6 @@
       "block_order": [
         "category_Qh6PtL",
         "category_hK4mmH",
-        "category_iMagPk",
-        "category_Qzchrz",
         "category_jGKLij"
       ],
       "name": "BM Category Strip",
@@ -859,7 +813,7 @@
         "heading_size_mobile": 22,
         "heading_color": "#ffffff",
         "heading_align": "center",
-        "cols_desktop": 5,
+        "cols_desktop": 3,
         "cols_tablet": 3,
         "mobile_visible": 1.5,
         "gap": 20,

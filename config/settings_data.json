@@ -2427,22 +2427,6 @@
               "url": "shopify://collections/rugs"
             }
           },
-          "bm-mobile-nav-5": {
-            "type": "category",
-            "settings": {
-              "image": "shopify://shop_images/bmo-curtains_28051ec3-0c91-41cb-969c-9548eec9f2b0.svg",
-              "label": "Curtains",
-              "url": "shopify://collections/curtains"
-            }
-          },
-          "bm-mobile-nav-8": {
-            "type": "category",
-            "settings": {
-              "image": "shopify://shop_images/bmo-throws.svg",
-              "label": "Throws",
-              "url": "shopify://collections/throws"
-            }
-          },
           "bm-mobile-nav-4": {
             "type": "category",
             "settings": {
@@ -2467,8 +2451,6 @@
           "bm-mobile-nav-3",
           "bm-mobile-nav-6",
           "bm-mobile-nav-7",
-          "bm-mobile-nav-5",
-          "bm-mobile-nav-8",
           "bm-mobile-nav-4",
           "bm-mobile-nav-9"
         ],
@@ -2542,7 +2524,7 @@
           "menu_font": "ebgaramond_n4",
           "menu_case": "uppercase",
           "show_search": true,
-          "search_placeholder": "Search for cushions, rugs, throws…",
+          "search_placeholder": "Search for cushions, rugs, objects…",
           "show_account": true,
           "show_wishlist": true,
           "wishlist_url": "",

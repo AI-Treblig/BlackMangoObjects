@@ -425,7 +425,7 @@
             "desc_c2a": {
               "type": "description",
               "settings": {
-                "desc": "We offer a curated range of premium home décor — hand-tufted rugs, tufted cushion covers, statement curtains, wool throws, and sculptural objects.",
+                "desc": "We offer a curated range of premium home décor — hand-tufted rugs, tufted cushion covers, and sculptural objects.",
                 "font": "--font-family-base",
                 "text_transfrom": "default",
                 "color": "#868686",

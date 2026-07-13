@@ -309,28 +309,6 @@
                   },
                   "blocks": {}
                 },
-                "list_item_LEzgVG": {
-                  "type": "_list-item",
-                  "settings": {
-                    "text": "Curtains",
-                    "url": "/collections/curtains",
-                    "icon": "",
-                    "padding": "",
-                    "margin": "0 0 8px"
-                  },
-                  "blocks": {}
-                },
-                "list_item_UefpNA": {
-                  "type": "_list-item",
-                  "settings": {
-                    "text": "Throws",
-                    "url": "/collections/throws",
-                    "icon": "",
-                    "padding": "",
-                    "margin": "0 0 8px"
-                  },
-                  "blocks": {}
-                },
                 "list_item_9N7PiX": {
                   "type": "_list-item",
                   "settings": {
@@ -347,8 +325,6 @@
                 "list_item_rqrQWc",
                 "list_item_gVnDAa",
                 "list_item_qYDVcn",
-                "list_item_LEzgVG",
-                "list_item_UefpNA",
                 "list_item_9N7PiX"
               ]
             }
