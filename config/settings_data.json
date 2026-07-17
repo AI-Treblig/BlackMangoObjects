@@ -2523,7 +2523,7 @@
           "logo_height": 70,
           "layout": "menu-below",
           "menu": "bmo-main-menu",
-          "menu_gap": 80,
+          "menu_gap": 120,
           "menu_font": "ebgaramond_n4",
           "menu_case": "uppercase",
           "show_search": true,
