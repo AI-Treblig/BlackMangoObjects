@@ -2415,6 +2415,7 @@
             "type": "category",
             "settings": {
               "image": "shopify://shop_images/bmo-cushion_b4f07b39-9b80-4729-9e3a-b4f77e8aa480.svg",
+              "icon_asset": "cushion-icon.webp",
               "label": "CUSHIONS",
               "url": "shopify://collections/cushion-covers"
             }
@@ -2423,6 +2424,7 @@
             "type": "category",
             "settings": {
               "image": "shopify://shop_images/bmo-rugs.svg",
+              "icon_asset": "rug-icon.webp",
               "label": "RUGS",
               "url": "shopify://collections/rugs"
             }
@@ -2431,6 +2433,7 @@
             "type": "category",
             "settings": {
               "image": "shopify://shop_images/bmo-objects-mobile.svg",
+              "icon_asset": "stand-objects.webp",
               "label": "Objects",
               "url": "shopify://collections/objects"
             }
@@ -2520,7 +2523,7 @@
           "logo_height": 70,
           "layout": "menu-below",
           "menu": "bmo-main-menu",
-          "menu_gap": 32,
+          "menu_gap": 60,
           "menu_font": "ebgaramond_n4",
           "menu_case": "uppercase",
           "show_search": true,

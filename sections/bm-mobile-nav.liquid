@@ -179,7 +179,9 @@
             {%- assign cat_url = block.settings.url | default: '#' -%}
             <a href="{{ cat_url }}" class="bm-mnav-cat" {{ block.shopify_attributes }}>
               <span class="bm-mnav-cat__img">
-                {%- if block.settings.image -%}
+                {%- if block.settings.icon_asset != blank -%}
+                  <img src="{{ block.settings.icon_asset | asset_url }}" alt="{{ block.settings.label | escape }}" loading="lazy">
+                {%- elsif block.settings.image -%}
                   <img src="{{ block.settings.image | image_url: width: 240 }}" alt="{{ block.settings.label | escape }}" loading="lazy">
                 {%- endif -%}
               </span>
@@ -800,6 +802,7 @@
       "name": "Category icon (drawer)",
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Image", "info": "Square works best (e.g. 240×240)." },
+        { "type": "text", "id": "icon_asset", "label": "Icon asset filename", "info": "Optional. Filename of an icon in the theme's assets/ folder (e.g. rug-icon.webp). Overrides the image above." },
         { "type": "text", "id": "label", "label": "Label", "default": "Category" },
         { "type": "url", "id": "url", "label": "Link to collection or page" }
       ]

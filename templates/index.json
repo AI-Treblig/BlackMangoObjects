@@ -769,6 +769,7 @@
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/bmo-rugs-hmpg.svg",
+            "icon_asset": "rug-icon.webp",
             "label": "Rugs",
             "url": "shopify://collections/rugs",
             "circle_bg": "",
@@ -779,6 +780,7 @@
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/bmo-cushion.svg",
+            "icon_asset": "cushion-icon.webp",
             "label": "Cushion Covers",
             "url": "shopify://collections/cushion-covers",
             "circle_bg": "",
@@ -789,6 +791,7 @@
           "type": "category",
           "settings": {
             "image": "shopify://shop_images/bmo-objects-homepg.svg",
+            "icon_asset": "stand-objects.webp",
             "label": "Objects",
             "url": "shopify://collections/objects",
             "circle_bg": "",

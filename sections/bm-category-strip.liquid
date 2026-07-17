@@ -46,7 +46,9 @@
                 style="background: {{ block.settings.circle_bg | default: section.settings.circle_bg | default: '#ffffff' }};
                        border-color: {{ block.settings.circle_border_color | default: section.settings.circle_border_color | default: '#ffffff' }};
                        border-width: {{ section.settings.circle_border_width | default: 0 }}px;">
-            {%- if block.settings.image -%}
+            {%- if block.settings.icon_asset != blank -%}
+              <img src="{{ block.settings.icon_asset | asset_url }}" alt="{{ block.settings.label | escape }}" loading="lazy">
+            {%- elsif block.settings.image -%}
               <img src="{{ block.settings.image | image_url: width: 320 }}" alt="{{ block.settings.label | escape }}" loading="lazy">
             {%- endif -%}
           </span>
@@ -265,6 +267,7 @@
       "name": "Category",
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Icon image", "info": "Square works best. PNG with transparent background recommended." },
+        { "type": "text", "id": "icon_asset", "label": "Icon asset filename", "info": "Optional. Filename of an icon in the theme's assets/ folder (e.g. rug-icon.webp). Overrides the icon image above." },
         { "type": "text", "id": "label", "label": "Label", "default": "Category" },
         { "type": "url", "id": "url", "label": "Link" },
         { "type": "color", "id": "circle_bg", "label": "Override circle background (optional)" },
