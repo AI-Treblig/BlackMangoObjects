@@ -129,7 +129,7 @@
 								<div class="lookbook-card swiper-slide">
 									<div class="lookbook-image">
 										{%- if image != blank -%}
-											{% render 'img-global' with image: image, class: "featured-lookbook__img", effect: "fade-in" %}
+											{% render 'img-global' with image, image: image, class: "featured-lookbook__img", effect: "fade-in" %}
 										{%- else -%}
 											{%- if section.settings.fullwidth -%}
 												<img class="lazyload fade-in" src="https://placehold.jp/1920x780.png" width="1920" height="780" />
@@ -586,4 +586,15 @@
             }
         ]
     }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: image, class: "featured-lookbook__img",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: image, class: "featured-lookbook__img",
+    effect: "fade-in" %}'
+  position: 6412..6514
+{%- endcomment -%}

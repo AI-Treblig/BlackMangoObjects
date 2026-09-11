@@ -37,7 +37,7 @@
 								{%- if article.image -%}
 									<div class="related-artibles__card-image">
 										<a href="{{ article.url }}">
-											{% render 'img-global' with image: article.image, class: "img-fluid", effect: "fade-in" %}
+											{% render 'img-global' with image, image: article.image, class: "img-fluid", effect: "fade-in" %}
 										</a>
 									</div>
 								{%- endif -%}
@@ -164,4 +164,15 @@
     }
   ]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: article.image, class: "img-fluid", effect:
+    "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: article.image, class: "img-fluid",
+    effect: "fade-in" %}'
+  position: 1933..2030
+{%- endcomment -%}

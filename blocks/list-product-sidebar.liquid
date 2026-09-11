@@ -9,7 +9,7 @@
             <div class="product">
                 <div class="image">
                     <a href="{{ product.url }}">
-                        {% render 'img-global' with image: product.featured_image, class: "img-fluid", effect: "fade-in" %}
+                        {% render 'img-global' with image, image: product.featured_image, class: "img-fluid", effect: "fade-in" %}
                     </a>
                 </div>
                 <div class="info">
@@ -61,4 +61,15 @@
     ],
     "presets": [{"name": "List product sidebar","category": "Single product"}]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: product.featured_image, class: "img-fluid",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: product.featured_image, class:
+    "img-fluid", effect: "fade-in" %}'
+  position: 556..662
+{%- endcomment -%}

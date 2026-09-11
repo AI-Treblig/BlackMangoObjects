@@ -146,7 +146,7 @@
 									<div class="lookbook-image">
 										<a href="{{ block.settings.url_lookbook }}">
 											{%- if image != blank -%}
-												{% render 'img-global' with image: image, class: "featured-lookbook__img", effect: "fade-in" %}
+												{% render 'img-global' with image, image: image, class: "featured-lookbook__img", effect: "fade-in" %}
 											{%- else -%}
 												<img class="lazyload fade-in" src="{{ 'placeholder.svg' | asset_url }}" alt="image demo"  width="690" height="690" />
 											{%- endif -%}
@@ -447,4 +447,15 @@
             }
         ]
     }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: image, class: "featured-lookbook__img",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: image, class: "featured-lookbook__img",
+    effect: "fade-in" %}'
+  position: 6814..6916
+{%- endcomment -%}

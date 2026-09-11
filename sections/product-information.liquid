@@ -44,7 +44,7 @@
 				<div class="content-ul-tab">
 					<ul class="more-info-tabs__nav nav">
 						{%- for block in section.blocks -%}
-							{%- capture "classes" -%}
+							{%- capture classes -%}
 								{%- if forloop.first -%}
 									active
 								{%- endif -%}
@@ -72,7 +72,7 @@
 			<div class="container">
 				<div class="more-info-tabs__content tab-content">
 					{%- for block in section.blocks -%}
-						{%- capture "classes" -%}
+						{%- capture classes -%}
 							{%- if forloop.first -%}
 								show
 							{%- endif -%}
@@ -311,3 +311,16 @@
     ]
   }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{%- capture "classes" -%}'
+  to: "{%- capture classes -%}"
+  position: 2030..2053
+- from: '{%- capture "classes" -%}'
+  to: "{%- capture classes -%}"
+  position: 3038..3061
+{% endcomment %}

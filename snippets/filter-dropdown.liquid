@@ -84,7 +84,7 @@
 						{%- if categories_enable -%}
 							<div id="Details-0-filter_categories" class="sidebar-categories js-filter filter-list" data-index="0">
 								<h4 class="block-sidebar__title"><label>{{ categories_title }}<span class="count hide"></span></label></h4>
-								{%- render 'collection-categories' with categories_menu:categories_menu -%}
+								{%- render 'collection-categories' with categories_menu.categories_menu, categories_menu: categories_menu -%}
 							</div>
 						{%- endif -%}
 					{%- endif -%}
@@ -294,4 +294,14 @@
 		</form>
     </facet-filters-form>
   {%- endunless -%}
-</div>
+</div>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'collection-categories' with categories_menu:categories_menu -%}"
+  to: "{%- render 'collection-categories' with categories_menu.categories_menu, categories_menu:
+    categories_menu -%}"
+  position: 4233..4342
+{%- endcomment -%}

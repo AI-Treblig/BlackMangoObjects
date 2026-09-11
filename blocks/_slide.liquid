@@ -3,10 +3,10 @@
       <img class="lazyload fade-in" src="https://placehold.jp/1920x952.png" width="1920" height="952" />
   {%- else -%}
       {%- if block.settings.image_mobi != blank -%}
-          {% render 'img-global' with image: block.settings.image_mobi, class: "wpbingo-slideshow__item-image mobile swiper-slide-image swiper-slicer-image" %}
-          {% render 'img-global' with image: block.settings.image, class: "wpbingo-slideshow__item-image hide_mobile swiper-slide-image swiper-slicer-image" %}
+          {% render 'img-global' with image, image: block.settings.image_mobi, class: "wpbingo-slideshow__item-image mobile swiper-slide-image swiper-slicer-image" %}
+          {% render 'img-global' with image, image: block.settings.image, class: "wpbingo-slideshow__item-image hide_mobile swiper-slide-image swiper-slicer-image" %}
       {%- else -%}
-          {% render 'img-global' with image: block.settings.image, class: "wpbingo-slideshow__item-image swiper-slide-image swiper-slicer-image" %}
+          {% render 'img-global' with image, image: block.settings.image, class: "wpbingo-slideshow__item-image swiper-slide-image swiper-slicer-image" %}
       {%- endif -%}
   {%- endif -%}
   {% content_for "blocks" %}
@@ -167,4 +167,26 @@
         } 
      ]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: block.settings.image_mobi, class: "wpbingo-slideshow__item-image
+    mobile swiper-slide-image swiper-slicer-image" %}'
+  to: '{% render ''img-global'' with image, image: block.settings.image_mobi, class:
+    "wpbingo-slideshow__item-image mobile swiper-slide-image swiper-slicer-image"
+    %}'
+  position: 439..595
+- from: '{% render ''img-global'' with image: block.settings.image, class: "wpbingo-slideshow__item-image
+    hide_mobile swiper-slide-image swiper-slicer-image" %}'
+  to: '{% render ''img-global'' with image, image: block.settings.image, class: "wpbingo-slideshow__item-image
+    hide_mobile swiper-slide-image swiper-slicer-image" %}'
+  position: 606..762
+- from: '{% render ''img-global'' with image: block.settings.image, class: "wpbingo-slideshow__item-image
+    swiper-slide-image swiper-slicer-image" %}'
+  to: '{% render ''img-global'' with image, image: block.settings.image, class: "wpbingo-slideshow__item-image
+    swiper-slide-image swiper-slicer-image" %}'
+  position: 792..936
+{%- endcomment -%}

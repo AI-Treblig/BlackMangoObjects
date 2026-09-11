@@ -83,7 +83,7 @@
 									<div class="lookbook-card">
 										<div class="lookbook-image">
 											{%- if image != blank -%}
-												{% render 'img-global' with image: image, class: "featured-lookbook__img", effect: "fade-in" %}
+												{% render 'img-global' with image, image: image, class: "featured-lookbook__img", effect: "fade-in" %}
 											{%- else -%}
 												{%- if section.settings.fullwidth -%}
 													<img class="lazyload fade-in" src="https://placehold.jp/1920x850.png" width="1920" height="850" />
@@ -329,4 +329,15 @@
             }
         ]
     }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: image, class: "featured-lookbook__img",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: image, class: "featured-lookbook__img",
+    effect: "fade-in" %}'
+  position: 3925..4027
+{%- endcomment -%}

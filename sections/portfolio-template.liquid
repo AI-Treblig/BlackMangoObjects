@@ -1,7 +1,7 @@
 {% paginate blog.articles by section.settings.limit %}
 {%- assign coloumn = section.settings.limit-coloumn -%}
 {%- assign coloumn2 = section.settings.limit-coloumn2 -%}
-{%- capture "class" -%}
+{%- capture class -%}
 	{%- if section.settings.layout == 'normal' -%}
 		{%- assign number = 12 | divided_by: coloumn -%}
 		{%- assign number2 = 12 | divided_by: coloumn2 -%}
@@ -162,3 +162,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{%- capture "class" -%}'
+  to: "{%- capture class -%}"
+  position: 169..190
+{% endcomment %}

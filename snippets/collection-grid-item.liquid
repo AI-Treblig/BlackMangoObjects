@@ -17,9 +17,21 @@
       <div class="collection-item__placeholder">{{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}</div>
     {%- else -%}
       <div class="collection-item__image">
-		 {% render 'img-global' with image: collection.products.first.featured_media.preview_image, effect: "fade-in" %}
+		 {% render 'img-global' with image, image: collection.products.first.featured_media.preview_image, effect: "fade-in" %}
       </div>
     {% endif %}
     <div class="collection-item__title">{{ collection_title }}</div>
   </a>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: collection.products.first.featured_media.preview_image,
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: collection.products.first.featured_media.preview_image,
+    effect: "fade-in" %}'
+  position: 1020..1138
+{% endcomment %}

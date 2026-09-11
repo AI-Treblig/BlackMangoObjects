@@ -8,7 +8,7 @@
 					<div class="article__image">
 						<a class="article__featured-image-link" href="{{ item.url }}">
 							<div class="article__featured-image-wrapper">
-								{% render 'img-global' with image: item.image, class: "img-fluid", effect: "fade-in" %}
+								{% render 'img-global' with image, image: item.image, class: "img-fluid", effect: "fade-in" %}
 							</div>
 						</a>
 					</div>
@@ -33,7 +33,7 @@
 					<div class="article__image">
 						<a class="article__featured-image-link" href="{{ item.url }}">
 							<div class="article__featured-image-wrapper">
-								{% render 'img-global' with image: item.featured_image, class: "img-fluid", effect: "fade-in" %}
+								{% render 'img-global' with image, image: item.featured_image, class: "img-fluid", effect: "fade-in" %}
 							</div>
 						</a>
 					</div>
@@ -84,3 +84,20 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: item.image, class: "img-fluid", effect:
+    "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: item.image, class: "img-fluid",
+    effect: "fade-in" %}'
+  position: 457..551
+- from: '{% render ''img-global'' with image: item.featured_image, class: "img-fluid",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: item.featured_image, class: "img-fluid",
+    effect: "fade-in" %}'
+  position: 1555..1658
+{% endcomment %}

@@ -19,7 +19,7 @@
 									{%- else -%}
 										{% assign image = product.featured_image %}
 									{%- endif -%}
-									{% render 'img-global' with image: image , class: "featured-banner__img", effect: "fade-in" %}
+									{% render 'img-global' with image, image: image, class: "featured-banner__img", effect: "fade-in" %}
 								</a>
 							</div>
 						</div>
@@ -38,7 +38,7 @@
                                           {%- else -%}
                                               {% assign image = product.featured_image %}
                                           {%- endif -%}
-                                          {% render 'img-global' with image: image , class: "featured-banner__img", effect: "fade-in" %}
+                                          {% render 'img-global' with image, image: image, class: "featured-banner__img", effect: "fade-in" %}
                                       </a>
                                   </div>
                               </div>
@@ -174,4 +174,20 @@
     ],
     "presets": [{"name": "Single buy together","category": "Single product"}]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: image , class: "featured-banner__img",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: image, class: "featured-banner__img",
+    effect: "fade-in" %}'
+  position: 1155..1255
+- from: '{% render ''img-global'' with image: image , class: "featured-banner__img",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: image, class: "featured-banner__img",
+    effect: "fade-in" %}'
+  position: 2643..2743
+{%- endcomment -%}

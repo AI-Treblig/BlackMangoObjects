@@ -19,16 +19,47 @@
 	{% else %}
 		<div class="product-card__image">
 			{% if  product.images.size > 1 and media_featured.media_type != 'video' %}
-				{% render 'img-global-product' with image: featured_image, image_video: image_video, media: media_featured, class: "product-card__img-visible", effect: "fade-in" %}
-				{% render 'img-global-product' with image: image, class: "product-card__img-hidden variant", effect: "fade-in"  %}
+				{% render 'img-global-product' with image, image: featured_image, image_video: image_video, media: media_featured, class: "product-card__img-visible", effect: "fade-in" %}
+				{% render 'img-global-product' with image, image: image, class: "product-card__img-hidden variant", effect: "fade-in" %}
 			{% else %}
 				{%- if product.variants[0].featured_image.src != blank -%}
 					{%- assign image = product.variants[0].featured_image.src -%}
-					{% render 'img-global-product' with image: image, image_video: image_video, media: media_featured, class: "product-card__img variant", effect: "fade-in" %}
+					{% render 'img-global-product' with image, image: image, image_video: image_video, media: media_featured, class: "product-card__img variant", effect: "fade-in" %}
 				{%- else -%}
-					{% render 'img-global-product' with image: featured_image, image_video: image_video, media: media_featured, class: "product-card__img variant", effect: "fade-in" %}
+					{% render 'img-global-product' with image, image: featured_image, image_video: image_video, media: media_featured, class: "product-card__img variant", effect: "fade-in" %}
 				{%- endif -%}
 			{% endif %}
 		</div>
 	{% endif %}
 </a>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global-product'' with image: featured_image, image_video:
+    image_video, media: media_featured, class: "product-card__img-visible", effect:
+    "fade-in" %}'
+  to: '{% render ''img-global-product'' with image, image: featured_image, image_video:
+    image_video, media: media_featured, class: "product-card__img-visible", effect:
+    "fade-in" %}'
+  position: 1014..1185
+- from: '{% render ''img-global-product'' with image: image, class: "product-card__img-hidden
+    variant", effect: "fade-in"  %}'
+  to: '{% render ''img-global-product'' with image, image: image, class: "product-card__img-hidden
+    variant", effect: "fade-in" %}'
+  position: 1190..1310
+- from: '{% render ''img-global-product'' with image: image, image_video: image_video,
+    media: media_featured, class: "product-card__img variant", effect: "fade-in" %}'
+  to: '{% render ''img-global-product'' with image, image: image, image_video: image_video,
+    media: media_featured, class: "product-card__img variant", effect: "fade-in" %}'
+  position: 1460..1622
+- from: '{% render ''img-global-product'' with image: featured_image, image_video:
+    image_video, media: media_featured, class: "product-card__img variant", effect:
+    "fade-in" %}'
+  to: '{% render ''img-global-product'' with image, image: featured_image, image_video:
+    image_video, media: media_featured, class: "product-card__img variant", effect:
+    "fade-in" %}'
+  position: 1645..1816
+{% endcomment %}

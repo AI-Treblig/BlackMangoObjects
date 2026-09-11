@@ -31,7 +31,7 @@
 						<li id="predictive-search-option-{{ forloop.index }}" class="predictive-search__list-item" role="option" aria-selected="false">
 							<a href="{{ product.url }}" class="predictive-search__item predictive-search__item--link link link--text" tabindex="-1">
 								{%- if product.featured_media != blank -%}
-									{% render 'img-global' with image: product.featured_media, class: "predictive-search__image", effect: "fade-in" %}
+									{% render 'img-global' with image, image: product.featured_media, class: "predictive-search__image", effect: "fade-in" %}
 								{%- endif -%}
 								<div class="predictive-search__item-content">
 									<h3 class="predictive-search__item-heading">{{ product.title }}</h3> 
@@ -127,3 +127,15 @@
 		</ul>
 	</div>
 {%- endif -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: product.featured_media, class: "predictive-search__image",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: product.featured_media, class:
+    "predictive-search__image", effect: "fade-in" %}'
+  position: 1755..1876
+{% endcomment %}

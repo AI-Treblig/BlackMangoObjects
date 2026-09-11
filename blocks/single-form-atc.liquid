@@ -4,7 +4,7 @@
 {%- if external == blank and group_product == blank -%}
     <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
     <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
-    {% capture "form_classes" %}
+    {% capture form_classes %}
         js-addtocart-form product-single__form{% if product.has_only_default_variant %} product-single__form--no-variants{% endif %}
     {%- endcapture %}
     {% form 'product', product, class:form_classes, data-product-form: '' %}
@@ -32,7 +32,7 @@
             <div class="product-content">
               <div class="product-thumb">
                 <a href="{{ product.url }}">
-                  {% render 'img-global' with image: product_group.featured_image, class: "featured-banner__img", effect: "fade-in" %}
+                  {% render 'img-global' with image, image: product_group.featured_image, class: "featured-banner__img", effect: "fade-in" %}
                 </a>
               </div>
               <div class="product-info">
@@ -175,4 +175,18 @@
     ],
     "presets": [{"name": "Single product form atc","category": "Single product"}]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% capture "form_classes" %}'
+  to: "{% capture form_classes %}"
+  position: 499..525
+- from: '{% render ''img-global'' with image: product_group.featured_image, class:
+    "featured-banner__img", effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: product_group.featured_image, class:
+    "featured-banner__img", effect: "fade-in" %}'
+  position: 2037..2160
+{%- endcomment -%}

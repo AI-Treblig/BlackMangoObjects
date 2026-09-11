@@ -3,7 +3,7 @@
     <div class="page-article__inner">
         <div class="article__image">
             <div class="article__featured-image-wrapper" style="padding-top:{{ 1 | divided_by: article.image.aspect_ratio | times: 100}}%;">
-                {% render 'img-global' with image: article.image, class: "article__featured-image", effect: "fade-in" %}
+                {% render 'img-global' with image, image: article.image, class: "article__featured-image", effect: "fade-in" %}
             </div>
         </div>
         <div class="content-image-single">
@@ -59,4 +59,15 @@
     ],
     "presets": [{"name": "Post normal"}]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: article.image, class: "article__featured-image",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: article.image, class: "article__featured-image",
+    effect: "fade-in" %}'
+  position: 323..434
+{%- endcomment -%}

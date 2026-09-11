@@ -12,7 +12,7 @@
         <div class="product-sidebar">
           <div class="product-sidebar__image">
             <a href="{{ product.url }}">
-			  {% render 'img-global' with image: product.featured_image, class: "img-fluid", effect: "fade-in" %}
+			  {% render 'img-global' with image, image: product.featured_image, class: "img-fluid", effect: "fade-in" %}
             </a>
           </div>
           <div class="product-sidebar__content">
@@ -70,7 +70,7 @@
         {%- endif -%}
         <a href="{{ banner_url }}" title="{{ block.settings.image.alt | default: shop.name }}">
           {%- if block.settings.image != blank -%}
-			{% render 'img-global' with image: block.settings.image, class: "img-fluid", effect: "fade-in" %}
+			{% render 'img-global' with image, image: block.settings.image, class: "img-fluid", effect: "fade-in" %}
           {%- else -%}
             <div class="no-image no-image--banner">
               {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -138,3 +138,20 @@
     ]
   }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: product.featured_image, class: "img-fluid",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: product.featured_image, class:
+    "img-fluid", effect: "fade-in" %}'
+  position: 872..978
+- from: '{% render ''img-global'' with image: block.settings.image, class: "img-fluid",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: block.settings.image, class: "img-fluid",
+    effect: "fade-in" %}'
+  position: 3853..3957
+{% endcomment %}

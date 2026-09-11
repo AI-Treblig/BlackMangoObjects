@@ -52,7 +52,7 @@
 		{%- elsif image_hover == 'transform' -%}
 			{% render 'image-transform',product: product %}
 		{%- elsif image_hover == 'slider' -%}
-			{% render 'image-slider',product: product' %}
+			{% render 'image-slider', product: product %}
 		{%- elsif image_hover == 'zoom' -%}
 			{% render 'image-zoom',product: product %}
 		{%- endif -%}
@@ -338,3 +338,13 @@
 		{%- endif -%}
 	</div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'image-slider',product: product' %}"
+  to: "{% render 'image-slider', product: product %}"
+  position: 2393..2438
+{% endcomment %}

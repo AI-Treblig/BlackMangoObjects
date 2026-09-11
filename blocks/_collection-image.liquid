@@ -10,7 +10,7 @@
     <div class="collection-item__image image-parent">
         <a href="{{ collections[collection_handle].url }}" class="collection-image__link image-effect">
             {%- if image -%}
-                {% render 'img-global' with image: image, class: "featured-banner__img", effect: "fade-in" %}
+                {% render 'img-global' with image, image: image, class: "featured-banner__img", effect: "fade-in" %}
             {%- else -%}
                 <img class="lazyload fade-in" src="{{ 'placeholder.svg' | asset_url }}" alt="image demo" width="330" height="489" />
             {%- endif -%}
@@ -178,4 +178,15 @@
     ],
     "presets": [{"name": "Collection image"}]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: image, class: "featured-banner__img",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: image, class: "featured-banner__img",
+    effect: "fade-in" %}'
+  position: 687..787
+{%- endcomment -%}

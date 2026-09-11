@@ -33,7 +33,7 @@
     						</div>
     					</div>
     					{%- if first_3d_model -%}
-    						{%- render 'xr-button' with model_id: first_3d_model.id, multi: false -%}
+    						{%- render 'xr-button' with model_id, model_id: first_3d_model.id, multi: false -%}
     					{%- endif -%}
     				</div>
     				{%- unless stacked or gird-mordern or lagre-gallery or slider  or gird-two -%}
@@ -58,7 +58,7 @@
 					</div>
 				</div>
 				{%- if first_3d_model -%}
-					{%- render 'xr-button' with model_id: first_3d_model.id, multi: false -%}
+					{%- render 'xr-button' with model_id, model_id: first_3d_model.id, multi: false -%}
 				{%- endif -%}
 			</div>
 			{%- unless stacked or gird-mordern or lagre-gallery or slider  or gird-two -%}
@@ -73,3 +73,18 @@
 		</div>
 	{%- endif -%}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'xr-button' with model_id: first_3d_model.id, multi: false -%}"
+  to: "{%- render 'xr-button' with model_id, model_id: first_3d_model.id, multi: false
+    -%}"
+  position: 2916..2999
+- from: "{%- render 'xr-button' with model_id: first_3d_model.id, multi: false -%}"
+  to: "{%- render 'xr-button' with model_id, model_id: first_3d_model.id, multi: false
+    -%}"
+  position: 4213..4296
+{% endcomment %}

@@ -21,7 +21,7 @@
                     {%- if block.settings.show_image -%}
                         <div class="testimonial-card__avatar">
                             {%- if avatar -%}
-                                {% render 'img-global' with image: avatar, class: "testimonial-card__avatar-img", effect: "fade-in" %}
+                                {% render 'img-global' with image, image: avatar, class: "testimonial-card__avatar-img", effect: "fade-in" %}
                             {%- else -%}
                                 <img class="lazyload fade-in" src="{{ 'placeholder.svg' | asset_url }}" alt="image demo"  width="100" height="100" />
                             {%- endif -%}
@@ -154,4 +154,15 @@
     ],
     "presets": [{"name": "Item"}]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: avatar, class: "testimonial-card__avatar-img",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: avatar, class: "testimonial-card__avatar-img",
+    effect: "fade-in" %}'
+  position: 1186..1295
+{%- endcomment -%}

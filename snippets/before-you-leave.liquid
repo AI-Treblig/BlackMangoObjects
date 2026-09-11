@@ -81,7 +81,7 @@
 												<img class="product-card__image lazyload fade-in" src="https://placehold.jp/450x540.png"  width="450" height="540" alt="{{ featured_image.alt | escape }}">
 											{% else %}
 												<div class="product-card__image">
-													{% render 'img-global-product' with image: featured_image, class: "product-card__img variant", effect: "fade-in" %}
+													{% render 'img-global-product' with image, image: featured_image, class: "product-card__img variant", effect: "fade-in" %}
 												</div>
 											{% endif %}
 										</a>
@@ -297,4 +297,15 @@
 			</div>
 		</div>
 	</div>
-{%- endif -%}
+{%- endif -%}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global-product'' with image: featured_image, class: "product-card__img
+    variant", effect: "fade-in" %}'
+  to: '{% render ''img-global-product'' with image, image: featured_image, class:
+    "product-card__img variant", effect: "fade-in" %}'
+  position: 4144..4266
+{%- endcomment -%}

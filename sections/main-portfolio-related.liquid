@@ -60,7 +60,7 @@
       										<div class="related-image">
       											{%- assign image = related.image -%}
       											<a href="{{related.url}}">
-      												{% render 'img-global' with image: image, class: "article__related-image", effect: "fade-in" %}
+      												{% render 'img-global' with image, image: image, class: "article__related-image", effect: "fade-in" %}
       											</a>
       										</div>
       									   <h5 class="title-article-rel"><a href="{{related.url}}">{{related.title}}</a></h5>
@@ -344,4 +344,15 @@
           }
 	]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: image, class: "article__related-image",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: image, class: "article__related-image",
+    effect: "fade-in" %}'
+  position: 4104..4206
+{%- endcomment -%}

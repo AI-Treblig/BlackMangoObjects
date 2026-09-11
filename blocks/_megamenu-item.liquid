@@ -22,7 +22,7 @@
         <div class="megamenu-banner">
             <a href="{{ block.settings.banner_link }}">
                 {%- if block.settings.image -%}
-                    {% render 'img-global' with image: block.settings.image, class: "img-fluid", effect: "fade-in" %}
+                    {% render 'img-global' with image, image: block.settings.image, class: "img-fluid", effect: "fade-in" %}
                 {%- else -%}
                     <img class="lazyload fade-in" src="https://placehold.jp/330x390.png" width="330" height="390" />
                 {%- endif -%}
@@ -180,4 +180,15 @@
     ],
     "presets": [{"name": "Megamenu item"}]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: block.settings.image, class: "img-fluid",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: block.settings.image, class: "img-fluid",
+    effect: "fade-in" %}'
+  position: 1153..1257
+{%- endcomment -%}

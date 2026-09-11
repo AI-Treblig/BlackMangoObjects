@@ -189,7 +189,7 @@
 																		{%- if block.settings.show_image -%}
 																			<div class="testimonial-card__avatar">
 																				{%- if avatar -%}
-																					{% render 'img-global' with image: avatar, class: "testimonial-card__avatar-img", effect: "fade-in" %}
+																					{% render 'img-global' with image, image: avatar, class: "testimonial-card__avatar-img", effect: "fade-in" %}
 																				{%- else -%}
 																					<img class="lazyload fade-in" src="https://placehold.jp/100x100.png" width="100" height="100" />
 																				{%- endif -%}
@@ -788,4 +788,15 @@
 		}
 	]
 }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: avatar, class: "testimonial-card__avatar-img",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: avatar, class: "testimonial-card__avatar-img",
+    effect: "fade-in" %}'
+  position: 8735..8844
+{%- endcomment -%}

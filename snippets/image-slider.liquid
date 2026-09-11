@@ -27,9 +27,9 @@
 		{%- for media in product.media -%}
 			<a class="swiper-slide product-card__image-link" href="{{ product_url }}" data-variant_id="{{ media.id }}" data-index="{{ forloop.index }}">
 				{% if forloop.first %}
-					{% render 'img-global-product' with image: media, media: media_featured, class: "product-card__img-visible variant", effect: "fade-in" %}
+					{% render 'img-global-product' with image, image: media, media: media_featured, class: "product-card__img-visible variant", effect: "fade-in" %}
 				{% else %}
-					{% render 'img-global-product' with image: media, class: "product-card__img-visible", effect: "fade-in" %}
+					{% render 'img-global-product' with image, image: media, class: "product-card__img-visible", effect: "fade-in" %}
 				{% endif %}
 			</a>
 		{%- endfor -%}
@@ -39,3 +39,20 @@
 
 	</div>
 {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global-product'' with image: media, media: media_featured,
+    class: "product-card__img-visible variant", effect: "fade-in" %}'
+  to: '{% render ''img-global-product'' with image, image: media, media: media_featured,
+    class: "product-card__img-visible variant", effect: "fade-in" %}'
+  position: 1334..1478
+- from: '{% render ''img-global-product'' with image: media, class: "product-card__img-visible",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global-product'' with image, image: media, class: "product-card__img-visible",
+    effect: "fade-in" %}'
+  position: 1499..1612
+{% endcomment %}

@@ -1,7 +1,7 @@
 {%- assign article_content = article.excerpt_or_content -%}
 {%- assign coloumn = section.settings.limit-coloumn -%}
 {%- assign coloumn2 = section.settings.limit-coloumn2 -%}
-{%- capture "class" -%}
+{%- capture class -%}
 	{%- assign number = 12 | divided_by: coloumn -%}
 	{%- assign number2 = 12 | divided_by: coloumn2 -%}
 	col-xl-{{ number }} col-lg-{{ number2 }} col-md-6 col-12
@@ -11,7 +11,7 @@
 		<div class="article__image">
 			<a class="article__featured-image-link" href="{{ article.url }}">
 				<div class="article__featured-image-wrapper" style="padding-top:{{ 1 | divided_by: article.image.aspect_ratio | times: 100}}%;">
-					{% render 'img-global' with image: article.image, class: "article__featured-image", effect: "fade-in" %}
+					{% render 'img-global' with image, image: article.image, class: "article__featured-image", effect: "fade-in" %}
 				</div>
 			</a>
 			{%- if block.settings.show_date -%}
@@ -50,3 +50,18 @@
 		</div>
 	</div>
 </article>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{%- capture "class" -%}'
+  to: "{%- capture class -%}"
+  position: 174..195
+- from: '{% render ''img-global'' with image: article.image, class: "article__featured-image",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: article.image, class: "article__featured-image",
+    effect: "fade-in" %}'
+  position: 688..799
+{% endcomment %}

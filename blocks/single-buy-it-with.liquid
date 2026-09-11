@@ -10,7 +10,7 @@
         <div class="content-right">
             <div class="product-thumb">
                 <a href="{{ product_buy_it_with.url }}">
-                    {% render 'img-global' with image: product_buy_it_with.featured_image, class: "featured-banner__img", effect: "fade-in" %}
+                    {% render 'img-global' with image, image: product_buy_it_with.featured_image, class: "featured-banner__img", effect: "fade-in" %}
                 </a>
             </div>
         </div>
@@ -51,4 +51,15 @@
     ],
     "presets": [{"name": "Single buy it with","category": "Single product"}]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: product_buy_it_with.featured_image,
+    class: "featured-banner__img", effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: product_buy_it_with.featured_image,
+    class: "featured-banner__img", effect: "fade-in" %}'
+  position: 861..990
+{%- endcomment -%}

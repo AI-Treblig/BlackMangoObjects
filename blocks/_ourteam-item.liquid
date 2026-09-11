@@ -6,7 +6,7 @@
         <div class="ourteam-card__inner">
             <div class="ourteam-card__avatar">
                 {%- if image -%}
-                    {% render 'img-global' with image: image, class: "ourteam-card__avatar-img", effect: "fade-in" %}
+                    {% render 'img-global' with image, image: image, class: "ourteam-card__avatar-img", effect: "fade-in" %}
                 {%- else -%}
                     <img class="lazyload fade-in" src="https://placehold.jp/424x484.png" width="424" height="484" />
                 {%- endif -%}
@@ -204,4 +204,15 @@
     ],
     "presets": [{"name": "Item"}]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% render ''img-global'' with image: image, class: "ourteam-card__avatar-img",
+    effect: "fade-in" %}'
+  to: '{% render ''img-global'' with image, image: image, class: "ourteam-card__avatar-img",
+    effect: "fade-in" %}'
+  position: 352..456
+{%- endcomment -%}

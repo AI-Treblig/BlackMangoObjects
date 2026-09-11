@@ -7,7 +7,7 @@
 {%- if categories_enable -%}
 	<div class="sidebar-categories js-filter filter-list">
 		<h4 class="block-sidebar__title">{{ categories_title }}</h4>
-		{%- render 'collection-categories' with categories_menu:categories_menu, show_count: show_count -%}
+		{%- render 'collection-categories' with categories_menu.categories_menu, categories_menu: categories_menu, show_count: show_count -%}
 	</div>
 {%- endif -%}
 {%- if block.settings.enable_filtering -%}
@@ -57,3 +57,15 @@
     ]
   }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'collection-categories' with categories_menu:categories_menu,
+    show_count: show_count -%}"
+  to: "{%- render 'collection-categories' with categories_menu.categories_menu, categories_menu:
+    categories_menu, show_count: show_count -%}"
+  position: 500..633
+{% endcomment %}

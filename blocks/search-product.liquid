@@ -71,7 +71,7 @@
 					{%- endif -%}
 					<div class="collection-content {{ sidebar_right_class }}">
 						<div class="page-width" id="main-collection-filters" data-id="{{ section.id }}">
-							{% render 'filter-dropdown' with results: search, layout_filter:layout_filter, sidebar_enable:sidebar_enable, select_columns:select_columns, views_enable:views_enable, sortby_enable:sortby_enable  %}
+							{% render 'filter-dropdown' with results, results: search, layout_filter: layout_filter, sidebar_enable: sidebar_enable, select_columns: select_columns, views_enable: views_enable, sortby_enable: sortby_enable %}
 						</div>
 						{%- assign total_limit 			= block.settings.page_item -%}
 						{% paginate search.results by total_limit %}
@@ -323,3 +323,17 @@
     ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'filter-dropdown' with results: search, layout_filter:layout_filter,
+    sidebar_enable:sidebar_enable, select_columns:select_columns, views_enable:views_enable,
+    sortby_enable:sortby_enable  %}"
+  to: "{% render 'filter-dropdown' with results, results: search, layout_filter: layout_filter,
+    sidebar_enable: sidebar_enable, select_columns: select_columns, views_enable:
+    views_enable, sortby_enable: sortby_enable %}"
+  position: 3988..4200
+{% endcomment %}

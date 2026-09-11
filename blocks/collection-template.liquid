@@ -7,7 +7,7 @@
 <div id="JsCollectionProduct" class="{{ select_columns }} {{section.settings.select_columns_sm}} {{section.settings.select_columns_xs}}">
 	{%- if layout_filter != 'on_top' -%} 
 	<div class="page-width" id="main-collection-filters" data-id="{{ block.id }}">
-	    {% render 'filter-dropdown' with results: collection, layout_filter:layout_filter, sidebar_enable:sidebar_enable, categories_menu: block.settings.categories_menu, categories_enable:block.settings.categories_enable, categories_title:block.settings.categories_title, views_enable:views_enable, sortby_enable:sortby_enable %}
+	    {% render 'filter-dropdown' with results, results: collection, layout_filter: layout_filter, sidebar_enable: sidebar_enable, categories_menu: block.settings.categories_menu, categories_enable: block.settings.categories_enable, categories_title: block.settings.categories_title, views_enable: views_enable, sortby_enable: sortby_enable %}
 	</div>
 	{%- endif -%}
 	<div class="js-collection-content-product">
@@ -26,7 +26,7 @@
 				{%- else -%}
 					{%- if layout_filter == 'on_top' -%}
 					<div class="page-width" id="main-collection-filters" data-id="{{ block.id }}">
-					    {% render 'filter-dropdown' with results: collection, layout_filter:layout_filter, sidebar_enable:sidebar_enable, categories_menu: block.settings.categories_menu, categories_enable:block.settings.categories_enable, categories_title:block.settings.categories_title, views_enable:views_enable, sortby_enable:sortby_enable %}
+					    {% render 'filter-dropdown' with results, results: collection, layout_filter: layout_filter, sidebar_enable: sidebar_enable, categories_menu: block.settings.categories_menu, categories_enable: block.settings.categories_enable, categories_title: block.settings.categories_title, views_enable: views_enable, sortby_enable: sortby_enable %}
 					</div>
 					{%- endif -%}
 					<div class="collection page-width {{ block.settings.layput_shop }}">
@@ -143,3 +143,28 @@
 		}
     ]
 } {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'filter-dropdown' with results: collection, layout_filter:layout_filter,
+    sidebar_enable:sidebar_enable, categories_menu: block.settings.categories_menu,
+    categories_enable:block.settings.categories_enable, categories_title:block.settings.categories_title,
+    views_enable:views_enable, sortby_enable:sortby_enable %}"
+  to: "{% render 'filter-dropdown' with results, results: collection, layout_filter:
+    layout_filter, sidebar_enable: sidebar_enable, categories_menu: block.settings.categories_menu,
+    categories_enable: block.settings.categories_enable, categories_title: block.settings.categories_title,
+    views_enable: views_enable, sortby_enable: sortby_enable %}"
+  position: 644..981
+- from: "{% render 'filter-dropdown' with results: collection, layout_filter:layout_filter,
+    sidebar_enable:sidebar_enable, categories_menu: block.settings.categories_menu,
+    categories_enable:block.settings.categories_enable, categories_title:block.settings.categories_title,
+    views_enable:views_enable, sortby_enable:sortby_enable %}"
+  to: "{% render 'filter-dropdown' with results, results: collection, layout_filter:
+    layout_filter, sidebar_enable: sidebar_enable, categories_menu: block.settings.categories_menu,
+    categories_enable: block.settings.categories_enable, categories_title: block.settings.categories_title,
+    views_enable: views_enable, sortby_enable: sortby_enable %}"
+  position: 1817..2154
+{% endcomment %}

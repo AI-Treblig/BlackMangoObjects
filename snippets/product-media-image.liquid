@@ -6,12 +6,12 @@
     {%- if variants_group_image != blank -%}
         {%- if variant_featured_media != blank -%}
             <div class="swiper-slide js-product-media-item product-single__media-item" data-slick-media-label="{{ thumbnail_alt }}">
-                {%- render 'media' with media: variant_featured_media, featured: featured, width: width, height: height -%}
+                {%- render 'media' with media, media: variant_featured_media, featured: featured, width: width, height: height -%}
             </div>
         {%- endif -%}
        {% for media_item in variants_group_image %}
             <div class="swiper-slide js-product-media-item product-single__media-item" data-slick-media-label="{{ thumbnail_alt }}">
-                {%- render 'media' with media: media_item, featured: featured, width: width, height: height -%}
+                {%- render 'media' with media, media: media_item, featured: featured, width: width, height: height -%}
             </div>
         {% endfor %}
     {%- else -%}
@@ -46,4 +46,20 @@
   </div>
     <button class="slick-prev slick-arrow" data-slick-previous aria-label="Previous" type="button" style=""></button>
     <button class="slick-next slick-arrow" data-slick-next aria-label="Next" type="button" style=""></button>
-</div>
+</div>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'media' with media: variant_featured_media, featured: featured,
+    width: width, height: height -%}"
+  to: "{%- render 'media' with media, media: variant_featured_media, featured: featured,
+    width: width, height: height -%}"
+  position: 747..861
+- from: "{%- render 'media' with media: media_item, featured: featured, width: width,
+    height: height -%}"
+  to: "{%- render 'media' with media, media: media_item, featured: featured, width:
+    width, height: height -%}"
+  position: 1104..1206
+{%- endcomment -%}
