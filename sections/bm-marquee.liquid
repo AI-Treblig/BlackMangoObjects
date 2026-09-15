@@ -1,0 +1,181 @@
+{%- comment -%}
+  Black Mango marquee — horizontally scrolling text loop with faded edges.
+  Pure CSS: the phrase sequence is rendered into two identical groups and the
+  track slides by exactly one group width (-50%), so the loop is seamless.
+  Edges fade with mask-image. Motion stops for prefers-reduced-motion.
+{%- endcomment -%}
+
+{%- assign font_d = section.settings.font_size_desktop | default: 56 -%}
+{%- assign font_m = section.settings.font_size_mobile | default: 34 -%}
+{%- assign gap_d = section.settings.gap_desktop | default: 48 -%}
+{%- assign gap_m = section.settings.gap_mobile | default: 28 -%}
+{%- assign speed = section.settings.speed | default: 40 -%}
+{%- assign fade = section.settings.fade | default: 12 -%}
+{%- assign fade_end = 100 | minus: fade -%}
+{%- assign repeat = section.settings.repeat | default: 4 -%}
+{%- assign separator = section.settings.separator -%}
+
+<section class="bm-marquee"
+         id="bm-marquee-{{ section.id }}"
+         style="background-color: {{ section.settings.bg_color | default: '#ffffff' }};">
+  {%- if section.blocks.size > 0 -%}
+    <h2 class="bm-marquee__sr">
+      {%- for block in section.blocks -%}{{ block.settings.text | escape }}{% unless forloop.last %}, {% endunless %}{%- endfor -%}
+    </h2>
+
+    <div class="bm-marquee__viewport" aria-hidden="true">
+      <div class="bm-marquee__track">
+        {%- for group in (1..2) -%}
+          <div class="bm-marquee__group">
+            {%- for i in (1..repeat) -%}
+              {%- for block in section.blocks -%}
+                <span class="bm-marquee__item" {% if group == 1 and i == 1 %}{{ block.shopify_attributes }}{% endif %}>{{ block.settings.text | escape }}</span>
+                {%- if separator != blank -%}
+                  <span class="bm-marquee__sep">{{ separator | escape }}</span>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endfor -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</section>
+
+<style>
+  #bm-marquee-{{ section.id }} {
+    --bm-mq-gap: {{ gap_d }}px;
+    padding: {{ section.settings.padding_top_desktop }}px 0 {{ section.settings.padding_bottom_desktop }}px;
+    color: {{ section.settings.text_color | default: '#000000' }};
+    overflow: hidden;
+  }
+  #bm-marquee-{{ section.id }} .bm-marquee__sr {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    margin: -1px; padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  #bm-marquee-{{ section.id }} .bm-marquee__viewport {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 {{ fade }}%, #000 {{ fade_end }}%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, #000 {{ fade }}%, #000 {{ fade_end }}%, transparent 100%);
+  }
+  #bm-marquee-{{ section.id }} .bm-marquee__track {
+    display: flex;
+    width: max-content;
+    animation: bm-marquee-{{ section.id }} {{ speed }}s linear infinite;
+    {%- if section.settings.direction == 'right' %}
+    animation-direction: reverse;
+    {%- endif %}
+    will-change: transform;
+  }
+  {%- if section.settings.pause_on_hover %}
+  #bm-marquee-{{ section.id }} .bm-marquee__viewport:hover .bm-marquee__track {
+    animation-play-state: paused;
+  }
+  {%- endif %}
+  #bm-marquee-{{ section.id }} .bm-marquee__group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: var(--bm-mq-gap);
+    /* trailing space so the seam between the two groups matches the inner gap */
+    padding-right: var(--bm-mq-gap);
+  }
+  #bm-marquee-{{ section.id }} .bm-marquee__item,
+  #bm-marquee-{{ section.id }} .bm-marquee__sep {
+    font-family: var(--font-family-second), 'Cormorant Garamond', Georgia, serif;
+    font-size: {{ font_d }}px;
+    line-height: 1.2;
+    font-weight: {{ section.settings.font_weight | default: '600' }};
+    letter-spacing: {{ section.settings.letter_spacing | default: 0 }}px;
+    white-space: nowrap;
+  }
+  #bm-marquee-{{ section.id }} .bm-marquee__sep {
+    font-size: {{ font_d | times: 0.6 | round }}px;
+  }
+  @keyframes bm-marquee-{{ section.id }} {
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
+  }
+  @media (max-width: 767px) {
+    #bm-marquee-{{ section.id }} {
+      --bm-mq-gap: {{ gap_m }}px;
+      padding: {{ section.settings.padding_top_mobile }}px 0 {{ section.settings.padding_bottom_mobile }}px;
+    }
+    #bm-marquee-{{ section.id }} .bm-marquee__item { font-size: {{ font_m }}px; }
+    #bm-marquee-{{ section.id }} .bm-marquee__sep { font-size: {{ font_m | times: 0.6 | round }}px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #bm-marquee-{{ section.id }} .bm-marquee__track { animation: none; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "BM Marquee",
+  "tag": "div",
+  "class": "bm-marquee-section",
+  "settings": [
+    { "type": "header", "content": "Text" },
+    { "type": "text", "id": "separator", "label": "Separator between phrases", "default": "•", "info": "Leave empty for no separator." },
+    { "type": "select", "id": "font_weight", "label": "Font weight",
+      "options": [
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": "600"
+    },
+    { "type": "range", "id": "font_size_desktop", "label": "Font size — desktop (px)", "min": 16, "max": 120, "step": 2, "default": 56 },
+    { "type": "range", "id": "font_size_mobile", "label": "Font size — mobile (px)", "min": 16, "max": 80, "step": 2, "default": 34 },
+    { "type": "range", "id": "letter_spacing", "label": "Letter spacing (px)", "min": -2, "max": 10, "step": 0.5, "default": 0 },
+    { "type": "range", "id": "gap_desktop", "label": "Space between phrases — desktop (px)", "min": 16, "max": 160, "step": 4, "default": 48 },
+    { "type": "range", "id": "gap_mobile", "label": "Space between phrases — mobile (px)", "min": 8, "max": 100, "step": 4, "default": 28 },
+
+    { "type": "header", "content": "Motion" },
+    { "type": "range", "id": "speed", "label": "Loop duration (seconds)", "min": 10, "max": 120, "step": 5, "default": 40, "info": "Higher = slower." },
+    { "type": "select", "id": "direction", "label": "Direction",
+      "options": [
+        { "value": "left", "label": "Right to left" },
+        { "value": "right", "label": "Left to right" }
+      ],
+      "default": "left"
+    },
+    { "type": "checkbox", "id": "pause_on_hover", "label": "Pause on hover", "default": false },
+    { "type": "range", "id": "fade", "label": "Edge fade width (%)", "min": 0, "max": 30, "step": 1, "default": 12 },
+    { "type": "range", "id": "repeat", "label": "Phrase repeats per loop", "min": 2, "max": 8, "step": 1, "default": 4, "info": "Increase if you see a gap at the edge on very wide screens." },
+
+    { "type": "header", "content": "Colors & spacing" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#000000" },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#ffffff" },
+    { "type": "range", "id": "padding_top_desktop", "label": "Padding top — desktop (px)", "min": 0, "max": 160, "step": 4, "default": 48 },
+    { "type": "range", "id": "padding_bottom_desktop", "label": "Padding bottom — desktop (px)", "min": 0, "max": 160, "step": 4, "default": 44 },
+    { "type": "range", "id": "padding_top_mobile", "label": "Padding top — mobile (px)", "min": 0, "max": 120, "step": 4, "default": 36 },
+    { "type": "range", "id": "padding_bottom_mobile", "label": "Padding bottom — mobile (px)", "min": 0, "max": 120, "step": 4, "default": 28 }
+  ],
+  "blocks": [
+    {
+      "type": "phrase",
+      "name": "Phrase",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Phrase" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BM Marquee",
+      "blocks": [
+        { "type": "phrase", "settings": { "text": "Trending Product" } },
+        { "type": "phrase", "settings": { "text": "Design That You Can Feel" } },
+        { "type": "phrase", "settings": { "text": "Objects With Presence" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

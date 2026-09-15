@@ -837,6 +837,39 @@
         "label_gap": 18
       }
     },
+    "bm_marquee_Tr3ndM": {
+      "type": "bm-marquee",
+      "blocks": {
+        "phrase_mq1": { "type": "phrase", "settings": { "text": "Trending Product" } },
+        "phrase_mq2": { "type": "phrase", "settings": { "text": "Design That You Can Feel" } },
+        "phrase_mq3": { "type": "phrase", "settings": { "text": "Objects With Presence" } }
+      },
+      "block_order": [
+        "phrase_mq1",
+        "phrase_mq2",
+        "phrase_mq3"
+      ],
+      "settings": {
+        "separator": "•",
+        "font_weight": "600",
+        "font_size_desktop": 56,
+        "font_size_mobile": 34,
+        "letter_spacing": 0,
+        "gap_desktop": 48,
+        "gap_mobile": 28,
+        "speed": 40,
+        "direction": "left",
+        "pause_on_hover": false,
+        "fade": 12,
+        "repeat": 4,
+        "text_color": "#000000",
+        "bg_color": "#ffffff",
+        "padding_top_desktop": 48,
+        "padding_bottom_desktop": 44,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 28
+      }
+    },
     "featured_custom_section_7d7gx7": {
       "type": "featured-custom-section",
       "blocks": {
@@ -859,31 +892,6 @@
             "border_radius": "0px 0px 0px 0px"
           },
           "blocks": {
-            "title_gFJJni": {
-              "type": "title",
-              "settings": {
-                "heading_size": "h3",
-                "title": "Trending Products",
-                "font": "--font-family-second",
-                "text_transfrom": "default",
-                "color": "#000000",
-                "font_size": 48,
-                "line_height": 54,
-                "letter_spacing": 0,
-                "font_weight": "600",
-                "align": "center",
-                "padding": "",
-                "margin": "0 0 45px | | | 0 0 30px",
-                "color_mobi": "#000000",
-                "font_size_mobi": 34,
-                "line_height_mobi": 40,
-                "letter_spacing_mobi": 0,
-                "align_mobi": "center",
-                "padding_mobi": "50px 0 10px 0",
-                "margin_mobi": ""
-              },
-              "blocks": {}
-            },
             "product_list_N8CAeV": {
               "type": "product-list",
               "settings": {
@@ -971,7 +979,6 @@
             }
           },
           "block_order": [
-            "title_gFJJni",
             "product_list_N8CAeV",
             "button_AWkKFh"
           ]
@@ -1879,6 +1886,7 @@
     "featured_custom_section_VrgDaP",
     "featured_custom_section_DmnpLg",
     "bm_category_strip_RFCikA",
+    "bm_marquee_Tr3ndM",
     "featured_custom_section_7d7gx7",
     "featured_custom_section_f8EHJE",
     "featured_custom_section_pCbp6J",
