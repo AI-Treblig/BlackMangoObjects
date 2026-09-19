@@ -1,0 +1,260 @@
+{%- comment -%}
+  Black Mango "Coming Soon" placeholder for categories that don't have a
+  collection page yet. Reusable: assign the "coming-soon" page template to any
+  page — the heading defaults to the page title (e.g. "Glassware").
+  Optional "notify me" form uses Shopify's native customer form, so sign-ups
+  land in Customers with the tags newsletter, coming-soon and the page handle.
+{%- endcomment -%}
+
+{%- liquid
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = page.title | default: 'Something New'
+  endif
+  assign pad_d = section.settings.padding_desktop
+  assign pad_m = section.settings.padding_mobile
+  assign form_id = 'bm-cs-form-' | append: section.id
+  assign tags = 'newsletter,coming-soon'
+  if page.handle
+    assign tags = tags | append: ',' | append: page.handle
+  endif
+-%}
+
+<section class="bm-cs" id="bm-cs-{{ section.id }}">
+  {%- if section.settings.bg_image -%}
+    <div class="bm-cs__bg" aria-hidden="true"
+         style="background-image: url('{{ section.settings.bg_image | image_url: width: 2400 }}');"></div>
+  {%- endif -%}
+
+  <div class="bm-cs__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="bm-cs__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+
+    <h1 class="bm-cs__heading">{{ heading | escape }}</h1>
+
+    <span class="bm-cs__rule" aria-hidden="true"></span>
+
+    {%- if section.settings.message != blank -%}
+      <div class="bm-cs__message">{{ section.settings.message }}</div>
+    {%- endif -%}
+
+    {%- if section.settings.show_form -%}
+      {%- form 'customer', id: form_id, class: 'bm-cs__form' -%}
+        <input type="hidden" name="contact[tags]" value="{{ tags }}">
+        {%- if form.posted_successfully? -%}
+          <p class="bm-cs__notice" role="status">{{ section.settings.success_text | escape }}</p>
+        {%- else -%}
+          {%- if form.errors -%}
+            <p class="bm-cs__notice bm-cs__notice--error" role="alert">
+              {{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}
+            </p>
+          {%- endif -%}
+          <label for="{{ form_id }}-email" class="bm-cs__sr">Email address</label>
+          <div class="bm-cs__field">
+            <input id="{{ form_id }}-email" type="email" name="contact[email]" required
+                   autocomplete="email" placeholder="{{ section.settings.form_placeholder | escape }}">
+            <button type="submit">{{ section.settings.form_button | escape }}</button>
+          </div>
+        {%- endif -%}
+      {%- endform -%}
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank or section.settings.link_label != blank -%}
+      <div class="bm-cs__actions">
+        {%- if section.settings.button_label != blank -%}
+          <a class="bm-cs__btn" href="{{ section.settings.button_url | default: routes.all_products_collection_url }}">
+            {{- section.settings.button_label | escape -}}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.link_label != blank -%}
+          <a class="bm-cs__link" href="{{ section.settings.link_url | default: '/pages/contact' }}">
+            {{- section.settings.link_label | escape -}}
+          </a>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  #bm-cs-{{ section.id }} {
+    --cs-bg: {{ section.settings.bg_color }};
+    --cs-text: {{ section.settings.text_color }};
+    --cs-btn-bg: {{ section.settings.button_bg }};
+    --cs-btn-text: {{ section.settings.button_text }};
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: {{ section.settings.min_height }}vh;
+    padding: {{ pad_d }}px 24px;
+    background-color: var(--cs-bg);
+    color: var(--cs-text);
+    text-align: center;
+    overflow: hidden;
+  }
+  #bm-cs-{{ section.id }} .bm-cs__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: {{ section.settings.bg_image_opacity | divided_by: 100.0 }};
+  }
+  #bm-cs-{{ section.id }} .bm-cs__inner {
+    position: relative;
+    max-width: 640px;
+    width: 100%;
+  }
+  #bm-cs-{{ section.id }} .bm-cs__eyebrow {
+    margin: 0 0 18px;
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--cs-text);
+    opacity: .75;
+  }
+  #bm-cs-{{ section.id }} .bm-cs__heading {
+    margin: 0;
+    font-family: var(--font-family-second), 'Cormorant Garamond', Georgia, serif;
+    font-size: {{ section.settings.heading_size_desktop }}px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--cs-text);
+  }
+  #bm-cs-{{ section.id }} .bm-cs__rule {
+    display: block;
+    width: 64px;
+    height: 1px;
+    margin: 28px auto;
+    background: currentColor;
+    opacity: .4;
+  }
+  #bm-cs-{{ section.id }} .bm-cs__message {
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--cs-text);
+    opacity: .85;
+  }
+  #bm-cs-{{ section.id }} .bm-cs__message p { margin: 0 0 12px; color: inherit; }
+  #bm-cs-{{ section.id }} .bm-cs__form { margin-top: 32px; }
+  #bm-cs-{{ section.id }} .bm-cs__field {
+    display: flex;
+    max-width: 440px;
+    margin: 0 auto;
+    border: 1px solid currentColor;
+  }
+  #bm-cs-{{ section.id }} .bm-cs__field input {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 50px;
+    padding: 0 16px;
+    border: 0;
+    background: transparent;
+    color: var(--cs-text);
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+    font-size: 14px;
+  }
+  #bm-cs-{{ section.id }} .bm-cs__field input::placeholder { color: var(--cs-text); opacity: .6; }
+  #bm-cs-{{ section.id }} .bm-cs__field input:focus { outline: none; }
+  #bm-cs-{{ section.id }} .bm-cs__field:focus-within { outline: 1px solid currentColor; outline-offset: 2px; }
+  #bm-cs-{{ section.id }} .bm-cs__field button,
+  #bm-cs-{{ section.id }} .bm-cs__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0 26px;
+    border: 0;
+    background: var(--cs-btn-bg);
+    color: var(--cs-btn-text);
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity .25s ease;
+  }
+  #bm-cs-{{ section.id }} .bm-cs__field button:hover,
+  #bm-cs-{{ section.id }} .bm-cs__btn:hover { opacity: .8; color: var(--cs-btn-text); }
+  #bm-cs-{{ section.id }} .bm-cs__notice {
+    margin: 0;
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+    font-size: 15px;
+    color: var(--cs-text);
+  }
+  #bm-cs-{{ section.id }} .bm-cs__notice--error { margin-bottom: 12px; }
+  #bm-cs-{{ section.id }} .bm-cs__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px 32px;
+    margin-top: 40px;
+  }
+  #bm-cs-{{ section.id }} .bm-cs__link {
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cs-text);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+  }
+  #bm-cs-{{ section.id }} .bm-cs__link:hover { color: var(--cs-text); opacity: .7; }
+  #bm-cs-{{ section.id }} .bm-cs__sr {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  @media (max-width: 767px) {
+    #bm-cs-{{ section.id }} { padding: {{ pad_m }}px 16px; }
+    #bm-cs-{{ section.id }} .bm-cs__heading { font-size: {{ section.settings.heading_size_mobile }}px; }
+    #bm-cs-{{ section.id }} .bm-cs__message { font-size: 15px; }
+    #bm-cs-{{ section.id }} .bm-cs__field button { padding: 0 16px; letter-spacing: 2px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "BM Coming Soon",
+  "tag": "div",
+  "class": "bm-coming-soon-section",
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "eyebrow", "label": "Small label above heading", "default": "Coming Soon" },
+    { "type": "text", "id": "heading", "label": "Heading", "info": "Leave empty to use the page title (e.g. Glassware)." },
+    { "type": "richtext", "id": "message", "label": "Message", "default": "<p>We're crafting something special. This collection is on its way — be the first to know when it arrives.</p>" },
+
+    { "type": "header", "content": "Notify me form" },
+    { "type": "checkbox", "id": "show_form", "label": "Show email sign-up", "default": true, "info": "Sign-ups appear under Customers, tagged coming-soon and the page handle." },
+    { "type": "text", "id": "form_placeholder", "label": "Email placeholder", "default": "Your email address" },
+    { "type": "text", "id": "form_button", "label": "Button label", "default": "Notify me" },
+    { "type": "text", "id": "success_text", "label": "Thank-you message", "default": "Thank you — we'll let you know as soon as it's here." },
+
+    { "type": "header", "content": "Buttons" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Explore collections" },
+    { "type": "url", "id": "button_url", "label": "Button link", "info": "Defaults to all products." },
+    { "type": "text", "id": "link_label", "label": "Secondary link label", "default": "Contact us" },
+    { "type": "url", "id": "link_url", "label": "Secondary link", "info": "Defaults to the contact page." },
+
+    { "type": "header", "content": "Style" },
+    { "type": "color", "id": "bg_color", "label": "Background color", "default": "#000000" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#ffffff" },
+    { "type": "color", "id": "button_bg", "label": "Button background", "default": "#ffffff" },
+    { "type": "color", "id": "button_text", "label": "Button text", "default": "#000000" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image (optional)" },
+    { "type": "range", "id": "bg_image_opacity", "label": "Background image opacity (%)", "min": 0, "max": 100, "step": 5, "default": 35 },
+    { "type": "range", "id": "heading_size_desktop", "label": "Heading size — desktop (px)", "min": 32, "max": 120, "step": 2, "default": 72 },
+    { "type": "range", "id": "heading_size_mobile", "label": "Heading size — mobile (px)", "min": 24, "max": 80, "step": 2, "default": 44 },
+    { "type": "range", "id": "min_height", "label": "Minimum height (% of screen)", "min": 30, "max": 100, "step": 5, "default": 70 },
+    { "type": "range", "id": "padding_desktop", "label": "Vertical padding — desktop (px)", "min": 0, "max": 200, "step": 4, "default": 96 },
+    { "type": "range", "id": "padding_mobile", "label": "Vertical padding — mobile (px)", "min": 0, "max": 160, "step": 4, "default": 64 }
+  ],
+  "presets": [
+    { "name": "BM Coming Soon" }
+  ]
+}
+{% endschema %}
