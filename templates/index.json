@@ -858,7 +858,7 @@
         "letter_spacing": 0,
         "gap_desktop": 48,
         "gap_mobile": 28,
-        "speed": 40,
+        "speed": 50,
         "direction": "left",
         "pause_on_hover": false,
         "fade": 12,
