@@ -92,6 +92,7 @@
     line-height: 1.2;
     font-weight: {{ section.settings.font_weight | default: '600' }};
     letter-spacing: {{ section.settings.letter_spacing | default: 0 }}px;
+    text-transform: {{ section.settings.text_case | default: 'none' }};
     white-space: nowrap;
   }
   #bm-marquee-{{ section.id }} .bm-marquee__sep {
@@ -130,6 +131,13 @@
         { "value": "700", "label": "Bold" }
       ],
       "default": "600"
+    },
+    { "type": "select", "id": "text_case", "label": "Text case",
+      "options": [
+        { "value": "none", "label": "As typed" },
+        { "value": "uppercase", "label": "ALL CAPS" }
+      ],
+      "default": "none"
     },
     { "type": "range", "id": "font_size_desktop", "label": "Font size — desktop (px)", "min": 16, "max": 120, "step": 2, "default": 56 },
     { "type": "range", "id": "font_size_mobile", "label": "Font size — mobile (px)", "min": 16, "max": 80, "step": 2, "default": 34 },
