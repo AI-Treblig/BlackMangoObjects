@@ -4,7 +4,7 @@
     <h4 class="js-collapse-mobile mobile-collapse__title block-sidebar__title"><span>{{ block.settings.products_title }}</span></h4>
     <div class="mobile-collapse__content block-sidebar__content facets__display">
       {%- assign collection_sidebar = collections[block.settings.collection_handle] -%}
-      {%- for product in collection_sidebar.products limit:pro_limit -%}
+      {%- for product in collection_sidebar.products limit:pro_limit -%}{%- unless product.available -%}{%- continue -%}{%- endunless -%}
         {%- assign on_sale = false -%}
         {%- if product.compare_at_price > product.price -%}
           {%- assign on_sale = true -%}

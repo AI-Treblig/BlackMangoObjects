@@ -125,7 +125,7 @@ class PredictiveSearch extends HTMLElement {
     const queryKey = searchTerm.replace(" ", "-").toLowerCase();
     this.setLiveRegionLoadingState();
 	
-    fetch(`${routes.predictive_search_url}?q=${encodeURIComponent(searchTerm)}&${encodeURIComponent('resources[type]')}=product&section_id=predictive-search`)
+    fetch(`${routes.predictive_search_url}?q=${encodeURIComponent(searchTerm)}&${encodeURIComponent('resources[type]')}=product&${encodeURIComponent('resources[options][unavailable_products]')}=hide&section_id=predictive-search`)
       .then((response) => { 
         if (!response.ok) {
           var error = new Error(response.status);

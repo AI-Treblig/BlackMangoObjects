@@ -182,7 +182,7 @@
                               data-space-column4="{{ space_column4 }}"
                               data-pergroup-column4="{{ pergroup_column4 }}">
                               <div class="swiper-wrapper">
-									{%- for product in collections[collection_handle].products limit: limit -%}
+									{%- for product in collections[collection_handle].products limit: limit -%}{%- unless product.available -%}{%- continue -%}{%- endunless -%}
 										<div class="swiper-slide">
 											{% render 'product-grid-item', product:product %}
 										</div>

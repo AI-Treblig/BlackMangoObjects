@@ -39,7 +39,7 @@
 					data-column4="{{ column4 }}"
                     data-space-column4="{{ space_column4 }}">
                     <div class="swiper-wrapper">
-    					{%- for product in recommendations.products -%}
+    					{%- for product in recommendations.products -%}{%- unless product.available -%}{%- continue -%}{%- endunless -%}
     					<div class="swiper-slide slick-carousel__item">
     						{% render 'product-grid-item', product:product %}
     					</div>

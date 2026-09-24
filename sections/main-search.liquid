@@ -1,6 +1,6 @@
 {%- assign product_check = 0 -%}
 {% for item in search.results %}
-{% if item.object_type == 'product' %}
+{% if item.object_type == 'product' and item.available %}
 	{% assign product_check = product_check | plus: 1 %}
 {% endif %}
 {% endfor %}

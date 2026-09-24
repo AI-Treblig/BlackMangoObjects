@@ -1,7 +1,7 @@
 {%- if predictive_search.performed -%}
 	{%- assign limit 			= settings.search_item_count -%}
 	<div id="predictive-search-product">
-		{%- for product in predictive_search.resources.products limit:limit -%}
+		{%- for product in predictive_search.resources.products limit:limit -%}{%- unless product.available -%}{%- continue -%}{%- endunless -%}
 			{% if product.type == "Gift Cards" %}
 				{%- assign total_size 			= predictive_search.resources.products.size | minus: 1 -%}
 				{%- assign total_limit 			= limit | plus: 1 -%}
@@ -25,7 +25,7 @@
 		</div>
 		<ul id="predictive-search-results-list" class="predictive-search__results-list list-unstyled" role="listbox" aria-labelledby="predictive-search-products">
 			{%- if total_size > 0 -%}
-				{%- for product in predictive_search.resources.products limit:total_limit -%}
+				{%- for product in predictive_search.resources.products limit:total_limit -%}{%- unless product.available -%}{%- continue -%}{%- endunless -%}
 					{% if product.type != "Gift Cards" %}
 						{%- assign group_product 			= product.metafields.bwp_fields.group_product -%}
 						<li id="predictive-search-option-{{ forloop.index }}" class="predictive-search__list-item" role="option" aria-selected="false">

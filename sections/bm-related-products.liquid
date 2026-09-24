@@ -10,7 +10,7 @@
 {%- assign related = '' | split: '' -%}
 {%- if source_collection -%}
   {%- for p in source_collection.products -%}
-    {%- if p.id != product.id -%}
+    {%- if p.id != product.id and p.available -%}
       {%- assign related = related | concat: p -%}
       {%- if related.size >= limit -%}{%- break -%}{%- endif -%}
     {%- endif -%}
@@ -19,7 +19,7 @@
 
 {%- if related.size < limit -%}
   {%- for p in collections.all.products -%}
-    {%- unless p.id == product.id -%}
+    {%- unless p.id == product.id or p.available == false -%}
       {%- assign already_in = false -%}
       {%- for existing in related -%}
         {%- if existing.id == p.id -%}{%- assign already_in = true -%}{%- break -%}{%- endif -%}

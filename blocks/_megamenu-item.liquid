@@ -77,7 +77,7 @@
                     data-column2="2"
                     data-column3="1"
                     data-column4="1">
-                    {%- for product in collections[block.settings.collection_widget].products limit: 3 -%}
+                    {%- for product in collections[block.settings.collection_widget].products limit: 3 -%}{%- unless product.available -%}{%- continue -%}{%- endunless -%}
                         <div class="slick-carousel__item">
                             {% render 'product-grid-item' %}
                         </div>

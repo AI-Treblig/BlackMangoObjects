@@ -32,7 +32,7 @@
 					<div class="collection page-width {{ block.settings.layput_shop }}">
 						<div id="product-grid" data-id="{{ block.id }}">
 							<div class="products__row row">
-								{%- for product in collection.products -%}
+								{%- for product in collection.products -%}{%- unless product.available -%}{%- continue -%}{%- endunless -%}
 									{% if product.type != "Gift Cards" %}
 										<div class="products__col">
 										  {% render 'product-grid-item', product:product %}

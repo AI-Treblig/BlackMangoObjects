@@ -97,6 +97,7 @@
   function fetchProduct(handle) {
     return fetch('/products/' + handle + '.js', { headers: { 'Accept': 'application/json' } })
       .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(p) { return p && p.available === false ? null : p; })
       .catch(function() { return null; });
   }
   function moneyFormat(cents) {

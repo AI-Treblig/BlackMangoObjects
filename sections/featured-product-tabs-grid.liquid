@@ -98,7 +98,7 @@
 							{%- if collection_handle == blank or collections[collection_handle] == empty or collections[collection_handle].products_count == 0 -%}
 								{% render 'onboarding-featured-products' %}
 							{%- else -%}
-								{%- for product in collections[collection_handle].products limit: limit -%}
+								{%- for product in collections[collection_handle].products limit: limit -%}{%- unless product.available -%}{%- continue -%}{%- endunless -%}
 									<div class="slick-carousel__item {{ col_gird }}">
 										{% render 'product-grid-item', product: product %}
 									</div>

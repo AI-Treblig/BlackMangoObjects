@@ -9,7 +9,7 @@
 {%- assign stay_time_unit 		= settings.stay_time_unit -%}
 {%- assign animation_nofication = settings.animation_nofication -%}
 {% capture array_product %}
-	{%- for product in collection.products limit:limit -%}
+	{%- for product in collection.products limit:limit -%}{%- unless product.available -%}{%- continue -%}{%- endunless -%}
 		{{ product.handle | json }}
 	{%- endfor -%}
 {% endcapture %}

@@ -31,7 +31,7 @@
 					{%- if collection_handle == blank or collections[collection_handle] == empty or collections[collection_handle].products_count == 0 -%}
 						{% render 'onboarding-featured-products' %}
 					{%- else -%}
-						{%- for product in collections[collection_handle].products limit: settings.limit_you_leave -%}
+						{%- for product in collections[collection_handle].products limit: settings.limit_you_leave -%}{%- unless product.available -%}{%- continue -%}{%- endunless -%}
 							{%- assign group_product 			= product.metafields.bwp_fields.group_product -%}
 							{%- assign countdowns 				= product.metafields.bwp_fields.countdowns -%}
 							{%- assign external 				= product.metafields.bwp_fields.external -%}

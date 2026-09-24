@@ -5,7 +5,7 @@
         <div class="title">{{ block.settings.heading_sidebar }}</div>
     {%- endif -%}
     <div class="content">
-        {%- for product in collection.products limit:limit -%}
+        {%- for product in collection.products limit:limit -%}{%- unless product.available -%}{%- continue -%}{%- endunless -%}
             <div class="product">
                 <div class="image">
                     <a href="{{ product.url }}">

@@ -79,7 +79,7 @@
 								<div class="loading-overlay gradient"></div>
 								<div class="products__row row negative-margin product-grid">
 									{%- for item in search.results -%}
-										{%- if item.object_type == 'product' -%}
+										{%- if item.object_type == 'product' and item.available -%}
 											<div class="grid__item{% if item.object_type == 'product' %} products__col{% endif %}">
 												{% render 'product-card', product: item %}
 											</div>
