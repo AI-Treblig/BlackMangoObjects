@@ -30,7 +30,7 @@
 			<h4 class="blog-sidebar__title">{{ heading }}</h4>
 			<div class="related-artibles__content">
 				<ul class="related-artibles__list">
-					{% for article in search.results limit:limit %}
+					{% for article in search.results limit:limit %}{%- if article.object_type == 'product' and article.available == false -%}{%- continue -%}{%- endif -%}
 						<li class="related-artibles__item">
 							<div class="related-artibles__card">
 								{%- if article.image -%}
