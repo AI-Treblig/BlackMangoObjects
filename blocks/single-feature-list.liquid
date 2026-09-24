@@ -25,6 +25,19 @@
   {%- endif -%}
 {%- endif -%}
 
+{%- comment -%}
+  The manual Feature 1-8 fallback only applies to products of the fallback
+  product type (default "Rugs"), so rug copy never shows on other products.
+  Other products with no metafield value render no list at all.
+{%- endcomment -%}
+{%- assign fallback_type = block.settings.fallback_product_type | default: 'Rugs' | strip | downcase -%}
+{%- assign product_type = product.type | strip | downcase -%}
+{%- assign use_fallback = false -%}
+{%- if feature_items.size == 0 and product_type == fallback_type -%}
+  {%- assign use_fallback = true -%}
+{%- endif -%}
+
+{%- if feature_items.size > 0 or use_fallback -%}
 <div class="bm-feature-list"
      id="bm-feature-list-{{ block.id }}"
      style="margin: {{ block.settings.margin | default: '0 0 24px' }};">
@@ -41,7 +54,7 @@
         {%- endif -%}
       {%- endfor -%}
     {%- else -%}
-      {%- comment -%} Global fallback: manual fields {%- endcomment -%}
+      {%- comment -%} Fallback: manual fields (fallback product type only) {%- endcomment -%}
       {%- for i in (1..8) -%}
         {%- assign key = 'feature_' | append: i -%}
         {%- assign val = block.settings[key] -%}
@@ -52,6 +65,7 @@
     {%- endif -%}
   </ul>
 </div>
+{%- endif -%}
 
 <style>
   #bm-feature-list-{{ block.id }} .bm-feature-list__heading {
@@ -111,6 +125,7 @@
     { "type": "paragraph", "content": "For unique bullets on each product, create a product metafield and enter its values on each product's admin page. The fields below are only a global fallback when a product has no metafield value." },
     { "type": "text", "id": "metafield_namespace", "label": "Metafield namespace", "default": "custom" },
     { "type": "text", "id": "metafield_key", "label": "Metafield key", "default": "product_features", "info": "Create a product metafield 'custom.product_features' (type: List of single line text). Each list entry becomes one bullet." },
+    { "type": "text", "id": "fallback_product_type", "label": "Use fallback features only for product type", "default": "Rugs", "info": "The Feature 1-8 fields below show only on products of this type that have no metafield value. Other products without a value show no list." },
 
     { "type": "header", "content": "Heading (optional)" },
     { "type": "text", "id": "heading", "label": "Heading", "info": "Leave blank to hide" },
