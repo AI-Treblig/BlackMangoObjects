@@ -26,6 +26,7 @@
       {%- for media in product.media -%}
         <div class="bm-gallery__slide{% if media.id == featured_media.id %} is-active{% endif %}"
              data-bm-slide
+             data-media-id="{{ media.id }}"
              data-index="{{ forloop.index0 }}">
           <img src="{{ media | image_url: width: 1200 }}"
                alt="{{ media.alt | escape }}"
@@ -196,6 +197,16 @@
         var idx = parseInt(thumb.dataset.index, 10);
         if (!isNaN(idx)) show(idx);
       });
+    });
+
+    /* Jump to the selected variant's image (event from bm-variant-price-sync) */
+    document.addEventListener('bm:variant-change', function(e) {
+      var v = e.detail && e.detail.variant;
+      var mediaId = v && v.featured_media && v.featured_media.id;
+      if (!mediaId) return;
+      for (var i = 0; i < slides.length; i++) {
+        if (String(slides[i].dataset.mediaId) === String(mediaId)) { show(i); break; }
+      }
     });
 
     root.tabIndex = 0;

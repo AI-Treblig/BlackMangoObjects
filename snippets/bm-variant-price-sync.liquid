@@ -56,6 +56,17 @@
     return null;
   }
 
+  /* Announce real variant changes (not every re-sync) so other components,
+     e.g. the product gallery, can react. Skips the initial load. */
+  var announcedId = null;
+  function announce(v) {
+    if (v.id === announcedId) return;
+    var isFirst = announcedId === null;
+    announcedId = v.id;
+    if (isFirst) return;
+    try { document.dispatchEvent(new CustomEvent('bm:variant-change', { detail: { variant: v } })); } catch (e) {}
+  }
+
   function update() {
     var v = findVariant();
     if (!v) { log('no matching variant for selection:', selectedValues()); return; }
@@ -95,6 +106,8 @@
         history.replaceState({}, '', url.toString());
       } catch (e) {}
     }
+
+    announce(v);
   }
 
   /* Aggressive event coverage — listen everywhere */
