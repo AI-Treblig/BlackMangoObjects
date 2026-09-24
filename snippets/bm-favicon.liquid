@@ -1,0 +1,12 @@
+{%- comment -%}
+  Favicon. Uses the "Favicon image" theme setting when one is uploaded;
+  otherwise falls back to the Black Mango "BM" monogram shipped in assets/.
+{%- endcomment -%}
+{%- if settings.favicon -%}
+  <link rel="icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="{{ settings.favicon | image_url: width: 180, height: 180 }}">
+{%- else -%}
+  <link rel="icon" href="{{ 'bm-favicon.svg' | asset_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ 'bm-favicon-32.png' | asset_url }}" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="{{ 'bm-apple-touch-icon.png' | asset_url }}">
+{%- endif -%}

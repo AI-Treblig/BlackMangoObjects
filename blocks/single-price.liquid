@@ -24,9 +24,29 @@
         {{  min_price | money }} - {{  max_price | money }}
     </div>
 {% else %}
-    <div class="price-single-product" style="margin:{{ block.settings.product_price_margin }};--price-color:{{ block.settings.price_color }};--price-color-sale:{{ block.settings.price_color_sale }};--price-font-size:{{ block.settings.price_size }}px;">
+    {%- comment -%} BM: optional per-product note after the price, from the product metafield custom.price_note (e.g. "for pack of 2") {%- endcomment -%}
+    {%- assign price_note = product.metafields.custom.price_note.value -%}
+    <div class="price-single-product{% if price_note != blank %} bm-has-price-note{% endif %}" style="margin:{{ block.settings.product_price_margin }};--price-color:{{ block.settings.price_color }};--price-color-sale:{{ block.settings.price_color_sale }};--price-font-size:{{ block.settings.price_size }}px;">
         {% render 'product-price', variant: current_variant %}
+        {%- if price_note != blank -%}
+            <span class="bm-price-note">{{ price_note | escape }}</span>
+        {%- endif -%}
     </div>
+    {%- if price_note != blank -%}
+    <style>
+      .price-single-product.bm-has-price-note {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        column-gap: 10px;
+      }
+      .price-single-product .bm-price-note {
+        font-family: var(--font-family-base), 'Manrope', sans-serif;
+        font-size: 15px;
+        color: #666666;
+      }
+    </style>
+    {%- endif -%}
 {% endif %}
 {% schema %}
   {

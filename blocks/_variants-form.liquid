@@ -1,3 +1,15 @@
+{%- comment -%} BM: colour swatch size + zoom (image swatches zoom onto the product) {%- endcomment -%}
+<style>
+  .product-single .wpb-variants-swatch .single-option-selector label[data-color] {
+    width: {{ block.settings.swatch_size | default: 44 }}px;
+    height: {{ block.settings.swatch_size | default: 44 }}px;
+  }
+  .product-single .wpb-variants-swatch .single-option-selector label[data-color][data-bm-image-swatch] {
+    background-repeat: no-repeat;
+    background-size: {{ block.settings.swatch_image_zoom | default: 450 }}% auto;
+    background-position: 50% {{ block.settings.swatch_image_focus | default: 50 }}%;
+  }
+</style>
 {%- assign current_variant 			= product.selected_or_first_available_variant -%}
 {%- assign filter_name_1 			= settings.filter_name_1 -%}
 {%- assign select_filter_1 			= settings.select_filter_1 -%}
@@ -47,7 +59,7 @@
                     {%- endfor -%}
                     {%- for variant in product.variants -%}
                         {%- if variant.title contains value and variant.featured_image  -%}
-                            {%- assign variant_image = variant.featured_image.src | image_url: width: 100 -%}
+                            {%- assign variant_image = variant.featured_image.src | image_url: width: 400 -%}
                         {%- endif -%}
                     {%- endfor -%}
                     <div class="single-option-selector" data-single-option-button>
@@ -62,7 +74,7 @@
                                     <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}"
                                         data-{{ type }}="{{ value }}"
                                         title="{{ value | strip | escape }}"
-                                        style="background:url('{{ variant_image }}');background-size: cover;background-position: center;"
+                                        style="background-image:url('{{ variant_image }}');" data-bm-image-swatch
                                         class="{% if option_disabled %}disabled{% endif %}">
                                         {{ value | escape }}
                                         {%- if type != 'label' -%}
@@ -136,7 +148,7 @@
                     {%- endfor -%}
                     {%- for variant in product.variants -%}
                         {%- if variant.title contains value and variant.featured_image  -%}
-                            {%- assign variant_image = variant.featured_image.src | image_url: width: 100 -%}
+                            {%- assign variant_image = variant.featured_image.src | image_url: width: 400 -%}
                         {%- endif -%}
                     {%- endfor -%}
                     <div class="single-option-selector color-checkbox" data-single-option-button>
@@ -151,7 +163,7 @@
                                             <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}"
                                                 data-{{ type }}="{{ value }}"
                                                 title="{{ value | strip | escape }}"
-                                                style="background:url('{{ variant_image }}');background-size: cover;background-position: center;"
+                                                style="background-image:url('{{ variant_image }}');" data-bm-image-swatch
                                                 class="{% if option_disabled %}disabled{% endif %}">
                                                 {{ value | escape }}
                                                 {%- if type != 'label' -%}
@@ -199,7 +211,7 @@
                         {%- endfor -%}
                         {%- for variant in product.variants -%}
                             {%- if variant.title contains value and variant.featured_image  -%}
-                                {%- assign variant_image = variant.featured_image.src | image_url: width: 100 -%}
+                                {%- assign variant_image = variant.featured_image.src | image_url: width: 400 -%}
                             {%- endif -%}
                         {%- endfor -%}
                         <div class="single-option-selector" data-single-option-button>
@@ -214,7 +226,7 @@
                                             <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}"
                                                 data-{{ type }}="{{ value }}"
                                                 title="{{ value | strip | escape }}"
-                                                style="background:url('{{ variant_image }}');background-size: cover;background-position: center;"
+                                                style="background-image:url('{{ variant_image }}');" data-bm-image-swatch
                                                 class="{% if option_disabled %}disabled{% endif %}">
                                                 {{ value | escape }}
                                                 {%- if type != 'label' -%}
@@ -306,7 +318,11 @@
                     "label": "Color and Dropdown"
                 }
             ]
-        }
+        },
+        { "type": "header", "content": "Colour swatches" },
+        { "type": "range", "id": "swatch_size", "label": "Swatch size (px)", "min": 20, "max": 64, "step": 2, "default": 44 },
+        { "type": "range", "id": "swatch_image_zoom", "label": "Photo swatch zoom (%)", "min": 100, "max": 800, "step": 25, "default": 450, "info": "When a colour uses the variant photo, zoom in so the product fills the circle. 100% shows the whole photo." },
+        { "type": "range", "id": "swatch_image_focus", "label": "Photo swatch vertical focus (%)", "min": 0, "max": 100, "step": 5, "default": 50 }
     ],
     "presets": [{"name": "Single variants","category": "Single product"}]
   }
