@@ -47,11 +47,15 @@
   <ul class="bm-feature-list__items">
     {%- if feature_items.size > 0 -%}
       {%- comment -%} Per-product metafield values {%- endcomment -%}
+      {%- comment -%} One entry may hold several bullets separated by "; " (how CSV imports store lists) {%- endcomment -%}
       {%- for item in feature_items -%}
-        {%- assign line = item | strip -%}
-        {%- if line != blank -%}
-          <li class="bm-feature-list__item">{{ line }}</li>
-        {%- endif -%}
+        {%- assign parts = item | split: '; ' -%}
+        {%- for part in parts -%}
+          {%- assign line = part | strip -%}
+          {%- if line != blank -%}
+            <li class="bm-feature-list__item">{{ line }}</li>
+          {%- endif -%}
+        {%- endfor -%}
       {%- endfor -%}
     {%- else -%}
       {%- comment -%} Fallback: manual fields (fallback product type only) {%- endcomment -%}
