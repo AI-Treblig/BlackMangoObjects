@@ -102,9 +102,13 @@
       }
     });
 
-    /* Hidden variant ID for Add to Cart */
-    var idInput = document.querySelector('form[action*="/cart/add"] input[name="id"]');
-    if (idInput) idInput.value = v.id;
+    /* Variant ID for Add to Cart — only this product's own forms (main form + sticky bar),
+       never product cards or the compare table, which carry other products' variants */
+    document.querySelectorAll('form[action*="/cart/add"] [name="id"]').forEach(function(el) {
+      if (!el.closest('.product-single__metas, .sticky-cart-single')) return;
+      if (el.tagName === 'SELECT' && !el.querySelector('option[value="' + v.id + '"]')) return;
+      el.value = v.id;
+    });
 
     /* URL */
     if (window.history && history.replaceState) {
