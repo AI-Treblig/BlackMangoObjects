@@ -64,7 +64,15 @@
     var isFirst = announcedId === null;
     announcedId = v.id;
     if (isFirst) return;
-    try { document.dispatchEvent(new CustomEvent('bm:variant-change', { detail: { variant: v } })); } catch (e) {}
+    /* Photo for this variant; if it has none, borrow one from a variant sharing its first option (e.g. same colour, other pack size) */
+    var mediaId = v.featured_media && v.featured_media.id;
+    if (!mediaId) {
+      for (var i = 0; i < product.variants.length; i++) {
+        var pv = product.variants[i];
+        if (pv.featured_media && pv.option1 === v.option1) { mediaId = pv.featured_media.id; break; }
+      }
+    }
+    try { document.dispatchEvent(new CustomEvent('bm:variant-change', { detail: { variant: v, mediaId: mediaId } })); } catch (e) {}
   }
 
   function update() {

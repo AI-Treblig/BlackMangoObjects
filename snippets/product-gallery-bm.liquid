@@ -214,7 +214,7 @@
     /* Jump to the selected variant's image (event from bm-variant-price-sync) */
     document.addEventListener('bm:variant-change', function(e) {
       var v = e.detail && e.detail.variant;
-      var mediaId = v && v.featured_media && v.featured_media.id;
+      var mediaId = (e.detail && e.detail.mediaId) || (v && v.featured_media && v.featured_media.id);
       if (!mediaId) return;
       for (var i = 0; i < slides.length; i++) {
         if (String(slides[i].dataset.mediaId) === String(mediaId)) { show(i); break; }

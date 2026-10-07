@@ -26,6 +26,8 @@
 {% else %}
     {%- comment -%} BM: optional per-product note after the price, from the product metafield custom.price_note (e.g. "for pack of 2") {%- endcomment -%}
     {%- assign price_note = product.metafields.custom.price_note.value -%}
+    {%- comment -%} A pack-size note would be wrong once the customer can choose the pack size {%- endcomment -%}
+    {%- if product.options contains 'Pack' -%}{%- assign price_note = blank -%}{%- endif -%}
     <div class="price-single-product{% if price_note != blank %} bm-has-price-note{% endif %}" style="margin:{{ block.settings.product_price_margin }};--price-color:{{ block.settings.price_color }};--price-color-sale:{{ block.settings.price_color_sale }};--price-font-size:{{ block.settings.price_size }}px;">
         {% render 'product-price', variant: current_variant %}
         {%- if price_note != blank -%}
