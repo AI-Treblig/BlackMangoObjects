@@ -334,19 +334,8 @@
                 "list_item_bmCustom": {
                   "type": "_list-item",
                   "settings": {
-                    "text": "Custom Products",
-                    "url": "/pages/custom-products",
-                    "icon": "",
-                    "padding": "",
-                    "margin": "0 0 8px"
-                  },
-                  "blocks": {}
-                },
-                "list_item_bmGlass": {
-                  "type": "_list-item",
-                  "settings": {
-                    "text": "Glassware",
-                    "url": "/collections/glassware",
+                    "text": "Custom Rugs",
+                    "url": "/pages/custom-rugs",
                     "icon": "",
                     "padding": "",
                     "margin": ""
@@ -360,8 +349,7 @@
                 "list_item_qYDVcn",
                 "list_item_9N7PiX",
                 "list_item_bmStudio",
-                "list_item_bmCustom",
-                "list_item_bmGlass"
+                "list_item_bmCustom"
               ]
             }
           },

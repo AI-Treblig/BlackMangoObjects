@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "main": {
+      "type": "bm-custom-rugs",
+      "blocks": {
+        "step_consult": {
+          "type": "step",
+          "settings": {
+            "title": "Consult",
+            "text": "Share your space, size and ideas. We talk through shape, material, colour and budget, on WhatsApp or a virtual appointment."
+          }
+        },
+        "step_sample": {
+          "type": "step",
+          "settings": {
+            "title": "Sample (if required)",
+            "text": "Where it helps, we make a small sample so you can check colour, texture and pile before the full rug is made."
+          }
+        },
+        "step_make": {
+          "type": "step",
+          "settings": {
+            "title": "Make",
+            "text": "Once you approve, your rug is made to order and delivered to you."
+          }
+        }
+      },
+      "block_order": [
+        "step_consult",
+        "step_sample",
+        "step_make"
+      ],
+      "settings": {
+        "eyebrow": "Made to order",
+        "intro": "<p>A rug made for your space: your size, your shape, your palette. Tell us what you have in mind and we will take it from there.</p>",
+        "form_heading": "Tell us about your rug",
+        "form_intro": "Share as much or as little as you know. Only your contact details are required.",
+        "materials": "Cotton\nCotton Silk + Silk\nNew Zealand Wool\nMerino Wool",
+        "max_pile": 25,
+        "reference_hint": "Paste a link to a folder, Pinterest board or image. You can also send photos on WhatsApp or by email after you submit.",
+        "notes_placeholder": "Colours, pattern ideas, where the rug will go, timeline",
+        "submit_label": "Send request",
+        "success_title": "Thank you. Your request is with us.",
+        "success_text": "We will get back to you shortly. If you have reference images, send them on WhatsApp or by email.",
+        "aside_heading": "Prefer to talk it through?",
+        "aside_text": "Chat with us on WhatsApp, or email us to book a one-on-one virtual design appointment.",
+        "whatsapp_number": "918698205381",
+        "whatsapp_label": "Chat on WhatsApp",
+        "whatsapp_message": "Hi, I would like to talk about a custom rug.",
+        "email": "info@blackmangoobjects.com",
+        "email_label": "Book a design appointment",
+        "appointment_subject": "Custom rug: virtual design appointment"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

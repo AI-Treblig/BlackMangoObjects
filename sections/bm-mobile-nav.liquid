@@ -96,7 +96,13 @@
       {%- for link in menu.links -%}
         <li class="bm-mnav-item{% if link.links.size > 0 %} bm-mnav-item--has-children{% endif %}">
           <div class="bm-mnav-row">
-            <a class="bm-mnav-link" href="{{ link.url }}">{{ link.title }}</a>
+            {%- if link.links.size > 0 -%}
+              {%- comment -%} Parent with children: tapping the label opens the list (the parent's own page is the first "View all" entry) {%- endcomment -%}
+              <a class="bm-mnav-link" href="{{ link.url }}" role="button" aria-expanded="false"
+                 onclick="var i=this.closest('.bm-mnav-item');var o=i.classList.toggle('is-open');this.setAttribute('aria-expanded',o);return false;">{{ link.title }}</a>
+            {%- else -%}
+              <a class="bm-mnav-link" href="{{ link.url }}">{{ link.title }}</a>
+            {%- endif -%}
             {%- if link.links.size > 0 -%}
               <button type="button"
                       class="bm-mnav-expand"
@@ -110,10 +116,22 @@
           </div>
           {%- if link.links.size > 0 -%}
             <ul class="bm-mnav-sublist">
+              {%- if link.url != blank and link.url != '#' -%}
+                <li class="bm-mnav-item">
+                  <div class="bm-mnav-row">
+                    <a class="bm-mnav-link bm-mnav-link--child" href="{{ link.url }}">View all</a>
+                  </div>
+                </li>
+              {%- endif -%}
               {%- for child in link.links -%}
                 <li class="bm-mnav-item{% if child.links.size > 0 %} bm-mnav-item--has-children{% endif %}">
                   <div class="bm-mnav-row">
-                    <a class="bm-mnav-link bm-mnav-link--child" href="{{ child.url }}">{{ child.title }}</a>
+                    {%- if child.links.size > 0 -%}
+                      <a class="bm-mnav-link bm-mnav-link--child" href="{{ child.url }}" role="button" aria-expanded="false"
+                         onclick="var i=this.closest('.bm-mnav-item');var o=i.classList.toggle('is-open');this.setAttribute('aria-expanded',o);return false;">{{ child.title }}</a>
+                    {%- else -%}
+                      <a class="bm-mnav-link bm-mnav-link--child" href="{{ child.url }}">{{ child.title }}</a>
+                    {%- endif -%}
                     {%- if child.links.size > 0 -%}
                       <button type="button"
                               class="bm-mnav-expand"

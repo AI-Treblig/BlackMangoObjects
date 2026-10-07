@@ -27,6 +27,19 @@
         {% elsif filter_name_3 != blank and filter_name_3 == option.name %}
             {%- assign type = select_filter_3 -%}
         {% endif %}
+        {%- comment -%}
+          BM: any other option whose name mentions colour (e.g. Tumbler "Base Color" / "Cap Color")
+          is shown as plain colour dots, using the value as a CSS colour name. Adding a new value
+          in Shopify admin (e.g. a third cap colour) needs no code change.
+        {%- endcomment -%}
+        {%- assign bm_solid = false -%}
+        {%- assign opt_lower = option.name | downcase -%}
+        {%- if type == 'label' -%}
+            {%- if opt_lower contains 'color' or opt_lower contains 'colour' -%}
+                {%- assign type = 'color' -%}
+                {%- assign bm_solid = true -%}
+            {%- endif -%}
+        {%- endif -%}
         <div class="variants-wrapper product-form__item wpb-variants-swatch">
             {% assign current = product.selected_or_first_available_variant %}
             {%- if forloop.index == 1 -%}
@@ -57,11 +70,14 @@
                             {%- endif -%}
                         {%- endif -%}
                     {%- endfor -%}
+                    {%- assign variant_image = blank -%}
+                    {%- unless bm_solid -%}
                     {%- for variant in product.variants -%}
                         {%- if variant.title contains value and variant.featured_image  -%}
                             {%- assign variant_image = variant.featured_image.src | image_url: width: 400 -%}
                         {%- endif -%}
                     {%- endfor -%}
+                    {%- endunless -%}
                     <div class="single-option-selector" data-single-option-button>
                         <input type="radio" {% if option.selected_value == value %} checked="checked"{% endif %}
                             {% if option_disabled %} disabled="disabled"{% endif %}
@@ -85,7 +101,7 @@
                                 <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}"
                                     data-{{ type }}="{{ value }}"
                                     title="{{ value | strip | escape }}"
-                                    class="{{ value | escape }} {% if option_disabled %}disabled{% endif %}">
+                                    {% if bm_solid %}style="background-color: {{ value | handleize }};" {% endif %}class="{{ value | escape }} {% if option_disabled %}disabled{% endif %}">
                                     {{ value | escape }}
                                     {%- if type != 'label' -%}
                                         <span class="tool-tip">{{ value | escape }}</span>

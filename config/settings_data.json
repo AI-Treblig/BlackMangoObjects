@@ -50,7 +50,7 @@
     "preview_bar": true,
     "show_search_blog": true,
     "search_item_count": 8,
-    "show_compare": false,
+    "show_compare": true,
     "sortby_variants": false,
     "number_variants": 5,
     "product_vendor_enable": false,

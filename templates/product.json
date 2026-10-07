@@ -304,7 +304,7 @@
                   "settings": {
                     "delivery_return_title": "Delivery & Return",
                     "delivery_return_heading": "Shipping info",
-                    "delivery_return_content": "<p><b>Return Policy:</b> We will gladly accept returns for any reason within 30 days of receipt of delivery.</p>\n\n<p><b>Availability:</b> Ships anywhere in the United States</p>\n\n<p><b>Processing Time:</b> Allow 3-4 business days processing time for your order to ship.</p>"
+                    "delivery_return_content": "<p><b>Return Policy:</b> We accept returns within 15 days of delivery.</p>\n\n<p><b>Availability:</b> We deliver across India.</p>\n\n<p><b>Processing Time:</b> Allow 3-4 business days processing time for your order to ship.</p>"
                   },
                   "blocks": {}
                 },
@@ -419,7 +419,7 @@
                 "product_product_tab_margin": "",
                 "tab_title": "Shipping",
                 "product_tab_selector": "custom",
-                "tab_content": "<p>For orders placed before 7am AEDT, we endeavour to process the same business day. Orders placed after 11am AEDT will be processed the next business day.</p><p>During sale events and new collection launches, there may be a slighly longer processing time.</p><p>All Auguste orders are hand-picked and packed with love from Byron Bay, Australie.</p>"
+                "tab_content": "<p>We deliver across India. Orders are usually processed within 3-4 business days and shipped through our courier partners; tracking details are shared by email once your order is dispatched.</p><p>Made-to-order and custom pieces take longer to produce. We will confirm the timeline with you when you order.</p><p>All Black Mango orders are packed with care and dispatched from India.</p>"
               },
               "blocks": {}
             },
@@ -431,7 +431,7 @@
                 "product_product_tab_margin": "",
                 "tab_title": "Return",
                 "product_tab_selector": "custom",
-                "tab_content": "<p>You can choose between a refund or a credit note on full priced items.</p><ul><li>Item(s) must be returned in their original condition and packaging: unworn, unwashed and with all tags attached.</li><li>Earrings cannot be returned due to health and safety reasons.</li><li>Return shipping methods and associated costs are the responsibility of the customer.</li><li>Sale items can not be refunded for change of mind.</li></ul>"
+                "tab_content": "<p>Returns are accepted within 15 days of delivery. You can choose between a refund or a credit note on full priced items.</p><ul><li>Item(s) must be returned in their original condition and packaging: unused, unwashed and with all tags attached.</li><li>Sale items can not be refunded for change of mind.</li></ul>"
               },
               "blocks": {}
             }
@@ -504,14 +504,14 @@
           "type": "tab_custom",
           "settings": {
             "title_custom": "Shipping",
-            "content_custom": "<p>For orders placed before 7am AEDT, we endeavour to process the same business day. Orders placed after 11am AEDT will be processed the next business day.</p><p>During sale events and new collection launches, there may be a slighly longer processing time.</p><p>All Auguste orders are hand-picked and packed with love from Byron Bay, Australie.</p>"
+            "content_custom": "<p>We deliver across India. Orders are usually processed within 3-4 business days and shipped through our courier partners; tracking details are shared by email once your order is dispatched.</p><p>Made-to-order and custom pieces take longer to produce. We will confirm the timeline with you when you order.</p><p>All Black Mango orders are packed with care and dispatched from India.</p>"
           }
         },
         "1c519445-14ba-4b4f-a8df-6bf711832c78": {
           "type": "tab_custom",
           "settings": {
             "title_custom": "Return",
-            "content_custom": "<p>You can choose between a refund or a credit note on full priced items.</p><ul><li>Item(s) must be returned in their original condition and packaging: unworn, unwashed and with all tags attached.</li></ul><ul><li>Earrings cannot be returned due to health and safety reasons.</li></ul><ul><li>Return shipping methods and associated costs are the responsibility of the customer.</li></ul><ul><li>Sale items can not be refunded for change of mind.</li></ul>"
+            "content_custom": "<p>Returns are accepted within 15 days of delivery. You can choose between a refund or a credit note on full priced items.</p><ul><li>Item(s) must be returned in their original condition and packaging: unused, unwashed and with all tags attached.</li></ul><ul><li>Sale items can not be refunded for change of mind.</li></ul>"
           }
         }
       },

@@ -1,0 +1,543 @@
+{%- comment -%}
+  Black Mango — Custom Rugs enquiry page.
+  1) Intro  2) 3-step process (blocks)  3) Brief form + direct WhatsApp / email actions.
+
+  The form posts through Shopify's native contact form, so enquiries arrive at the
+  store contact email with every field listed. Shopify's contact form cannot carry
+  file attachments, so reference images go by link, WhatsApp or email instead.
+  Self-contained CSS + vanilla JS; no theme JS dependencies.
+{%- endcomment -%}
+
+{%- liquid
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = page.title | default: 'Custom Rugs'
+  endif
+  assign wa = section.settings.whatsapp_number | replace: '+', '' | replace: ' ', '' | replace: '-', ''
+  assign email = section.settings.email | default: 'info@blackmangoobjects.com'
+  assign wa_text = section.settings.whatsapp_message | url_encode
+  assign mail_subject = section.settings.appointment_subject | url_encode
+  assign form_id = 'bm-cr-form-' | append: section.id
+  assign max_pile = section.settings.max_pile | default: 25
+  assign materials = section.settings.materials | newline_to_br | split: '<br />'
+-%}
+
+<section class="bm-cr" id="bm-cr-{{ section.id }}">
+
+  <header class="bm-cr__intro">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="bm-cr__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+    {%- endif -%}
+    <h1 class="bm-cr__title">{{ heading | escape }}</h1>
+    {%- if section.settings.intro != blank -%}
+      <div class="bm-cr__lede">{{ section.settings.intro }}</div>
+    {%- endif -%}
+  </header>
+
+  {%- if section.blocks.size > 0 -%}
+    <ol class="bm-cr__steps" aria-label="How it works">
+      {%- for block in section.blocks -%}
+        <li class="bm-cr__step" {{ block.shopify_attributes }}>
+          <span class="bm-cr__step-num" aria-hidden="true">{{ forloop.index | prepend: '0' }}</span>
+          <h2 class="bm-cr__step-title">{{ block.settings.title | escape }}</h2>
+          {%- if block.settings.text != blank -%}
+            <p class="bm-cr__step-text">{{ block.settings.text | escape }}</p>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ol>
+  {%- endif -%}
+
+  <div class="bm-cr__body">
+
+    <div class="bm-cr__form-wrap">
+      <h2 class="bm-cr__h2">{{ section.settings.form_heading | escape }}</h2>
+      {%- if section.settings.form_intro != blank -%}
+        <p class="bm-cr__form-intro">{{ section.settings.form_intro | escape }}</p>
+      {%- endif -%}
+
+      {%- form 'contact', id: form_id, class: 'bm-cr__form' -%}
+        {%- if form.posted_successfully? -%}
+          <div class="bm-cr__notice" role="status">
+            <strong>{{ section.settings.success_title | escape }}</strong>
+            <span>{{ section.settings.success_text | escape }}</span>
+          </div>
+        {%- endif -%}
+        {%- if form.errors -%}
+          <div class="bm-cr__notice bm-cr__notice--error" role="alert">
+            {%- for field in form.errors -%}
+              <div>{{ form.errors.translated_fields[field] | capitalize }} {{ form.errors.messages[field] }}</div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        <input type="hidden" name="contact[Enquiry]" value="Custom rug">
+        <input type="hidden" name="contact[Dimensions]" value="" data-bm-cr-dims>
+
+        <fieldset class="bm-cr__group">
+          <legend class="bm-cr__legend">Your details</legend>
+          <div class="bm-cr__grid bm-cr__grid--3">
+            <label class="bm-cr__field">
+              <span class="bm-cr__label">Full name <i aria-hidden="true">*</i></span>
+              <input type="text" name="contact[name]" required autocomplete="name"
+                     value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
+            </label>
+            <label class="bm-cr__field">
+              <span class="bm-cr__label">Email address <i aria-hidden="true">*</i></span>
+              <input type="email" name="contact[email]" required autocomplete="email" autocapitalize="off"
+                     value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+            </label>
+            <label class="bm-cr__field">
+              <span class="bm-cr__label">Phone number <i aria-hidden="true">*</i></span>
+              <input type="tel" name="contact[phone]" required autocomplete="tel" pattern="[0-9+\-\s\(\)]{7,}"
+                     value="{% if form.phone %}{{ form.phone }}{% endif %}">
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="bm-cr__group">
+          <legend class="bm-cr__legend">Dimensions</legend>
+          <div class="bm-cr__pills" role="radiogroup" aria-label="How would you like to give the size?">
+            <label class="bm-cr__pill">
+              <input type="radio" name="bm_cr_dim_mode" value="lw" checked data-bm-cr-mode>
+              <span>Length × width</span>
+            </label>
+            <label class="bm-cr__pill">
+              <input type="radio" name="bm_cr_dim_mode" value="area" data-bm-cr-mode>
+              <span>Total area (sq ft)</span>
+            </label>
+          </div>
+
+          <div class="bm-cr__dims" data-bm-cr-panel="lw">
+            <div class="bm-cr__dim">
+              <span class="bm-cr__label">Length</span>
+              <div class="bm-cr__unit-row">
+                <label class="bm-cr__unit"><input type="number" min="0" max="99" step="1" inputmode="numeric" data-bm-cr-l-ft aria-label="Length, feet"><span>ft</span></label>
+                <label class="bm-cr__unit"><input type="number" min="0" max="11" step="1" inputmode="numeric" data-bm-cr-l-in aria-label="Length, inches"><span>in</span></label>
+              </div>
+            </div>
+            <div class="bm-cr__dim">
+              <span class="bm-cr__label">Width</span>
+              <div class="bm-cr__unit-row">
+                <label class="bm-cr__unit"><input type="number" min="0" max="99" step="1" inputmode="numeric" data-bm-cr-w-ft aria-label="Width, feet"><span>ft</span></label>
+                <label class="bm-cr__unit"><input type="number" min="0" max="11" step="1" inputmode="numeric" data-bm-cr-w-in aria-label="Width, inches"><span>in</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="bm-cr__dims" data-bm-cr-panel="area" hidden>
+            <div class="bm-cr__dim">
+              <span class="bm-cr__label">Total area</span>
+              <div class="bm-cr__unit-row">
+                <label class="bm-cr__unit bm-cr__unit--wide"><input type="number" min="1" max="9999" step="0.5" inputmode="decimal" data-bm-cr-area aria-label="Total area, square feet"><span>sq ft</span></label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="bm-cr__group">
+          <legend class="bm-cr__legend">Shape</legend>
+          <div class="bm-cr__shapes">
+            <label class="bm-cr__shape">
+              <input type="radio" name="contact[Shape]" value="Square">
+              <span class="bm-cr__shape-card">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="10" width="28" height="28"/></svg>
+                <span>Square</span>
+              </span>
+            </label>
+            <label class="bm-cr__shape">
+              <input type="radio" name="contact[Shape]" value="Rectangle">
+              <span class="bm-cr__shape-card">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="13" width="38" height="22"/></svg>
+                <span>Rectangle</span>
+              </span>
+            </label>
+            <label class="bm-cr__shape">
+              <input type="radio" name="contact[Shape]" value="Circle">
+              <span class="bm-cr__shape-card">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="15"/></svg>
+                <span>Circle</span>
+              </span>
+            </label>
+            <label class="bm-cr__shape">
+              <input type="radio" name="contact[Shape]" value="Oval">
+              <span class="bm-cr__shape-card">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="24" cy="24" rx="19" ry="12"/></svg>
+                <span>Oval</span>
+              </span>
+            </label>
+            <label class="bm-cr__shape">
+              <input type="radio" name="contact[Shape]" value="Freeform">
+              <span class="bm-cr__shape-card">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 12c6-5 15-3 19 2 3 4 9 5 9 12 0 8-8 13-15 12-5-1-8 3-13 1-6-3-7-10-5-15 1-4 1-9 5-12z"/></svg>
+                <span>Freeform</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        {%- if materials.size > 0 -%}
+          <fieldset class="bm-cr__group">
+            <legend class="bm-cr__legend">Material</legend>
+            <div class="bm-cr__pills">
+              {%- for m in materials -%}
+                {%- assign material = m | strip -%}
+                {%- if material != blank -%}
+                  <label class="bm-cr__pill">
+                    <input type="radio" name="contact[Material]" value="{{ material | escape }}">
+                    <span>{{ material | escape }}</span>
+                  </label>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </fieldset>
+        {%- endif -%}
+
+        <fieldset class="bm-cr__group">
+          <legend class="bm-cr__legend">Pile height</legend>
+          <div class="bm-cr__unit-row">
+            <label class="bm-cr__unit bm-cr__unit--wide">
+              <input type="number" name="contact[Pile height (mm)]" min="1" max="{{ max_pile }}" step="1" inputmode="numeric" data-bm-cr-pile aria-label="Pile height in millimetres">
+              <span>mm</span>
+            </label>
+          </div>
+          <p class="bm-cr__hint">Up to {{ max_pile }} mm.</p>
+        </fieldset>
+
+        <fieldset class="bm-cr__group">
+          <legend class="bm-cr__legend">Design &amp; references</legend>
+          <label class="bm-cr__field">
+            <span class="bm-cr__label">Link to colour palette or reference images</span>
+            <input type="url" name="contact[Reference link]" placeholder="https://" autocapitalize="off" data-bm-cr-link>
+          </label>
+          <p class="bm-cr__hint">{{ section.settings.reference_hint | escape }}</p>
+          <label class="bm-cr__field">
+            <span class="bm-cr__label">Design notes</span>
+            <textarea name="contact[body]" rows="5" data-bm-cr-notes placeholder="{{ section.settings.notes_placeholder | escape }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+          </label>
+        </fieldset>
+
+        <div class="bm-cr__submit-row">
+          <button type="submit" class="bm-cr__btn bm-cr__btn--solid">{{ section.settings.submit_label | escape }}</button>
+          {%- if wa != blank -%}
+            <a class="bm-cr__btn bm-cr__btn--line" href="https://wa.me/{{ wa }}?text={{ wa_text }}" target="_blank" rel="noopener" data-bm-cr-wa-send>
+              Send on WhatsApp instead
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endform -%}
+    </div>
+
+    <aside class="bm-cr__aside" aria-label="Talk to us directly">
+      <div class="bm-cr__aside-inner">
+        <h2 class="bm-cr__h2">{{ section.settings.aside_heading | escape }}</h2>
+        {%- if section.settings.aside_text != blank -%}
+          <p class="bm-cr__aside-text">{{ section.settings.aside_text | escape }}</p>
+        {%- endif -%}
+        {%- if wa != blank -%}
+          <a class="bm-cr__btn bm-cr__btn--wa" href="https://wa.me/{{ wa }}?text={{ wa_text }}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 1.67c2.2 0 4.26.86 5.82 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.4-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24zM8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.29-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.78.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43-.14 0-.3-.01-.47-.01z"/></svg>
+            {{ section.settings.whatsapp_label | escape }}
+          </a>
+        {%- endif -%}
+        <a class="bm-cr__btn bm-cr__btn--line" href="mailto:{{ email }}?subject={{ mail_subject }}">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><polyline points="3 7 12 13 21 7"/></svg>
+          {{ section.settings.email_label | escape }}
+        </a>
+        <p class="bm-cr__aside-meta">{{ email }}</p>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<style>
+  #bm-cr-{{ section.id }} {
+    --cr-ink: #000000;
+    --cr-muted: #666666;
+    --cr-line: #dcdcdc;
+    --cr-soft: #f6f5f3;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 16px;
+    padding-block: 40px 64px;
+    color: var(--cr-ink);
+    font-family: var(--font-family-base), 'Manrope', sans-serif;
+  }
+  #bm-cr-{{ section.id }} *, #bm-cr-{{ section.id }} *::before, #bm-cr-{{ section.id }} *::after { box-sizing: border-box; }
+
+  /* Intro */
+  #bm-cr-{{ section.id }} .bm-cr__intro { max-width: 720px; margin: 0 auto 40px; text-align: center; }
+  #bm-cr-{{ section.id }} .bm-cr__eyebrow { margin: 0 0 14px; font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: var(--cr-muted); }
+  #bm-cr-{{ section.id }} .bm-cr__title {
+    margin: 0;
+    font-family: var(--font-family-second), 'Cormorant Garamond', Georgia, serif;
+    font-size: 40px; line-height: 1.1; font-weight: 600; color: var(--cr-ink);
+  }
+  #bm-cr-{{ section.id }} .bm-cr__lede { margin-top: 18px; font-size: 16px; line-height: 1.7; color: #333; }
+  #bm-cr-{{ section.id }} .bm-cr__lede p { margin: 0 0 10px; }
+
+  /* Steps */
+  #bm-cr-{{ section.id }} .bm-cr__steps {
+    list-style: none; margin: 0 0 48px; padding: 0;
+    display: grid; grid-template-columns: 1fr; gap: 12px;
+  }
+  #bm-cr-{{ section.id }} .bm-cr__step { background: var(--cr-soft); padding: 24px 22px; }
+  #bm-cr-{{ section.id }} .bm-cr__step-num {
+    display: block; margin-bottom: 14px;
+    font-family: var(--font-family-second), 'Cormorant Garamond', Georgia, serif;
+    font-size: 34px; line-height: 1; color: var(--cr-ink);
+  }
+  #bm-cr-{{ section.id }} .bm-cr__step-title {
+    margin: 0 0 8px;
+    font-family: var(--font-family-second), 'Cormorant Garamond', Georgia, serif;
+    font-size: 24px; line-height: 1.2; font-weight: 600; color: var(--cr-ink);
+  }
+  #bm-cr-{{ section.id }} .bm-cr__step-text { margin: 0; font-size: 14px; line-height: 1.65; color: #444; }
+
+  /* Body layout */
+  #bm-cr-{{ section.id }} .bm-cr__body { display: grid; grid-template-columns: 1fr; gap: 32px; }
+  #bm-cr-{{ section.id }} .bm-cr__h2 {
+    margin: 0 0 10px;
+    font-family: var(--font-family-second), 'Cormorant Garamond', Georgia, serif;
+    font-size: 30px; line-height: 1.2; font-weight: 600; color: var(--cr-ink);
+  }
+  #bm-cr-{{ section.id }} .bm-cr__form-intro { margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #444; }
+
+  /* Form */
+  #bm-cr-{{ section.id }} .bm-cr__group { border: 0; margin: 0 0 30px; padding: 0; min-width: 0; }
+  #bm-cr-{{ section.id }} .bm-cr__legend {
+    padding: 0; margin: 0 0 14px; width: 100%;
+    font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--cr-ink); font-weight: 600;
+    border-bottom: 1px solid var(--cr-line); padding-bottom: 10px;
+  }
+  #bm-cr-{{ section.id }} .bm-cr__grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  #bm-cr-{{ section.id }} .bm-cr__field { display: block; margin: 0 0 14px; }
+  #bm-cr-{{ section.id }} .bm-cr__grid .bm-cr__field { margin: 0; }
+  #bm-cr-{{ section.id }} .bm-cr__label { display: block; margin: 0 0 6px; font-size: 13px; color: #333; }
+  #bm-cr-{{ section.id }} .bm-cr__label i { font-style: normal; color: #b3261e; }
+  #bm-cr-{{ section.id }} input[type="text"],
+  #bm-cr-{{ section.id }} input[type="email"],
+  #bm-cr-{{ section.id }} input[type="tel"],
+  #bm-cr-{{ section.id }} input[type="url"],
+  #bm-cr-{{ section.id }} input[type="number"],
+  #bm-cr-{{ section.id }} textarea {
+    width: 100%; min-height: 48px; padding: 12px 14px;
+    border: 1px solid var(--cr-line); border-radius: 0; background: #fff; color: var(--cr-ink);
+    font-family: inherit; font-size: 16px; line-height: 1.4;
+    -moz-appearance: textfield; appearance: none;
+  }
+  #bm-cr-{{ section.id }} textarea { resize: vertical; min-height: 120px; }
+  #bm-cr-{{ section.id }} input:focus, #bm-cr-{{ section.id }} textarea:focus { outline: none; border-color: var(--cr-ink); box-shadow: 0 0 0 1px var(--cr-ink); }
+  #bm-cr-{{ section.id }} .bm-cr__hint { margin: 8px 0 14px; font-size: 13px; line-height: 1.5; color: var(--cr-muted); }
+
+  /* Dimension rows */
+  #bm-cr-{{ section.id }} .bm-cr__dims { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 16px; }
+  #bm-cr-{{ section.id }} .bm-cr__dims[hidden] { display: none; }
+  #bm-cr-{{ section.id }} .bm-cr__unit-row { display: flex; gap: 10px; }
+  #bm-cr-{{ section.id }} .bm-cr__unit { position: relative; flex: 1 1 0; min-width: 0; display: block; margin: 0; }
+  #bm-cr-{{ section.id }} .bm-cr__unit--wide { flex: 0 1 220px; }
+  #bm-cr-{{ section.id }} .bm-cr__unit input { padding-right: 52px; }
+  #bm-cr-{{ section.id }} .bm-cr__unit span {
+    position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+    font-size: 13px; color: var(--cr-muted); pointer-events: none;
+  }
+
+  /* Pills + shape cards (radio) */
+  #bm-cr-{{ section.id }} .bm-cr__pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  #bm-cr-{{ section.id }} .bm-cr__pill, #bm-cr-{{ section.id }} .bm-cr__shape { position: relative; margin: 0; cursor: pointer; }
+  #bm-cr-{{ section.id }} .bm-cr__pill input, #bm-cr-{{ section.id }} .bm-cr__shape input {
+    position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; pointer-events: none;
+  }
+  #bm-cr-{{ section.id }} .bm-cr__pill span {
+    display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px;
+    border: 1px solid var(--cr-line); border-radius: 999px; background: #fff;
+    font-size: 14px; color: var(--cr-ink); transition: background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  #bm-cr-{{ section.id }} .bm-cr__pill:hover span { border-color: var(--cr-ink); }
+  #bm-cr-{{ section.id }} .bm-cr__pill input:checked + span { background: var(--cr-ink); border-color: var(--cr-ink); color: #fff; }
+  #bm-cr-{{ section.id }} .bm-cr__pill input:focus-visible + span,
+  #bm-cr-{{ section.id }} .bm-cr__shape input:focus-visible + .bm-cr__shape-card { outline: 2px solid var(--cr-ink); outline-offset: 3px; }
+
+  #bm-cr-{{ section.id }} .bm-cr__shapes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  #bm-cr-{{ section.id }} .bm-cr__shape-card {
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    padding: 16px 6px 12px; border: 1px solid var(--cr-line); background: #fff;
+    font-size: 13px; color: var(--cr-ink); text-align: center;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  #bm-cr-{{ section.id }} .bm-cr__shape-card svg { width: 44px; height: 44px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+  #bm-cr-{{ section.id }} .bm-cr__shape:hover .bm-cr__shape-card { border-color: var(--cr-ink); }
+  #bm-cr-{{ section.id }} .bm-cr__shape input:checked + .bm-cr__shape-card { background: var(--cr-ink); border-color: var(--cr-ink); color: #fff; }
+
+  /* Buttons */
+  #bm-cr-{{ section.id }} .bm-cr__btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 52px; padding: 0 26px; border: 1px solid var(--cr-ink); border-radius: 0;
+    font-family: inherit; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; text-decoration: none;
+    cursor: pointer; transition: opacity .2s ease, background .2s ease, color .2s ease;
+  }
+  #bm-cr-{{ section.id }} .bm-cr__btn--solid { background: var(--cr-ink); color: #fff; }
+  #bm-cr-{{ section.id }} .bm-cr__btn--solid:hover { opacity: .8; color: #fff; }
+  #bm-cr-{{ section.id }} .bm-cr__btn--line { background: transparent; color: var(--cr-ink); }
+  #bm-cr-{{ section.id }} .bm-cr__btn--line:hover { background: var(--cr-ink); color: #fff; }
+  #bm-cr-{{ section.id }} .bm-cr__btn--wa { background: #fff; color: #000; border-color: #fff; }
+  #bm-cr-{{ section.id }} .bm-cr__btn--wa:hover { opacity: .85; color: #000; }
+  #bm-cr-{{ section.id }} .bm-cr__submit-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  #bm-cr-{{ section.id }} .bm-cr__submit-row .bm-cr__btn { flex: 1 1 220px; }
+
+  /* Notices */
+  #bm-cr-{{ section.id }} .bm-cr__notice { margin: 0 0 24px; padding: 16px 18px; background: var(--cr-soft); font-size: 15px; line-height: 1.6; }
+  #bm-cr-{{ section.id }} .bm-cr__notice strong { display: block; }
+  #bm-cr-{{ section.id }} .bm-cr__notice--error { background: #fdecea; color: #7a1c15; }
+
+  /* Direct actions */
+  #bm-cr-{{ section.id }} .bm-cr__aside-inner { background: var(--cr-ink); color: #fff; padding: 28px 24px; display: flex; flex-direction: column; gap: 12px; }
+  #bm-cr-{{ section.id }} .bm-cr__aside .bm-cr__h2 { color: #fff; margin: 0; }
+  #bm-cr-{{ section.id }} .bm-cr__aside-text { margin: 0 0 6px; font-size: 14px; line-height: 1.65; color: #d9d9d9; }
+  #bm-cr-{{ section.id }} .bm-cr__aside .bm-cr__btn--line { border-color: #fff; color: #fff; }
+  #bm-cr-{{ section.id }} .bm-cr__aside .bm-cr__btn--line:hover { background: #fff; color: #000; }
+  #bm-cr-{{ section.id }} .bm-cr__aside-meta { margin: 4px 0 0; font-size: 13px; color: #bdbdbd; word-break: break-word; }
+
+  @media (min-width: 600px) {
+    #bm-cr-{{ section.id }} .bm-cr__shapes { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    #bm-cr-{{ section.id }} .bm-cr__dims { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width: 768px) {
+    #bm-cr-{{ section.id }} { padding-inline: 32px; padding-block: 56px 88px; }
+    #bm-cr-{{ section.id }} .bm-cr__title { font-size: 56px; }
+    #bm-cr-{{ section.id }} .bm-cr__steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 64px; }
+    #bm-cr-{{ section.id }} .bm-cr__grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (min-width: 992px) {
+    #bm-cr-{{ section.id }} .bm-cr__body { grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; align-items: start; }
+    #bm-cr-{{ section.id }} .bm-cr__aside { position: sticky; top: 150px; }
+  }
+</style>
+
+<script>
+(function() {
+  var root = document.getElementById('bm-cr-{{ section.id }}');
+  if (!root || root.dataset.bmCrInit === '1') return;
+  root.dataset.bmCrInit = '1';
+  var form = root.querySelector('form');
+  if (!form) return;
+
+  var q = function(sel) { return form.querySelector(sel); };
+  var num = function(el) { var v = el ? parseFloat(el.value) : NaN; return isNaN(v) ? 0 : v; };
+  var MAX_PILE = {{ max_pile }};
+
+  /* Size mode: length × width  <->  total area */
+  var panels = form.querySelectorAll('[data-bm-cr-panel]');
+  function mode() { var m = form.querySelector('[data-bm-cr-mode]:checked'); return m ? m.value : 'lw'; }
+  function syncMode() {
+    var m = mode();
+    panels.forEach(function(p) { p.hidden = p.getAttribute('data-bm-cr-panel') !== m; });
+  }
+  form.querySelectorAll('[data-bm-cr-mode]').forEach(function(r) { r.addEventListener('change', syncMode); });
+  syncMode();
+
+  function side(ft, inch) {
+    var f = num(ft), i = num(inch);
+    if (!f && !i) return '';
+    return f + ' ft' + (i ? ' ' + i + ' in' : '');
+  }
+  function dimensions() {
+    if (mode() === 'area') {
+      var a = num(q('[data-bm-cr-area]'));
+      return a ? a + ' sq ft (total area)' : '';
+    }
+    var l = side(q('[data-bm-cr-l-ft]'), q('[data-bm-cr-l-in]'));
+    var w = side(q('[data-bm-cr-w-ft]'), q('[data-bm-cr-w-in]'));
+    if (!l && !w) return '';
+    return (l || '?') + ' x ' + (w || '?');
+  }
+
+  /* Pile height never above the cap */
+  var pile = q('[data-bm-cr-pile]');
+  if (pile) pile.addEventListener('change', function() {
+    var v = parseFloat(pile.value);
+    if (!isNaN(v) && v > MAX_PILE) pile.value = MAX_PILE;
+    if (!isNaN(v) && v < 1) pile.value = 1;
+  });
+
+  form.addEventListener('submit', function() {
+    var hidden = q('[data-bm-cr-dims]');
+    if (hidden) hidden.value = dimensions();
+  });
+
+  /* "Send on WhatsApp instead": carries the brief as a prefilled message */
+  var waBtn = q('[data-bm-cr-wa-send]');
+  if (waBtn) waBtn.addEventListener('click', function() {
+    var checked = function(name) { var el = form.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : ''; };
+    var val = function(name) { var el = form.querySelector('[name="' + name + '"]'); return el ? el.value.trim() : ''; };
+    var lines = ['Hi, I would like to enquire about a custom rug.'];
+    var add = function(label, v) { if (v) lines.push(label + ': ' + v); };
+    add('Name', val('contact[name]'));
+    add('Size', dimensions());
+    add('Shape', checked('contact[Shape]'));
+    add('Material', checked('contact[Material]'));
+    add('Pile height', pile && pile.value ? pile.value + ' mm' : '');
+    add('Reference', val('contact[Reference link]'));
+    add('Notes', val('contact[body]'));
+    waBtn.href = waBtn.href.split('?')[0] + '?text=' + encodeURIComponent(lines.join('\n'));
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "BM Custom Rugs",
+  "tag": "div",
+  "class": "bm-custom-rugs-section",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "header", "content": "Intro" },
+    { "type": "text", "id": "eyebrow", "label": "Small label above heading", "default": "Made to order" },
+    { "type": "text", "id": "heading", "label": "Heading", "info": "Leave empty to use the page title." },
+    { "type": "richtext", "id": "intro", "label": "Intro text", "default": "<p>A rug made for your space: your size, your shape, your palette. Tell us what you have in mind and we will take it from there.</p>" },
+
+    { "type": "header", "content": "Form" },
+    { "type": "paragraph", "content": "Enquiries are sent to the store contact email (Shopify admin → Settings → General). Shopify's contact form cannot carry file attachments, so reference images are shared by link, WhatsApp or email." },
+    { "type": "text", "id": "form_heading", "label": "Form heading", "default": "Tell us about your rug" },
+    { "type": "text", "id": "form_intro", "label": "Form intro", "default": "Share as much or as little as you know. Only your contact details are required." },
+    { "type": "textarea", "id": "materials", "label": "Materials (one per line)", "default": "Cotton\nCotton Silk + Silk\nNew Zealand Wool\nMerino Wool" },
+    { "type": "range", "id": "max_pile", "label": "Maximum pile height (mm)", "min": 5, "max": 50, "step": 1, "default": 25 },
+    { "type": "text", "id": "reference_hint", "label": "Reference images hint", "default": "Paste a link to a folder, Pinterest board or image. You can also send photos on WhatsApp or by email after you submit." },
+    { "type": "text", "id": "notes_placeholder", "label": "Design notes placeholder", "default": "Colours, pattern ideas, where the rug will go, timeline" },
+    { "type": "text", "id": "submit_label", "label": "Submit button label", "default": "Send request" },
+    { "type": "text", "id": "success_title", "label": "Thank-you title", "default": "Thank you. Your request is with us." },
+    { "type": "text", "id": "success_text", "label": "Thank-you text", "default": "We will get back to you shortly. If you have reference images, send them on WhatsApp or by email." },
+
+    { "type": "header", "content": "Talk to us directly" },
+    { "type": "text", "id": "aside_heading", "label": "Heading", "default": "Prefer to talk it through?" },
+    { "type": "text", "id": "aside_text", "label": "Text", "default": "Chat with us on WhatsApp, or email us to book a one-on-one virtual design appointment." },
+    { "type": "text", "id": "whatsapp_number", "label": "WhatsApp number (with country code)", "default": "918698205381" },
+    { "type": "text", "id": "whatsapp_label", "label": "WhatsApp button label", "default": "Chat on WhatsApp" },
+    { "type": "text", "id": "whatsapp_message", "label": "WhatsApp opening message", "default": "Hi, I would like to talk about a custom rug." },
+    { "type": "text", "id": "email", "label": "Email address", "default": "info@blackmangoobjects.com" },
+    { "type": "text", "id": "email_label", "label": "Email button label", "default": "Book a design appointment" },
+    { "type": "text", "id": "appointment_subject", "label": "Email subject", "default": "Custom rug: virtual design appointment" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Step" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BM Custom Rugs",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Consult", "text": "Share your space, size and ideas. We talk through shape, material, colour and budget, on WhatsApp or a virtual appointment." } },
+        { "type": "step", "settings": { "title": "Sample (if required)", "text": "Where it helps, we make a small sample so you can check colour, texture and pile before the full rug is made." } },
+        { "type": "step", "settings": { "title": "Make", "text": "Once you approve, your rug is made to order and delivered to you." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
